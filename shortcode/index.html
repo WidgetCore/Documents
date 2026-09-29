@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The wgcr_search shortcode | WidgetCore Documentation</title>
+<meta name="description" content="The complete reference for the [wgcr_search] shortcode — all 24 attributes with defaults and allowed values, boolean parsing, practical examples, the PHP function and validation rules.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f4f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161618" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="WidgetCore docs build">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://docs.widgetcore.ir/shortcode/">
+<link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/shortcode/">
+<link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/shortcode/">
+<link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/shortcode/">
+<meta property="og:site_name" content="WidgetCore Documentation">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fa_IR">
+<meta property="og:title" content="The wgcr_search shortcode">
+<meta property="og:description" content="The complete reference for the [wgcr_search] shortcode — all 24 attributes with defaults and allowed values, boolean parsing, practical examples, the PHP function and validation rules.">
+<meta property="og:url" content="https://docs.widgetcore.ir/shortcode/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The wgcr_search shortcode">
+<meta name="twitter:description" content="The complete reference for the [wgcr_search] shortcode — all 24 attributes with defaults and allowed values, boolean parsing, practical examples, the PHP function and validation rules.">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://docs.widgetcore.ir/"},{"@type":"ListItem","position":2,"name":"The wgcr_search shortcode","item":"https://docs.widgetcore.ir/shortcode/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"The wgcr_search shortcode","description":"The complete reference for the [wgcr_search] shortcode — all 24 attributes with defaults and allowed values, boolean parsing, practical examples, the PHP function and validation rules.","inLanguage":"en_US","url":"https://docs.widgetcore.ir/shortcode/","isPartOf":{"@type":"WebSite","name":"WidgetCore Documentation","url":"https://docs.widgetcore.ir/","inLanguage":"en_US"},"about":{"@type":"SoftwareApplication","name":"WidgetCore","applicationCategory":"Plugin","operatingSystem":"WordPress"},"author":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"publisher":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"license":"https://www.gnu.org/licenses/gpl-2.0.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.widgetcore.ir/shortcode/"}}</script>
+<script>(function(){try{var k='wgcr-theme';var t=localStorage.getItem(k);if(!t){t='system'}var d=t==='system'?(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;var r=document.documentElement;r.classList.add(d==='dark'?'dark':'light');r.setAttribute('data-theme',d);r.setAttribute('data-theme-mode',t);r.style.colorScheme=d;}catch(e){}})();</script>
+</head>
+<body class="body-docs">
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0"><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></symbol><symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></symbol><symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol><symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></symbol><symbol id="i-command" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6a3 3 0 10-3 3h12a3 3 0 10-3-3v12a3 3 0 103-3H6a3 3 0 103 3V6z"/></symbol><symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h11v11H9zM5 15H4V4h11v1"/></symbol><symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11m0 0l-4-4m4 4l4-4M4 18v2a1 1 0 001 1h14a1 1 0 001-1v-2"/></symbol><symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-2c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-1-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.8-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0012 2z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></symbol><symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.3A3.7 3.7 0 0112 8a3.7 3.7 0 017 2.7C19 15.6 12 20 12 20z"/></symbol><symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM12 11v6M12 7.5h.01"/></symbol><symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM7 10h.01M11 10h.01M15 10h.01M8 14h8"/></symbol><symbol id="i-life" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 5.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM5 5l4 4M19 5l-4 4M5 19l4-4M19 19l-4-4"/></symbol><symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 006 .5l2-2a4 4 0 00-5.7-5.7L11 8M14 10a4 4 0 00-6-.5l-2 2A4 4 0 0011.7 17L13 16"/></symbol><symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v11H3zM9 20h6M12 16v4"/></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 019.5 4 8.5 8.5 0 1020 14.5z"/></symbol><symbol id="i-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V4h10v5M7 18H4v-6h16v6h-3M7 14h10v6H7z"/></symbol><symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 2 5 5.5 5 9l2 3v3l-3-1.5V19l-4 3-4-3v-3.5L5 17v-3l2-3c0-3.5 2-7 5-9zm0 8.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></symbol><symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4a7 7 0 100 14 7 7 0 000-14zm9 16l-4.5-4.5"/></symbol><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zM12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol><symbol id="i-tip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2h5c0-.8.4-1.5 1-2A6 6 0 0012 3z"/></symbol></svg>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="header">
+<div class="reading-progress" data-reading-progress aria-hidden="true"></div>
+<div class="header-in">
+<button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-label="Sections menu" aria-expanded="false" aria-haspopup="dialog" aria-controls="sidebar"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="29" height="29" rx="8"/><path d="M8 11h6v6H8zM18 11h6v10h-6zM8 21h6"/></svg></button>
+<a class="brand" href="../"><span class="brand-txt"><span class="brand-name">WidgetCore</span><span class="brand-sub">WidgetCore Documentation</span></span></a>
+<div class="header-actions">
+<button class="search-trigger" type="button" data-search-open aria-label="Search the documentation"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span class="search-text">Search the documentation…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<a class="download-link" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="Download the latest version" title="Download the latest version"><span class="download-mark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span><span class="download-count" data-download-count data-count-api="https://api.github.com/repos/WidgetCore/Plugin/releases?per_page=100" aria-label="Total GitHub downloads" aria-live="polite" aria-busy="true"></span></a>
+<a class="github-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="WidgetCore plugin repository on GitHub" title="WidgetCore plugin repository on GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg></a>
+<div class="theme-control">
+<button class="icon-btn theme-btn" type="button" data-theme-menu-toggle aria-haspopup="menu" aria-controls="theme-menu" aria-expanded="false"
+			aria-label="Theme" title="Theme">
+			<span class="th-ic th-light"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg></span>
+			<span class="th-ic th-dark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg></span>
+		</button>
+<div class="theme-menu" id="theme-menu" role="menu" aria-label="Theme" data-theme-menu hidden>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="system" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-monitor"/></svg><span>System</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="light" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg><span>Light</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="dark" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg><span>Dark</span></button>
+</div>
+</div>
+<a class="lang-btn" href="../fa/shortcode/" hreflang="fa" lang="fa" title="This page in Persian" aria-label="This page in Persian" data-lang-switch><span class="flag-emoji" aria-hidden="true">🇮🇷</span></a>
+</div>
+</div>
+</header>
+
+<div class="search-modal" data-search-modal data-search-index="../search-index-en.json" data-search-page="shortcode/" data-search-lang="en" hidden>
+<div class="search-backdrop" data-search-close></div>
+<div class="search-box" role="dialog" aria-modal="true" aria-label="Search the documentation" dir="ltr">
+<form class="search-head" role="search" data-search-form>
+<span class="search-head-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span>
+<input class="search-input" type="search" data-search-input placeholder="Search the documentation…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Search the documentation" aria-controls="search-results" aria-autocomplete="list">
+<button class="icon-btn" type="button" data-search-close aria-label="Close search"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button>
+</form>
+<div class="search-results" id="search-results" data-search-results role="listbox" aria-label="Search the documentation" tabindex="-1"></div>
+<p class="search-empty" data-search-empty hidden>No results for this query. <span>Try a shorter phrase, or switch the site language.</span></p>
+<p class="search-loading" data-search-loading hidden>Searching…</p>
+<p class="search-foot"><span class="search-count" data-search-count></span><span class="search-keys">Use ↑ and ↓ to move, Enter to open and Esc to close.</span></p>
+</div>
+</div>
+
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="Sections menu" data-sidebar>
+<div class="sidebar-in">
+<div class="sidebar-quick-head"><div class="sidebar-quick-title" id="sidebar-quick-title" role="heading" aria-level="2">Quick Access</div><button class="icon-btn sidebar-close" type="button" data-sidebar-close aria-label="Close quick-access menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button></div>
+<button class="sidebar-search" type="button" data-search-open aria-label="Search all documentation…"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span>Search all documentation…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<nav class="nav" aria-label="Sections menu">
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-intro" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg></span>
+<span class="nav-title">Getting to know</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-intro" data-nav-list>
+<li><a class="nav-link" href="../introduction/">What is WidgetCore?</a></li>
+<li><a class="nav-link" href="../quick-start/">Quick start</a></li>
+<li><a class="nav-link" href="../concepts/">Core concepts</a></li>
+<li><a class="nav-link" href="../requirements/">Requirements and compatibility</a></li>
+
+</ul>
+<p class="nav-desc">What the plugin is and what it adds to your site.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-install" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span>
+<span class="nav-title">Download &amp; install</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-install" data-nav-list>
+<li><a class="nav-link" href="../download/">Download</a></li>
+<li><a class="nav-link" href="../installation/">Installation and activation</a></li>
+<li><a class="nav-link" href="../updates/">Updates</a></li>
+
+</ul>
+<p class="nav-desc">Download, install, update and remove.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-widgets" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="nav-title">Widgets</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-widgets" data-nav-list>
+<li><a class="nav-link" href="../widgets/">Widgets</a></li>
+<li><a class="nav-link" href="../widgets/faq/">FAQ widget</a></li>
+<li><a class="nav-link" href="../widgets/live-search/">Live Search widget</a></li>
+
+</ul>
+<p class="nav-desc">The complete guide to every widget and control.</p>
+</div>
+<div class="nav-group is-open" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="true" aria-controls="nav-advanced" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+<span class="nav-title">Advanced use</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-advanced" data-nav-list>
+<li><a class="nav-link is-current" href="./" aria-current="page">The wgcr_search shortcode</a></li>
+<li><a class="nav-link" href="../rest-api/">REST API</a></li>
+
+</ul>
+<p class="nav-desc">Shortcode, REST and hooks for custom integrations.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-a11y" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="nav-title">Accessibility &amp; language</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-a11y" data-nav-list>
+<li><a class="nav-link" href="../accessibility/">Accessibility</a></li>
+<li><a class="nav-link" href="../keyboard/">Keyboard shortcuts</a></li>
+<li><a class="nav-link" href="../translation/">Language and translation</a></li>
+
+</ul>
+<p class="nav-desc">Keyboard, screen readers and translation.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-support" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-life"/></svg></span>
+<span class="nav-title">Support</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-support" data-nav-list>
+<li><a class="nav-link" href="../faq/">Frequently asked questions</a></li>
+<li><a class="nav-link" href="../troubleshooting/">Troubleshooting</a></li>
+
+</ul>
+<p class="nav-desc">Troubleshooting and frequently asked questions.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-project" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-heart"/></svg></span>
+<span class="nav-title">Project</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-project" data-nav-list>
+<li><a class="nav-link" href="../changelog/">Changelog</a></li>
+<li><a class="nav-link" href="../contributing/">Contributing</a></li>
+
+</ul>
+<p class="nav-desc">Changelog, open source and contributing.</p>
+</div>
+
+</nav>
+<div class="sidebar-foot">
+<a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="Download the latest version" title="Download the latest version"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">Download the latest version</span></a>
+<a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="WidgetCore repository on GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>WidgetCore repository on GitHub</span></a>
+<p class="side-ver">Version <b dir="ltr">0.0.7</b></p>
+</div>
+</div>
+</aside>
+<div class="scrim" data-scrim hidden></div>
+
+<main class="main" id="main" tabindex="-1">
+<div class="content">
+<nav class="breadcrumb" aria-label="breadcrumb"><ol><li><a href="../">Home</a></li><li aria-current="page"><span>The wgcr_search shortcode</span></li></ol><button class="breadcrumb-toc-toggle" type="button" data-toc-toggle aria-label="On this page" title="On this page" aria-expanded="false" aria-controls="breadcrumb-toc-menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-list"/></svg></button><div class="breadcrumb-toc-menu" id="breadcrumb-toc-menu" data-mobile-toc hidden><nav class="toc" aria-label="On this page" data-mobile-toc-list>
+<p class="toc-title">On this page</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#complete-attribute-table" data-toc-link="complete-attribute-table">Complete attribute table</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#boolean-values" data-toc-link="boolean-values">Boolean values</a></li></ul></li><li class="toc-item toc-d2"><a href="#examples" data-toc-link="examples">Examples</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#a-simple-search-across-posts" data-toc-link="a-simple-search-across-posts">A simple search across posts</a></li><li class="toc-item toc-d3"><a href="#a-course-search-with-a-three-column-grid" data-toc-link="a-course-search-with-a-three-column-grid">A course search with a three-column grid</a></li><li class="toc-item toc-d3"><a href="#results-only-from-two-specific-categories" data-toc-link="results-only-from-two-specific-categories">Results only from two specific categories</a></li><li class="toc-item toc-d3"><a href="#last-year39s-results-with-numbered-pagination" data-toc-link="last-year39s-results-with-numbered-pagination">Last year&amp;#39;s results with numbered pagination</a></li><li class="toc-item toc-d3"><a href="#results-with-an-elementor-template-and-equal-height" data-toc-link="results-with-an-elementor-template-and-equal-height">Results with an Elementor template and equal height</a></li><li class="toc-item toc-d3"><a href="#excluding-a-tag" data-toc-link="excluding-a-tag">Excluding a tag</a></li></ul></li><li class="toc-item toc-d2"><a href="#using-it-from-php" data-toc-link="using-it-from-php">Using it from PHP</a></li><li class="toc-item toc-d2"><a href="#differences-from-the-elementor-widget" data-toc-link="differences-from-the-elementor-widget">Differences from the Elementor widget</a></li><li class="toc-item toc-d2"><a href="#value-validation" data-toc-link="value-validation">Value validation</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>Print this page</span></button>
+</nav>
+</div></nav>
+<article class="article">
+<header class="article-head">
+<h1 class="article-title">The wgcr_search shortcode</h1>
+<p class="article-desc">The complete reference for the [wgcr_search] shortcode — all 24 attributes with defaults and allowed values, boolean parsing, practical examples, the PHP function and validation rules.</p>
+<p class="article-meta">Last updated <time datetime="2026-09-29">2026-09-29</time></p>
+</header>
+<div class="prose" data-prose>
+<p>The <code>[wgcr_search]</code> shortcode renders exactly the same search field as the Elementor widget, but you can use it anywhere: inside content, in a theme template or in another plugin. Every attribute is optional.</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">[wgcr_search]
+[wgcr_search source=&quot;course&quot; limit=&quot;9&quot; columns=&quot;3&quot; mode=&quot;page&quot;]
+[wgcr_search terms=&quot;category:12,category:18&quot; terms_op=&quot;include&quot; date=&quot;year&quot;]</code></pre>
+</figure>
+<h2 id="complete-attribute-table">Complete attribute table<a class="hlink" href="#complete-attribute-table" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Attribute</th><th>Default</th><th>Allowed values</th><th>Description</th></tr></thead><tbody><tr><td><code>source</code></td><td><code>post</code></td><td>Any public, searchable post type</td><td>The source of results</td></tr><tr><td><code>placeholder</code></td><td>Automatic</td><td>Any text</td><td>When empty: “Search posts…”, or “Search courses…” for <code>course</code></td></tr><tr><td><code>limit</code></td><td><code>5</code></td><td>A number 1 to 50</td><td>Results per page</td></tr><tr><td><code>columns</code></td><td><code>1</code></td><td>A number 1 to 6</td><td>Only with <code>mode=&quot;page&quot;</code></td></tr><tr><td><code>masonry</code></td><td><code>no</code></td><td><code>yes</code> / <code>no</code></td><td>Only with <code>mode=&quot;page&quot;</code></td></tr><tr><td><code>equal_height</code></td><td><code>no</code></td><td><code>yes</code> / <code>no</code></td><td>Only with <code>mode=&quot;page&quot;</code> and when masonry is off</td></tr><tr><td><code>thumb</code></td><td><code>yes</code></td><td><code>yes</code> / <code>no</code></td><td>Show the thumbnail</td></tr><tr><td><code>excerpt</code></td><td><code>yes</code></td><td><code>yes</code> / <code>no</code></td><td>Show the excerpt</td></tr><tr><td><code>all</code></td><td>“Show all results”</td><td>Any text</td><td>Label of the link to the full results page</td></tr><tr><td><code>template</code></td><td><code>0</code></td><td>An Elementor template id</td><td>Render results with a custom template</td></tr><tr><td><code>mode</code></td><td><code>modal</code></td><td><code>modal</code> / <code>page</code></td><td>Display mode of results</td></tr><tr><td><code>orderby</code></td><td><code>relevance</code></td><td><code>relevance</code>, <code>date</code>, <code>title</code>, <code>author</code>, <code>rand</code>, <code>menu_order</code></td><td>Result ordering</td></tr><tr><td><code>order</code></td><td><code>DESC</code></td><td><code>DESC</code> / <code>ASC</code></td><td>Sort direction</td></tr><tr><td><code>date</code></td><td><code>all</code></td><td><code>all</code>, <code>week</code>, <code>month</code>, <code>year</code></td><td>Date range</td></tr><tr><td><code>terms</code></td><td>Empty</td><td><code>[taxonomy:]id</code>, comma separated</td><td>Category or tag filter</td></tr><tr><td><code>terms_op</code></td><td><code>exclude</code></td><td><code>include</code> / <code>exclude</code></td><td>Include or exclude</td></tr><tr><td><code>ignore_sticky</code></td><td><code>yes</code></td><td><code>yes</code> / <code>no</code></td><td>With <code>no</code>, sticky posts come first</td></tr><tr><td><code>query_id</code></td><td>Empty</td><td>A simple key (<code>sanitize_key</code>)</td><td>For the <code>wgcr_search_query_args/{query_id}</code> filter</td></tr><tr><td><code>pagination</code></td><td><code>none</code></td><td><code>none</code>, <code>numbers</code>, <code>prev_next</code>, <code>load_on_click</code>, <code>load_on_scroll</code></td><td>Pagination type</td></tr><tr><td><code>spacer</code></td><td><code>no</code></td><td><code>yes</code> / <code>no</code></td><td>Extra space before pagination</td></tr><tr><td><code>more_text</code></td><td>“View more posts”</td><td>Any text</td><td>Label of the “load more” button</td></tr><tr><td><code>more_icon</code></td><td><code>yes</code></td><td><code>yes</code> / <code>no</code></td><td>Icon on the button</td></tr><tr><td><code>more_id</code></td><td>Empty</td><td>Letters, numbers, <code>-</code> and <code>_</code></td><td>HTML id of the button</td></tr><tr><td><code>no_more</code></td><td>“There are no more posts.”</td><td>Any text</td><td>Message shown at the end of results</td></tr></tbody></table></div>
+<p><code>source</code> excludes <code>attachment</code> and <code>elementor_library</code>; invalid or non-searchable types fall back to <code>post</code>. <code>all</code> is a link label, not a multi-type source. <code>thumb</code> and <code>excerpt</code> only control display; the REST fields remain present.</p>
+<h3 id="boolean-values">Boolean values<a class="hlink" href="#boolean-values" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>The four words <code>yes</code>, <code>1</code>, <code>true</code> and <code>on</code> are treated as true; everything else is false:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">[wgcr_search thumb=&quot;1&quot;]
+[wgcr_search thumb=&quot;true&quot;]
+[wgcr_search thumb=&quot;on&quot;]
+[wgcr_search thumb=&quot;yes&quot;]</code></pre>
+</figure>
+<h2 id="examples">Examples<a class="hlink" href="#examples" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<h3 id="a-simple-search-across-posts">A simple search across posts<a class="hlink" href="#a-simple-search-across-posts" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">[wgcr_search]</code></pre>
+</figure>
+<h3 id="a-course-search-with-a-three-column-grid">A course search with a three-column grid<a class="hlink" href="#a-course-search-with-a-three-column-grid" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">[wgcr_search source=&quot;course&quot; mode=&quot;page&quot; limit=&quot;9&quot; columns=&quot;3&quot; equal_height=&quot;yes&quot;]</code></pre>
+</figure>
+<h3 id="results-only-from-two-specific-categories">Results only from two specific categories<a class="hlink" href="#results-only-from-two-specific-categories" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">[wgcr_search terms=&quot;category:12,category:18&quot; terms_op=&quot;include&quot;]</code></pre>
+</figure>
+<h3 id="last-year39s-results-with-numbered-pagination">Last year&#39;s results with numbered pagination<a class="hlink" href="#last-year39s-results-with-numbered-pagination" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">[wgcr_search date=&quot;year&quot; orderby=&quot;date&quot; pagination=&quot;numbers&quot; limit=&quot;12&quot;]</code></pre>
+</figure>
+<h3 id="results-with-an-elementor-template-and-equal-height">Results with an Elementor template and equal height<a class="hlink" href="#results-with-an-elementor-template-and-equal-height" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">[wgcr_search mode=&quot;page&quot; template=&quot;42&quot; columns=&quot;2&quot; equal_height=&quot;yes&quot;]</code></pre>
+</figure>
+<h3 id="excluding-a-tag">Excluding a tag<a class="hlink" href="#excluding-a-tag" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">[wgcr_search terms=&quot;post_tag:7&quot; terms_op=&quot;exclude&quot;]</code></pre>
+</figure>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">The terms format</p><p>Each term is written as <code>taxonomy:id</code>. If you omit the taxonomy part, <code>category</code> is assumed — so <code>terms=&quot;12,18&quot;</code> means <code>category:12,category:18</code>. With <code>terms_op=&quot;include&quot;</code> several terms are combined with <code>OR</code>; with <code>exclude</code> a single <code>tax_query</code> entry with <code>NOT IN</code> is used.</p>
+</div></aside>
+<h2 id="using-it-from-php">Using it from PHP<a class="hlink" href="#using-it-from-php" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>The shortcode is backed by a public render function you can call directly:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-k">echo</span> wgcr_search_render(
+	<span class="tok-k">array</span>(
+		<span class="tok-s">'source'</span>  =&gt; <span class="tok-s">'post'</span>,
+		<span class="tok-s">'limit'</span>   =&gt; <span class="tok-n">6</span>,
+		<span class="tok-s">'mode'</span>    =&gt; <span class="tok-s">'modal'</span>,
+		<span class="tok-s">'columns'</span> =&gt; <span class="tok-n">1</span>,
+	),
+	<span class="tok-s">'homepage'</span>
+);</code></pre>
+</figure>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Argument</th><th>Type</th><th>Notes</th></tr></thead><tbody><tr><td><code>$args</code></td><td>array</td><td>The same keys as the shortcode attributes</td></tr><tr><td><code>$id</code></td><td>string</td><td>A unique identifier; when empty the plugin generates <code>sc1</code>, <code>sc2</code>, …</td></tr></tbody></table></div>
+<p>The <code>$id</code> argument matters when you render several searches on one page from PHP: each instance needs a unique root id, otherwise the panels conflict.</p>
+<h2 id="differences-from-the-elementor-widget">Differences from the Elementor widget<a class="hlink" href="#differences-from-the-elementor-widget" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Feature</th><th>Widget</th><th>Shortcode</th></tr></thead><tbody><tr><td>Style controls</td><td>Full Elementor panel</td><td>None (style with CSS)</td></tr><tr><td>Columns</td><td>1 to 3</td><td>1 to 6</td></tr><tr><td>Default items per page</td><td>12</td><td>5</td></tr><tr><td>Default display mode</td><td>List mode</td><td><code>modal</code></td></tr><tr><td>Template choice control</td><td>Yes</td><td>With the <code>template</code> attribute</td></tr><tr><td>Query ID</td><td>Yes</td><td>Yes</td></tr><tr><td>Works outside Elementor</td><td>No</td><td>Yes</td></tr></tbody></table></div>
+<p>Because the shortcode has no style panel, its output relies on the classes on the <a href="../widgets/live-search/#styling">styling page</a> plus the <code>more_text</code>, <code>more_icon</code> and <code>more_id</code> attributes for the load-more button.</p>
+<h2 id="value-validation">Value validation<a class="hlink" href="#value-validation" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>Nothing you write reaches the query unfiltered:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Attribute</th><th>Validation</th></tr></thead><tbody><tr><td><code>source</code></td><td>Only public, searchable post types; <code>attachment</code> and <code>elementor_library</code> are excluded; anything else becomes <code>post</code></td></tr><tr><td><code>limit</code></td><td>Cast to an integer and clamped to 1–50</td></tr><tr><td><code>columns</code></td><td>Clamped to 1–6</td></tr><tr><td><code>mode</code></td><td>Only <code>modal</code> or <code>page</code></td></tr><tr><td><code>orderby</code></td><td>A whitelist of six values, otherwise <code>relevance</code></td></tr><tr><td><code>order</code></td><td>Only <code>ASC</code> or <code>DESC</code></td></tr><tr><td><code>date</code></td><td>Only <code>all</code>, <code>week</code>, <code>month</code>, <code>year</code></td></tr><tr><td><code>terms</code></td><td>Each item is parsed and cast to a positive integer</td></tr><tr><td><code>terms_op</code></td><td>Only <code>include</code> or <code>exclude</code></td></tr><tr><td><code>query_id</code></td><td>Passed through <code>sanitize_key</code></td></tr><tr><td><code>more_id</code></td><td>Only letters, numbers, <code>-</code> and <code>_</code></td></tr><tr><td>Text attributes</td><td>Escaped for the attribute or HTML context they are printed in</td></tr></tbody></table></div>
+<aside class="callout callout--tip"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-tip"/></svg><div class="callout-body"><p class="callout-title">A safe habit</p><p>Always wrap your own dynamic values in <code>esc_attr()</code> before putting them into a shortcode string:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-k">echo</span> do_shortcode( <span class="tok-s">'[wgcr_search placeholder=&quot;'</span> . esc_attr( <span class="tok-v">$label</span> ) . <span class="tok-s">'&quot;]'</span> );</code></pre>
+</figure>
+</div></aside>
+
+</div>
+
+</article>
+<nav class="prevnext" aria-label="Previous / Next"><a class="pn pn--prev" href="../widgets/live-search/" rel="prev">
+<span class="pn-dir">Previous</span>
+<span class="pn-group">Widgets</span>
+<span class="pn-title">Live Search widget</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></span>
+</a>
+<a class="pn pn--next" href="../rest-api/" rel="next">
+<span class="pn-dir">Next</span>
+<span class="pn-group">Advanced use</span>
+<span class="pn-title">REST API</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span>
+</a>
+</nav>
+<section class="related"><h2 class="related-title">Related pages</h2><div class="cards cards--related"><a class="card" href="../widgets/live-search/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="card-body"><span class="card-title">Live Search widget</span><span class="card-text">The complete guide to the WidgetCore Live Search widget — General, Layout, Query and Pagination controls, result structure, styles, JavaScript configuration and how to send custom queries.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../rest-api/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+<span class="card-body"><span class="card-title">REST API</span><span class="card-text">The WidgetCore search REST endpoint — the route, every parameter with its type and default, the response shape, pagination headers, request examples and the status codes.</span></span>
+<span class="card-arrow"></span>
+</a>
+</div></section>
+</div>
+</main>
+<aside class="aside-right" aria-label="On this page">
+<nav class="toc" aria-label="On this page" data-toc>
+<p class="toc-title">On this page</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#complete-attribute-table" data-toc-link="complete-attribute-table">Complete attribute table</a></li><li class="toc-item toc-d3"><a href="#boolean-values" data-toc-link="boolean-values">Boolean values</a></li><li class="toc-item toc-d2"><a href="#examples" data-toc-link="examples">Examples</a></li><li class="toc-item toc-d3"><a href="#a-simple-search-across-posts" data-toc-link="a-simple-search-across-posts">A simple search across posts</a></li><li class="toc-item toc-d3"><a href="#a-course-search-with-a-three-column-grid" data-toc-link="a-course-search-with-a-three-column-grid">A course search with a three-column grid</a></li><li class="toc-item toc-d3"><a href="#results-only-from-two-specific-categories" data-toc-link="results-only-from-two-specific-categories">Results only from two specific categories</a></li><li class="toc-item toc-d3"><a href="#last-year39s-results-with-numbered-pagination" data-toc-link="last-year39s-results-with-numbered-pagination">Last year&amp;#39;s results with numbered pagination</a></li><li class="toc-item toc-d3"><a href="#results-with-an-elementor-template-and-equal-height" data-toc-link="results-with-an-elementor-template-and-equal-height">Results with an Elementor template and equal height</a></li><li class="toc-item toc-d3"><a href="#excluding-a-tag" data-toc-link="excluding-a-tag">Excluding a tag</a></li><li class="toc-item toc-d2"><a href="#using-it-from-php" data-toc-link="using-it-from-php">Using it from PHP</a></li><li class="toc-item toc-d2"><a href="#differences-from-the-elementor-widget" data-toc-link="differences-from-the-elementor-widget">Differences from the Elementor widget</a></li><li class="toc-item toc-d2"><a href="#value-validation" data-toc-link="value-validation">Value validation</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>Print this page</span></button>
+</nav>
+
+</aside>
+</div>
+<footer class="footer">
+<div class="footer-in">
+<div class="footer-brand">
+<p class="footer-note">WidgetCore is a free, open source plugin released under GPL-2.0-or-later.</p>
+<p class="footer-ver">Version <b dir="ltr">0.0.7</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">GPL-2.0-or-later license</a></p>
+</div>
+
+</div>
+</footer>
+
+<script type="application/json" data-ui-strings>{"lang":"en","copy":"Copy code","copied":"Copied","results":"results","theme":"Theme"}</script>
+<script src="../assets/app.js" defer></script>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/site-ui.js" defer></script>
+</body>
+</html>

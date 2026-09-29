@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ widget | WidgetCore Documentation</title>
+<meta name="description" content="The complete guide to the WidgetCore FAQ widget — question and answer items, accordion or toggle mode, icons, animation speed, question heading tag, FAQPage schema and styling.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f4f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161618" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="WidgetCore docs build">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://docs.widgetcore.ir/widgets/faq/">
+<link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/widgets/faq/">
+<link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/widgets/faq/">
+<link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/widgets/faq/">
+<meta property="og:site_name" content="WidgetCore Documentation">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fa_IR">
+<meta property="og:title" content="FAQ widget">
+<meta property="og:description" content="The complete guide to the WidgetCore FAQ widget — question and answer items, accordion or toggle mode, icons, animation speed, question heading tag, FAQPage schema and styling.">
+<meta property="og:url" content="https://docs.widgetcore.ir/widgets/faq/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FAQ widget">
+<meta name="twitter:description" content="The complete guide to the WidgetCore FAQ widget — question and answer items, accordion or toggle mode, icons, animation speed, question heading tag, FAQPage schema and styling.">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://docs.widgetcore.ir/"},{"@type":"ListItem","position":2,"name":"Widgets","item":"https://docs.widgetcore.ir/widgets/"},{"@type":"ListItem","position":3,"name":"FAQ widget","item":"https://docs.widgetcore.ir/widgets/faq/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"FAQ widget","description":"The complete guide to the WidgetCore FAQ widget — question and answer items, accordion or toggle mode, icons, animation speed, question heading tag, FAQPage schema and styling.","inLanguage":"en_US","url":"https://docs.widgetcore.ir/widgets/faq/","isPartOf":{"@type":"WebSite","name":"WidgetCore Documentation","url":"https://docs.widgetcore.ir/","inLanguage":"en_US"},"about":{"@type":"SoftwareApplication","name":"WidgetCore","applicationCategory":"Plugin","operatingSystem":"WordPress"},"author":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"publisher":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"license":"https://www.gnu.org/licenses/gpl-2.0.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.widgetcore.ir/widgets/faq/"}}</script>
+<script>(function(){try{var k='wgcr-theme';var t=localStorage.getItem(k);if(!t){t='system'}var d=t==='system'?(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;var r=document.documentElement;r.classList.add(d==='dark'?'dark':'light');r.setAttribute('data-theme',d);r.setAttribute('data-theme-mode',t);r.style.colorScheme=d;}catch(e){}})();</script>
+</head>
+<body class="body-docs">
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0"><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></symbol><symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></symbol><symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol><symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></symbol><symbol id="i-command" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6a3 3 0 10-3 3h12a3 3 0 10-3-3v12a3 3 0 103-3H6a3 3 0 103 3V6z"/></symbol><symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h11v11H9zM5 15H4V4h11v1"/></symbol><symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11m0 0l-4-4m4 4l4-4M4 18v2a1 1 0 001 1h14a1 1 0 001-1v-2"/></symbol><symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-2c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-1-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.8-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0012 2z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></symbol><symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.3A3.7 3.7 0 0112 8a3.7 3.7 0 017 2.7C19 15.6 12 20 12 20z"/></symbol><symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM12 11v6M12 7.5h.01"/></symbol><symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM7 10h.01M11 10h.01M15 10h.01M8 14h8"/></symbol><symbol id="i-life" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 5.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM5 5l4 4M19 5l-4 4M5 19l4-4M19 19l-4-4"/></symbol><symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 006 .5l2-2a4 4 0 00-5.7-5.7L11 8M14 10a4 4 0 00-6-.5l-2 2A4 4 0 0011.7 17L13 16"/></symbol><symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v11H3zM9 20h6M12 16v4"/></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 019.5 4 8.5 8.5 0 1020 14.5z"/></symbol><symbol id="i-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V4h10v5M7 18H4v-6h16v6h-3M7 14h10v6H7z"/></symbol><symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 2 5 5.5 5 9l2 3v3l-3-1.5V19l-4 3-4-3v-3.5L5 17v-3l2-3c0-3.5 2-7 5-9zm0 8.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></symbol><symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4a7 7 0 100 14 7 7 0 000-14zm9 16l-4.5-4.5"/></symbol><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zM12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol><symbol id="i-tip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2h5c0-.8.4-1.5 1-2A6 6 0 0012 3z"/></symbol><symbol id="i-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 16H3l9-16zM12 10v4M12 17h.01"/></symbol></svg>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="header">
+<div class="reading-progress" data-reading-progress aria-hidden="true"></div>
+<div class="header-in">
+<button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-label="Sections menu" aria-expanded="false" aria-haspopup="dialog" aria-controls="sidebar"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="29" height="29" rx="8"/><path d="M8 11h6v6H8zM18 11h6v10h-6zM8 21h6"/></svg></button>
+<a class="brand" href="../../"><span class="brand-txt"><span class="brand-name">WidgetCore</span><span class="brand-sub">WidgetCore Documentation</span></span></a>
+<div class="header-actions">
+<button class="search-trigger" type="button" data-search-open aria-label="Search the documentation"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span class="search-text">Search the documentation…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<a class="download-link" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="Download the latest version" title="Download the latest version"><span class="download-mark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span><span class="download-count" data-download-count data-count-api="https://api.github.com/repos/WidgetCore/Plugin/releases?per_page=100" aria-label="Total GitHub downloads" aria-live="polite" aria-busy="true"></span></a>
+<a class="github-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="WidgetCore plugin repository on GitHub" title="WidgetCore plugin repository on GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg></a>
+<div class="theme-control">
+<button class="icon-btn theme-btn" type="button" data-theme-menu-toggle aria-haspopup="menu" aria-controls="theme-menu" aria-expanded="false"
+			aria-label="Theme" title="Theme">
+			<span class="th-ic th-light"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg></span>
+			<span class="th-ic th-dark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg></span>
+		</button>
+<div class="theme-menu" id="theme-menu" role="menu" aria-label="Theme" data-theme-menu hidden>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="system" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-monitor"/></svg><span>System</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="light" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg><span>Light</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="dark" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg><span>Dark</span></button>
+</div>
+</div>
+<a class="lang-btn" href="../../fa/widgets/faq/" hreflang="fa" lang="fa" title="This page in Persian" aria-label="This page in Persian" data-lang-switch><span class="flag-emoji" aria-hidden="true">🇮🇷</span></a>
+</div>
+</div>
+</header>
+
+<div class="search-modal" data-search-modal data-search-index="../../search-index-en.json" data-search-page="widgets/faq/" data-search-lang="en" hidden>
+<div class="search-backdrop" data-search-close></div>
+<div class="search-box" role="dialog" aria-modal="true" aria-label="Search the documentation" dir="ltr">
+<form class="search-head" role="search" data-search-form>
+<span class="search-head-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span>
+<input class="search-input" type="search" data-search-input placeholder="Search the documentation…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Search the documentation" aria-controls="search-results" aria-autocomplete="list">
+<button class="icon-btn" type="button" data-search-close aria-label="Close search"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button>
+</form>
+<div class="search-results" id="search-results" data-search-results role="listbox" aria-label="Search the documentation" tabindex="-1"></div>
+<p class="search-empty" data-search-empty hidden>No results for this query. <span>Try a shorter phrase, or switch the site language.</span></p>
+<p class="search-loading" data-search-loading hidden>Searching…</p>
+<p class="search-foot"><span class="search-count" data-search-count></span><span class="search-keys">Use ↑ and ↓ to move, Enter to open and Esc to close.</span></p>
+</div>
+</div>
+
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="Sections menu" data-sidebar>
+<div class="sidebar-in">
+<div class="sidebar-quick-head"><div class="sidebar-quick-title" id="sidebar-quick-title" role="heading" aria-level="2">Quick Access</div><button class="icon-btn sidebar-close" type="button" data-sidebar-close aria-label="Close quick-access menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button></div>
+<button class="sidebar-search" type="button" data-search-open aria-label="Search all documentation…"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span>Search all documentation…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<nav class="nav" aria-label="Sections menu">
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-intro" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg></span>
+<span class="nav-title">Getting to know</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-intro" data-nav-list>
+<li><a class="nav-link" href="../../introduction/">What is WidgetCore?</a></li>
+<li><a class="nav-link" href="../../quick-start/">Quick start</a></li>
+<li><a class="nav-link" href="../../concepts/">Core concepts</a></li>
+<li><a class="nav-link" href="../../requirements/">Requirements and compatibility</a></li>
+
+</ul>
+<p class="nav-desc">What the plugin is and what it adds to your site.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-install" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span>
+<span class="nav-title">Download &amp; install</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-install" data-nav-list>
+<li><a class="nav-link" href="../../download/">Download</a></li>
+<li><a class="nav-link" href="../../installation/">Installation and activation</a></li>
+<li><a class="nav-link" href="../../updates/">Updates</a></li>
+
+</ul>
+<p class="nav-desc">Download, install, update and remove.</p>
+</div>
+<div class="nav-group is-open" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="true" aria-controls="nav-widgets" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="nav-title">Widgets</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-widgets" data-nav-list>
+<li><a class="nav-link" href="../">Widgets</a></li>
+<li><a class="nav-link is-current" href="./" aria-current="page">FAQ widget</a></li>
+<li><a class="nav-link" href="../live-search/">Live Search widget</a></li>
+
+</ul>
+<p class="nav-desc">The complete guide to every widget and control.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-advanced" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+<span class="nav-title">Advanced use</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-advanced" data-nav-list>
+<li><a class="nav-link" href="../../shortcode/">The wgcr_search shortcode</a></li>
+<li><a class="nav-link" href="../../rest-api/">REST API</a></li>
+
+</ul>
+<p class="nav-desc">Shortcode, REST and hooks for custom integrations.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-a11y" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="nav-title">Accessibility &amp; language</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-a11y" data-nav-list>
+<li><a class="nav-link" href="../../accessibility/">Accessibility</a></li>
+<li><a class="nav-link" href="../../keyboard/">Keyboard shortcuts</a></li>
+<li><a class="nav-link" href="../../translation/">Language and translation</a></li>
+
+</ul>
+<p class="nav-desc">Keyboard, screen readers and translation.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-support" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-life"/></svg></span>
+<span class="nav-title">Support</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-support" data-nav-list>
+<li><a class="nav-link" href="../../faq/">Frequently asked questions</a></li>
+<li><a class="nav-link" href="../../troubleshooting/">Troubleshooting</a></li>
+
+</ul>
+<p class="nav-desc">Troubleshooting and frequently asked questions.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-project" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-heart"/></svg></span>
+<span class="nav-title">Project</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-project" data-nav-list>
+<li><a class="nav-link" href="../../changelog/">Changelog</a></li>
+<li><a class="nav-link" href="../../contributing/">Contributing</a></li>
+
+</ul>
+<p class="nav-desc">Changelog, open source and contributing.</p>
+</div>
+
+</nav>
+<div class="sidebar-foot">
+<a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="Download the latest version" title="Download the latest version"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">Download the latest version</span></a>
+<a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="WidgetCore repository on GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>WidgetCore repository on GitHub</span></a>
+<p class="side-ver">Version <b dir="ltr">0.0.7</b></p>
+</div>
+</div>
+</aside>
+<div class="scrim" data-scrim hidden></div>
+
+<main class="main" id="main" tabindex="-1">
+<div class="content">
+<nav class="breadcrumb" aria-label="breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../">Widgets</a></li><li aria-current="page"><span>FAQ widget</span></li></ol><button class="breadcrumb-toc-toggle" type="button" data-toc-toggle aria-label="On this page" title="On this page" aria-expanded="false" aria-controls="breadcrumb-toc-menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-list"/></svg></button><div class="breadcrumb-toc-menu" id="breadcrumb-toc-menu" data-mobile-toc hidden><nav class="toc" aria-label="On this page" data-mobile-toc-list>
+<p class="toc-title">On this page</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#the-questions-section" data-toc-link="the-questions-section">The “Questions” section</a></li><li class="toc-item toc-d2"><a href="#the-behaviour-section" data-toc-link="the-behaviour-section">The “Behaviour” section</a></li><li class="toc-item toc-d2"><a href="#the-seo-and-structure-section" data-toc-link="the-seo-and-structure-section">The “SEO and structure” section</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#shape-of-the-structured-data-output" data-toc-link="shape-of-the-structured-data-output">Shape of the structured data output</a></li><li class="toc-item toc-d3"><a href="#without-javascript" data-toc-link="without-javascript">Without JavaScript</a></li></ul></li><li class="toc-item toc-d2"><a href="#html-output-structure" data-toc-link="html-output-structure">HTML output structure</a></li><li class="toc-item toc-d2"><a href="#accessibility-and-keyboard" data-toc-link="accessibility-and-keyboard">Accessibility and keyboard</a></li><li class="toc-item toc-d2"><a href="#style-sections" data-toc-link="style-sections">Style sections</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#overall-layout" data-toc-link="overall-layout">Overall layout</a></li><li class="toc-item toc-d3"><a href="#card-body" data-toc-link="card-body">Card body</a></li><li class="toc-item toc-d3"><a href="#title" data-toc-link="title">Title</a></li><li class="toc-item toc-d3"><a href="#answer-card" data-toc-link="answer-card">Answer card</a></li><li class="toc-item toc-d3"><a href="#icon" data-toc-link="icon">Icon</a></li></ul></li><li class="toc-item toc-d2"><a href="#custom-styling-example" data-toc-link="custom-styling-example">Custom styling example</a></li><li class="toc-item toc-d2"><a href="#complete-control-reference" data-toc-link="complete-control-reference">Complete control reference</a></li><li class="toc-item toc-d2"><a href="#troubleshooting" data-toc-link="troubleshooting">Troubleshooting</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>Print this page</span></button>
+</nav>
+</div></nav>
+<article class="article">
+<header class="article-head">
+<h1 class="article-title">FAQ widget</h1>
+<p class="article-desc">The complete guide to the WidgetCore FAQ widget — question and answer items, accordion or toggle mode, icons, animation speed, question heading tag, FAQPage schema and styling.</p>
+<p class="article-meta">Last updated <time datetime="2026-09-29">2026-09-29</time></p>
+</header>
+<div class="prose" data-prose>
+<p>The <strong>FAQ</strong> widget is an accessible accordion: every question is a button inside a heading tag, and every answer is a <code>region</code> connected to that button with <code>aria-labelledby</code>. Alongside the widget, <code>FAQPage</code> structured data is printed.</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Item</th><th>Value</th></tr></thead><tbody><tr><td>Widget name</td><td><code>wgcr-faq</code></td></tr><tr><td>Panel title</td><td>FAQ</td></tr><tr><td>Category</td><td>WidgetCore Widgets (<code>wgcr</code>)</td></tr><tr><td>Style / script</td><td><code>wgcr-faq</code></td></tr><tr><td>Root class</td><td><code>.wgcr-faq</code></td></tr></tbody></table></div>
+<h2 id="the-questions-section">The “Questions” section<a class="hlink" href="#the-questions-section" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>The only control here is a repeater called <strong>Items</strong> with three fields:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Field</th><th>Type</th><th>Default</th><th>Notes</th></tr></thead><tbody><tr><td>Question title</td><td>Text</td><td>“Question title”</td><td>The text on the button, and the value used for <code>Question.name</code> in the schema</td></tr><tr><td>Answer</td><td>WYSIWYG</td><td>“Answer text…”</td><td>The answer content; links and simple formatting are allowed</td></tr><tr><td>Open by default</td><td>Switcher</td><td>No</td><td>When on, this item starts open</td></tr></tbody></table></div>
+<p>On first use the widget is filled with a few sample items so you can see the structure; replace all of their text with your own content.</p>
+<aside class="callout callout--tip"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-tip"/></svg><div class="callout-body"><p class="callout-title">Do not leave answers empty</p><p>Items whose question or answer is empty are dropped from the <code>FAQPage</code> schema output (they still render on the page). If you want a question to be eligible for rich results, write both fields completely.</p>
+</div></aside>
+<h2 id="the-behaviour-section">The “Behaviour” section<a class="hlink" href="#the-behaviour-section" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Control</th><th>Type</th><th>Values</th><th>Default</th></tr></thead><tbody><tr><td>Opening mode</td><td>Select</td><td>Accordion (only one item open) / Toggle (several items at once)</td><td>Accordion</td></tr><tr><td>Icon</td><td>Select</td><td>Plus / Chevron / Custom (Elementor icon library)</td><td>Plus</td></tr><tr><td>Custom icon</td><td>Icon</td><td>From the Elementor icon library</td><td>—</td></tr><tr><td>Animation speed (ms)</td><td>Slider</td><td>100 to 1000</td><td>300</td></tr></tbody></table></div>
+<p><strong>Accordion mode</strong>: opening an item closes the previously open one. Better for long lists and mobile screens.</p>
+<p><strong>Toggle mode</strong>: every item opens and closes independently, so visitors can keep several answers open at once; better for comparing questions.</p>
+<p>Icons are inline SVG elements coloured with <code>currentColor</code>, so they follow the colour controls in the “Icon” section. In the open state the plus icon rotates 45 degrees and the chevron and custom icons rotate 180 degrees; the rotation of a custom icon is adjustable with “Custom icon rotation when open (degrees)”.</p>
+<h2 id="the-seo-and-structure-section">The “SEO and structure” section<a class="hlink" href="#the-seo-and-structure-section" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Control</th><th>Values</th><th>Default</th><th>Notes</th></tr></thead><tbody><tr><td>Question heading tag</td><td><code>H2</code> / <code>H3</code> (recommended) / <code>H4</code> / <code>DIV</code></td><td><code>H3</code></td><td>Defines the heading structure of your page</td></tr><tr><td>FAQ schema (JSON-LD)</td><td>Yes / No</td><td>Yes</td><td>Prints <code>FAQPage</code> structured data for search engines</td></tr></tbody></table></div>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">Several widgets on one page</p><p>Only the first rendered FAQ instance with schema enabled reaches schema generation. Instances with schema disabled do not consume this opportunity. Within that first enabled instance, only non-empty question/answer pairs are included; if none qualify, no block is printed and later instances still cannot emit one. This is the plugin’s one-block policy, not a claim that multiple FAQ blocks always cause a search-engine error. Valid JSON-LD does not guarantee a rich result; search-engine eligibility and content policies also apply.</p>
+</div></aside>
+<h3 id="shape-of-the-structured-data-output">Shape of the structured data output<a class="hlink" href="#shape-of-the-structured-data-output" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">json</span></figcaption>
+<pre><code class="language-json" dir="ltr">{
+	<span class="tok-p">&quot;@context&quot;:</span> <span class="tok-s">&quot;https://schema.org&quot;</span>,
+	<span class="tok-p">&quot;@type&quot;:</span> <span class="tok-s">&quot;FAQPage&quot;</span>,
+	<span class="tok-p">&quot;mainEntity&quot;:</span> [
+		{
+			<span class="tok-p">&quot;@type&quot;:</span> <span class="tok-s">&quot;Question&quot;</span>,
+			<span class="tok-p">&quot;name&quot;:</span> <span class="tok-s">&quot;How are the courses delivered?&quot;</span>,
+			<span class="tok-p">&quot;acceptedAnswer&quot;:</span> {
+				<span class="tok-p">&quot;@type&quot;:</span> <span class="tok-s">&quot;Answer&quot;</span>,
+				<span class="tok-p">&quot;text&quot;:</span> <span class="tok-s">&quot;All courses are video-based and online…&quot;</span>
+			}
+		}
+	]
+}</code></pre>
+</figure>
+<p>The output is printed with <code>JSON_UNESCAPED_UNICODE</code>, so non-Latin text stays readable in the page source instead of becoming <code>\uXXXX</code> sequences.</p>
+<h3 id="without-javascript">Without JavaScript<a class="hlink" href="#without-javascript" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>FAQ interaction requires JavaScript; there is no <code>details</code>/<code>summary</code> fallback. Closed answers remain hidden (<code>max-height: 0</code>). Only initially open answers remain visible, with a 640px CSS cap, so long answers can be clipped. Provide essential information outside the accordion when no-script access is required.</p>
+<h2 id="html-output-structure">HTML output structure<a class="hlink" href="#html-output-structure" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">html</span></figcaption>
+<pre><code class="language-html" dir="ltr">&lt;div class=&quot;wgcr-faq&quot; data-mode=&quot;accordion&quot; data-speed=&quot;300&quot;&gt;
+	&lt;div class=&quot;wgcr-faq-list&quot;&gt;
+		&lt;div class=&quot;wgcr-faq-item open&quot; data-icon=&quot;plus&quot;&gt;
+			&lt;h3 class=&quot;wgcr-faq-qwrap&quot;&gt;
+				&lt;button type=&quot;button&quot; class=&quot;wgcr-faq-q&quot; id=&quot;wgcr-faq-q-abc123-0&quot;
+					aria-expanded=&quot;true&quot; aria-controls=&quot;wgcr-faq-a-abc123-0&quot;&gt;
+					&lt;span class=&quot;wgcr-faq-qtext&quot;&gt;Question title&lt;/span&gt;
+					&lt;span class=&quot;wgcr-faq-ic&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;…&lt;/svg&gt;&lt;/span&gt;
+				&lt;/button&gt;
+			&lt;/h3&gt;
+			&lt;div class=&quot;wgcr-faq-a&quot; role=&quot;region&quot; id=&quot;wgcr-faq-a-abc123-0&quot;
+				aria-labelledby=&quot;wgcr-faq-q-abc123-0&quot;&gt;
+				&lt;div class=&quot;wgcr-faq-atext&quot;&gt;Answer text…&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</figure>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Class</th><th>Role</th></tr></thead><tbody><tr><td><code>.wgcr-faq</code></td><td>Root; carries <code>data-mode</code> and <code>data-speed</code></td></tr><tr><td><code>.wgcr-faq-list</code></td><td>The grid of items with an adjustable gap</td></tr><tr><td><code>.wgcr-faq-item</code></td><td>Each card; gets the <code>open</code> class when expanded</td></tr><tr><td><code>.wgcr-faq-qwrap</code></td><td>The heading tag (per the “Question heading tag” control)</td></tr><tr><td><code>.wgcr-faq-q</code></td><td>The question button; the keyboard focus target</td></tr><tr><td><code>.wgcr-faq-qtext</code></td><td>The question text (supports inline editing)</td></tr><tr><td><code>.wgcr-faq-ic</code></td><td>The icon box</td></tr><tr><td><code>.wgcr-faq-a</code></td><td>The answer region with <code>role=&quot;region&quot;</code></td></tr><tr><td><code>.wgcr-faq-atext</code></td><td>The answer text</td></tr></tbody></table></div>
+<h2 id="accessibility-and-keyboard">Accessibility and keyboard<a class="hlink" href="#accessibility-and-keyboard" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Key</th><th>Behaviour</th></tr></thead><tbody><tr><td><code>Enter</code> or <code>Space</code></td><td>Opens or closes the focused question</td></tr><tr><td><code>ArrowDown</code></td><td>Moves to the next question</td></tr><tr><td><code>ArrowUp</code></td><td>Moves to the previous question</td></tr><tr><td><code>Home</code></td><td>First question</td></tr><tr><td><code>End</code></td><td>Last question</td></tr></tbody></table></div>
+<ul>
+<li>Closed answers leave the tab order (through <code>visibility: hidden</code>), so keyboard users never get trapped inside hidden content.</li>
+<li>The focus ring is only painted for <code>:focus-visible</code>, so mouse clicks do not draw a blue outline.</li>
+<li>When the visitor enabled <code>prefers-reduced-motion</code>, animation is removed and items open instantly.</li>
+<li>The height of each open answer is measured dynamically and re-measured when the window is resized, so long answers are never clipped.</li>
+<li>Movement between questions wraps around: after the last question, <code>ArrowDown</code> returns to the first.</li>
+</ul>
+<p>More detail on the <a href="../../accessibility/">accessibility</a> and <a href="../../keyboard/">keyboard shortcuts</a> pages.</p>
+<h2 id="style-sections">Style sections<a class="hlink" href="#style-sections" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<h3 id="overall-layout">Overall layout<a class="hlink" href="#overall-layout" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Control</th><th>Default</th><th>Notes</th></tr></thead><tbody><tr><td>Max width</td><td>—</td><td>Width of the whole widget (<code>760px</code> in the inline CSS)</td></tr><tr><td>Widget horizontal alignment</td><td>Center</td><td>Right / Center / Left</td></tr><tr><td>Gap between cards</td><td><code>14px</code></td><td>Vertical spacing of items</td></tr></tbody></table></div>
+<h3 id="card-body">Card body<a class="hlink" href="#card-body" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Control</th><th>Default</th><th>Notes</th></tr></thead><tbody><tr><td>Background</td><td><code>rgba(255,255,255,0.72)</code></td><td>Card background</td></tr><tr><td>Background (open)</td><td>—</td><td>Only for the open item</td></tr><tr><td>Border colour (open)</td><td>—</td><td>Border of the open item</td></tr><tr><td>Glass blur amount</td><td><code>12px</code></td><td>The <code>backdrop-filter</code> effect</td></tr><tr><td>Border radius</td><td><code>12px</code></td><td>Card corner radius</td></tr></tbody></table></div>
+<h3 id="title">Title<a class="hlink" href="#title" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Control</th><th>Default</th></tr></thead><tbody><tr><td>Title row background</td><td>—</td></tr><tr><td>Text colour</td><td><code>#1F2937</code></td></tr><tr><td>Title row background (open)</td><td>—</td></tr><tr><td>Text colour (open)</td><td>—</td></tr><tr><td>Text colour (hover)</td><td>—</td></tr><tr><td>Title row border radius</td><td>—</td></tr><tr><td>Padding</td><td><code>20px 24px</code></td></tr></tbody></table></div>
+<h3 id="answer-card">Answer card<a class="hlink" href="#answer-card" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Control</th><th>Default</th></tr></thead><tbody><tr><td>Background</td><td>—</td></tr><tr><td>Text colour</td><td><code>#6B7280</code></td></tr><tr><td>Background (open)</td><td>—</td></tr><tr><td>Text colour (open)</td><td>—</td></tr><tr><td>Border radius</td><td>—</td></tr><tr><td>Padding</td><td><code>0 24px 22px</code></td></tr></tbody></table></div>
+<h3 id="icon">Icon<a class="hlink" href="#icon" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Control</th><th>Default</th></tr></thead><tbody><tr><td>Gap from text</td><td><code>16px</code></td></tr><tr><td>Box size</td><td><code>30px</code></td></tr><tr><td>Icon size</td><td><code>16px</code></td></tr><tr><td>Box radius</td><td><code>8px</code></td></tr><tr><td>Custom icon rotation when open</td><td><code>180deg</code></td></tr><tr><td>Background</td><td><code>#EBF3FC</code></td></tr><tr><td>Icon colour</td><td><code>#2E86DE</code></td></tr><tr><td>Background (open)</td><td><code>#2E86DE</code></td></tr><tr><td>Icon colour (open)</td><td><code>#ffffff</code></td></tr></tbody></table></div>
+<h2 id="custom-styling-example">Custom styling example<a class="hlink" href="#custom-styling-example" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>To change the appearance outside the controls, this snippet in your theme&#39;s custom CSS is enough:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr"><span class="tok-t">.wgcr-faq-item</span> {
+	border-radius: <span class="tok-n">16px</span>;
+	box-shadow: <span class="tok-n">0</span> <span class="tok-n">2px</span> <span class="tok-n">10px</span> rgb(<span class="tok-n">15</span> <span class="tok-n">23</span> <span class="tok-n">42</span> / <span class="tok-n">6</span>%);
+}
+<span class="tok-t">.wgcr-faq-item</span><span class="tok-t">.open</span> <span class="tok-t">.wgcr-faq-qtext</span> {
+	color: <span class="tok-t">#1d4ed8</span>;
+}
+@media (prefers-reduced-motion: reduce) {
+	<span class="tok-t">.wgcr-faq-a</span> { transition: none; }
+}</code></pre>
+</figure>
+<aside class="callout callout--warning"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-warning"/></svg><div class="callout-body"><p class="callout-title">Do not edit the plugin's CSS file</p><p>The FAQ widget&#39;s styles are printed inline with the widget and are rewritten on every plugin update. Put your changes in the theme CSS or in Elementor&#39;s “Custom CSS”.</p>
+</div></aside>
+<h2 id="complete-control-reference">Complete control reference<a class="hlink" href="#complete-control-reference" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>Every content control of the widget, in panel order. Style controls are listed in “Style sections” above.</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Id</th><th>Panel label</th><th>Type</th><th>Default</th><th>Shown when</th></tr></thead><tbody><tr><td><code>items</code></td><td>Questions</td><td>Repeater</td><td>Three sample questions</td><td>—</td></tr><tr><td><code>question</code></td><td>Question title</td><td>Text</td><td>“Question title”</td><td>Inside each item</td></tr><tr><td><code>answer</code></td><td>Answer</td><td>Text editor</td><td>“Answer text…”</td><td>Inside each item</td></tr><tr><td><code>open_default</code></td><td>Open by default</td><td>Switcher</td><td>No</td><td>Inside each item</td></tr><tr><td><code>mode</code></td><td>Opening mode</td><td>Select</td><td><code>accordion</code></td><td>—</td></tr><tr><td><code>icon_type</code></td><td>Icon</td><td>Select</td><td><code>plus</code></td><td>—</td></tr><tr><td><code>custom_icon</code></td><td>Custom icon</td><td>Icon picker</td><td><code>fas fa-plus</code></td><td><code>icon_type = custom</code></td></tr><tr><td><code>speed</code></td><td>Animation speed (milliseconds)</td><td>Slider, 100 to 1000</td><td>300</td><td>—</td></tr><tr><td><code>q_tag</code></td><td>Question title tag</td><td>Select</td><td><code>h3</code></td><td>—</td></tr><tr><td><code>schema</code></td><td>FAQ schema (JSON-LD)</td><td>Switcher</td><td>Yes</td><td>—</td></tr></tbody></table></div>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">Where these ids appear</p><p><code>q_tag</code> decides the heading tag of each question, <code>speed</code> becomes the <code>--wgcr-faq-speed</code> custom property on the widget root, and <code>schema</code> switches the JSON-LD output on or off.</p>
+</div></aside>
+<h2 id="troubleshooting">Troubleshooting<a class="hlink" href="#troubleshooting" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Symptom</th><th>Cause</th><th>Fix</th></tr></thead><tbody><tr><td>Items do not open</td><td>The widget script did not load</td><td>Check in developer tools whether <code>wgcr-faq</code> loaded; clear caches</td></tr><tr><td>A very long answer is clipped</td><td>The script did not run, so the CSS cap (<code>max-height: 640px</code>) applies</td><td>With the script running, each answer&#39;s height is set to its real content height; clear caches</td></tr><tr><td>No schema on the page</td><td>The “FAQ schema” control is off, or this is the second widget</td><td>Turn the control on or move the widget first</td></tr><tr><td>The custom icon does not rotate</td><td>The icon type is not “Custom”</td><td>Set “Icon” to “Custom (Elementor icon library)”</td></tr></tbody></table></div>
+
+</div>
+
+</article>
+<nav class="prevnext" aria-label="Previous / Next"><a class="pn pn--prev" href="../" rel="prev">
+<span class="pn-dir">Previous</span>
+<span class="pn-group">Widgets</span>
+<span class="pn-title">Widgets</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></span>
+</a>
+<a class="pn pn--next" href="../live-search/" rel="next">
+<span class="pn-dir">Next</span>
+<span class="pn-group">Widgets</span>
+<span class="pn-title">Live Search widget</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span>
+</a>
+</nav>
+<section class="related"><h2 class="related-title">Related pages</h2><div class="cards cards--related"><a class="card" href="../">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="card-body"><span class="card-title">Widgets</span><span class="card-text">The list of WidgetCore widgets in Elementor, the name and purpose of each, the dedicated “WidgetCore Widgets” category and how assets are loaded only where needed.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../../accessibility/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="card-body"><span class="card-title">Accessibility</span><span class="card-text">How WidgetCore meets accessibility requirements — the combobox pattern, ARIA roles, live regions, working without JavaScript, FAQ semantics, reduced motion, contrast and an audit checklist.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../../keyboard/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="card-body"><span class="card-title">Keyboard shortcuts</span><span class="card-text">Every keyboard interaction in the WidgetCore widgets and in this documentation site — search field, results list, pagination, the FAQ accordion and the docs shortcuts.</span></span>
+<span class="card-arrow"></span>
+</a>
+</div></section>
+</div>
+</main>
+<aside class="aside-right" aria-label="On this page">
+<nav class="toc" aria-label="On this page" data-toc>
+<p class="toc-title">On this page</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#the-questions-section" data-toc-link="the-questions-section">The “Questions” section</a></li><li class="toc-item toc-d2"><a href="#the-behaviour-section" data-toc-link="the-behaviour-section">The “Behaviour” section</a></li><li class="toc-item toc-d2"><a href="#the-seo-and-structure-section" data-toc-link="the-seo-and-structure-section">The “SEO and structure” section</a></li><li class="toc-item toc-d3"><a href="#shape-of-the-structured-data-output" data-toc-link="shape-of-the-structured-data-output">Shape of the structured data output</a></li><li class="toc-item toc-d3"><a href="#without-javascript" data-toc-link="without-javascript">Without JavaScript</a></li><li class="toc-item toc-d2"><a href="#html-output-structure" data-toc-link="html-output-structure">HTML output structure</a></li><li class="toc-item toc-d2"><a href="#accessibility-and-keyboard" data-toc-link="accessibility-and-keyboard">Accessibility and keyboard</a></li><li class="toc-item toc-d2"><a href="#style-sections" data-toc-link="style-sections">Style sections</a></li><li class="toc-item toc-d3"><a href="#overall-layout" data-toc-link="overall-layout">Overall layout</a></li><li class="toc-item toc-d3"><a href="#card-body" data-toc-link="card-body">Card body</a></li><li class="toc-item toc-d3"><a href="#title" data-toc-link="title">Title</a></li><li class="toc-item toc-d3"><a href="#answer-card" data-toc-link="answer-card">Answer card</a></li><li class="toc-item toc-d3"><a href="#icon" data-toc-link="icon">Icon</a></li><li class="toc-item toc-d2"><a href="#custom-styling-example" data-toc-link="custom-styling-example">Custom styling example</a></li><li class="toc-item toc-d2"><a href="#complete-control-reference" data-toc-link="complete-control-reference">Complete control reference</a></li><li class="toc-item toc-d2"><a href="#troubleshooting" data-toc-link="troubleshooting">Troubleshooting</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>Print this page</span></button>
+</nav>
+
+</aside>
+</div>
+<footer class="footer">
+<div class="footer-in">
+<div class="footer-brand">
+<p class="footer-note">WidgetCore is a free, open source plugin released under GPL-2.0-or-later.</p>
+<p class="footer-ver">Version <b dir="ltr">0.0.7</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">GPL-2.0-or-later license</a></p>
+</div>
+
+</div>
+</footer>
+
+<script type="application/json" data-ui-strings>{"lang":"en","copy":"Copy code","copied":"Copied","results":"results","theme":"Theme"}</script>
+<script src="../../assets/app.js" defer></script>
+<script src="../../assets/search.js" defer></script>
+<script src="../../assets/site-ui.js" defer></script>
+</body>
+</html>

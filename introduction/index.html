@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What is WidgetCore? | WidgetCore Documentation</title>
+<meta name="description" content="An introduction to the WidgetCore plugin for Elementor — a growing set of accessible widgets, including an FAQ accordion with FAQPage schema and an AJAX live search with a shortcode, plus requirements and a reading path.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f4f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161618" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="WidgetCore docs build">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://docs.widgetcore.ir/introduction/">
+<link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/introduction/">
+<link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/introduction/">
+<link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/introduction/">
+<meta property="og:site_name" content="WidgetCore Documentation">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fa_IR">
+<meta property="og:title" content="What is WidgetCore?">
+<meta property="og:description" content="An introduction to the WidgetCore plugin for Elementor — a growing set of accessible widgets, including an FAQ accordion with FAQPage schema and an AJAX live search with a shortcode, plus requirements and a reading path.">
+<meta property="og:url" content="https://docs.widgetcore.ir/introduction/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="What is WidgetCore?">
+<meta name="twitter:description" content="An introduction to the WidgetCore plugin for Elementor — a growing set of accessible widgets, including an FAQ accordion with FAQPage schema and an AJAX live search with a shortcode, plus requirements and a reading path.">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://docs.widgetcore.ir/"},{"@type":"ListItem","position":2,"name":"What is WidgetCore?","item":"https://docs.widgetcore.ir/introduction/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"What is WidgetCore?","description":"An introduction to the WidgetCore plugin for Elementor — a growing set of accessible widgets, including an FAQ accordion with FAQPage schema and an AJAX live search with a shortcode, plus requirements and a reading path.","inLanguage":"en_US","url":"https://docs.widgetcore.ir/introduction/","isPartOf":{"@type":"WebSite","name":"WidgetCore Documentation","url":"https://docs.widgetcore.ir/","inLanguage":"en_US"},"about":{"@type":"SoftwareApplication","name":"WidgetCore","applicationCategory":"Plugin","operatingSystem":"WordPress"},"author":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"publisher":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"license":"https://www.gnu.org/licenses/gpl-2.0.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.widgetcore.ir/introduction/"}}</script>
+<script>(function(){try{var k='wgcr-theme';var t=localStorage.getItem(k);if(!t){t='system'}var d=t==='system'?(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;var r=document.documentElement;r.classList.add(d==='dark'?'dark':'light');r.setAttribute('data-theme',d);r.setAttribute('data-theme-mode',t);r.style.colorScheme=d;}catch(e){}})();</script>
+</head>
+<body class="body-docs">
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0"><symbol id="i-accordion" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v4H4zM4 12h16v3H4zM4 18h16v3H4z"/></symbol><symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol><symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></symbol><symbol id="i-command" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6a3 3 0 10-3 3h12a3 3 0 10-3-3v12a3 3 0 103-3H6a3 3 0 103 3V6z"/></symbol><symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11m0 0l-4-4m4 4l4-4M4 18v2a1 1 0 001 1h14a1 1 0 001-1v-2"/></symbol><symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-2c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-1-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.8-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0012 2z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></symbol><symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.3A3.7 3.7 0 0112 8a3.7 3.7 0 017 2.7C19 15.6 12 20 12 20z"/></symbol><symbol id="i-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM9.5 9.5a2.5 2.5 0 114 2c-.9.7-1.5 1.2-1.5 2.2M12 17h.01"/></symbol><symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM7 10h.01M11 10h.01M15 10h.01M8 14h8"/></symbol><symbol id="i-life" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 5.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM5 5l4 4M19 5l-4 4M5 19l4-4M19 19l-4-4"/></symbol><symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 006 .5l2-2a4 4 0 00-5.7-5.7L11 8M14 10a4 4 0 00-6-.5l-2 2A4 4 0 0011.7 17L13 16"/></symbol><symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v11H3zM9 20h6M12 16v4"/></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 019.5 4 8.5 8.5 0 1020 14.5z"/></symbol><symbol id="i-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V4h10v5M7 18H4v-6h16v6h-3M7 14h10v6H7z"/></symbol><symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 2 5 5.5 5 9l2 3v3l-3-1.5V19l-4 3-4-3v-3.5L5 17v-3l2-3c0-3.5 2-7 5-9zm0 8.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></symbol><symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4a7 7 0 100 14 7 7 0 000-14zm9 16l-4.5-4.5"/></symbol><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zM12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol><symbol id="i-tip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2h5c0-.8.4-1.5 1-2A6 6 0 0012 3z"/></symbol><symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 13h5l-1 9 8-11h-5l1-9z"/></symbol></svg>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="header">
+<div class="reading-progress" data-reading-progress aria-hidden="true"></div>
+<div class="header-in">
+<button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-label="Sections menu" aria-expanded="false" aria-haspopup="dialog" aria-controls="sidebar"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="29" height="29" rx="8"/><path d="M8 11h6v6H8zM18 11h6v10h-6zM8 21h6"/></svg></button>
+<a class="brand" href="../"><span class="brand-txt"><span class="brand-name">WidgetCore</span><span class="brand-sub">WidgetCore Documentation</span></span></a>
+<div class="header-actions">
+<button class="search-trigger" type="button" data-search-open aria-label="Search the documentation"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span class="search-text">Search the documentation…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<a class="download-link" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="Download the latest version" title="Download the latest version"><span class="download-mark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span><span class="download-count" data-download-count data-count-api="https://api.github.com/repos/WidgetCore/Plugin/releases?per_page=100" aria-label="Total GitHub downloads" aria-live="polite" aria-busy="true"></span></a>
+<a class="github-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="WidgetCore plugin repository on GitHub" title="WidgetCore plugin repository on GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg></a>
+<div class="theme-control">
+<button class="icon-btn theme-btn" type="button" data-theme-menu-toggle aria-haspopup="menu" aria-controls="theme-menu" aria-expanded="false"
+			aria-label="Theme" title="Theme">
+			<span class="th-ic th-light"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg></span>
+			<span class="th-ic th-dark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg></span>
+		</button>
+<div class="theme-menu" id="theme-menu" role="menu" aria-label="Theme" data-theme-menu hidden>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="system" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-monitor"/></svg><span>System</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="light" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg><span>Light</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="dark" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg><span>Dark</span></button>
+</div>
+</div>
+<a class="lang-btn" href="../fa/introduction/" hreflang="fa" lang="fa" title="This page in Persian" aria-label="This page in Persian" data-lang-switch><span class="flag-emoji" aria-hidden="true">🇮🇷</span></a>
+</div>
+</div>
+</header>
+
+<div class="search-modal" data-search-modal data-search-index="../search-index-en.json" data-search-page="introduction/" data-search-lang="en" hidden>
+<div class="search-backdrop" data-search-close></div>
+<div class="search-box" role="dialog" aria-modal="true" aria-label="Search the documentation" dir="ltr">
+<form class="search-head" role="search" data-search-form>
+<span class="search-head-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span>
+<input class="search-input" type="search" data-search-input placeholder="Search the documentation…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Search the documentation" aria-controls="search-results" aria-autocomplete="list">
+<button class="icon-btn" type="button" data-search-close aria-label="Close search"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button>
+</form>
+<div class="search-results" id="search-results" data-search-results role="listbox" aria-label="Search the documentation" tabindex="-1"></div>
+<p class="search-empty" data-search-empty hidden>No results for this query. <span>Try a shorter phrase, or switch the site language.</span></p>
+<p class="search-loading" data-search-loading hidden>Searching…</p>
+<p class="search-foot"><span class="search-count" data-search-count></span><span class="search-keys">Use ↑ and ↓ to move, Enter to open and Esc to close.</span></p>
+</div>
+</div>
+
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="Sections menu" data-sidebar>
+<div class="sidebar-in">
+<div class="sidebar-quick-head"><div class="sidebar-quick-title" id="sidebar-quick-title" role="heading" aria-level="2">Quick Access</div><button class="icon-btn sidebar-close" type="button" data-sidebar-close aria-label="Close quick-access menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button></div>
+<button class="sidebar-search" type="button" data-search-open aria-label="Search all documentation…"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span>Search all documentation…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<nav class="nav" aria-label="Sections menu">
+<div class="nav-group is-open" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="true" aria-controls="nav-intro" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg></span>
+<span class="nav-title">Getting to know</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-intro" data-nav-list>
+<li><a class="nav-link is-current" href="./" aria-current="page">What is WidgetCore?</a></li>
+<li><a class="nav-link" href="../quick-start/">Quick start</a></li>
+<li><a class="nav-link" href="../concepts/">Core concepts</a></li>
+<li><a class="nav-link" href="../requirements/">Requirements and compatibility</a></li>
+
+</ul>
+<p class="nav-desc">What the plugin is and what it adds to your site.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-install" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span>
+<span class="nav-title">Download &amp; install</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-install" data-nav-list>
+<li><a class="nav-link" href="../download/">Download</a></li>
+<li><a class="nav-link" href="../installation/">Installation and activation</a></li>
+<li><a class="nav-link" href="../updates/">Updates</a></li>
+
+</ul>
+<p class="nav-desc">Download, install, update and remove.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-widgets" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="nav-title">Widgets</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-widgets" data-nav-list>
+<li><a class="nav-link" href="../widgets/">Widgets</a></li>
+<li><a class="nav-link" href="../widgets/faq/">FAQ widget</a></li>
+<li><a class="nav-link" href="../widgets/live-search/">Live Search widget</a></li>
+
+</ul>
+<p class="nav-desc">The complete guide to every widget and control.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-advanced" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+<span class="nav-title">Advanced use</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-advanced" data-nav-list>
+<li><a class="nav-link" href="../shortcode/">The wgcr_search shortcode</a></li>
+<li><a class="nav-link" href="../rest-api/">REST API</a></li>
+
+</ul>
+<p class="nav-desc">Shortcode, REST and hooks for custom integrations.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-a11y" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="nav-title">Accessibility &amp; language</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-a11y" data-nav-list>
+<li><a class="nav-link" href="../accessibility/">Accessibility</a></li>
+<li><a class="nav-link" href="../keyboard/">Keyboard shortcuts</a></li>
+<li><a class="nav-link" href="../translation/">Language and translation</a></li>
+
+</ul>
+<p class="nav-desc">Keyboard, screen readers and translation.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-support" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-life"/></svg></span>
+<span class="nav-title">Support</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-support" data-nav-list>
+<li><a class="nav-link" href="../faq/">Frequently asked questions</a></li>
+<li><a class="nav-link" href="../troubleshooting/">Troubleshooting</a></li>
+
+</ul>
+<p class="nav-desc">Troubleshooting and frequently asked questions.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-project" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-heart"/></svg></span>
+<span class="nav-title">Project</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-project" data-nav-list>
+<li><a class="nav-link" href="../changelog/">Changelog</a></li>
+<li><a class="nav-link" href="../contributing/">Contributing</a></li>
+
+</ul>
+<p class="nav-desc">Changelog, open source and contributing.</p>
+</div>
+
+</nav>
+<div class="sidebar-foot">
+<a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="Download the latest version" title="Download the latest version"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">Download the latest version</span></a>
+<a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="WidgetCore repository on GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>WidgetCore repository on GitHub</span></a>
+<p class="side-ver">Version <b dir="ltr">0.0.7</b></p>
+</div>
+</div>
+</aside>
+<div class="scrim" data-scrim hidden></div>
+
+<main class="main" id="main" tabindex="-1">
+<div class="content">
+<nav class="breadcrumb" aria-label="breadcrumb"><ol><li><a href="../">Home</a></li><li aria-current="page"><span>What is WidgetCore?</span></li></ol><button class="breadcrumb-toc-toggle" type="button" data-toc-toggle aria-label="On this page" title="On this page" aria-expanded="false" aria-controls="breadcrumb-toc-menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-list"/></svg></button><div class="breadcrumb-toc-menu" id="breadcrumb-toc-menu" data-mobile-toc hidden><nav class="toc" aria-label="On this page" data-mobile-toc-list>
+<p class="toc-title">On this page</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#the-widgets" data-toc-link="the-widgets">The widgets</a></li><li class="toc-item toc-d2"><a href="#at-a-glance" data-toc-link="at-a-glance">At a glance</a></li><li class="toc-item toc-d2"><a href="#suggested-reading-path" data-toc-link="suggested-reading-path">Suggested reading path</a></li><li class="toc-item toc-d2"><a href="#how-the-plugin-is-organised" data-toc-link="how-the-plugin-is-organised">How the plugin is organised</a></li><li class="toc-item toc-d2"><a href="#what-the-plugin-does-not-do" data-toc-link="what-the-plugin-does-not-do">What the plugin does not do</a></li><li class="toc-item toc-d2"><a href="#where-to-go-next" data-toc-link="where-to-go-next">Where to go next</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>Print this page</span></button>
+</nav>
+</div></nav>
+<article class="article">
+<header class="article-head">
+<h1 class="article-title">What is WidgetCore?</h1>
+<p class="article-desc">An introduction to the WidgetCore plugin for Elementor — a growing set of accessible widgets, including an FAQ accordion with FAQPage schema and an AJAX live search with a shortcode, plus requirements and a reading path.</p>
+<p class="article-meta">Last updated <time datetime="2026-09-26">2026-09-26</time></p>
+</header>
+<div class="prose" data-prose>
+<p><strong>WidgetCore</strong> is a free, open-source WordPress plugin that adds a growing set of practical, ready-to-use widgets to Elementor — including an accessible <strong>FAQ</strong> accordion that outputs <code>FAQPage</code> structured data and a <strong>live search</strong> that shows results without reloading the page, also available anywhere on the site through the <code>[wgcr_search]</code> shortcode. Every widget the plugin ships has its own guide page in these docs, and the set grows with each release.</p>
+<p>The plugin focuses on three things: <strong>real accessibility</strong> (keyboard support, ARIA and reduced motion), <strong>first-class Persian and right-to-left support</strong> (with <code>fa_IR</code> and <code>en_US</code> translations bundled), and <strong>staying light</strong> (no external JavaScript or CSS library, no extra requests).</p>
+<h2 id="the-widgets">The widgets<a class="hlink" href="#the-widgets" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="cards"><a class="card" href="../widgets/faq/"><span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-accordion"/></svg></span><span class="card-body"><span class="card-title">FAQ widget</span><span class="card-text">Every content and style control, keyboard behaviour and the structured data output.</span></span><span class="card-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span></a><a class="card" href="../widgets/live-search/"><span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span><span class="card-body"><span class="card-title">Live Search widget</span><span class="card-text">General, Layout, Query and Pagination sections plus the style sections, in two display modes.</span></span><span class="card-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span></a></div>
+<div class="cards"><a class="card" href="../widgets/"><span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span><span class="card-body"><span class="card-title">The complete widget list</span><span class="card-text">Id, purpose and guide of every widget in the set, on one page.</span></span><span class="card-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span></a><a class="card" href="../download/"><span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span><span class="card-body"><span class="card-title">Download the plugin</span><span class="card-text">The installable package from GitHub releases, with installation and update guides.</span></span><span class="card-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span></a></div>
+<h2 id="at-a-glance">At a glance<a class="hlink" href="#at-a-glance" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Item</th><th>Value</th></tr></thead><tbody><tr><td>Current version</td><td><code>0.0.7</code></td></tr><tr><td>Widgets</td><td>2</td></tr><tr><td>Translatable strings</td><td>192</td></tr><tr><td>Minimum WordPress</td><td>6.7</td></tr><tr><td>Minimum PHP</td><td>7.4</td></tr><tr><td>Required plugin</td><td>Elementor</td></tr><tr><td>Tested with</td><td>WordPress 7.1.2 and Elementor 4.3.2</td></tr><tr><td>License</td><td>GPL-2.0-or-later</td></tr><tr><td>Text domain</td><td><code>widgetcore</code></td></tr><tr><td>Shortcode</td><td><code>[wgcr_search]</code></td></tr><tr><td>REST route</td><td><code>/wp-json/wgcr/v1/search</code></td></tr></tbody></table></div>
+<aside class="callout callout--tip"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-tip"/></svg><div class="callout-body"><p class="callout-title">Searching the documentation</p><p>Press <code>Ctrl</code> + <code>K</code> (<code>Cmd</code> + <code>K</code> on macOS) or <code>/</code> to open the documentation search. The search index is scoped to the current site language and never contacts a third-party server.</p>
+</div></aside>
+<h2 id="suggested-reading-path">Suggested reading path<a class="hlink" href="#suggested-reading-path" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<ol class="steps" data-lang="en"><li class="step"><div class="step-body"><p class="step-title">Check the requirements</p><p>WordPress 6.7 or newer, PHP 7.4 or newer, and an active Elementor installation. Details on the <a href="../requirements/">requirements page</a>.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">Download and install the plugin</p><p>Get the ZIP package from the <a href="../download/">download page</a> and activate it following the <a href="../installation/">installation guide</a>.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">Place your first widget</p><p>In the Elementor editor, open the “WidgetCore Widgets” category and drag a widget onto the canvas.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">Configure the behaviour</p><p>For search, read <a href="../widgets/live-search/#display-modes">display modes</a> and <a href="../widgets/live-search/#pagination">pagination</a>; for FAQs, see the <a href="../widgets/faq/">FAQ widget</a> page.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">Stay current</p><p>Updates are delivered straight from the GitHub repository — see the <a href="../updates/">updates page</a>.</p>
+</div></li></ol>
+<h2 id="how-the-plugin-is-organised">How the plugin is organised<a class="hlink" href="#how-the-plugin-is-organised" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>The plugin is a handful of small, independent parts. Knowing them makes troubleshooting much faster:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Part</th><th>Role</th></tr></thead><tbody><tr><td><code>widgetcore.php</code></td><td>Registers the widget category, loads translations and registers assets</td></tr><tr><td><code>widgets/class-faq-widget.php</code></td><td>The FAQ widget with its inline style and script</td></tr><tr><td><code>widgets/class-search-widget.php</code></td><td>The live search widget and all of its controls</td></tr><tr><td><code>includes/search/search-shared.php</code></td><td>Shared search logic, the shortcode and the render output</td></tr><tr><td><code>includes/search/rest-search.php</code></td><td>The search REST route and its parameters</td></tr><tr><td><code>includes/update/github-updater.php</code></td><td>Updates from the GitHub repository</td></tr><tr><td><code>assets/search/search.css</code> and <code>search.js</code></td><td>Front-end appearance and behaviour of the search widget</td></tr><tr><td><code>languages/</code></td><td>The <code>fa_IR</code> and <code>en_US</code> translation files and the <code>.pot</code> template</td></tr></tbody></table></div>
+<h2 id="what-the-plugin-does-not-do">What the plugin does not do<a class="hlink" href="#what-the-plugin-does-not-do" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<ul>
+<li>No external JavaScript or CSS library is loaded; everything ships inside the package.</li>
+<li>No data is sent to a third-party server. The only network requests the plugin makes are to your own WordPress REST API and (when checking for updates) to the GitHub API.</li>
+<li>Widgets are registered inside Elementor only; with Elementor inactive, the plugin adds nothing to your site.</li>
+</ul>
+<h2 id="where-to-go-next">Where to go next<a class="hlink" href="#where-to-go-next" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="cards"><a class="card" href="../quick-start/"><span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-zap"/></svg></span><span class="card-body"><span class="card-title">Quick start</span><span class="card-text">From installation to your first output in a few short steps.</span></span><span class="card-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span></a><a class="card" href="../concepts/"><span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span><span class="card-body"><span class="card-title">Core concepts</span><span class="card-text">What display mode, template, query and pagination actually mean.</span></span><span class="card-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span></a><a class="card" href="../faq/"><span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-help"/></svg></span><span class="card-body"><span class="card-title">Frequently asked questions</span><span class="card-text">Answers to the most common questions about installation, updates and compatibility.</span></span><span class="card-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span></a></div>
+
+</div>
+
+</article>
+<nav class="prevnext" aria-label="Previous / Next"><span class="pn-empty" aria-hidden="true"></span><a class="pn pn--next" href="../quick-start/" rel="next">
+<span class="pn-dir">Next</span>
+<span class="pn-group">Getting to know</span>
+<span class="pn-title">Quick start</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span>
+</a>
+</nav>
+<section class="related"><h2 class="related-title">Related pages</h2><div class="cards cards--related"><a class="card" href="../quick-start/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg></span>
+<span class="card-body"><span class="card-title">Quick start</span><span class="card-text">From download to your first WidgetCore output in a few minutes — installing the plugin, finding the widgets in Elementor, building your first FAQ and your first live search.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../widgets/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="card-body"><span class="card-title">Widgets</span><span class="card-text">The list of WidgetCore widgets in Elementor, the name and purpose of each, the dedicated “WidgetCore Widgets” category and how assets are loaded only where needed.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../download/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span>
+<span class="card-body"><span class="card-title">Download</span><span class="card-text">Download the WidgetCore installable package from GitHub releases, what the package contains, alternative ways to fetch it and how to choose the right version.</span></span>
+<span class="card-arrow"></span>
+</a>
+</div></section>
+</div>
+</main>
+<aside class="aside-right" aria-label="On this page">
+<nav class="toc" aria-label="On this page" data-toc>
+<p class="toc-title">On this page</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#the-widgets" data-toc-link="the-widgets">The widgets</a></li><li class="toc-item toc-d2"><a href="#at-a-glance" data-toc-link="at-a-glance">At a glance</a></li><li class="toc-item toc-d2"><a href="#suggested-reading-path" data-toc-link="suggested-reading-path">Suggested reading path</a></li><li class="toc-item toc-d2"><a href="#how-the-plugin-is-organised" data-toc-link="how-the-plugin-is-organised">How the plugin is organised</a></li><li class="toc-item toc-d2"><a href="#what-the-plugin-does-not-do" data-toc-link="what-the-plugin-does-not-do">What the plugin does not do</a></li><li class="toc-item toc-d2"><a href="#where-to-go-next" data-toc-link="where-to-go-next">Where to go next</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>Print this page</span></button>
+</nav>
+
+</aside>
+</div>
+<footer class="footer">
+<div class="footer-in">
+<div class="footer-brand">
+<p class="footer-note">WidgetCore is a free, open source plugin released under GPL-2.0-or-later.</p>
+<p class="footer-ver">Version <b dir="ltr">0.0.7</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">GPL-2.0-or-later license</a></p>
+</div>
+
+</div>
+</footer>
+
+<script type="application/json" data-ui-strings>{"lang":"en","copy":"Copy code","copied":"Copied","results":"results","theme":"Theme"}</script>
+<script src="../assets/app.js" defer></script>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/site-ui.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WidgetCore Documentation — light, accessible widgets for Elementor</title>
+<meta name="description" content="Documentation for the free WidgetCore plugin for WordPress and Elementor: a growing widget set — FAQ with FAQPage schema, live search with a shortcode and REST — plus install and troubleshooting guides.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f4f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161618" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="WidgetCore docs build">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://docs.widgetcore.ir/">
+<link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/">
+<link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/">
+<link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/">
+<meta property="og:site_name" content="WidgetCore Documentation">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fa_IR">
+<meta property="og:title" content="WidgetCore Documentation — light, accessible widgets for Elementor">
+<meta property="og:description" content="Documentation for the free WidgetCore plugin for WordPress and Elementor: a growing widget set — FAQ with FAQPage schema, live search with a shortcode and REST — plus install and troubleshooting guides.">
+<meta property="og:url" content="https://docs.widgetcore.ir/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WidgetCore Documentation — light, accessible widgets for Elementor">
+<meta name="twitter:description" content="Documentation for the free WidgetCore plugin for WordPress and Elementor: a growing widget set — FAQ with FAQPage schema, live search with a shortcode and REST — plus install and troubleshooting guides.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"WidgetCore","alternateName":"WidgetCore Widgets","applicationCategory":"Plugin","applicationSubCategory":"Elementor widgets","operatingSystem":"WordPress 6.7+","softwareVersion":"0.0.7","softwareRequirements":["WordPress 6.7+","PHP 7.4+","Elementor"],"url":"https://docs.widgetcore.ir/","inLanguage":"en_US","description":"Documentation for the free WidgetCore plugin for WordPress and Elementor: a growing widget set — FAQ with FAQPage schema, live search with a shortcode and REST — plus install and troubleshooting guides.","license":"https://www.gnu.org/licenses/gpl-2.0.html","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"publisher":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"downloadUrl":"https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip","softwareHelp":{"@type":"WebSite","name":"WidgetCore Documentation — light, accessible widgets for Elementor","url":"https://docs.widgetcore.ir/","inLanguage":"en_US"},"featureList":["FAQ","Live Search"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"WidgetCore Documentation","url":"https://docs.widgetcore.ir/","inLanguage":"en_US","publisher":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"}}</script>
+<script>(function(){try{var k='wgcr-theme';var t=localStorage.getItem(k);if(!t){t='system'}var d=t==='system'?(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;var r=document.documentElement;r.classList.add(d==='dark'?'dark':'light');r.setAttribute('data-theme',d);r.setAttribute('data-theme-mode',t);r.style.colorScheme=d;}catch(e){}})();</script>
+</head>
+<body class="body-landing">
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0"><symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m0 0l-6-6m6 6l-6 6"/></symbol><symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7a3 3 0 013 3v13a2.5 2.5 0 00-2.5-2.5H4zM20 4h-3a3 3 0 00-3 3v13a2.5 2.5 0 012.5-2.5H20z"/></symbol><symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></symbol><symbol id="i-command" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6a3 3 0 10-3 3h12a3 3 0 10-3-3v12a3 3 0 103-3H6a3 3 0 103 3V6z"/></symbol><symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11m0 0l-4-4m4 4l4-4M4 18v2a1 1 0 001 1h14a1 1 0 001-1v-2"/></symbol><symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-2c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-1-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.8-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0012 2z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></symbol><symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.3A3.7 3.7 0 0112 8a3.7 3.7 0 017 2.7C19 15.6 12 20 12 20z"/></symbol><symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM7 10h.01M11 10h.01M15 10h.01M8 14h8"/></symbol><symbol id="i-languages" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h9M8 3v2c0 4-2 7-4 8M6 9c0 2.5 2.5 5 5 6M13 21l4-10 4 10M14.5 17h5"/></symbol><symbol id="i-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM4 9h16M9 9v11"/></symbol><symbol id="i-life" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 5.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM5 5l4 4M19 5l-4 4M5 19l4-4M19 19l-4-4"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v11H3zM9 20h6M12 16v4"/></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 019.5 4 8.5 8.5 0 1020 14.5z"/></symbol><symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 2 5 5.5 5 9l2 3v3l-3-1.5V19l-4 3-4-3v-3.5L5 17v-3l2-3c0-3.5 2-7 5-9zm0 8.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></symbol><symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4a7 7 0 100 14 7 7 0 000-14zm9 16l-4.5-4.5"/></symbol><symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.2 7.7-8 9-4.8-1.3-8-4.5-8-9V6l8-3z"/></symbol><symbol id="i-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 12h4M12 12h8M4 17h12M20 17h0M16 5v4M10 10v4M18 15v4"/></symbol><symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3zM18 15l.8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8L18 15z"/></symbol><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zM12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol><symbol id="i-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V9m0 0L8 13m4-4l4 4M4 6V4a1 1 0 011-1h14a1 1 0 011 1v2"/></symbol><symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 13h5l-1 9 8-11h-5l1-9z"/></symbol></svg>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="header header--landing">
+<div class="reading-progress" data-reading-progress aria-hidden="true"></div>
+<div class="header-in">
+<button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-label="Sections menu" aria-expanded="false" aria-haspopup="dialog" aria-controls="sidebar"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="29" height="29" rx="8"/><path d="M8 11h6v6H8zM18 11h6v10h-6zM8 21h6"/></svg></button>
+<a class="brand" href="./"><span class="brand-txt"><span class="brand-name">WidgetCore</span><span class="brand-sub">WidgetCore Documentation</span></span></a>
+<div class="header-actions">
+<button class="search-trigger" type="button" data-search-open aria-label="Search the documentation"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span class="search-text">Search the documentation…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<a class="download-link" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="Download the latest version" title="Download the latest version"><span class="download-mark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span><span class="download-count" data-download-count data-count-api="https://api.github.com/repos/WidgetCore/Plugin/releases?per_page=100" aria-label="Total GitHub downloads" aria-live="polite" aria-busy="true"></span></a>
+<a class="github-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="WidgetCore plugin repository on GitHub" title="WidgetCore plugin repository on GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg></a>
+<div class="theme-control">
+<button class="icon-btn theme-btn" type="button" data-theme-menu-toggle aria-haspopup="menu" aria-controls="theme-menu" aria-expanded="false"
+			aria-label="Theme" title="Theme">
+			<span class="th-ic th-light"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg></span>
+			<span class="th-ic th-dark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg></span>
+		</button>
+<div class="theme-menu" id="theme-menu" role="menu" aria-label="Theme" data-theme-menu hidden>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="system" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-monitor"/></svg><span>System</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="light" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg><span>Light</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="dark" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg><span>Dark</span></button>
+</div>
+</div>
+<a class="lang-btn" href="fa/" hreflang="fa" lang="fa" title="This page in Persian" aria-label="This page in Persian" data-lang-switch><span class="flag-emoji" aria-hidden="true">🇮🇷</span></a>
+</div>
+</div>
+</header>
+
+<aside class="sidebar" id="sidebar" aria-label="Sections menu" data-sidebar>
+<div class="sidebar-in">
+<div class="sidebar-quick-head"><div class="sidebar-quick-title" id="sidebar-quick-title" role="heading" aria-level="2">Quick Access</div><button class="icon-btn sidebar-close" type="button" data-sidebar-close aria-label="Close quick-access menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button></div>
+<button class="sidebar-search" type="button" data-search-open aria-label="Search all documentation…"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span>Search all documentation…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<nav class="nav" aria-label="Sections menu">
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-intro" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg></span>
+<span class="nav-title">Getting to know</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-intro" data-nav-list>
+<li><a class="nav-link" href="introduction/">What is WidgetCore?</a></li>
+<li><a class="nav-link" href="quick-start/">Quick start</a></li>
+<li><a class="nav-link" href="concepts/">Core concepts</a></li>
+<li><a class="nav-link" href="requirements/">Requirements and compatibility</a></li>
+
+</ul>
+<p class="nav-desc">What the plugin is and what it adds to your site.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-install" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span>
+<span class="nav-title">Download &amp; install</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-install" data-nav-list>
+<li><a class="nav-link" href="download/">Download</a></li>
+<li><a class="nav-link" href="installation/">Installation and activation</a></li>
+<li><a class="nav-link" href="updates/">Updates</a></li>
+
+</ul>
+<p class="nav-desc">Download, install, update and remove.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-widgets" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="nav-title">Widgets</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-widgets" data-nav-list>
+<li><a class="nav-link" href="widgets/">Widgets</a></li>
+<li><a class="nav-link" href="widgets/faq/">FAQ widget</a></li>
+<li><a class="nav-link" href="widgets/live-search/">Live Search widget</a></li>
+
+</ul>
+<p class="nav-desc">The complete guide to every widget and control.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-advanced" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+<span class="nav-title">Advanced use</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-advanced" data-nav-list>
+<li><a class="nav-link" href="shortcode/">The wgcr_search shortcode</a></li>
+<li><a class="nav-link" href="rest-api/">REST API</a></li>
+
+</ul>
+<p class="nav-desc">Shortcode, REST and hooks for custom integrations.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-a11y" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="nav-title">Accessibility &amp; language</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-a11y" data-nav-list>
+<li><a class="nav-link" href="accessibility/">Accessibility</a></li>
+<li><a class="nav-link" href="keyboard/">Keyboard shortcuts</a></li>
+<li><a class="nav-link" href="translation/">Language and translation</a></li>
+
+</ul>
+<p class="nav-desc">Keyboard, screen readers and translation.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-support" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-life"/></svg></span>
+<span class="nav-title">Support</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-support" data-nav-list>
+<li><a class="nav-link" href="faq/">Frequently asked questions</a></li>
+<li><a class="nav-link" href="troubleshooting/">Troubleshooting</a></li>
+
+</ul>
+<p class="nav-desc">Troubleshooting and frequently asked questions.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-project" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-heart"/></svg></span>
+<span class="nav-title">Project</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-project" data-nav-list>
+<li><a class="nav-link" href="changelog/">Changelog</a></li>
+<li><a class="nav-link" href="contributing/">Contributing</a></li>
+
+</ul>
+<p class="nav-desc">Changelog, open source and contributing.</p>
+</div>
+
+</nav>
+<div class="sidebar-foot">
+<a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="Download the latest version" title="Download the latest version"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">Download the latest version</span></a>
+<a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="WidgetCore repository on GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>WidgetCore repository on GitHub</span></a>
+<p class="side-ver">Version <b dir="ltr">0.0.7</b></p>
+</div>
+</div>
+</aside>
+<div class="scrim" data-scrim hidden></div>
+
+<div class="search-modal" data-search-modal data-search-index="search-index-en.json" data-search-page="" data-search-lang="en" hidden>
+<div class="search-backdrop" data-search-close></div>
+<div class="search-box" role="dialog" aria-modal="true" aria-label="Search the documentation" dir="ltr">
+<form class="search-head" role="search" data-search-form>
+<span class="search-head-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span>
+<input class="search-input" type="search" data-search-input placeholder="Search the documentation…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Search the documentation" aria-controls="search-results" aria-autocomplete="list">
+<button class="icon-btn" type="button" data-search-close aria-label="Close search"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button>
+</form>
+<div class="search-results" id="search-results" data-search-results role="listbox" aria-label="Search the documentation" tabindex="-1"></div>
+<p class="search-empty" data-search-empty hidden>No results for this query. <span>Try a shorter phrase, or switch the site language.</span></p>
+<p class="search-loading" data-search-loading hidden>Searching…</p>
+<p class="search-foot"><span class="search-count" data-search-count></span><span class="search-keys">Use ↑ and ↓ to move, Enter to open and Esc to close.</span></p>
+</div>
+</div>
+
+<main class="main main--landing" id="main" tabindex="-1">
+<div class="hero-bg" aria-hidden="true"></div>
+<section class="hero">
+<div class="hero-txt">
+<p class="hero-badges"><span class="badge"><span class="dot" aria-hidden="true"></span>Version 0.0.7 released</span><span class="eyebrow">Official plugin documentation</span></p>
+<h1 class="hero-title">WidgetCore. A professional Elementor widget set, zero overhead.</h1>
+<p class="hero-text">From an FAQ block with automatic schema for search engines to a live search that shows results as you type. No settings page, no data stored in your database and no external requests.</p>
+<div class="hero-cta">
+<a class="btn btn--solid btn--lg" href="introduction/"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-book"/></svg><span>Start with the docs</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+<a class="btn btn--outline btn--lg" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span>Download the latest version</span></a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="panel-card">
+<div class="panel-head">
+<p class="panel-title">Plugin overview</p>
+<p class="panel-host" dir="ltr">widgetcore · Elementor</p>
+<span class="badge badge--sm"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sparkles"/></svg>Version 0.0.7 released</span>
+</div>
+<div class="metrics">
+<div class="metric">
+<div class="metric-top"><span class="metric-main"><span class="metric-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span><span class="metric-value" dir="ltr">2</span></span><span class="dot dot--ok" aria-hidden="true"></span></div>
+<p class="metric-label">Custom widgets</p>
+</div>
+<div class="metric">
+<div class="metric-top"><span class="metric-main"><span class="metric-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-languages"/></svg></span><span class="metric-value" dir="ltr">192</span></span><span class="dot dot--ok" aria-hidden="true"></span></div>
+<p class="metric-label">Translated strings</p>
+</div>
+<div class="metric">
+<div class="metric-top"><span class="metric-main"><span class="metric-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg></span><span class="metric-value" dir="ltr">0</span></span><span class="dot dot--ok" aria-hidden="true"></span></div>
+<p class="metric-label">External requests</p>
+</div>
+
+</div>
+<ul class="status-list">
+<li class="stat-row"><span class="stat-name"><span class="dot dot--ok" aria-hidden="true"></span>FAQPage schema</span><span class="stat-badge">Active</span></li>
+<li class="stat-row"><span class="stat-name"><span class="dot dot--ok" aria-hidden="true"></span>Live search REST</span><span class="stat-badge">Active</span></li>
+<li class="stat-row"><span class="stat-name"><span class="dot dot--ok" aria-hidden="true"></span>Automatic updates</span><span class="stat-badge">Active</span></li>
+<li class="stat-row"><span class="stat-name"><span class="dot dot--ok" aria-hidden="true"></span>Persian &amp; English</span><span class="stat-badge">100%</span></li>
+
+</ul>
+</div>
+</div>
+</section>
+<div class="quick-links-wrap">
+<div class="quick-row">
+<a class="quick" href="download/"><span class="quick-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span><span class="quick-label">Download the plugin</span></a>
+<a class="quick" href="installation/"><span class="quick-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-upload"/></svg></span><span class="quick-label">Install &amp; activate</span></a>
+<a class="quick" href="quick-start/"><span class="quick-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-zap"/></svg></span><span class="quick-label">Quick start</span></a>
+<a class="quick" href="widgets/live-search/"><span class="quick-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span><span class="quick-label">Live Search widget</span></a>
+
+</div>
+</div>
+<section class="bands">
+<div class="mini-row">
+<div class="mini-card">
+<div class="mini-head"><span class="mini-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span><h2 class="mini-title">Install &amp; update</h2></div>
+<p class="mini-text">Install from the ZIP, stay current with WordPress' own auto-update toggle and remove it safely; nothing is left behind.</p>
+</div>
+<div class="mini-card">
+<div class="mini-head"><span class="mini-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sliders"/></svg></span><h2 class="mini-title">Widget controls</h2></div>
+<p class="mini-text">Every Elementor panel control with its type, default value and full explanation, plus keyboard tables and accessibility behaviour.</p>
+</div>
+<div class="mini-card">
+<div class="mini-head"><span class="mini-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span><h2 class="mini-title">Beyond the panel</h2></div>
+<p class="mini-text">A shortcode for anywhere on your site, a read-only REST endpoint for site builders and one hook to shape the search query.</p>
+</div>
+
+</div>
+<div class="fcard-row">
+<a class="fcard" href="widgets/">
+<span class="fcard-head"><span class="fcard-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span><span class="fcard-title">Widgets</span><span class="fcard-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></span></span>
+<span class="fcard-text">The complete guide to every widget in the set, each on its own page.</span>
+</a>
+<a class="fcard" href="widgets/live-search/">
+<span class="fcard-head"><span class="fcard-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layout"/></svg></span><span class="fcard-title">Displaying results</span><span class="fcard-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></span></span>
+<span class="fcard-text">List mode or page mode, columns, masonry, pagination and Elementor templates.</span>
+</a>
+<a class="fcard" href="accessibility/">
+<span class="fcard-head"><span class="fcard-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span><span class="fcard-title">Accessibility</span><span class="fcard-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></span></span>
+<span class="fcard-text">The combobox/listbox pattern, keyboard navigation and reduced-motion support.</span>
+</a>
+
+</div>
+</section>
+
+</main>
+<footer class="footer">
+<div class="footer-in">
+<div class="footer-brand">
+<p class="footer-note">WidgetCore is a free, open source plugin released under GPL-2.0-or-later.</p>
+<p class="footer-ver">Version <b dir="ltr">0.0.7</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">GPL-2.0-or-later license</a></p>
+</div>
+
+</div>
+</footer>
+
+<script type="application/json" data-ui-strings>{"lang":"en","copy":"Copy code","copied":"Copied","results":"results","theme":"Theme"}</script>
+<script src="assets/app.js" defer></script>
+<script src="assets/search.js" defer></script>
+<script src="assets/site-ui.js" defer></script>
+</body>
+</html>

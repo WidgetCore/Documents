@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ویجت سوالات متداول | مستندات WidgetCore</title>
+<meta name="description" content="راهنمای کامل ویجت سوالات متداول WidgetCore؛ آیتم‌های پرسش و پاسخ، حالت آکاردئون یا آزاد، آیکون‌ها، سرعت انیمیشن، تگ عنوان، اسکیمای FAQPage و استایل‌دهی.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f4f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161618" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="WidgetCore docs build">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://docs.widgetcore.ir/fa/widgets/faq/">
+<link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/widgets/faq/">
+<link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/widgets/faq/">
+<link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/widgets/faq/">
+<meta property="og:site_name" content="مستندات WidgetCore">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="ویجت سوالات متداول">
+<meta property="og:description" content="راهنمای کامل ویجت سوالات متداول WidgetCore؛ آیتم‌های پرسش و پاسخ، حالت آکاردئون یا آزاد، آیکون‌ها، سرعت انیمیشن، تگ عنوان، اسکیمای FAQPage و استایل‌دهی.">
+<meta property="og:url" content="https://docs.widgetcore.ir/fa/widgets/faq/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ویجت سوالات متداول">
+<meta name="twitter:description" content="راهنمای کامل ویجت سوالات متداول WidgetCore؛ آیتم‌های پرسش و پاسخ، حالت آکاردئون یا آزاد، آیکون‌ها، سرعت انیمیشن، تگ عنوان، اسکیمای FAQPage و استایل‌دهی.">
+<link rel="icon" href="../../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../assets/style.css">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../assets/fonts/yekan.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../assets/fonts/vazirmatn-var.woff2">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"خانه","item":"https://docs.widgetcore.ir/fa/"},{"@type":"ListItem","position":2,"name":"ویجت‌ها","item":"https://docs.widgetcore.ir/fa/widgets/"},{"@type":"ListItem","position":3,"name":"ویجت سوالات متداول","item":"https://docs.widgetcore.ir/fa/widgets/faq/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"ویجت سوالات متداول","description":"راهنمای کامل ویجت سوالات متداول WidgetCore؛ آیتم‌های پرسش و پاسخ، حالت آکاردئون یا آزاد، آیکون‌ها، سرعت انیمیشن، تگ عنوان، اسکیمای FAQPage و استایل‌دهی.","inLanguage":"fa_IR","url":"https://docs.widgetcore.ir/fa/widgets/faq/","isPartOf":{"@type":"WebSite","name":"مستندات WidgetCore","url":"https://docs.widgetcore.ir/","inLanguage":"fa_IR"},"about":{"@type":"SoftwareApplication","name":"WidgetCore","applicationCategory":"Plugin","operatingSystem":"WordPress"},"author":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"publisher":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"license":"https://www.gnu.org/licenses/gpl-2.0.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.widgetcore.ir/fa/widgets/faq/"}}</script>
+<script>(function(){try{var k='wgcr-theme';var t=localStorage.getItem(k);if(!t){t='system'}var d=t==='system'?(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;var r=document.documentElement;r.classList.add(d==='dark'?'dark':'light');r.setAttribute('data-theme',d);r.setAttribute('data-theme-mode',t);r.style.colorScheme=d;}catch(e){}})();</script>
+</head>
+<body class="body-docs">
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0"><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></symbol><symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></symbol><symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol><symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></symbol><symbol id="i-command" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6a3 3 0 10-3 3h12a3 3 0 10-3-3v12a3 3 0 103-3H6a3 3 0 103 3V6z"/></symbol><symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h11v11H9zM5 15H4V4h11v1"/></symbol><symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11m0 0l-4-4m4 4l4-4M4 18v2a1 1 0 001 1h14a1 1 0 001-1v-2"/></symbol><symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-2c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-1-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.8-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0012 2z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></symbol><symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.3A3.7 3.7 0 0112 8a3.7 3.7 0 017 2.7C19 15.6 12 20 12 20z"/></symbol><symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM12 11v6M12 7.5h.01"/></symbol><symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM7 10h.01M11 10h.01M15 10h.01M8 14h8"/></symbol><symbol id="i-life" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 5.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM5 5l4 4M19 5l-4 4M5 19l4-4M19 19l-4-4"/></symbol><symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 006 .5l2-2a4 4 0 00-5.7-5.7L11 8M14 10a4 4 0 00-6-.5l-2 2A4 4 0 0011.7 17L13 16"/></symbol><symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v11H3zM9 20h6M12 16v4"/></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 019.5 4 8.5 8.5 0 1020 14.5z"/></symbol><symbol id="i-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V4h10v5M7 18H4v-6h16v6h-3M7 14h10v6H7z"/></symbol><symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 2 5 5.5 5 9l2 3v3l-3-1.5V19l-4 3-4-3v-3.5L5 17v-3l2-3c0-3.5 2-7 5-9zm0 8.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></symbol><symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4a7 7 0 100 14 7 7 0 000-14zm9 16l-4.5-4.5"/></symbol><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zM12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol><symbol id="i-tip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2h5c0-.8.4-1.5 1-2A6 6 0 0012 3z"/></symbol><symbol id="i-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 16H3l9-16zM12 10v4M12 17h.01"/></symbol></svg>
+<a class="skip" href="#main">پرش به محتوای اصلی</a>
+<header class="header">
+<div class="reading-progress" data-reading-progress aria-hidden="true"></div>
+<div class="header-in">
+<button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-label="منوی بخش‌ها" aria-expanded="false" aria-haspopup="dialog" aria-controls="sidebar"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="29" height="29" rx="8"/><path d="M8 11h6v6H8zM18 11h6v10h-6zM8 21h6"/></svg></button>
+<a class="brand" href="../../"><span class="brand-txt"><span class="brand-name">WidgetCore</span><span class="brand-sub">مستندات WidgetCore</span></span></a>
+<div class="header-actions">
+<button class="search-trigger" type="button" data-search-open aria-label="جستجو در مستندات"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span class="search-text">جستجو در مستندات…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<a class="download-link" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="دانلود آخرین نسخه" title="دانلود آخرین نسخه"><span class="download-mark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span><span class="download-count" data-download-count data-count-api="https://api.github.com/repos/WidgetCore/Plugin/releases?per_page=100" aria-label="مجموع دانلودهای گیت‌هاب" aria-live="polite" aria-busy="true"></span></a>
+<a class="github-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="مخزن افزونه WidgetCore در GitHub" title="مخزن افزونه WidgetCore در GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg></a>
+<div class="theme-control">
+<button class="icon-btn theme-btn" type="button" data-theme-menu-toggle aria-haspopup="menu" aria-controls="theme-menu" aria-expanded="false"
+			aria-label="پوسته" title="پوسته">
+			<span class="th-ic th-light"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg></span>
+			<span class="th-ic th-dark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg></span>
+		</button>
+<div class="theme-menu" id="theme-menu" role="menu" aria-label="پوسته" data-theme-menu hidden>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="system" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-monitor"/></svg><span>سیستم</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="light" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg><span>روشن</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="dark" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg><span>تیره</span></button>
+</div>
+</div>
+<a class="lang-btn" href="../../../widgets/faq/" hreflang="en" lang="en" title="همین صفحه به انگلیسی" aria-label="همین صفحه به انگلیسی" data-lang-switch><span class="flag-emoji" aria-hidden="true">🇬🇧</span></a>
+</div>
+</div>
+</header>
+
+<div class="search-modal" data-search-modal data-search-index="../../../search-index-fa.json" data-search-page="fa/widgets/faq/" data-search-lang="fa" hidden>
+<div class="search-backdrop" data-search-close></div>
+<div class="search-box" role="dialog" aria-modal="true" aria-label="جستجو در مستندات" dir="rtl">
+<form class="search-head" role="search" data-search-form>
+<span class="search-head-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span>
+<input class="search-input" type="search" data-search-input placeholder="جستجو در مستندات…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="جستجو در مستندات" aria-controls="search-results" aria-autocomplete="list">
+<button class="icon-btn" type="button" data-search-close aria-label="بستن جستجو"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button>
+</form>
+<div class="search-results" id="search-results" data-search-results role="listbox" aria-label="جستجو در مستندات" tabindex="-1"></div>
+<p class="search-empty" data-search-empty hidden>نتیجه‌ای برای این عبارت پیدا نشد. <span>عبارت کوتاه‌تری بنویسید یا زبان سایت را عوض کنید.</span></p>
+<p class="search-loading" data-search-loading hidden>در حال جستجو…</p>
+<p class="search-foot"><span class="search-count" data-search-count></span><span class="search-keys">با ↑ و ↓ حرکت کنید، با Enter باز کنید و با Esc ببندید.</span></p>
+</div>
+</div>
+
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="منوی بخش‌ها" data-sidebar>
+<div class="sidebar-in">
+<div class="sidebar-quick-head"><div class="sidebar-quick-title" id="sidebar-quick-title" role="heading" aria-level="2">دسترسی سریع</div><button class="icon-btn sidebar-close" type="button" data-sidebar-close aria-label="بستن منوی دسترسی سریع"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button></div>
+<button class="sidebar-search" type="button" data-search-open aria-label="جستجو در همه مستندات…"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span>جستجو در همه مستندات…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<nav class="nav" aria-label="منوی بخش‌ها">
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-intro" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg></span>
+<span class="nav-title">آشنایی</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-intro" data-nav-list>
+<li><a class="nav-link" href="../../introduction/">ویجت‌کور چیست؟</a></li>
+<li><a class="nav-link" href="../../quick-start/">شروع سریع</a></li>
+<li><a class="nav-link" href="../../concepts/">مفهوم‌های پایه</a></li>
+<li><a class="nav-link" href="../../requirements/">پیش‌نیازها و سازگاری</a></li>
+
+</ul>
+<p class="nav-desc">افزونه چیست و چه چیزی به سایت شما اضافه می‌کند.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-install" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span>
+<span class="nav-title">دریافت و نصب</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-install" data-nav-list>
+<li><a class="nav-link" href="../../download/">دانلود</a></li>
+<li><a class="nav-link" href="../../installation/">نصب و فعال‌سازی</a></li>
+<li><a class="nav-link" href="../../updates/">به‌روزرسانی</a></li>
+
+</ul>
+<p class="nav-desc">دانلود، نصب، به‌روزرسانی و حذف.</p>
+</div>
+<div class="nav-group is-open" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="true" aria-controls="nav-widgets" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="nav-title">ویجت‌ها</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-widgets" data-nav-list>
+<li><a class="nav-link" href="../">ویجت‌ها</a></li>
+<li><a class="nav-link is-current" href="./" aria-current="page">ویجت سوالات متداول</a></li>
+<li><a class="nav-link" href="../live-search/">ویجت جستجوی زنده</a></li>
+
+</ul>
+<p class="nav-desc">راهنمای کامل هر ویجت و همه کنترل‌ها.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-advanced" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+<span class="nav-title">استفاده پیشرفته</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-advanced" data-nav-list>
+<li><a class="nav-link" href="../../shortcode/">شورت‌کد جستجو</a></li>
+<li><a class="nav-link" href="../../rest-api/">REST API جستجو</a></li>
+
+</ul>
+<p class="nav-desc">شورت‌کد، REST و هوک‌ها برای یکپارچه‌سازی سفارشی.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-a11y" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="nav-title">دسترس‌پذیری و زبان</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-a11y" data-nav-list>
+<li><a class="nav-link" href="../../accessibility/">دسترس‌پذیری</a></li>
+<li><a class="nav-link" href="../../keyboard/">میان‌برهای کیبورد</a></li>
+<li><a class="nav-link" href="../../translation/">زبان و ترجمه</a></li>
+
+</ul>
+<p class="nav-desc">کیبورد، صفحه‌خوان‌ها و ترجمه.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-support" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-life"/></svg></span>
+<span class="nav-title">پشتیبانی</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-support" data-nav-list>
+<li><a class="nav-link" href="../../faq/">پرسش‌های متداول</a></li>
+<li><a class="nav-link" href="../../troubleshooting/">عیب‌یابی</a></li>
+
+</ul>
+<p class="nav-desc">عیب‌یابی و پرسش‌های متداول.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-project" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-heart"/></svg></span>
+<span class="nav-title">پروژه</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-project" data-nav-list>
+<li><a class="nav-link" href="../../changelog/">Changelog</a></li>
+<li><a class="nav-link" href="../../contributing/">مشارکت در توسعه</a></li>
+
+</ul>
+<p class="nav-desc">Changelog، متن‌باز بودن و مشارکت در توسعه.</p>
+</div>
+
+</nav>
+<div class="sidebar-foot">
+<a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="دانلود آخرین نسخه" title="دانلود آخرین نسخه"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">دانلود آخرین نسخه</span></a>
+<a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="مخزن WidgetCore در GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>مخزن WidgetCore در GitHub</span></a>
+<p class="side-ver">نسخه <b dir="ltr">0.0.7</b></p>
+</div>
+</div>
+</aside>
+<div class="scrim" data-scrim hidden></div>
+
+<main class="main" id="main" tabindex="-1">
+<div class="content">
+<nav class="breadcrumb" aria-label="breadcrumb"><ol><li><a href="../../">خانه</a></li><li><a href="../">ویجت‌ها</a></li><li aria-current="page"><span>ویجت سوالات متداول</span></li></ol><button class="breadcrumb-toc-toggle" type="button" data-toc-toggle aria-label="در این صفحه" title="در این صفحه" aria-expanded="false" aria-controls="breadcrumb-toc-menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-list"/></svg></button><div class="breadcrumb-toc-menu" id="breadcrumb-toc-menu" data-mobile-toc hidden><nav class="toc" aria-label="در این صفحه" data-mobile-toc-list>
+<p class="toc-title">در این صفحه</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#بخش-سوالها" data-toc-link="بخش-سوالها">بخش «سوال‌ها»</a></li><li class="toc-item toc-d2"><a href="#بخش-تنظیمات-رفتار" data-toc-link="بخش-تنظیمات-رفتار">بخش «تنظیمات رفتار»</a></li><li class="toc-item toc-d2"><a href="#بخش-سئو-و-ساختار" data-toc-link="بخش-سئو-و-ساختار">بخش «سئو و ساختار»</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#شکل-خروجی-اسکیمای-ساختیافته" data-toc-link="شکل-خروجی-اسکیمای-ساختیافته">شکل خروجی اسکیمای ساخت‌یافته</a></li><li class="toc-item toc-d3"><a href="#بدون-جاوااسکریپت" data-toc-link="بدون-جاوااسکریپت">بدون جاوااسکریپت</a></li></ul></li><li class="toc-item toc-d2"><a href="#ساختار-خروجی-html" data-toc-link="ساختار-خروجی-html">ساختار خروجی HTML</a></li><li class="toc-item toc-d2"><a href="#دسترسپذیری-و-کیبورد" data-toc-link="دسترسپذیری-و-کیبورد">دسترس‌پذیری و کیبورد</a></li><li class="toc-item toc-d2"><a href="#بخشهای-استایل" data-toc-link="بخشهای-استایل">بخش‌های استایل</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#طرح-کلی" data-toc-link="طرح-کلی">طرح کلی</a></li><li class="toc-item toc-d3"><a href="#بدنه-کارت" data-toc-link="بدنه-کارت">بدنه کارت</a></li><li class="toc-item toc-d3"><a href="#عنوان" data-toc-link="عنوان">عنوان</a></li><li class="toc-item toc-d3"><a href="#کارت-توضیحات" data-toc-link="کارت-توضیحات">کارت توضیحات</a></li><li class="toc-item toc-d3"><a href="#آیکون" data-toc-link="آیکون">آیکون</a></li></ul></li><li class="toc-item toc-d2"><a href="#نمونهی-استایل-سفارشی" data-toc-link="نمونهی-استایل-سفارشی">نمونه‌ی استایل سفارشی</a></li><li class="toc-item toc-d2"><a href="#فهرست-کامل-کنترلها" data-toc-link="فهرست-کامل-کنترلها">فهرست کامل کنترل‌ها</a></li><li class="toc-item toc-d2"><a href="#رفع-مشکلات" data-toc-link="رفع-مشکلات">رفع مشکلات</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>چاپ این صفحه</span></button>
+</nav>
+</div></nav>
+<article class="article">
+<header class="article-head">
+<h1 class="article-title">ویجت سوالات متداول</h1>
+<p class="article-desc">راهنمای کامل ویجت سوالات متداول WidgetCore؛ آیتم‌های پرسش و پاسخ، حالت آکاردئون یا آزاد، آیکون‌ها، سرعت انیمیشن، تگ عنوان، اسکیمای FAQPage و استایل‌دهی.</p>
+<p class="article-meta">آخرین به‌روزرسانی <time datetime="2026-09-29">2026-09-29</time></p>
+</header>
+<div class="prose" data-prose>
+<p>ویجت <strong>سوالات متداول</strong> یک آکاردئون دسترس‌پذیر است: هر پرسش یک دکمه داخل یک تگ عنوان دارد و پاسخ در یک ناحیه‌ی <code>region</code> قرار می‌گیرد که با <code>aria-labelledby</code> به همان دکمه وصل است. همراه ویجت، خروجی ساخت‌یافته‌ی <code>FAQPage</code> هم چاپ می‌شود.</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>مورد</th><th>مقدار</th></tr></thead><tbody><tr><td>شناسه‌ی ویجت</td><td><code>wgcr-faq</code></td></tr><tr><td>عنوان در پنل</td><td>سوالات متداول - FAQ</td></tr><tr><td>دسته</td><td>ویجت‌های WidgetCore (<code>wgcr</code>)</td></tr><tr><td>استایل / اسکریپت</td><td><code>wgcr-faq</code></td></tr><tr><td>کلاس ریشه</td><td><code>.wgcr-faq</code></td></tr></tbody></table></div>
+<h2 id="بخش-سوالها">بخش «سوال‌ها»<a class="hlink" href="#بخش-سوالها" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>تنها کنترل این بخش یک تکرارشونده (Repeater) به نام <strong>آیتم‌ها</strong> است که سه فیلد دارد:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>فیلد</th><th>نوع</th><th>پیش‌فرض</th><th>توضیح</th></tr></thead><tbody><tr><td>عنوان سوال</td><td>متن</td><td>«عنوان سوال»</td><td>همان متنی که روی دکمه دیده می‌شود و در اسکیمای <code>Question.name</code> می‌رود</td></tr><tr><td>پاسخ</td><td>ویرایشگر (WYSIWYG)</td><td>«متن پاسخ…»</td><td>محتوای پاسخ؛ لینک و قالب‌بندی ساده مجاز است</td></tr><tr><td>باز بودن پیش‌فرض</td><td>کلید</td><td>خیر</td><td>اگر روشن باشد، این آیتم از ابتدا باز است</td></tr></tbody></table></div>
+<p>هنگام اولین استفاده، ویجت با چند آیتم نمونه پر می‌شود تا ساختار را ببینید؛ متن همه‌ی آن‌ها را با محتوای خودتان عوض کنید.</p>
+<aside class="callout callout--tip"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-tip"/></svg><div class="callout-body"><p class="callout-title">پاسخ خالی نگذارید</p><p>آیتم‌هایی که عنوان یا پاسخشان خالی باشد، از خروجی اسکیمای <code>FAQPage</code> حذف می‌شوند (ولی در صفحه نمایش داده می‌شوند). اگر می‌خواهید پرسشی در نتایج گوگل دیده شود، هم عنوان و هم پاسخ را کامل بنویسید.</p>
+</div></aside>
+<h2 id="بخش-تنظیمات-رفتار">بخش «تنظیمات رفتار»<a class="hlink" href="#بخش-تنظیمات-رفتار" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کنترل</th><th>نوع</th><th>مقدارها</th><th>پیش‌فرض</th></tr></thead><tbody><tr><td>حالت باز شدن</td><td>انتخابی</td><td>آکاردئون (فقط یک آیتم باز) / آزاد (چند آیتم هم‌زمان)</td><td>آکاردئون</td></tr><tr><td>آیکون</td><td>انتخابی</td><td>پلاس / فلش (شورون) / سفارشی (کتابخانه المنتور)</td><td>پلاس</td></tr><tr><td>آیکون سفارشی</td><td>آیکون</td><td>از کتابخانه‌ی آیکون المنتور</td><td>—</td></tr><tr><td>سرعت انیمیشن (میلی‌ثانیه)</td><td>لغزنده</td><td>100 تا 1000</td><td>300</td></tr></tbody></table></div>
+<p><strong>حالت آکاردئون</strong>: با باز شدن یک آیتم، آیتم باز قبلی بسته می‌شود. برای فهرست‌های طولانی و صفحه‌های موبایل مناسب‌تر است.</p>
+<p><strong>حالت آزاد</strong>: هر آیتم مستقل باز و بسته می‌شود و کاربر می‌تواند چند پاسخ را هم‌زمان باز نگه دارد؛ برای مقایسه‌ی چند پرسش بهتر است.</p>
+<p>آیکون‌ها SVG درون‌خطی‌اند و با <code>currentColor</code> رنگ می‌گیرند، پس از کنترل‌های رنگ بخش «آیکون» پیروی می‌کنند. در حالت باز، آیکون پلاس 45 درجه و آیکون‌های فلش و سفارشی 180 درجه می‌چرخند؛ میزان چرخش آیکون سفارشی با کنترل «چرخش آیکون سفارشی در حالت باز (درجه)» قابل تنظیم است.</p>
+<h2 id="بخش-سئو-و-ساختار">بخش «سئو و ساختار»<a class="hlink" href="#بخش-سئو-و-ساختار" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کنترل</th><th>مقدارها</th><th>پیش‌فرض</th><th>توضیح</th></tr></thead><tbody><tr><td>تگ عنوان سوال</td><td><code>H2</code> / <code>H3</code> (پیشنهادی) / <code>H4</code> / <code>DIV</code></td><td><code>H3</code></td><td>ساختار سرفصل صفحه را تعیین می‌کند</td></tr><tr><td>اسکیمای FAQ (JSON-LD)</td><td>بله / خیر</td><td>بله</td><td>خروجی <code>FAQPage</code> برای موتورهای جستجو</td></tr></tbody></table></div>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">چند ویجت در یک صفحه</p><p>فقط اولین نمونه‌ی رندرشده‌ی FAQ که اسکیما در آن فعال است وارد تولید اسکیما می‌شود؛ نمونه‌های با اسکیمای خاموش این فرصت را مصرف نمی‌کنند. فقط جفت پرسش/پاسخ غیرخالی همان نمونه وارد خروجی می‌شوند؛ اگر هیچ جفت معتبری نداشته باشد، بلوکی چاپ نمی‌شود و نمونه‌های بعدی هم اسکیما نمی‌دهند. این سیاست تک‌بلوکی افزونه است، نه تضمین خطای موتور جستجو برای چند بلوک FAQ. معتبر بودن JSON-LD نمایش نتیجه‌ی غنی را تضمین نمی‌کند و شرایط موتور جستجو و محتوای صفحه هم مؤثرند.</p>
+</div></aside>
+<h3 id="شکل-خروجی-اسکیمای-ساختیافته">شکل خروجی اسکیمای ساخت‌یافته<a class="hlink" href="#شکل-خروجی-اسکیمای-ساختیافته" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">json</span></figcaption>
+<pre><code class="language-json" dir="ltr">{
+	<span class="tok-p">&quot;@context&quot;:</span> <span class="tok-s">&quot;https://schema.org&quot;</span>,
+	<span class="tok-p">&quot;@type&quot;:</span> <span class="tok-s">&quot;FAQPage&quot;</span>,
+	<span class="tok-p">&quot;mainEntity&quot;:</span> [
+		{
+			<span class="tok-p">&quot;@type&quot;:</span> <span class="tok-s">&quot;Question&quot;</span>,
+			<span class="tok-p">&quot;name&quot;:</span> <span class="tok-s">&quot;دوره‌ها به چه صورت برگزار می‌شوند؟&quot;</span>,
+			<span class="tok-p">&quot;acceptedAnswer&quot;:</span> {
+				<span class="tok-p">&quot;@type&quot;:</span> <span class="tok-s">&quot;Answer&quot;</span>,
+				<span class="tok-p">&quot;text&quot;:</span> <span class="tok-s">&quot;همه دوره‌ها ویدیویی و آنلاین هستند…&quot;</span>
+			}
+		}
+	]
+}</code></pre>
+</figure>
+<p>خروجی با <code>JSON_UNESCAPED_UNICODE</code> چاپ می‌شود، یعنی متن فارسی به‌صورت خوانا در کد صفحه می‌ماند و به <code>\uXXXX</code> تبدیل نمی‌شود.</p>
+<h3 id="بدون-جاوااسکریپت">بدون جاوااسکریپت<a class="hlink" href="#بدون-جاوااسکریپت" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>باز و بسته کردن FAQ به جاوااسکریپت نیاز دارد و جایگزین <code>details</code>/<code>summary</code> ندارد. پاسخ‌های بسته با <code>max-height: 0</code> پنهان می‌مانند. فقط پاسخ‌های باز اولیه با سقف CSS برابر 640px دیده می‌شوند و پاسخ طولانی ممکن است بریده شود. اگر دسترسی بدون اسکریپت ضروری است، اطلاعات لازم را بیرون آکاردئون هم ارائه کنید.</p>
+<h2 id="ساختار-خروجی-html">ساختار خروجی HTML<a class="hlink" href="#ساختار-خروجی-html" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">html</span></figcaption>
+<pre><code class="language-html" dir="ltr">&lt;div class=&quot;wgcr-faq&quot; data-mode=&quot;accordion&quot; data-speed=&quot;300&quot;&gt;
+	&lt;div class=&quot;wgcr-faq-list&quot;&gt;
+		&lt;div class=&quot;wgcr-faq-item open&quot; data-icon=&quot;plus&quot;&gt;
+			&lt;h3 class=&quot;wgcr-faq-qwrap&quot;&gt;
+				&lt;button type=&quot;button&quot; class=&quot;wgcr-faq-q&quot; id=&quot;wgcr-faq-q-abc123-0&quot;
+					aria-expanded=&quot;true&quot; aria-controls=&quot;wgcr-faq-a-abc123-0&quot;&gt;
+					&lt;span class=&quot;wgcr-faq-qtext&quot;&gt;عنوان سوال&lt;/span&gt;
+					&lt;span class=&quot;wgcr-faq-ic&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;…&lt;/svg&gt;&lt;/span&gt;
+				&lt;/button&gt;
+			&lt;/h3&gt;
+			&lt;div class=&quot;wgcr-faq-a&quot; role=&quot;region&quot; id=&quot;wgcr-faq-a-abc123-0&quot;
+				aria-labelledby=&quot;wgcr-faq-q-abc123-0&quot;&gt;
+				&lt;div class=&quot;wgcr-faq-atext&quot;&gt;متن پاسخ…&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</figure>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کلاس</th><th>نقش</th></tr></thead><tbody><tr><td><code>.wgcr-faq</code></td><td>ریشه؛ <code>data-mode</code> و <code>data-speed</code> را نگه می‌دارد</td></tr><tr><td><code>.wgcr-faq-list</code></td><td>شبکه‌ی آیتم‌ها با فاصله‌ی قابل تنظیم</td></tr><tr><td><code>.wgcr-faq-item</code></td><td>هر کارت؛ کلاس <code>open</code> وقتی آیتم باز است</td></tr><tr><td><code>.wgcr-faq-qwrap</code></td><td>تگ عنوان (طبق کنترل «تگ عنوان سوال»)</td></tr><tr><td><code>.wgcr-faq-q</code></td><td>دکمه‌ی پرسش؛ نقطه‌ی فوکوس کیبورد</td></tr><tr><td><code>.wgcr-faq-qtext</code></td><td>متن پرسش (از ویرایش درون‌خطی پشتیبانی می‌کند)</td></tr><tr><td><code>.wgcr-faq-ic</code></td><td>جعبه‌ی آیکون</td></tr><tr><td><code>.wgcr-faq-a</code></td><td>ناحیه‌ی پاسخ با <code>role=&quot;region&quot;</code></td></tr><tr><td><code>.wgcr-faq-atext</code></td><td>متن پاسخ</td></tr></tbody></table></div>
+<h2 id="دسترسپذیری-و-کیبورد">دسترس‌پذیری و کیبورد<a class="hlink" href="#دسترسپذیری-و-کیبورد" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کلید</th><th>رفتار</th></tr></thead><tbody><tr><td><code>Enter</code> یا <code>Space</code></td><td>باز و بسته کردن پرسش فوکوس‌شده</td></tr><tr><td><code>ArrowDown</code></td><td>رفتن به پرسش بعدی</td></tr><tr><td><code>ArrowUp</code></td><td>رفتن به پرسش قبلی</td></tr><tr><td><code>Home</code></td><td>اولین پرسش</td></tr><tr><td><code>End</code></td><td>آخرین پرسش</td></tr></tbody></table></div>
+<ul>
+<li>پاسخ‌های بسته‌شده از ترتیب <code>Tab</code> بیرون می‌مانند (با <code>visibility: hidden</code>)، پس کاربر با کیبورد داخل محتوای پنهان گیر نمی‌کند.</li>
+<li>حلقه‌ی فوکوس فقط با <code>:focus-visible</code> دیده می‌شود تا کلیک با ماوس خط آبی نیاندازد.</li>
+<li>اگر کاربر <code>prefers-reduced-motion</code> را فعال کرده باشد، انیمیشن حذف می‌شود و آیتم‌ها فوری باز و بسته می‌شوند.</li>
+<li>ارتفاع هر پاسخ باز به‌صورت پویا محاسبه می‌شود و با تغییر اندازه‌ی پنجره دوباره اندازه‌گیری می‌شود؛ پس پاسخ‌های بلند کوتاه نمی‌شوند.</li>
+<li>حرکت بین پرسش‌ها حلقه‌ای است: بعد از آخرین پرسش، <code>ArrowDown</code> به اولین پرسش می‌رود.</li>
+</ul>
+<p>جزئیات بیشتر در صفحه‌های <a href="../../accessibility/">دسترس‌پذیری</a> و <a href="../../keyboard/">میان‌برهای کیبورد</a>.</p>
+<h2 id="بخشهای-استایل">بخش‌های استایل<a class="hlink" href="#بخشهای-استایل" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<h3 id="طرح-کلی">طرح کلی<a class="hlink" href="#طرح-کلی" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کنترل</th><th>پیش‌فرض</th><th>توضیح</th></tr></thead><tbody><tr><td>حداکثر عرض</td><td>—</td><td>عرض کل ویجت (در CSS داخلی <code>760px</code> است)</td></tr><tr><td>تراز افقی ویجت</td><td>وسط</td><td>راست / وسط / چپ</td></tr><tr><td>فاصله بین کارت‌ها</td><td><code>14px</code></td><td>فاصله‌ی عمودی آیتم‌ها</td></tr></tbody></table></div>
+<h3 id="بدنه-کارت">بدنه کارت<a class="hlink" href="#بدنه-کارت" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کنترل</th><th>پیش‌فرض</th><th>توضیح</th></tr></thead><tbody><tr><td>پس‌زمینه</td><td><code>rgba(255,255,255,0.72)</code></td><td>پس‌زمینه‌ی کارت‌ها</td></tr><tr><td>پس‌زمینه (باز)</td><td>—</td><td>فقط برای آیتم باز</td></tr><tr><td>رنگ کادر (باز)</td><td>—</td><td>حاشیه‌ی آیتم باز</td></tr><tr><td>میزان تاری شیشه‌ای</td><td><code>12px</code></td><td>افکت <code>backdrop-filter</code></td></tr><tr><td>گردی گوشه‌ها</td><td><code>12px</code></td><td>شعاع کارت</td></tr></tbody></table></div>
+<h3 id="عنوان">عنوان<a class="hlink" href="#عنوان" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کنترل</th><th>پیش‌فرض</th></tr></thead><tbody><tr><td>پس‌زمینه ردیف عنوان</td><td>—</td></tr><tr><td>رنگ متن</td><td><code>#1F2937</code></td></tr><tr><td>پس‌زمینه ردیف عنوان (باز)</td><td>—</td></tr><tr><td>رنگ متن (باز)</td><td>—</td></tr><tr><td>رنگ متن (هاور)</td><td>—</td></tr><tr><td>گردی گوشه‌های ردیف عنوان</td><td>—</td></tr><tr><td>پدینگ</td><td><code>20px 24px</code></td></tr></tbody></table></div>
+<h3 id="کارت-توضیحات">کارت توضیحات<a class="hlink" href="#کارت-توضیحات" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کنترل</th><th>پیش‌فرض</th></tr></thead><tbody><tr><td>پس‌زمینه</td><td>—</td></tr><tr><td>رنگ متن</td><td><code>#6B7280</code></td></tr><tr><td>پس‌زمینه (باز)</td><td>—</td></tr><tr><td>رنگ متن (باز)</td><td>—</td></tr><tr><td>گردی گوشه‌ها</td><td>—</td></tr><tr><td>پدینگ</td><td><code>0 24px 22px</code></td></tr></tbody></table></div>
+<h3 id="آیکون">آیکون<a class="hlink" href="#آیکون" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کنترل</th><th>پیش‌فرض</th></tr></thead><tbody><tr><td>فاصله از متن</td><td><code>16px</code></td></tr><tr><td>اندازه باکس</td><td><code>30px</code></td></tr><tr><td>اندازه آیکون</td><td><code>16px</code></td></tr><tr><td>گردی باکس</td><td><code>8px</code></td></tr><tr><td>چرخش آیکون سفارشی در حالت باز</td><td><code>180deg</code></td></tr><tr><td>پس‌زمینه</td><td><code>#EBF3FC</code></td></tr><tr><td>رنگ آیکون</td><td><code>#2E86DE</code></td></tr><tr><td>پس‌زمینه (باز)</td><td><code>#2E86DE</code></td></tr><tr><td>رنگ آیکون (باز)</td><td><code>#ffffff</code></td></tr></tbody></table></div>
+<h2 id="نمونهی-استایل-سفارشی">نمونه‌ی استایل سفارشی<a class="hlink" href="#نمونهی-استایل-سفارشی" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>اگر می‌خواهید ظاهر را بیرون از کنترل‌ها تغییر دهید، این قطعه در CSS سفارشی پوسته کافی است:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr"><span class="tok-t">.wgcr-faq-item</span> {
+	border-radius: <span class="tok-n">16px</span>;
+	box-shadow: <span class="tok-n">0</span> <span class="tok-n">2px</span> <span class="tok-n">10px</span> rgb(<span class="tok-n">15</span> <span class="tok-n">23</span> <span class="tok-n">42</span> / <span class="tok-n">6</span>%);
+}
+<span class="tok-t">.wgcr-faq-item</span><span class="tok-t">.open</span> <span class="tok-t">.wgcr-faq-qtext</span> {
+	color: <span class="tok-t">#1d4ed8</span>;
+}
+@media (prefers-reduced-motion: reduce) {
+	<span class="tok-t">.wgcr-faq-a</span> { transition: none; }
+}</code></pre>
+</figure>
+<aside class="callout callout--warning"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-warning"/></svg><div class="callout-body"><p class="callout-title">فایل CSS افزونه را ویرایش نکنید</p><p>استایل ویجت سوالات متداول به‌صورت درون‌خطی و همراه ویجت چاپ می‌شود و با به‌روزرسانی افزونه بازنویسی می‌شود. تغییرات خود را در CSS پوسته یا در «CSS سفارشی» المنتور بگذارید.</p>
+</div></aside>
+<h2 id="فهرست-کامل-کنترلها">فهرست کامل کنترل‌ها<a class="hlink" href="#فهرست-کامل-کنترلها" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>همه‌ی کنترل‌های محتوایی ویجت به ترتیب بخش‌های پنل. کنترل‌های استایل در بخش‌های بالا فهرست شده‌اند.</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>شناسه</th><th>برچسب در پنل</th><th>نوع</th><th>پیش‌فرض</th><th>شرط نمایش</th></tr></thead><tbody><tr><td><code>items</code></td><td>آیتم‌ها</td><td>تکرارشونده</td><td>سه سوال نمونه</td><td>—</td></tr><tr><td><code>question</code></td><td>عنوان سوال</td><td>متن</td><td>«عنوان سوال»</td><td>داخل هر آیتم</td></tr><tr><td><code>answer</code></td><td>پاسخ</td><td>ویرایشگر متن</td><td>«متن پاسخ…»</td><td>داخل هر آیتم</td></tr><tr><td><code>open_default</code></td><td>باز بودن پیش‌فرض</td><td>کلید</td><td>خیر</td><td>داخل هر آیتم</td></tr><tr><td><code>mode</code></td><td>حالت باز شدن</td><td>انتخابی</td><td><code>accordion</code></td><td>—</td></tr><tr><td><code>icon_type</code></td><td>آیکون</td><td>انتخابی</td><td><code>plus</code></td><td>—</td></tr><tr><td><code>custom_icon</code></td><td>آیکون سفارشی</td><td>انتخاب آیکون</td><td><code>fas fa-plus</code></td><td><code>icon_type = custom</code></td></tr><tr><td><code>speed</code></td><td>سرعت انیمیشن (میلی‌ثانیه)</td><td>لغزنده 100 تا 1000</td><td>300</td><td>—</td></tr><tr><td><code>q_tag</code></td><td>تگ عنوان سوال</td><td>انتخابی</td><td><code>h3</code></td><td>—</td></tr><tr><td><code>schema</code></td><td>اسکیمای FAQ (JSON-LD)</td><td>کلید</td><td>بله</td><td>—</td></tr></tbody></table></div>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">شناسه‌ها در خروجی</p><p>مقدار <code>q_tag</code> تگ هدینگ سوال را می‌سازد، <code>speed</code> به متغیر <code>--wgcr-faq-speed</code> روی ریشه‌ی ویجت تبدیل می‌شود و <code>schema</code> خروجی JSON-LD را روشن یا خاموش می‌کند.</p>
+</div></aside>
+<h2 id="رفع-مشکلات">رفع مشکلات<a class="hlink" href="#رفع-مشکلات" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>نشانه</th><th>علت</th><th>راه‌حل</th></tr></thead><tbody><tr><td>آیتم‌ها باز نمی‌شوند</td><td>اسکریپت ویجت بارگذاری نشده</td><td>در ابزار توسعه‌دهنده ببینید <code>wgcr-faq</code> بارگذاری شده یا نه؛ کش را خالی کنید</td></tr><tr><td>پاسخ خیلی طولانی کامل دیده نمی‌شود</td><td>اسکریپت ویجت اجرا نشده و سقف CSS (<code>max-height: 640px</code>) اعمال می‌شود</td><td>با اجرا شدن اسکریپت، ارتفاع هر پاسخ به اندازه‌ی واقعی محتوایش تنظیم می‌شود؛ پس کش را خالی کنید</td></tr><tr><td>اسکیما در صفحه نیست</td><td>کنترل «اسکیمای FAQ» خاموش است یا ویجت دوم است</td><td>کنترل را روشن کنید یا ویجت را اول صفحه بگذارید</td></tr><tr><td>آیکون سفارشی نمی‌چرخد</td><td>نوع آیکون روی «سفارشی» نیست</td><td>«آیکون» را روی «سفارشی (کتابخانه المنتور)» بگذارید</td></tr></tbody></table></div>
+
+</div>
+
+</article>
+<nav class="prevnext" aria-label="قبلی / بعدی"><a class="pn pn--prev" href="../" rel="prev">
+<span class="pn-dir">قبلی</span>
+<span class="pn-group">ویجت‌ها</span>
+<span class="pn-title">ویجت‌ها</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span>
+</a>
+<a class="pn pn--next" href="../live-search/" rel="next">
+<span class="pn-dir">بعدی</span>
+<span class="pn-group">ویجت‌ها</span>
+<span class="pn-title">ویجت جستجوی زنده</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></span>
+</a>
+</nav>
+<section class="related"><h2 class="related-title">صفحه‌های مرتبط</h2><div class="cards cards--related"><a class="card" href="../">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="card-body"><span class="card-title">ویجت‌ها</span><span class="card-text">فهرست ویجت‌های WidgetCore در المنتور، شناسه و کاربرد هر ویجت، دسته‌ی اختصاصی «ویجت‌های WidgetCore» و نحوه‌ی بارگذاری دارایی‌ها فقط در صفحه‌های لازم.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../../accessibility/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="card-body"><span class="card-title">دسترس‌پذیری</span><span class="card-text">امکانات دسترس‌پذیری ویجت‌های WidgetCore؛ ساختار ARIA، نواحی زنده، فوکوس، کاهش حرکت، کنتراست، پشتیبانی راست‌به‌چپ و کارکرد بدون جاوااسکریپت.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../../keyboard/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="card-body"><span class="card-title">میان‌برهای کیبورد</span><span class="card-text">فهرست کامل کلیدهای کیبورد در ویجت جستجوی زنده، ویجت سوالات متداول و خود سایت مستندات؛ همراه با رفتار فوکوس و نکات دسترس‌پذیری.</span></span>
+<span class="card-arrow"></span>
+</a>
+</div></section>
+</div>
+</main>
+<aside class="aside-right" aria-label="در این صفحه">
+<nav class="toc" aria-label="در این صفحه" data-toc>
+<p class="toc-title">در این صفحه</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#بخش-سوالها" data-toc-link="بخش-سوالها">بخش «سوال‌ها»</a></li><li class="toc-item toc-d2"><a href="#بخش-تنظیمات-رفتار" data-toc-link="بخش-تنظیمات-رفتار">بخش «تنظیمات رفتار»</a></li><li class="toc-item toc-d2"><a href="#بخش-سئو-و-ساختار" data-toc-link="بخش-سئو-و-ساختار">بخش «سئو و ساختار»</a></li><li class="toc-item toc-d3"><a href="#شکل-خروجی-اسکیمای-ساختیافته" data-toc-link="شکل-خروجی-اسکیمای-ساختیافته">شکل خروجی اسکیمای ساخت‌یافته</a></li><li class="toc-item toc-d3"><a href="#بدون-جاوااسکریپت" data-toc-link="بدون-جاوااسکریپت">بدون جاوااسکریپت</a></li><li class="toc-item toc-d2"><a href="#ساختار-خروجی-html" data-toc-link="ساختار-خروجی-html">ساختار خروجی HTML</a></li><li class="toc-item toc-d2"><a href="#دسترسپذیری-و-کیبورد" data-toc-link="دسترسپذیری-و-کیبورد">دسترس‌پذیری و کیبورد</a></li><li class="toc-item toc-d2"><a href="#بخشهای-استایل" data-toc-link="بخشهای-استایل">بخش‌های استایل</a></li><li class="toc-item toc-d3"><a href="#طرح-کلی" data-toc-link="طرح-کلی">طرح کلی</a></li><li class="toc-item toc-d3"><a href="#بدنه-کارت" data-toc-link="بدنه-کارت">بدنه کارت</a></li><li class="toc-item toc-d3"><a href="#عنوان" data-toc-link="عنوان">عنوان</a></li><li class="toc-item toc-d3"><a href="#کارت-توضیحات" data-toc-link="کارت-توضیحات">کارت توضیحات</a></li><li class="toc-item toc-d3"><a href="#آیکون" data-toc-link="آیکون">آیکون</a></li><li class="toc-item toc-d2"><a href="#نمونهی-استایل-سفارشی" data-toc-link="نمونهی-استایل-سفارشی">نمونه‌ی استایل سفارشی</a></li><li class="toc-item toc-d2"><a href="#فهرست-کامل-کنترلها" data-toc-link="فهرست-کامل-کنترلها">فهرست کامل کنترل‌ها</a></li><li class="toc-item toc-d2"><a href="#رفع-مشکلات" data-toc-link="رفع-مشکلات">رفع مشکلات</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>چاپ این صفحه</span></button>
+</nav>
+
+</aside>
+</div>
+<footer class="footer">
+<div class="footer-in">
+<div class="footer-brand">
+<p class="footer-note">WidgetCore یک افزونه رایگان و متن‌باز با مجوز GPL-2.0-or-later است.</p>
+<p class="footer-ver">نسخه <b dir="ltr">0.0.7</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">مجوز GPL-2.0-or-later</a></p>
+</div>
+
+</div>
+</footer>
+
+<script type="application/json" data-ui-strings>{"lang":"fa","copy":"کپی کد","copied":"کپی شد","results":"نتیجه","theme":"پوسته"}</script>
+<script src="../../../assets/app.js" defer></script>
+<script src="../../../assets/search.js" defer></script>
+<script src="../../../assets/site-ui.js" defer></script>
+</body>
+</html>

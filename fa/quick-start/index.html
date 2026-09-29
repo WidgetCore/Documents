@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>شروع سریع | مستندات WidgetCore</title>
+<meta name="description" content="از دانلود تا اولین خروجی WidgetCore در چند دقیقه؛ نصب افزونه، پیدا کردن ویجت‌ها در المنتور، ساخت اولین سوالات متداول و اولین جستجوی زنده.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f4f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161618" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="WidgetCore docs build">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://docs.widgetcore.ir/fa/quick-start/">
+<link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/quick-start/">
+<link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/quick-start/">
+<link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/quick-start/">
+<meta property="og:site_name" content="مستندات WidgetCore">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="شروع سریع">
+<meta property="og:description" content="از دانلود تا اولین خروجی WidgetCore در چند دقیقه؛ نصب افزونه، پیدا کردن ویجت‌ها در المنتور، ساخت اولین سوالات متداول و اولین جستجوی زنده.">
+<meta property="og:url" content="https://docs.widgetcore.ir/fa/quick-start/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="شروع سریع">
+<meta name="twitter:description" content="از دانلود تا اولین خروجی WidgetCore در چند دقیقه؛ نصب افزونه، پیدا کردن ویجت‌ها در المنتور، ساخت اولین سوالات متداول و اولین جستجوی زنده.">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/yekan.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/vazirmatn-var.woff2">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"خانه","item":"https://docs.widgetcore.ir/fa/"},{"@type":"ListItem","position":2,"name":"شروع سریع","item":"https://docs.widgetcore.ir/fa/quick-start/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"شروع سریع","description":"از دانلود تا اولین خروجی WidgetCore در چند دقیقه؛ نصب افزونه، پیدا کردن ویجت‌ها در المنتور، ساخت اولین سوالات متداول و اولین جستجوی زنده.","inLanguage":"fa_IR","url":"https://docs.widgetcore.ir/fa/quick-start/","isPartOf":{"@type":"WebSite","name":"مستندات WidgetCore","url":"https://docs.widgetcore.ir/","inLanguage":"fa_IR"},"about":{"@type":"SoftwareApplication","name":"WidgetCore","applicationCategory":"Plugin","operatingSystem":"WordPress"},"author":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"publisher":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"license":"https://www.gnu.org/licenses/gpl-2.0.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.widgetcore.ir/fa/quick-start/"}}</script>
+<script>(function(){try{var k='wgcr-theme';var t=localStorage.getItem(k);if(!t){t='system'}var d=t==='system'?(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;var r=document.documentElement;r.classList.add(d==='dark'?'dark':'light');r.setAttribute('data-theme',d);r.setAttribute('data-theme-mode',t);r.style.colorScheme=d;}catch(e){}})();</script>
+</head>
+<body class="body-docs">
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0"><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></symbol><symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></symbol><symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol><symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></symbol><symbol id="i-command" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6a3 3 0 10-3 3h12a3 3 0 10-3-3v12a3 3 0 103-3H6a3 3 0 103 3V6z"/></symbol><symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h11v11H9zM5 15H4V4h11v1"/></symbol><symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11m0 0l-4-4m4 4l4-4M4 18v2a1 1 0 001 1h14a1 1 0 001-1v-2"/></symbol><symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-2c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-1-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.8-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0012 2z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></symbol><symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.3A3.7 3.7 0 0112 8a3.7 3.7 0 017 2.7C19 15.6 12 20 12 20z"/></symbol><symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM12 11v6M12 7.5h.01"/></symbol><symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM7 10h.01M11 10h.01M15 10h.01M8 14h8"/></symbol><symbol id="i-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM4 9h16M9 9v11"/></symbol><symbol id="i-life" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 5.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM5 5l4 4M19 5l-4 4M5 19l4-4M19 19l-4-4"/></symbol><symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 006 .5l2-2a4 4 0 00-5.7-5.7L11 8M14 10a4 4 0 00-6-.5l-2 2A4 4 0 0011.7 17L13 16"/></symbol><symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v11H3zM9 20h6M12 16v4"/></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 019.5 4 8.5 8.5 0 1020 14.5z"/></symbol><symbol id="i-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V4h10v5M7 18H4v-6h16v6h-3M7 14h10v6H7z"/></symbol><symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 2 5 5.5 5 9l2 3v3l-3-1.5V19l-4 3-4-3v-3.5L5 17v-3l2-3c0-3.5 2-7 5-9zm0 8.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></symbol><symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4a7 7 0 100 14 7 7 0 000-14zm9 16l-4.5-4.5"/></symbol><symbol id="i-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 12h4M12 12h8M4 17h12M20 17h0M16 5v4M10 10v4M18 15v4"/></symbol><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zM12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol><symbol id="i-tip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2h5c0-.8.4-1.5 1-2A6 6 0 0012 3z"/></symbol></svg>
+<a class="skip" href="#main">پرش به محتوای اصلی</a>
+<header class="header">
+<div class="reading-progress" data-reading-progress aria-hidden="true"></div>
+<div class="header-in">
+<button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-label="منوی بخش‌ها" aria-expanded="false" aria-haspopup="dialog" aria-controls="sidebar"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="29" height="29" rx="8"/><path d="M8 11h6v6H8zM18 11h6v10h-6zM8 21h6"/></svg></button>
+<a class="brand" href="../"><span class="brand-txt"><span class="brand-name">WidgetCore</span><span class="brand-sub">مستندات WidgetCore</span></span></a>
+<div class="header-actions">
+<button class="search-trigger" type="button" data-search-open aria-label="جستجو در مستندات"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span class="search-text">جستجو در مستندات…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<a class="download-link" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="دانلود آخرین نسخه" title="دانلود آخرین نسخه"><span class="download-mark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span><span class="download-count" data-download-count data-count-api="https://api.github.com/repos/WidgetCore/Plugin/releases?per_page=100" aria-label="مجموع دانلودهای گیت‌هاب" aria-live="polite" aria-busy="true"></span></a>
+<a class="github-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="مخزن افزونه WidgetCore در GitHub" title="مخزن افزونه WidgetCore در GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg></a>
+<div class="theme-control">
+<button class="icon-btn theme-btn" type="button" data-theme-menu-toggle aria-haspopup="menu" aria-controls="theme-menu" aria-expanded="false"
+			aria-label="پوسته" title="پوسته">
+			<span class="th-ic th-light"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg></span>
+			<span class="th-ic th-dark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg></span>
+		</button>
+<div class="theme-menu" id="theme-menu" role="menu" aria-label="پوسته" data-theme-menu hidden>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="system" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-monitor"/></svg><span>سیستم</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="light" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg><span>روشن</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="dark" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg><span>تیره</span></button>
+</div>
+</div>
+<a class="lang-btn" href="../../quick-start/" hreflang="en" lang="en" title="همین صفحه به انگلیسی" aria-label="همین صفحه به انگلیسی" data-lang-switch><span class="flag-emoji" aria-hidden="true">🇬🇧</span></a>
+</div>
+</div>
+</header>
+
+<div class="search-modal" data-search-modal data-search-index="../../search-index-fa.json" data-search-page="fa/quick-start/" data-search-lang="fa" hidden>
+<div class="search-backdrop" data-search-close></div>
+<div class="search-box" role="dialog" aria-modal="true" aria-label="جستجو در مستندات" dir="rtl">
+<form class="search-head" role="search" data-search-form>
+<span class="search-head-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span>
+<input class="search-input" type="search" data-search-input placeholder="جستجو در مستندات…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="جستجو در مستندات" aria-controls="search-results" aria-autocomplete="list">
+<button class="icon-btn" type="button" data-search-close aria-label="بستن جستجو"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button>
+</form>
+<div class="search-results" id="search-results" data-search-results role="listbox" aria-label="جستجو در مستندات" tabindex="-1"></div>
+<p class="search-empty" data-search-empty hidden>نتیجه‌ای برای این عبارت پیدا نشد. <span>عبارت کوتاه‌تری بنویسید یا زبان سایت را عوض کنید.</span></p>
+<p class="search-loading" data-search-loading hidden>در حال جستجو…</p>
+<p class="search-foot"><span class="search-count" data-search-count></span><span class="search-keys">با ↑ و ↓ حرکت کنید، با Enter باز کنید و با Esc ببندید.</span></p>
+</div>
+</div>
+
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="منوی بخش‌ها" data-sidebar>
+<div class="sidebar-in">
+<div class="sidebar-quick-head"><div class="sidebar-quick-title" id="sidebar-quick-title" role="heading" aria-level="2">دسترسی سریع</div><button class="icon-btn sidebar-close" type="button" data-sidebar-close aria-label="بستن منوی دسترسی سریع"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button></div>
+<button class="sidebar-search" type="button" data-search-open aria-label="جستجو در همه مستندات…"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span>جستجو در همه مستندات…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<nav class="nav" aria-label="منوی بخش‌ها">
+<div class="nav-group is-open" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="true" aria-controls="nav-intro" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg></span>
+<span class="nav-title">آشنایی</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-intro" data-nav-list>
+<li><a class="nav-link" href="../introduction/">ویجت‌کور چیست؟</a></li>
+<li><a class="nav-link is-current" href="./" aria-current="page">شروع سریع</a></li>
+<li><a class="nav-link" href="../concepts/">مفهوم‌های پایه</a></li>
+<li><a class="nav-link" href="../requirements/">پیش‌نیازها و سازگاری</a></li>
+
+</ul>
+<p class="nav-desc">افزونه چیست و چه چیزی به سایت شما اضافه می‌کند.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-install" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span>
+<span class="nav-title">دریافت و نصب</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-install" data-nav-list>
+<li><a class="nav-link" href="../download/">دانلود</a></li>
+<li><a class="nav-link" href="../installation/">نصب و فعال‌سازی</a></li>
+<li><a class="nav-link" href="../updates/">به‌روزرسانی</a></li>
+
+</ul>
+<p class="nav-desc">دانلود، نصب، به‌روزرسانی و حذف.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-widgets" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="nav-title">ویجت‌ها</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-widgets" data-nav-list>
+<li><a class="nav-link" href="../widgets/">ویجت‌ها</a></li>
+<li><a class="nav-link" href="../widgets/faq/">ویجت سوالات متداول</a></li>
+<li><a class="nav-link" href="../widgets/live-search/">ویجت جستجوی زنده</a></li>
+
+</ul>
+<p class="nav-desc">راهنمای کامل هر ویجت و همه کنترل‌ها.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-advanced" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+<span class="nav-title">استفاده پیشرفته</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-advanced" data-nav-list>
+<li><a class="nav-link" href="../shortcode/">شورت‌کد جستجو</a></li>
+<li><a class="nav-link" href="../rest-api/">REST API جستجو</a></li>
+
+</ul>
+<p class="nav-desc">شورت‌کد، REST و هوک‌ها برای یکپارچه‌سازی سفارشی.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-a11y" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="nav-title">دسترس‌پذیری و زبان</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-a11y" data-nav-list>
+<li><a class="nav-link" href="../accessibility/">دسترس‌پذیری</a></li>
+<li><a class="nav-link" href="../keyboard/">میان‌برهای کیبورد</a></li>
+<li><a class="nav-link" href="../translation/">زبان و ترجمه</a></li>
+
+</ul>
+<p class="nav-desc">کیبورد، صفحه‌خوان‌ها و ترجمه.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-support" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-life"/></svg></span>
+<span class="nav-title">پشتیبانی</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-support" data-nav-list>
+<li><a class="nav-link" href="../faq/">پرسش‌های متداول</a></li>
+<li><a class="nav-link" href="../troubleshooting/">عیب‌یابی</a></li>
+
+</ul>
+<p class="nav-desc">عیب‌یابی و پرسش‌های متداول.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-project" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-heart"/></svg></span>
+<span class="nav-title">پروژه</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-project" data-nav-list>
+<li><a class="nav-link" href="../changelog/">Changelog</a></li>
+<li><a class="nav-link" href="../contributing/">مشارکت در توسعه</a></li>
+
+</ul>
+<p class="nav-desc">Changelog، متن‌باز بودن و مشارکت در توسعه.</p>
+</div>
+
+</nav>
+<div class="sidebar-foot">
+<a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="دانلود آخرین نسخه" title="دانلود آخرین نسخه"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">دانلود آخرین نسخه</span></a>
+<a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="مخزن WidgetCore در GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>مخزن WidgetCore در GitHub</span></a>
+<p class="side-ver">نسخه <b dir="ltr">0.0.7</b></p>
+</div>
+</div>
+</aside>
+<div class="scrim" data-scrim hidden></div>
+
+<main class="main" id="main" tabindex="-1">
+<div class="content">
+<nav class="breadcrumb" aria-label="breadcrumb"><ol><li><a href="../">خانه</a></li><li aria-current="page"><span>شروع سریع</span></li></ol><button class="breadcrumb-toc-toggle" type="button" data-toc-toggle aria-label="در این صفحه" title="در این صفحه" aria-expanded="false" aria-controls="breadcrumb-toc-menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-list"/></svg></button><div class="breadcrumb-toc-menu" id="breadcrumb-toc-menu" data-mobile-toc hidden><nav class="toc" aria-label="در این صفحه" data-mobile-toc-list>
+<p class="toc-title">در این صفحه</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#گام-1-نصب-افزونه" data-toc-link="گام-1-نصب-افزونه">گام 1 — نصب افزونه</a></li><li class="toc-item toc-d2"><a href="#گام-2-پیدا-کردن-ویجتها" data-toc-link="گام-2-پیدا-کردن-ویجتها">گام 2 — پیدا کردن ویجت‌ها</a></li><li class="toc-item toc-d2"><a href="#گام-3-ساخت-اولین-سوالات-متداول" data-toc-link="گام-3-ساخت-اولین-سوالات-متداول">گام 3 — ساخت اولین سوالات متداول</a></li><li class="toc-item toc-d2"><a href="#گام-4-ساخت-اولین-جستجوی-زنده" data-toc-link="گام-4-ساخت-اولین-جستجوی-زنده">گام 4 — ساخت اولین جستجوی زنده</a></li><li class="toc-item toc-d2"><a href="#گام-5-جستجو-در-هر-جای-سایت-با-شورتکد" data-toc-link="گام-5-جستجو-در-هر-جای-سایت-با-شورتکد">گام 5 — جستجو در هر جای سایت با شورت‌کد</a></li><li class="toc-item toc-d2"><a href="#بررسی-اینکه-همهچیز-کار-میکند" data-toc-link="بررسی-اینکه-همهچیز-کار-میکند">بررسی اینکه همه‌چیز کار می‌کند</a></li><li class="toc-item toc-d2"><a href="#قدم-بعدی" data-toc-link="قدم-بعدی">قدم بعدی</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>چاپ این صفحه</span></button>
+</nav>
+</div></nav>
+<article class="article">
+<header class="article-head">
+<h1 class="article-title">شروع سریع</h1>
+<p class="article-desc">از دانلود تا اولین خروجی WidgetCore در چند دقیقه؛ نصب افزونه، پیدا کردن ویجت‌ها در المنتور، ساخت اولین سوالات متداول و اولین جستجوی زنده.</p>
+<p class="article-meta">آخرین به‌روزرسانی <time datetime="2026-09-26">2026-09-26</time></p>
+</header>
+<div class="prose" data-prose>
+<p>این صفحه کوتاه‌ترین مسیر رسیدن به یک خروجی واقعی است. اگر فقط می‌خواهید افزونه را راه بیندازید و بعد جزئیات را بخوانید، از همین‌جا شروع کنید.</p>
+<h2 id="گام-1-نصب-افزونه">گام 1 — نصب افزونه<a class="hlink" href="#گام-1-نصب-افزونه" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>بسته‌ی <code>widgetcore.zip</code> را از <a href="../download/">صفحه‌ی دانلود</a> بگیرید و در «پیشخوان → افزونه‌ها → افزودن → بارگذاری افزونه» آپلود کنید. سپس <strong>فعال‌سازی</strong> را بزنید.</p>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">پیش‌نیاز</p><p>المنتور باید فعال باشد. اگر فعال نباشد، افزونه‌ی ویجت‌کور فعال می‌ماند ولی ویجتی در ویرایشگر ظاهر نمی‌شود.</p>
+</div></aside>
+<h2 id="گام-2-پیدا-کردن-ویجتها">گام 2 — پیدا کردن ویجت‌ها<a class="hlink" href="#گام-2-پیدا-کردن-ویجتها" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>یک صفحه یا برگه را با المنتور باز کنید. در پنل سمت راست (یا چپ در حالت چپ‌به‌راست)، دسته‌ای به نام <strong>ویجت‌های WidgetCore</strong> می‌بینید که ویجت‌های افزونه در آن فهرست شده‌اند:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>ویجت</th><th>شناسه</th><th>کاربرد</th></tr></thead><tbody><tr><td>سوالات متداول</td><td><code>wgcr-faq</code></td><td>فهرست پرسش و پاسخ بازشو</td></tr><tr><td>جستجوی زنده</td><td><code>wgcr-search</code></td><td>فیلد جستجو با نتایج زنده</td></tr></tbody></table></div>
+<h2 id="گام-3-ساخت-اولین-سوالات-متداول">گام 3 — ساخت اولین سوالات متداول<a class="hlink" href="#گام-3-ساخت-اولین-سوالات-متداول" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>ویجت <strong>سوالات متداول</strong> را روی صفحه بکشید و در بخش «سوال‌ها» روی «آیتم‌ها» بزنید:</p>
+<ol class="steps" data-lang="fa"><li class="step"><div class="step-body"><p class="step-title">عنوان سوال را بنویسید</p><p>فیلد «عنوان سوال» همان چیزی است که کاربر می‌بیند و در اسکیمای FAQPage هم استفاده می‌شود.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">پاسخ را بنویسید</p><p>فیلد «پاسخ» از ویرایشگر المنتور پشتیبانی می‌کند، پس لینک و قالب‌بندی ساده مجاز است.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">آیتم‌های بعدی را اضافه کنید</p><p>با دکمه‌ی «افزودن آیتم» چند پرسش دیگر بسازید و ترتیبشان را با کشیدن عوض کنید.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">حالت باز شدن را انتخاب کنید</p><p>«آکاردئون» یعنی فقط یک آیتم باز می‌ماند؛ «آزاد» یعنی چند آیتم هم‌زمان باز می‌شوند.</p>
+</div></li></ol>
+<p>خروجی یک فهرست از کارت‌هاست که با کلیک یا با کیبورد باز و بسته می‌شوند، و یک بلوک <code>FAQPage</code> به صورت JSON-LD در همان صفحه چاپ می‌شود.</p>
+<h2 id="گام-4-ساخت-اولین-جستجوی-زنده">گام 4 — ساخت اولین جستجوی زنده<a class="hlink" href="#گام-4-ساخت-اولین-جستجوی-زنده" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>ویجت <strong>جستجوی زنده</strong> را روی صفحه بکشید. با تنظیمات پیش‌فرض کار می‌کند:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کنترل</th><th>مقدار پیش‌فرض</th><th>نتیجه</th></tr></thead><tbody><tr><td>حالت نمایش نتایج</td><td>حالت لیست</td><td>نتایج در پنلی بازشو زیر فیلد</td></tr><tr><td>منبع</td><td><code>post</code></td><td>فقط نوشته‌ها جستجو می‌شوند</td></tr><tr><td>آیتم در هر برگه</td><td>12</td><td>حداکثر 12 نتیجه در هر جستجو</td></tr><tr><td>نمایش تصویر</td><td>بله</td><td>بندانگشتی هر نتیجه نشان داده می‌شود</td></tr><tr><td>نمایش خلاصه</td><td>بله</td><td>18 کلمه از متن با نقطه‌چین</td></tr><tr><td>صفحه‌بندی</td><td>هیچکدام</td><td>فقط همان یک صفحه نتیجه</td></tr></tbody></table></div>
+<p>صفحه را منتشر کنید، در نمای سایت روی فیلد کلیک کنید و دست‌کم <strong>دو نویسه</strong> تایپ کنید — نتایج بدون بارگذاری مجدد صفحه ظاهر می‌شوند.</p>
+<aside class="callout callout--tip"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-tip"/></svg><div class="callout-body"><p class="callout-title">حداقل طول عبارت</p><p>جستجو از 2 نویسه شروع می‌شود (<code>minChars</code> در پیکربندی جاوااسکریپت). کمتر از آن، درخواستی فرستاده نمی‌شود و پنل خالی می‌ماند.</p>
+</div></aside>
+<h2 id="گام-5-جستجو-در-هر-جای-سایت-با-شورتکد">گام 5 — جستجو در هر جای سایت با شورت‌کد<a class="hlink" href="#گام-5-جستجو-در-هر-جای-سایت-با-شورتکد" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>اگر می‌خواهید فیلد جستجو را بیرون از المنتور (مثلاً در یک الگوی پوسته یا داخل محتوا) بگذارید، از شورت‌کد استفاده کنید:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">[wgcr_search]
+[wgcr_search limit=&quot;8&quot; thumb=&quot;no&quot; placeholder=&quot;جستجو در مقالات…&quot;]
+[wgcr_search mode=&quot;page&quot; columns=&quot;3&quot; pagination=&quot;load_on_click&quot;]</code></pre>
+</figure>
+<p>همه‌ی ویژگی‌ها اختیاری‌اند؛ فهرست کامل در صفحه‌ی <a href="../shortcode/">شورت‌کد</a>.</p>
+<h2 id="بررسی-اینکه-همهچیز-کار-میکند">بررسی اینکه همه‌چیز کار می‌کند<a class="hlink" href="#بررسی-اینکه-همهچیز-کار-میکند" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<ol class="steps" data-lang="fa"><li class="step"><div class="step-body"><p class="step-title">ویجت‌ها در ویرایشگر دیده می‌شوند</p><p>اگر دسته‌ی «ویجت‌های WidgetCore» نیست، المنتور را فعال کنید و صفحه‌ی ویرایشگر را تازه کنید.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">نتایج جستجو برمی‌گردند</p><p>در ابزار توسعه‌دهنده‌ی مرورگر، درخواست <code>/wp-json/wgcr/v1/search</code> باید وضعیت 200 داشته باشد.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">متن‌ها به زبان سایت هستند</p><p>اگر متن‌ها فارسی‌اند ولی سایت انگلیسی است، صفحه‌ی <a href="../translation/">زبان و ترجمه</a> را ببینید.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">اسکیمای FAQ در منبع صفحه است</p><p>در کد منبع صفحه عبارت <code>&quot;@type&quot;:&quot;FAQPage&quot;</code> را جستجو کنید.</p>
+</div></li></ol>
+<h2 id="قدم-بعدی">قدم بعدی<a class="hlink" href="#قدم-بعدی" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="cards"><a class="card" href="../widgets/live-search/"><span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span><span class="card-body"><span class="card-title">راهنمای کامل جستجوی زنده</span><span class="card-text">همه‌ی کنترل‌های عمومی، طرح‌بندی، کوئری و صفحه‌بندی.</span></span><span class="card-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></span></a><a class="card" href="../widgets/live-search/#حالتهای-نمایش"><span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layout"/></svg></span><span class="card-body"><span class="card-title">حالت‌های نمایش</span><span class="card-text">تفاوت «حالت لیست» و «حالت نمایش در صفحه» و زمان استفاده از هر کدام.</span></span><span class="card-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></span></a><a class="card" href="../widgets/live-search/#استایلدهی-نتایج"><span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sliders"/></svg></span><span class="card-body"><span class="card-title">استایل‌دهی</span><span class="card-text">رنگ‌ها، ستون‌ها، کاشی و ارتفاع برابر، و کلاس‌های CSS قابل بازنویسی.</span></span><span class="card-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></span></a></div>
+
+</div>
+
+</article>
+<nav class="prevnext" aria-label="قبلی / بعدی"><a class="pn pn--prev" href="../introduction/" rel="prev">
+<span class="pn-dir">قبلی</span>
+<span class="pn-group">آشنایی</span>
+<span class="pn-title">ویجت‌کور چیست؟</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span>
+</a>
+<a class="pn pn--next" href="../concepts/" rel="next">
+<span class="pn-dir">بعدی</span>
+<span class="pn-group">آشنایی</span>
+<span class="pn-title">مفهوم‌های پایه</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></span>
+</a>
+</nav>
+<section class="related"><h2 class="related-title">صفحه‌های مرتبط</h2><div class="cards cards--related"><a class="card" href="../installation/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span>
+<span class="card-body"><span class="card-title">نصب و فعال‌سازی</span><span class="card-text">راهنمای گام‌به‌گام نصب افزونه‌ی WidgetCore در وردپرس با سه روش (بارگذاری ZIP، FTP و WP-CLI)، فعال‌سازی، بررسی ویجت‌ها در المنتور و حذف افزونه.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../widgets/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="card-body"><span class="card-title">ویجت‌ها</span><span class="card-text">فهرست ویجت‌های WidgetCore در المنتور، شناسه و کاربرد هر ویجت، دسته‌ی اختصاصی «ویجت‌های WidgetCore» و نحوه‌ی بارگذاری دارایی‌ها فقط در صفحه‌های لازم.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../widgets/faq/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="card-body"><span class="card-title">ویجت سوالات متداول</span><span class="card-text">راهنمای کامل ویجت سوالات متداول WidgetCore؛ آیتم‌های پرسش و پاسخ، حالت آکاردئون یا آزاد، آیکون‌ها، سرعت انیمیشن، تگ عنوان، اسکیمای FAQPage و استایل‌دهی.</span></span>
+<span class="card-arrow"></span>
+</a>
+</div></section>
+</div>
+</main>
+<aside class="aside-right" aria-label="در این صفحه">
+<nav class="toc" aria-label="در این صفحه" data-toc>
+<p class="toc-title">در این صفحه</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#گام-1-نصب-افزونه" data-toc-link="گام-1-نصب-افزونه">گام 1 — نصب افزونه</a></li><li class="toc-item toc-d2"><a href="#گام-2-پیدا-کردن-ویجتها" data-toc-link="گام-2-پیدا-کردن-ویجتها">گام 2 — پیدا کردن ویجت‌ها</a></li><li class="toc-item toc-d2"><a href="#گام-3-ساخت-اولین-سوالات-متداول" data-toc-link="گام-3-ساخت-اولین-سوالات-متداول">گام 3 — ساخت اولین سوالات متداول</a></li><li class="toc-item toc-d2"><a href="#گام-4-ساخت-اولین-جستجوی-زنده" data-toc-link="گام-4-ساخت-اولین-جستجوی-زنده">گام 4 — ساخت اولین جستجوی زنده</a></li><li class="toc-item toc-d2"><a href="#گام-5-جستجو-در-هر-جای-سایت-با-شورتکد" data-toc-link="گام-5-جستجو-در-هر-جای-سایت-با-شورتکد">گام 5 — جستجو در هر جای سایت با شورت‌کد</a></li><li class="toc-item toc-d2"><a href="#بررسی-اینکه-همهچیز-کار-میکند" data-toc-link="بررسی-اینکه-همهچیز-کار-میکند">بررسی اینکه همه‌چیز کار می‌کند</a></li><li class="toc-item toc-d2"><a href="#قدم-بعدی" data-toc-link="قدم-بعدی">قدم بعدی</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>چاپ این صفحه</span></button>
+</nav>
+
+</aside>
+</div>
+<footer class="footer">
+<div class="footer-in">
+<div class="footer-brand">
+<p class="footer-note">WidgetCore یک افزونه رایگان و متن‌باز با مجوز GPL-2.0-or-later است.</p>
+<p class="footer-ver">نسخه <b dir="ltr">0.0.7</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">مجوز GPL-2.0-or-later</a></p>
+</div>
+
+</div>
+</footer>
+
+<script type="application/json" data-ui-strings>{"lang":"fa","copy":"کپی کد","copied":"کپی شد","results":"نتیجه","theme":"پوسته"}</script>
+<script src="../../assets/app.js" defer></script>
+<script src="../../assets/search.js" defer></script>
+<script src="../../assets/site-ui.js" defer></script>
+</body>
+</html>

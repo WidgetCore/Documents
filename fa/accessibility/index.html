@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>دسترس‌پذیری | مستندات WidgetCore</title>
+<meta name="description" content="امکانات دسترس‌پذیری ویجت‌های WidgetCore؛ ساختار ARIA، نواحی زنده، فوکوس، کاهش حرکت، کنتراست، پشتیبانی راست‌به‌چپ و کارکرد بدون جاوااسکریپت.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f4f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161618" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="WidgetCore docs build">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://docs.widgetcore.ir/fa/accessibility/">
+<link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/accessibility/">
+<link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/accessibility/">
+<link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/accessibility/">
+<meta property="og:site_name" content="مستندات WidgetCore">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="دسترس‌پذیری">
+<meta property="og:description" content="امکانات دسترس‌پذیری ویجت‌های WidgetCore؛ ساختار ARIA، نواحی زنده، فوکوس، کاهش حرکت، کنتراست، پشتیبانی راست‌به‌چپ و کارکرد بدون جاوااسکریپت.">
+<meta property="og:url" content="https://docs.widgetcore.ir/fa/accessibility/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="دسترس‌پذیری">
+<meta name="twitter:description" content="امکانات دسترس‌پذیری ویجت‌های WidgetCore؛ ساختار ARIA، نواحی زنده، فوکوس، کاهش حرکت، کنتراست، پشتیبانی راست‌به‌چپ و کارکرد بدون جاوااسکریپت.">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/yekan.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/vazirmatn-var.woff2">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"خانه","item":"https://docs.widgetcore.ir/fa/"},{"@type":"ListItem","position":2,"name":"دسترس‌پذیری","item":"https://docs.widgetcore.ir/fa/accessibility/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"دسترس‌پذیری","description":"امکانات دسترس‌پذیری ویجت‌های WidgetCore؛ ساختار ARIA، نواحی زنده، فوکوس، کاهش حرکت، کنتراست، پشتیبانی راست‌به‌چپ و کارکرد بدون جاوااسکریپت.","inLanguage":"fa_IR","url":"https://docs.widgetcore.ir/fa/accessibility/","isPartOf":{"@type":"WebSite","name":"مستندات WidgetCore","url":"https://docs.widgetcore.ir/","inLanguage":"fa_IR"},"about":{"@type":"SoftwareApplication","name":"WidgetCore","applicationCategory":"Plugin","operatingSystem":"WordPress"},"author":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"publisher":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"license":"https://www.gnu.org/licenses/gpl-2.0.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.widgetcore.ir/fa/accessibility/"}}</script>
+<script>(function(){try{var k='wgcr-theme';var t=localStorage.getItem(k);if(!t){t='system'}var d=t==='system'?(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;var r=document.documentElement;r.classList.add(d==='dark'?'dark':'light');r.setAttribute('data-theme',d);r.setAttribute('data-theme-mode',t);r.style.colorScheme=d;}catch(e){}})();</script>
+</head>
+<body class="body-docs">
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0"><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></symbol><symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></symbol><symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol><symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></symbol><symbol id="i-command" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6a3 3 0 10-3 3h12a3 3 0 10-3-3v12a3 3 0 103-3H6a3 3 0 103 3V6z"/></symbol><symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h11v11H9zM5 15H4V4h11v1"/></symbol><symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11m0 0l-4-4m4 4l4-4M4 18v2a1 1 0 001 1h14a1 1 0 001-1v-2"/></symbol><symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-2c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-1-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.8-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0012 2z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></symbol><symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.3A3.7 3.7 0 0112 8a3.7 3.7 0 017 2.7C19 15.6 12 20 12 20z"/></symbol><symbol id="i-important" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.2-2.9 7.3-7 9-4.1-1.7-7-4.8-7-9V6l7-3zM12 8v5M12 16h.01"/></symbol><symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM7 10h.01M11 10h.01M15 10h.01M8 14h8"/></symbol><symbol id="i-life" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 5.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM5 5l4 4M19 5l-4 4M5 19l4-4M19 19l-4-4"/></symbol><symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 006 .5l2-2a4 4 0 00-5.7-5.7L11 8M14 10a4 4 0 00-6-.5l-2 2A4 4 0 0011.7 17L13 16"/></symbol><symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v11H3zM9 20h6M12 16v4"/></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 019.5 4 8.5 8.5 0 1020 14.5z"/></symbol><symbol id="i-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V4h10v5M7 18H4v-6h16v6h-3M7 14h10v6H7z"/></symbol><symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 2 5 5.5 5 9l2 3v3l-3-1.5V19l-4 3-4-3v-3.5L5 17v-3l2-3c0-3.5 2-7 5-9zm0 8.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></symbol><symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4a7 7 0 100 14 7 7 0 000-14zm9 16l-4.5-4.5"/></symbol><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zM12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol></svg>
+<a class="skip" href="#main">پرش به محتوای اصلی</a>
+<header class="header">
+<div class="reading-progress" data-reading-progress aria-hidden="true"></div>
+<div class="header-in">
+<button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-label="منوی بخش‌ها" aria-expanded="false" aria-haspopup="dialog" aria-controls="sidebar"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="29" height="29" rx="8"/><path d="M8 11h6v6H8zM18 11h6v10h-6zM8 21h6"/></svg></button>
+<a class="brand" href="../"><span class="brand-txt"><span class="brand-name">WidgetCore</span><span class="brand-sub">مستندات WidgetCore</span></span></a>
+<div class="header-actions">
+<button class="search-trigger" type="button" data-search-open aria-label="جستجو در مستندات"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span class="search-text">جستجو در مستندات…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<a class="download-link" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="دانلود آخرین نسخه" title="دانلود آخرین نسخه"><span class="download-mark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span><span class="download-count" data-download-count data-count-api="https://api.github.com/repos/WidgetCore/Plugin/releases?per_page=100" aria-label="مجموع دانلودهای گیت‌هاب" aria-live="polite" aria-busy="true"></span></a>
+<a class="github-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="مخزن افزونه WidgetCore در GitHub" title="مخزن افزونه WidgetCore در GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg></a>
+<div class="theme-control">
+<button class="icon-btn theme-btn" type="button" data-theme-menu-toggle aria-haspopup="menu" aria-controls="theme-menu" aria-expanded="false"
+			aria-label="پوسته" title="پوسته">
+			<span class="th-ic th-light"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg></span>
+			<span class="th-ic th-dark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg></span>
+		</button>
+<div class="theme-menu" id="theme-menu" role="menu" aria-label="پوسته" data-theme-menu hidden>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="system" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-monitor"/></svg><span>سیستم</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="light" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg><span>روشن</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="dark" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg><span>تیره</span></button>
+</div>
+</div>
+<a class="lang-btn" href="../../accessibility/" hreflang="en" lang="en" title="همین صفحه به انگلیسی" aria-label="همین صفحه به انگلیسی" data-lang-switch><span class="flag-emoji" aria-hidden="true">🇬🇧</span></a>
+</div>
+</div>
+</header>
+
+<div class="search-modal" data-search-modal data-search-index="../../search-index-fa.json" data-search-page="fa/accessibility/" data-search-lang="fa" hidden>
+<div class="search-backdrop" data-search-close></div>
+<div class="search-box" role="dialog" aria-modal="true" aria-label="جستجو در مستندات" dir="rtl">
+<form class="search-head" role="search" data-search-form>
+<span class="search-head-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span>
+<input class="search-input" type="search" data-search-input placeholder="جستجو در مستندات…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="جستجو در مستندات" aria-controls="search-results" aria-autocomplete="list">
+<button class="icon-btn" type="button" data-search-close aria-label="بستن جستجو"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button>
+</form>
+<div class="search-results" id="search-results" data-search-results role="listbox" aria-label="جستجو در مستندات" tabindex="-1"></div>
+<p class="search-empty" data-search-empty hidden>نتیجه‌ای برای این عبارت پیدا نشد. <span>عبارت کوتاه‌تری بنویسید یا زبان سایت را عوض کنید.</span></p>
+<p class="search-loading" data-search-loading hidden>در حال جستجو…</p>
+<p class="search-foot"><span class="search-count" data-search-count></span><span class="search-keys">با ↑ و ↓ حرکت کنید، با Enter باز کنید و با Esc ببندید.</span></p>
+</div>
+</div>
+
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="منوی بخش‌ها" data-sidebar>
+<div class="sidebar-in">
+<div class="sidebar-quick-head"><div class="sidebar-quick-title" id="sidebar-quick-title" role="heading" aria-level="2">دسترسی سریع</div><button class="icon-btn sidebar-close" type="button" data-sidebar-close aria-label="بستن منوی دسترسی سریع"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button></div>
+<button class="sidebar-search" type="button" data-search-open aria-label="جستجو در همه مستندات…"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span>جستجو در همه مستندات…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<nav class="nav" aria-label="منوی بخش‌ها">
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-intro" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg></span>
+<span class="nav-title">آشنایی</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-intro" data-nav-list>
+<li><a class="nav-link" href="../introduction/">ویجت‌کور چیست؟</a></li>
+<li><a class="nav-link" href="../quick-start/">شروع سریع</a></li>
+<li><a class="nav-link" href="../concepts/">مفهوم‌های پایه</a></li>
+<li><a class="nav-link" href="../requirements/">پیش‌نیازها و سازگاری</a></li>
+
+</ul>
+<p class="nav-desc">افزونه چیست و چه چیزی به سایت شما اضافه می‌کند.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-install" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span>
+<span class="nav-title">دریافت و نصب</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-install" data-nav-list>
+<li><a class="nav-link" href="../download/">دانلود</a></li>
+<li><a class="nav-link" href="../installation/">نصب و فعال‌سازی</a></li>
+<li><a class="nav-link" href="../updates/">به‌روزرسانی</a></li>
+
+</ul>
+<p class="nav-desc">دانلود، نصب، به‌روزرسانی و حذف.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-widgets" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="nav-title">ویجت‌ها</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-widgets" data-nav-list>
+<li><a class="nav-link" href="../widgets/">ویجت‌ها</a></li>
+<li><a class="nav-link" href="../widgets/faq/">ویجت سوالات متداول</a></li>
+<li><a class="nav-link" href="../widgets/live-search/">ویجت جستجوی زنده</a></li>
+
+</ul>
+<p class="nav-desc">راهنمای کامل هر ویجت و همه کنترل‌ها.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-advanced" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+<span class="nav-title">استفاده پیشرفته</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-advanced" data-nav-list>
+<li><a class="nav-link" href="../shortcode/">شورت‌کد جستجو</a></li>
+<li><a class="nav-link" href="../rest-api/">REST API جستجو</a></li>
+
+</ul>
+<p class="nav-desc">شورت‌کد، REST و هوک‌ها برای یکپارچه‌سازی سفارشی.</p>
+</div>
+<div class="nav-group is-open" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="true" aria-controls="nav-a11y" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="nav-title">دسترس‌پذیری و زبان</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-a11y" data-nav-list>
+<li><a class="nav-link is-current" href="./" aria-current="page">دسترس‌پذیری</a></li>
+<li><a class="nav-link" href="../keyboard/">میان‌برهای کیبورد</a></li>
+<li><a class="nav-link" href="../translation/">زبان و ترجمه</a></li>
+
+</ul>
+<p class="nav-desc">کیبورد، صفحه‌خوان‌ها و ترجمه.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-support" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-life"/></svg></span>
+<span class="nav-title">پشتیبانی</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-support" data-nav-list>
+<li><a class="nav-link" href="../faq/">پرسش‌های متداول</a></li>
+<li><a class="nav-link" href="../troubleshooting/">عیب‌یابی</a></li>
+
+</ul>
+<p class="nav-desc">عیب‌یابی و پرسش‌های متداول.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-project" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-heart"/></svg></span>
+<span class="nav-title">پروژه</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-project" data-nav-list>
+<li><a class="nav-link" href="../changelog/">Changelog</a></li>
+<li><a class="nav-link" href="../contributing/">مشارکت در توسعه</a></li>
+
+</ul>
+<p class="nav-desc">Changelog، متن‌باز بودن و مشارکت در توسعه.</p>
+</div>
+
+</nav>
+<div class="sidebar-foot">
+<a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="دانلود آخرین نسخه" title="دانلود آخرین نسخه"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">دانلود آخرین نسخه</span></a>
+<a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="مخزن WidgetCore در GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>مخزن WidgetCore در GitHub</span></a>
+<p class="side-ver">نسخه <b dir="ltr">0.0.7</b></p>
+</div>
+</div>
+</aside>
+<div class="scrim" data-scrim hidden></div>
+
+<main class="main" id="main" tabindex="-1">
+<div class="content">
+<nav class="breadcrumb" aria-label="breadcrumb"><ol><li><a href="../">خانه</a></li><li aria-current="page"><span>دسترس‌پذیری</span></li></ol><button class="breadcrumb-toc-toggle" type="button" data-toc-toggle aria-label="در این صفحه" title="در این صفحه" aria-expanded="false" aria-controls="breadcrumb-toc-menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-list"/></svg></button><div class="breadcrumb-toc-menu" id="breadcrumb-toc-menu" data-mobile-toc hidden><nav class="toc" aria-label="در این صفحه" data-mobile-toc-list>
+<p class="toc-title">در این صفحه</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#ویجت-جستجوی-زنده" data-toc-link="ویجت-جستجوی-زنده">ویجت جستجوی زنده</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#الگوی-combobox" data-toc-link="الگوی-combobox">الگوی combobox</a></li><li class="toc-item toc-d3"><a href="#برچسب-و-نام-دسترسپذیر" data-toc-link="برچسب-و-نام-دسترسپذیر">برچسب و نام دسترس‌پذیر</a></li><li class="toc-item toc-d3"><a href="#نواحی-زنده" data-toc-link="نواحی-زنده">نواحی زنده</a></li><li class="toc-item toc-d3"><a href="#کار-بدون-جاوااسکریپت" data-toc-link="کار-بدون-جاوااسکریپت">کار بدون جاوااسکریپت</a></li></ul></li><li class="toc-item toc-d2"><a href="#ویجت-سوالات-متداول" data-toc-link="ویجت-سوالات-متداول">ویجت سوالات متداول</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#ساختار-معنایی" data-toc-link="ساختار-معنایی">ساختار معنایی</a></li><li class="toc-item toc-d3"><a href="#وضعیت-بسته-و-فوکوس" data-toc-link="وضعیت-بسته-و-فوکوس">وضعیت بسته و فوکوس</a></li><li class="toc-item toc-d3"><a href="#اسکیمای-ساختیافته" data-toc-link="اسکیمای-ساختیافته">اسکیمای ساخت‌یافته</a></li><li class="toc-item toc-d3"><a href="#بدون-جاوااسکریپت" data-toc-link="بدون-جاوااسکریپت">بدون جاوااسکریپت</a></li></ul></li><li class="toc-item toc-d2"><a href="#کاهش-حرکت" data-toc-link="کاهش-حرکت">کاهش حرکت</a></li><li class="toc-item toc-d2"><a href="#کنتراست-رنگ" data-toc-link="کنتراست-رنگ">کنتراست رنگ</a></li><li class="toc-item toc-d2"><a href="#جهت-متن-و-چیدمان" data-toc-link="جهت-متن-و-چیدمان">جهت متن و چیدمان</a></li><li class="toc-item toc-d2"><a href="#نشانهگذاری-هنگام-شخصیسازی" data-toc-link="نشانهگذاری-هنگام-شخصیسازی">نشانه‌گذاری هنگام شخصی‌سازی</a></li><li class="toc-item toc-d2"><a href="#چکلیست-انتشار" data-toc-link="چکلیست-انتشار">چک‌لیست انتشار</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>چاپ این صفحه</span></button>
+</nav>
+</div></nav>
+<article class="article">
+<header class="article-head">
+<h1 class="article-title">دسترس‌پذیری</h1>
+<p class="article-desc">امکانات دسترس‌پذیری ویجت‌های WidgetCore؛ ساختار ARIA، نواحی زنده، فوکوس، کاهش حرکت، کنتراست، پشتیبانی راست‌به‌چپ و کارکرد بدون جاوااسکریپت.</p>
+<p class="article-meta">آخرین به‌روزرسانی <time datetime="2026-09-29">2026-09-29</time></p>
+</header>
+<div class="prose" data-prose>
+<p>دسترس‌پذیری در این افزونه یک لایه‌ی اضافی نیست؛ بخشی از ساختار خروجی است. این صفحه آنچه را که افزونه از پیش رعایت کرده و آنچه را که هنگام شخصی‌سازی باید خودتان رعایت کنید توضیح می‌دهد.</p>
+<h2 id="ویجت-جستجوی-زنده">ویجت جستجوی زنده<a class="hlink" href="#ویجت-جستجوی-زنده" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<h3 id="الگوی-combobox">الگوی combobox<a class="hlink" href="#الگوی-combobox" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>فیلد جستجو الگوی استاندارد «قالب ترکیبی با فهرست» را پیاده می‌کند:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>ویژگی</th><th>مقدار</th><th>نقش</th></tr></thead><tbody><tr><td><code>role</code> روی فیلد</td><td><code>combobox</code></td><td>اعلام الگوی تعامل</td></tr><tr><td><code>aria-autocomplete</code></td><td><code>list</code></td><td>پیشنهادها در یک فهرست نشان داده می‌شوند</td></tr><tr><td><code>aria-expanded</code></td><td><code>false</code> در حالت لیست، <code>true</code> در حالت صفحه</td><td>وضعیت باز بودن پنل</td></tr><tr><td><code>aria-controls</code></td><td>شناسه‌ی فهرست نتایج</td><td>اتصال فیلد به فهرست</td></tr><tr><td><code>aria-haspopup</code></td><td><code>listbox</code></td><td>نوع محتوای بازشو</td></tr><tr><td><code>aria-activedescendant</code></td><td>شناسه‌ی نتیجه‌ی انتخاب‌شده</td><td>اعلام گزینه‌ی فعال بدون جابه‌جایی فوکوس</td></tr></tbody></table></div>
+<p>فهرست نتایج <code>role=&quot;listbox&quot;</code> و هر نتیجه <code>role=&quot;option&quot;</code> با <code>aria-selected</code> است.</p>
+<h3 id="برچسب-و-نام-دسترسپذیر">برچسب و نام دسترس‌پذیر<a class="hlink" href="#برچسب-و-نام-دسترسپذیر" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<ul>
+<li>فیلد یک <code>&lt;label class=&quot;wgcr-search-label&quot;&gt;</code> دارد که به‌صورت بصری پنهان است (با تکنیک <code>clip</code>) ولی برای صفحه‌خوان خوانده می‌شود.</li>
+<li>آیکون جستجو <code>aria-hidden=&quot;true&quot;</code> دارد و اسپینر هم همین‌طور؛ هیچ‌کدام خوانده نمی‌شوند.</li>
+<li>فرم <code>role=&quot;search&quot;</code> دارد تا به‌عنوان نقطه‌ی عطف «جستجو» شناخته شود.</li>
+</ul>
+<h3 id="نواحی-زنده">نواحی زنده<a class="hlink" href="#نواحی-زنده" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>عنصر</th><th>ویژگی</th><th>چه چیزی اعلام می‌شود</th></tr></thead><tbody><tr><td><code>.wgcr-search-status</code></td><td><code>aria-live=&quot;polite&quot;</code></td><td>«تعداد نتایج: N» یا پیام خطا</td></tr><tr><td><code>.wgcr-search-nomore</code></td><td><code>role=&quot;status&quot;</code></td><td>پیام پایان نتایج</td></tr><tr><td><code>.wgcr-search-pagination</code></td><td><code>aria-label</code></td><td>نام ناوبری صفحه‌بندی</td></tr><tr><td>دکمه‌ی صفحه‌ی جاری</td><td><code>aria-current=&quot;page&quot;</code></td><td>شماره‌ی صفحه‌ی فعال</td></tr></tbody></table></div>
+<h3 id="کار-بدون-جاوااسکریپت">کار بدون جاوااسکریپت<a class="hlink" href="#کار-بدون-جاوااسکریپت" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>فرم یک فرم واقعی <code>GET</code> است که به خانه‌ی سایت می‌رود و فیلد <code>s</code> به‌همراه <code>post_type</code> پنهان دارد. یعنی با جاوااسکریپت غیرفعال، کاربر همان جستجوی استاندارد وردپرس را برای همان نوع محتوا می‌گیرد — نه صفحه‌ی خالی.</p>
+<h2 id="ویجت-سوالات-متداول">ویجت سوالات متداول<a class="hlink" href="#ویجت-سوالات-متداول" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<h3 id="ساختار-معنایی">ساختار معنایی<a class="hlink" href="#ساختار-معنایی" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>عنصر</th><th>نقش</th></tr></thead><tbody><tr><td><code>&lt;h2&gt;</code>/<code>&lt;h3&gt;</code>/<code>&lt;h4&gt;</code> (طبق کنترل)</td><td>سرفصل پرسش در ساختار صفحه</td></tr><tr><td><code>&lt;button&gt;</code> داخل سرفصل</td><td>نقطه‌ی تعامل با <code>aria-expanded</code> و <code>aria-controls</code></td></tr><tr><td><code>&lt;div role=&quot;region&quot;&gt;</code></td><td>پاسخ، با <code>aria-labelledby</code> به همان دکمه</td></tr></tbody></table></div>
+<h3 id="وضعیت-بسته-و-فوکوس">وضعیت بسته و فوکوس<a class="hlink" href="#وضعیت-بسته-و-فوکوس" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>پاسخ‌های بسته‌شده با <code>visibility: hidden</code> از دید مرورگر بیرون می‌روند؛ در نتیجه:</p>
+<ul>
+<li>داخل محتوای پنهان با <code>Tab</code> نمی‌روید.</li>
+<li>لینک‌های داخل پاسخ بسته‌شده در ترتیب فوکوس نمی‌مانند.</li>
+<li>صفحه‌خوان متن پنهان را نمی‌خواند.</li>
+</ul>
+<h3 id="اسکیمای-ساختیافته">اسکیمای ساخت‌یافته<a class="hlink" href="#اسکیمای-ساختیافته" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>فقط اولین نمونه‌ی رندرشده‌ی FAQ که اسکیما در آن فعال است وارد تولید اسکیما می‌شود؛ نمونه‌های با اسکیمای خاموش این فرصت را مصرف نمی‌کنند. فقط جفت پرسش/پاسخ غیرخالی همان نمونه وارد خروجی می‌شوند؛ اگر هیچ جفت معتبری نداشته باشد، بلوکی چاپ نمی‌شود و نمونه‌های بعدی هم اسکیما نمی‌دهند. این سیاست تک‌بلوکی افزونه است، نه تضمین خطای موتور جستجو برای چند بلوک FAQ. معتبر بودن JSON-LD نمایش نتیجه‌ی غنی را تضمین نمی‌کند و شرایط موتور جستجو و محتوای صفحه هم مؤثرند.</p>
+<h3 id="بدون-جاوااسکریپت">بدون جاوااسکریپت<a class="hlink" href="#بدون-جاوااسکریپت" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>باز و بسته کردن FAQ به جاوااسکریپت نیاز دارد و جایگزین <code>details</code>/<code>summary</code> ندارد. پاسخ‌های بسته با <code>max-height: 0</code> پنهان می‌مانند. فقط پاسخ‌های باز اولیه با سقف CSS برابر 640px دیده می‌شوند و پاسخ طولانی ممکن است بریده شود. اگر دسترسی بدون اسکریپت ضروری است، اطلاعات لازم را بیرون آکاردئون هم ارائه کنید.</p>
+<h2 id="کاهش-حرکت">کاهش حرکت<a class="hlink" href="#کاهش-حرکت" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>همه‌ی ویجت‌ها از <code>prefers-reduced-motion</code> پیروی می‌کنند:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr">@media (prefers-reduced-motion: reduce) {
+	<span class="tok-c">/* انیمیشن‌ها و انتقال‌ها حذف یا کوتاه می‌شوند */</span>
+}</code></pre>
+</figure>
+<p>در عمل: چرخش آیکون‌ها، انیمیشن باز شدن پاسخ‌ها، ظاهر شدن پنل نتایج و چرخش اسپینر برای کاربرانی که کاهش حرکت را در سیستم‌عامل فعال کرده‌اند حذف یا فوری می‌شود. اگر استایل سفارشی با انیمیشن اضافه می‌کنید، همین رسانه‌پرسش را برایش بنویسید.</p>
+<h2 id="کنتراست-رنگ">کنتراست رنگ<a class="hlink" href="#کنتراست-رنگ" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>مقدارهای پیش‌فرض افزونه برای کنتراست متن انتخاب شده‌اند:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>ترکیب</th><th>رنگ متن</th><th>رنگ زمینه</th></tr></thead><tbody><tr><td>عنوان نتیجه</td><td><code>#111827</code></td><td><code>#ffffff</code></td></tr><tr><td>خلاصه و تاریخ</td><td><code>#64748B</code></td><td><code>#ffffff</code></td></tr><tr><td>رنگ اصلی (فوکوس)</td><td><code>#2E86DE</code></td><td><code>#ffffff</code></td></tr><tr><td>عنوان پرسش در FAQ</td><td><code>#1F2937</code></td><td><code>rgba(255,255,255,.72)</code></td></tr><tr><td>پاسخ در FAQ</td><td><code>#6B7280</code></td><td>—</td></tr></tbody></table></div>
+<p>هنگام شخصی‌سازی، کنتراست متن روی زمینه‌ی جدید را بررسی کنید؛ هدف نسبت 4.5 به 1 برای متن معمولی و 3 به 1 برای متن بزرگ است. اگر پس‌زمینه‌ی پنل را تیره می‌کنید، متغیرهای <code>--wgcr-ink</code> و <code>--wgcr-slate</code> را هم عوض کنید.</p>
+<h2 id="جهت-متن-و-چیدمان">جهت متن و چیدمان<a class="hlink" href="#جهت-متن-و-چیدمان" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<ul>
+<li>همه‌ی فاصله‌های افقی با خواص منطقی نوشته شده‌اند (<code>inset-inline-start</code>، <code>inset-inline-end</code>، <code>margin-inline</code>)، پس در سایت چپ‌به‌راست هم درست کار می‌کنند.</li>
+<li>پیکان‌ها و نشانه‌های جهت‌دار با <code>dir</code> صفحه می‌چرخند.</li>
+<li>ترجمه‌های فارسی و انگلیسی همراه بسته‌اند؛ متن‌ها با زبان سایت عوض می‌شوند.</li>
+</ul>
+<h2 id="نشانهگذاری-هنگام-شخصیسازی">نشانه‌گذاری هنگام شخصی‌سازی<a class="hlink" href="#نشانهگذاری-هنگام-شخصیسازی" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<aside class="callout callout--important"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-important"/></svg><div class="callout-body"><p class="callout-title">وقتی ظاهر را عوض می‌کنید این‌ها را حفظ کنید</p><ul>
+<li><code>role=&quot;listbox&quot;</code> روی فهرست و <code>role=&quot;option&quot;</code> روی هر نتیجه</li>
+<li><code>aria-activedescendant</code> و <code>aria-selected</code> برای پیمایش کیبوردی</li>
+<li><code>aria-live=&quot;polite&quot;</code> روی پیام وضعیت</li>
+<li><code>&lt;label&gt;</code> فیلد را با <code>display: none</code> پنهان نکنید (از <code>clip</code> استفاده کنید)</li>
+<li><code>aria-expanded</code> روی دکمه‌های پرسش در FAQ</li>
+</ul>
+</div></aside>
+<p>اگر نتایج را با قالب المنتور می‌سازید، افزونه هیچ استایل انتخابی روی آن‌ها نمی‌گذارد؛ در این حالت مسئولیت کنتراست، ترتیب فوکوس و وجود یک لینک اصلی در هر کارت با قالب شماست.</p>
+<h2 id="چکلیست-انتشار">چک‌لیست انتشار<a class="hlink" href="#چکلیست-انتشار" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<ol class="steps" data-lang="fa"><li class="step"><div class="step-body"><p class="step-title">فقط با کیبورد تست کنید</p><p>از فیلد تا آخرین نتیجه و صفحه‌بندی را بدون ماوس طی کنید.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">با صفحه‌خوان بشنوید</p><p>تعداد نتایج باید پس از هر جستجو خوانده شود.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">با بزرگ‌نمایی 200٪ ببینید</p><p>هیچ محتوایی نباید از دست برود یا روی هم بیفتد.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">کاهش حرکت را فعال کنید</p><p>در سیستم‌عامل «Reduce motion» را روشن و دوباره تست کنید.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">جاوااسکریپت را غیرفعال کنید</p><p>فرم باید به صفحه‌ی نتایج وردپرس برود.</p>
+</div></li></ol>
+<p>فهرست کلیدها در صفحه‌ی <a href="../keyboard/">میان‌برهای کیبورد</a> آمده است.</p>
+
+</div>
+
+</article>
+<nav class="prevnext" aria-label="قبلی / بعدی"><a class="pn pn--prev" href="../rest-api/" rel="prev">
+<span class="pn-dir">قبلی</span>
+<span class="pn-group">استفاده پیشرفته</span>
+<span class="pn-title">REST API جستجو</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span>
+</a>
+<a class="pn pn--next" href="../keyboard/" rel="next">
+<span class="pn-dir">بعدی</span>
+<span class="pn-group">دسترس‌پذیری و زبان</span>
+<span class="pn-title">میان‌برهای کیبورد</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></span>
+</a>
+</nav>
+<section class="related"><h2 class="related-title">صفحه‌های مرتبط</h2><div class="cards cards--related"><a class="card" href="../keyboard/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="card-body"><span class="card-title">میان‌برهای کیبورد</span><span class="card-text">فهرست کامل کلیدهای کیبورد در ویجت جستجوی زنده، ویجت سوالات متداول و خود سایت مستندات؛ همراه با رفتار فوکوس و نکات دسترس‌پذیری.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../widgets/faq/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="card-body"><span class="card-title">ویجت سوالات متداول</span><span class="card-text">راهنمای کامل ویجت سوالات متداول WidgetCore؛ آیتم‌های پرسش و پاسخ، حالت آکاردئون یا آزاد، آیکون‌ها، سرعت انیمیشن، تگ عنوان، اسکیمای FAQPage و استایل‌دهی.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../widgets/live-search/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="card-body"><span class="card-title">ویجت جستجوی زنده</span><span class="card-text">راهنمای کامل ویجت جستجوی زنده‌ی WidgetCore؛ کنترل‌های عمومی، طرح‌بندی، کوئری و صفحه‌بندی، ساختار خروجی، رفتار جاوااسکریپت و کار بدون جاوااسکریپت.</span></span>
+<span class="card-arrow"></span>
+</a>
+</div></section>
+</div>
+</main>
+<aside class="aside-right" aria-label="در این صفحه">
+<nav class="toc" aria-label="در این صفحه" data-toc>
+<p class="toc-title">در این صفحه</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#ویجت-جستجوی-زنده" data-toc-link="ویجت-جستجوی-زنده">ویجت جستجوی زنده</a></li><li class="toc-item toc-d3"><a href="#الگوی-combobox" data-toc-link="الگوی-combobox">الگوی combobox</a></li><li class="toc-item toc-d3"><a href="#برچسب-و-نام-دسترسپذیر" data-toc-link="برچسب-و-نام-دسترسپذیر">برچسب و نام دسترس‌پذیر</a></li><li class="toc-item toc-d3"><a href="#نواحی-زنده" data-toc-link="نواحی-زنده">نواحی زنده</a></li><li class="toc-item toc-d3"><a href="#کار-بدون-جاوااسکریپت" data-toc-link="کار-بدون-جاوااسکریپت">کار بدون جاوااسکریپت</a></li><li class="toc-item toc-d2"><a href="#ویجت-سوالات-متداول" data-toc-link="ویجت-سوالات-متداول">ویجت سوالات متداول</a></li><li class="toc-item toc-d3"><a href="#ساختار-معنایی" data-toc-link="ساختار-معنایی">ساختار معنایی</a></li><li class="toc-item toc-d3"><a href="#وضعیت-بسته-و-فوکوس" data-toc-link="وضعیت-بسته-و-فوکوس">وضعیت بسته و فوکوس</a></li><li class="toc-item toc-d3"><a href="#اسکیمای-ساختیافته" data-toc-link="اسکیمای-ساختیافته">اسکیمای ساخت‌یافته</a></li><li class="toc-item toc-d3"><a href="#بدون-جاوااسکریپت" data-toc-link="بدون-جاوااسکریپت">بدون جاوااسکریپت</a></li><li class="toc-item toc-d2"><a href="#کاهش-حرکت" data-toc-link="کاهش-حرکت">کاهش حرکت</a></li><li class="toc-item toc-d2"><a href="#کنتراست-رنگ" data-toc-link="کنتراست-رنگ">کنتراست رنگ</a></li><li class="toc-item toc-d2"><a href="#جهت-متن-و-چیدمان" data-toc-link="جهت-متن-و-چیدمان">جهت متن و چیدمان</a></li><li class="toc-item toc-d2"><a href="#نشانهگذاری-هنگام-شخصیسازی" data-toc-link="نشانهگذاری-هنگام-شخصیسازی">نشانه‌گذاری هنگام شخصی‌سازی</a></li><li class="toc-item toc-d2"><a href="#چکلیست-انتشار" data-toc-link="چکلیست-انتشار">چک‌لیست انتشار</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>چاپ این صفحه</span></button>
+</nav>
+
+</aside>
+</div>
+<footer class="footer">
+<div class="footer-in">
+<div class="footer-brand">
+<p class="footer-note">WidgetCore یک افزونه رایگان و متن‌باز با مجوز GPL-2.0-or-later است.</p>
+<p class="footer-ver">نسخه <b dir="ltr">0.0.7</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">مجوز GPL-2.0-or-later</a></p>
+</div>
+
+</div>
+</footer>
+
+<script type="application/json" data-ui-strings>{"lang":"fa","copy":"کپی کد","copied":"کپی شد","results":"نتیجه","theme":"پوسته"}</script>
+<script src="../../assets/app.js" defer></script>
+<script src="../../assets/search.js" defer></script>
+<script src="../../assets/site-ui.js" defer></script>
+</body>
+</html>

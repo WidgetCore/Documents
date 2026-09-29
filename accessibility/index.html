@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility | WidgetCore Documentation</title>
+<meta name="description" content="How WidgetCore meets accessibility requirements — the combobox pattern, ARIA roles, live regions, working without JavaScript, FAQ semantics, reduced motion, contrast and an audit checklist.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f4f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161618" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="WidgetCore docs build">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://docs.widgetcore.ir/accessibility/">
+<link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/accessibility/">
+<link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/accessibility/">
+<link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/accessibility/">
+<meta property="og:site_name" content="WidgetCore Documentation">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fa_IR">
+<meta property="og:title" content="Accessibility">
+<meta property="og:description" content="How WidgetCore meets accessibility requirements — the combobox pattern, ARIA roles, live regions, working without JavaScript, FAQ semantics, reduced motion, contrast and an audit checklist.">
+<meta property="og:url" content="https://docs.widgetcore.ir/accessibility/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Accessibility">
+<meta name="twitter:description" content="How WidgetCore meets accessibility requirements — the combobox pattern, ARIA roles, live regions, working without JavaScript, FAQ semantics, reduced motion, contrast and an audit checklist.">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://docs.widgetcore.ir/"},{"@type":"ListItem","position":2,"name":"Accessibility","item":"https://docs.widgetcore.ir/accessibility/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Accessibility","description":"How WidgetCore meets accessibility requirements — the combobox pattern, ARIA roles, live regions, working without JavaScript, FAQ semantics, reduced motion, contrast and an audit checklist.","inLanguage":"en_US","url":"https://docs.widgetcore.ir/accessibility/","isPartOf":{"@type":"WebSite","name":"WidgetCore Documentation","url":"https://docs.widgetcore.ir/","inLanguage":"en_US"},"about":{"@type":"SoftwareApplication","name":"WidgetCore","applicationCategory":"Plugin","operatingSystem":"WordPress"},"author":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"publisher":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"license":"https://www.gnu.org/licenses/gpl-2.0.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.widgetcore.ir/accessibility/"}}</script>
+<script>(function(){try{var k='wgcr-theme';var t=localStorage.getItem(k);if(!t){t='system'}var d=t==='system'?(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;var r=document.documentElement;r.classList.add(d==='dark'?'dark':'light');r.setAttribute('data-theme',d);r.setAttribute('data-theme-mode',t);r.style.colorScheme=d;}catch(e){}})();</script>
+</head>
+<body class="body-docs">
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0"><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></symbol><symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></symbol><symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol><symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></symbol><symbol id="i-command" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6a3 3 0 10-3 3h12a3 3 0 10-3-3v12a3 3 0 103-3H6a3 3 0 103 3V6z"/></symbol><symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h11v11H9zM5 15H4V4h11v1"/></symbol><symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11m0 0l-4-4m4 4l4-4M4 18v2a1 1 0 001 1h14a1 1 0 001-1v-2"/></symbol><symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-2c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-1-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.8-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0012 2z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></symbol><symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.3A3.7 3.7 0 0112 8a3.7 3.7 0 017 2.7C19 15.6 12 20 12 20z"/></symbol><symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM12 11v6M12 7.5h.01"/></symbol><symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM7 10h.01M11 10h.01M15 10h.01M8 14h8"/></symbol><symbol id="i-life" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 5.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM5 5l4 4M19 5l-4 4M5 19l4-4M19 19l-4-4"/></symbol><symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 006 .5l2-2a4 4 0 00-5.7-5.7L11 8M14 10a4 4 0 00-6-.5l-2 2A4 4 0 0011.7 17L13 16"/></symbol><symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v11H3zM9 20h6M12 16v4"/></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 019.5 4 8.5 8.5 0 1020 14.5z"/></symbol><symbol id="i-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V4h10v5M7 18H4v-6h16v6h-3M7 14h10v6H7z"/></symbol><symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 2 5 5.5 5 9l2 3v3l-3-1.5V19l-4 3-4-3v-3.5L5 17v-3l2-3c0-3.5 2-7 5-9zm0 8.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></symbol><symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4a7 7 0 100 14 7 7 0 000-14zm9 16l-4.5-4.5"/></symbol><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zM12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol><symbol id="i-tip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2h5c0-.8.4-1.5 1-2A6 6 0 0012 3z"/></symbol><symbol id="i-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 16H3l9-16zM12 10v4M12 17h.01"/></symbol></svg>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="header">
+<div class="reading-progress" data-reading-progress aria-hidden="true"></div>
+<div class="header-in">
+<button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-label="Sections menu" aria-expanded="false" aria-haspopup="dialog" aria-controls="sidebar"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="29" height="29" rx="8"/><path d="M8 11h6v6H8zM18 11h6v10h-6zM8 21h6"/></svg></button>
+<a class="brand" href="../"><span class="brand-txt"><span class="brand-name">WidgetCore</span><span class="brand-sub">WidgetCore Documentation</span></span></a>
+<div class="header-actions">
+<button class="search-trigger" type="button" data-search-open aria-label="Search the documentation"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span class="search-text">Search the documentation…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<a class="download-link" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="Download the latest version" title="Download the latest version"><span class="download-mark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span><span class="download-count" data-download-count data-count-api="https://api.github.com/repos/WidgetCore/Plugin/releases?per_page=100" aria-label="Total GitHub downloads" aria-live="polite" aria-busy="true"></span></a>
+<a class="github-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="WidgetCore plugin repository on GitHub" title="WidgetCore plugin repository on GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg></a>
+<div class="theme-control">
+<button class="icon-btn theme-btn" type="button" data-theme-menu-toggle aria-haspopup="menu" aria-controls="theme-menu" aria-expanded="false"
+			aria-label="Theme" title="Theme">
+			<span class="th-ic th-light"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg></span>
+			<span class="th-ic th-dark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg></span>
+		</button>
+<div class="theme-menu" id="theme-menu" role="menu" aria-label="Theme" data-theme-menu hidden>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="system" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-monitor"/></svg><span>System</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="light" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg><span>Light</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="dark" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg><span>Dark</span></button>
+</div>
+</div>
+<a class="lang-btn" href="../fa/accessibility/" hreflang="fa" lang="fa" title="This page in Persian" aria-label="This page in Persian" data-lang-switch><span class="flag-emoji" aria-hidden="true">🇮🇷</span></a>
+</div>
+</div>
+</header>
+
+<div class="search-modal" data-search-modal data-search-index="../search-index-en.json" data-search-page="accessibility/" data-search-lang="en" hidden>
+<div class="search-backdrop" data-search-close></div>
+<div class="search-box" role="dialog" aria-modal="true" aria-label="Search the documentation" dir="ltr">
+<form class="search-head" role="search" data-search-form>
+<span class="search-head-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span>
+<input class="search-input" type="search" data-search-input placeholder="Search the documentation…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Search the documentation" aria-controls="search-results" aria-autocomplete="list">
+<button class="icon-btn" type="button" data-search-close aria-label="Close search"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button>
+</form>
+<div class="search-results" id="search-results" data-search-results role="listbox" aria-label="Search the documentation" tabindex="-1"></div>
+<p class="search-empty" data-search-empty hidden>No results for this query. <span>Try a shorter phrase, or switch the site language.</span></p>
+<p class="search-loading" data-search-loading hidden>Searching…</p>
+<p class="search-foot"><span class="search-count" data-search-count></span><span class="search-keys">Use ↑ and ↓ to move, Enter to open and Esc to close.</span></p>
+</div>
+</div>
+
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="Sections menu" data-sidebar>
+<div class="sidebar-in">
+<div class="sidebar-quick-head"><div class="sidebar-quick-title" id="sidebar-quick-title" role="heading" aria-level="2">Quick Access</div><button class="icon-btn sidebar-close" type="button" data-sidebar-close aria-label="Close quick-access menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button></div>
+<button class="sidebar-search" type="button" data-search-open aria-label="Search all documentation…"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span>Search all documentation…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<nav class="nav" aria-label="Sections menu">
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-intro" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg></span>
+<span class="nav-title">Getting to know</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-intro" data-nav-list>
+<li><a class="nav-link" href="../introduction/">What is WidgetCore?</a></li>
+<li><a class="nav-link" href="../quick-start/">Quick start</a></li>
+<li><a class="nav-link" href="../concepts/">Core concepts</a></li>
+<li><a class="nav-link" href="../requirements/">Requirements and compatibility</a></li>
+
+</ul>
+<p class="nav-desc">What the plugin is and what it adds to your site.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-install" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span>
+<span class="nav-title">Download &amp; install</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-install" data-nav-list>
+<li><a class="nav-link" href="../download/">Download</a></li>
+<li><a class="nav-link" href="../installation/">Installation and activation</a></li>
+<li><a class="nav-link" href="../updates/">Updates</a></li>
+
+</ul>
+<p class="nav-desc">Download, install, update and remove.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-widgets" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="nav-title">Widgets</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-widgets" data-nav-list>
+<li><a class="nav-link" href="../widgets/">Widgets</a></li>
+<li><a class="nav-link" href="../widgets/faq/">FAQ widget</a></li>
+<li><a class="nav-link" href="../widgets/live-search/">Live Search widget</a></li>
+
+</ul>
+<p class="nav-desc">The complete guide to every widget and control.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-advanced" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+<span class="nav-title">Advanced use</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-advanced" data-nav-list>
+<li><a class="nav-link" href="../shortcode/">The wgcr_search shortcode</a></li>
+<li><a class="nav-link" href="../rest-api/">REST API</a></li>
+
+</ul>
+<p class="nav-desc">Shortcode, REST and hooks for custom integrations.</p>
+</div>
+<div class="nav-group is-open" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="true" aria-controls="nav-a11y" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="nav-title">Accessibility &amp; language</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-a11y" data-nav-list>
+<li><a class="nav-link is-current" href="./" aria-current="page">Accessibility</a></li>
+<li><a class="nav-link" href="../keyboard/">Keyboard shortcuts</a></li>
+<li><a class="nav-link" href="../translation/">Language and translation</a></li>
+
+</ul>
+<p class="nav-desc">Keyboard, screen readers and translation.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-support" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-life"/></svg></span>
+<span class="nav-title">Support</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-support" data-nav-list>
+<li><a class="nav-link" href="../faq/">Frequently asked questions</a></li>
+<li><a class="nav-link" href="../troubleshooting/">Troubleshooting</a></li>
+
+</ul>
+<p class="nav-desc">Troubleshooting and frequently asked questions.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-project" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-heart"/></svg></span>
+<span class="nav-title">Project</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-project" data-nav-list>
+<li><a class="nav-link" href="../changelog/">Changelog</a></li>
+<li><a class="nav-link" href="../contributing/">Contributing</a></li>
+
+</ul>
+<p class="nav-desc">Changelog, open source and contributing.</p>
+</div>
+
+</nav>
+<div class="sidebar-foot">
+<a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="Download the latest version" title="Download the latest version"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">Download the latest version</span></a>
+<a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="WidgetCore repository on GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>WidgetCore repository on GitHub</span></a>
+<p class="side-ver">Version <b dir="ltr">0.0.7</b></p>
+</div>
+</div>
+</aside>
+<div class="scrim" data-scrim hidden></div>
+
+<main class="main" id="main" tabindex="-1">
+<div class="content">
+<nav class="breadcrumb" aria-label="breadcrumb"><ol><li><a href="../">Home</a></li><li aria-current="page"><span>Accessibility</span></li></ol><button class="breadcrumb-toc-toggle" type="button" data-toc-toggle aria-label="On this page" title="On this page" aria-expanded="false" aria-controls="breadcrumb-toc-menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-list"/></svg></button><div class="breadcrumb-toc-menu" id="breadcrumb-toc-menu" data-mobile-toc hidden><nav class="toc" aria-label="On this page" data-mobile-toc-list>
+<p class="toc-title">On this page</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#live-search-widget" data-toc-link="live-search-widget">Live Search widget</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#the-combobox-pattern" data-toc-link="the-combobox-pattern">The combobox pattern</a></li><li class="toc-item toc-d3"><a href="#label-and-accessible-name" data-toc-link="label-and-accessible-name">Label and accessible name</a></li><li class="toc-item toc-d3"><a href="#live-regions" data-toc-link="live-regions">Live regions</a></li><li class="toc-item toc-d3"><a href="#working-without-javascript" data-toc-link="working-without-javascript">Working without JavaScript</a></li></ul></li><li class="toc-item toc-d2"><a href="#faq-widget" data-toc-link="faq-widget">FAQ widget</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#semantic-structure" data-toc-link="semantic-structure">Semantic structure</a></li><li class="toc-item toc-d3"><a href="#closed-state-and-focus" data-toc-link="closed-state-and-focus">Closed state and focus</a></li><li class="toc-item toc-d3"><a href="#structured-data" data-toc-link="structured-data">Structured data</a></li><li class="toc-item toc-d3"><a href="#without-javascript" data-toc-link="without-javascript">Without JavaScript</a></li></ul></li><li class="toc-item toc-d2"><a href="#reduced-motion" data-toc-link="reduced-motion">Reduced motion</a></li><li class="toc-item toc-d2"><a href="#colour-contrast" data-toc-link="colour-contrast">Colour contrast</a></li><li class="toc-item toc-d2"><a href="#text-direction-and-layout" data-toc-link="text-direction-and-layout">Text direction and layout</a></li><li class="toc-item toc-d2"><a href="#markup-when-customising" data-toc-link="markup-when-customising">Markup when customising</a></li><li class="toc-item toc-d2"><a href="#publishing-checklist" data-toc-link="publishing-checklist">Publishing checklist</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>Print this page</span></button>
+</nav>
+</div></nav>
+<article class="article">
+<header class="article-head">
+<h1 class="article-title">Accessibility</h1>
+<p class="article-desc">How WidgetCore meets accessibility requirements — the combobox pattern, ARIA roles, live regions, working without JavaScript, FAQ semantics, reduced motion, contrast and an audit checklist.</p>
+<p class="article-meta">Last updated <time datetime="2026-09-29">2026-09-29</time></p>
+</header>
+<div class="prose" data-prose>
+<p>Accessibility in this plugin is not an extra layer: the markup, the keyboard behaviour and the ARIA attributes are built into every widget from the start. This page explains what is already handled and what you should check when you customise the output.</p>
+<h2 id="live-search-widget">Live Search widget<a class="hlink" href="#live-search-widget" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<h3 id="the-combobox-pattern">The combobox pattern<a class="hlink" href="#the-combobox-pattern" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>The field follows the WAI-ARIA <strong>combobox</strong> pattern:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Element</th><th>Attribute</th><th>Meaning</th></tr></thead><tbody><tr><td>The input</td><td><code>role=&quot;combobox&quot;</code></td><td>Announced as a combined field and list</td></tr><tr><td>The input</td><td><code>aria-expanded=&quot;true/false&quot;</code></td><td>Whether the results panel is open</td></tr><tr><td>The input</td><td><code>aria-controls=&quot;…-list&quot;</code></td><td>The id of the results list</td></tr><tr><td>The input</td><td><code>aria-autocomplete=&quot;list&quot;</code></td><td>Suggestions come from a list</td></tr><tr><td>The input</td><td><code>aria-activedescendant=&quot;…&quot;</code></td><td>The currently highlighted result</td></tr><tr><td>The results list</td><td><code>role=&quot;listbox&quot;</code></td><td>A selectable list</td></tr><tr><td>Each result</td><td><code>role=&quot;option&quot;</code></td><td>A selectable item</td></tr><tr><td>The selected result</td><td><code>aria-selected=&quot;true&quot;</code></td><td>The highlighted option</td></tr></tbody></table></div>
+<h3 id="label-and-accessible-name">Label and accessible name<a class="hlink" href="#label-and-accessible-name" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>Every field has an accessible name: a visible <code>&lt;label&gt;</code> when there is room, otherwise <code>aria-label</code>. The panel has <code>aria-label</code> too, and the results list is associated with the field through <code>aria-controls</code>.</p>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">Do not remove the label</p><p>If you restyle the field and hide the label with <code>display: none</code>, replace it with an accessible alternative such as <code>aria-label</code> or a visually-hidden label class. A missing label is the most common accessibility failure in custom search fields.</p>
+</div></aside>
+<h3 id="live-regions">Live regions<a class="hlink" href="#live-regions" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>Two live regions keep screen readers informed without stealing focus:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Region</th><th><code>aria-live</code></th><th>Announces</th></tr></thead><tbody><tr><td>The status text</td><td><code>polite</code></td><td>“8 results found.”, “No results found.”</td></tr><tr><td>The end-of-results message</td><td><code>polite</code> via <code>role=&quot;status&quot;</code></td><td>No more results</td></tr></tbody></table></div>
+<p>The results list itself is <strong>not</strong> a live region: announcing every list change would be noisy, so only the count is announced.</p>
+<h3 id="working-without-javascript">Working without JavaScript<a class="hlink" href="#working-without-javascript" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>The markup contains a real <code>&lt;form&gt;</code> that submits with <code>GET</code> to the site root:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">html</span></figcaption>
+<pre><code class="language-html" dir="ltr">&lt;form class=&quot;wgcr-search-form&quot; role=&quot;search&quot; method=&quot;get&quot; action=&quot;https://example.com/&quot;&gt;
+	&lt;input type=&quot;search&quot; name=&quot;s&quot; class=&quot;wgcr-search-input&quot; autocomplete=&quot;off&quot;&gt;
+	&lt;input type=&quot;hidden&quot; name=&quot;post_type&quot; value=&quot;post&quot;&gt;
+&lt;/form&gt;</code></pre>
+</figure>
+<p>This is a simplified form example; the widget has no separate submit button. Without JavaScript, Enter in the input still submits and the visitor lands on the theme&#39;s native search results page. This means the widget never becomes a dead end for assistive technology or for a visitor with scripts disabled.</p>
+<h2 id="faq-widget">FAQ widget<a class="hlink" href="#faq-widget" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<h3 id="semantic-structure">Semantic structure<a class="hlink" href="#semantic-structure" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Element</th><th>Markup</th><th>Notes</th></tr></thead><tbody><tr><td>The question</td><td>A <code>&lt;button type=&quot;button&quot;&gt;</code> inside a heading tag</td><td>The heading level is a control (<code>H2</code>/<code>H3</code>/<code>H4</code>/<code>DIV</code>)</td></tr><tr><td>The answer</td><td><code>&lt;div role=&quot;region&quot; aria-labelledby=&quot;…&quot;&gt;</code></td><td>A navigable landmark region</td></tr><tr><td>The state</td><td><code>aria-expanded=&quot;true/false&quot;</code> on the button</td><td>Announced by screen readers</td></tr><tr><td>The connection</td><td><code>aria-controls</code> and <code>aria-labelledby</code></td><td>Unique per widget instance and item</td></tr><tr><td>The icon</td><td><code>aria-hidden=&quot;true&quot;</code> on the SVG</td><td>Decorative only</td></tr></tbody></table></div>
+<h3 id="closed-state-and-focus">Closed state and focus<a class="hlink" href="#closed-state-and-focus" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>A closed answer is not merely visually hidden — it also leaves the tab order:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr"><span class="tok-t">.wgcr-faq-a</span> {
+	overflow: hidden;
+	max-height: <span class="tok-n">0</span>;
+	visibility: hidden;
+}
+<span class="tok-t">.wgcr-faq-item</span><span class="tok-t">.open</span> <span class="tok-t">.wgcr-faq-a</span> {
+	visibility: visible;
+}</code></pre>
+</figure>
+<p>Using <code>visibility</code> (rather than only <code>max-height</code>) guarantees that links inside a closed answer cannot receive focus, so keyboard users never tab into invisible content.</p>
+<h3 id="structured-data">Structured data<a class="hlink" href="#structured-data" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>With the “FAQ schema” control on, the widget prints <code>FAQPage</code> JSON-LD. Two rules keep it valid:</p>
+<ul>
+<li>Only items with both a question and an answer are included.
+Only the first rendered FAQ instance with schema enabled reaches schema generation. Instances with schema disabled do not consume this opportunity. Within that first enabled instance, only non-empty question/answer pairs are included; if none qualify, no block is printed and later instances still cannot emit one. This is the plugin’s one-block policy, not a claim that multiple FAQ blocks always cause a search-engine error. Valid JSON-LD does not guarantee a rich result; search-engine eligibility and content policies also apply.</li>
+</ul>
+<aside class="callout callout--tip"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-tip"/></svg><div class="callout-body"><p class="callout-title">Check the rich results</p><p>After publishing, test the page URL in Google&#39;s Rich Results Test. A valid <code>FAQPage</code> should be reported with each question and answer.</p>
+</div></aside>
+<h3 id="without-javascript">Without JavaScript<a class="hlink" href="#without-javascript" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>FAQ interaction requires JavaScript; there is no <code>details</code>/<code>summary</code> fallback. Closed answers remain hidden (<code>max-height: 0</code>). Only initially open answers remain visible, with a 640px CSS cap, so long answers can be clipped. Provide essential information outside the accordion when no-script access is required.</p>
+<h2 id="reduced-motion">Reduced motion<a class="hlink" href="#reduced-motion" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>All widgets respect <code>prefers-reduced-motion</code>:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr">@media (prefers-reduced-motion: reduce) {
+	<span class="tok-t">.wgcr-faq-a</span>,
+	<span class="tok-t">.wgcr-faq-ic</span> svg,
+	<span class="tok-t">.wgcr-search-panel</span>,
+	<span class="tok-t">.wgcr-search-item</span> {
+		transition: none !important;
+		animation: none !important;
+	}
+}</code></pre>
+</figure>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Widget</th><th>With reduced motion</th></tr></thead><tbody><tr><td>FAQ</td><td>Items open and close instantly; the icon does not rotate with a transition</td></tr><tr><td>Live Search</td><td>The panel appears without a fade; infinite scroll still works</td></tr></tbody></table></div>
+<p>The behaviour stays complete — only the animation is removed. Nothing is hidden or disabled.</p>
+<h2 id="colour-contrast">Colour contrast<a class="hlink" href="#colour-contrast" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>The default palette was chosen for readable contrast:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Pair</th><th>Ratio</th><th>Level</th></tr></thead><tbody><tr><td>Result title (<code>#0f172a</code>) on white</td><td>Above 15:1</td><td>AAA</td></tr><tr><td>Excerpt (<code>#64748b</code>) on white</td><td>About 4.8:1</td><td>AA</td></tr><tr><td>Placeholder (<code>#94a3b8</code>) on white</td><td>About 2.6:1</td><td>Below AA for normal text</td></tr><tr><td>FAQ question (<code>#1F2937</code>) on the card</td><td>Above 13:1</td><td>AAA</td></tr><tr><td>FAQ answer (<code>#6B7280</code>) on the card</td><td>About 5.0:1</td><td>AA</td></tr></tbody></table></div>
+<aside class="callout callout--warning"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-warning"/></svg><div class="callout-body"><p class="callout-title">Check placeholder contrast</p><p>Placeholder text is not exempt from contrast requirements. Darken it to meet 4.5:1 for normal text, and do not rely on it as the only instruction. Keep an accessible label so the purpose remains clear after typing starts.</p>
+</div></aside>
+<p>Focus styles vary by control and state. Check focus visibility and contrast against the actual page background; the default palette alone is not a guarantee of compliance.</p>
+<h2 id="text-direction-and-layout">Text direction and layout<a class="hlink" href="#text-direction-and-layout" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>All layout rules use <strong>logical properties</strong>, so right-to-left and left-to-right both work from the same stylesheet:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Logical property</th><th>Instead of</th></tr></thead><tbody><tr><td><code>inset-inline-start</code> / <code>inset-inline-end</code></td><td><code>left</code> / <code>right</code></td></tr><tr><td><code>margin-inline</code> / <code>padding-inline</code></td><td><code>margin-left</code> / <code>padding-right</code></td></tr><tr><td><code>border-inline-start</code></td><td><code>border-left</code></td></tr><tr><td><code>text-align: start</code></td><td><code>text-align: left</code></td></tr></tbody></table></div>
+<p>The icon position, the panel alignment and the pagination order therefore flip correctly on an RTL site without a second stylesheet.</p>
+<h2 id="markup-when-customising">Markup when customising<a class="hlink" href="#markup-when-customising" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>If you build a custom Elementor template for results, keep these attributes:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Keep</th><th>Why</th></tr></thead><tbody><tr><td><code>role=&quot;option&quot;</code> on each result</td><td>So <code>aria-activedescendant</code> keeps working</td></tr><tr><td>Meaningful links inside the template</td><td><code>Tab</code> and <code>Enter</code> activate each link normally</td></tr><tr><td>Text alternatives for images</td><td>A meaningful <code>alt</code>, or <code>alt=&quot;&quot;</code> when decorative</td></tr><tr><td>The heading level of the title</td><td>So the results fit the page outline</td></tr></tbody></table></div>
+<p>The plugin wraps whatever your template prints, so the list roles stay intact; the input’s active-result navigation uses the result permalink even if the template has no link.</p>
+<h2 id="publishing-checklist">Publishing checklist<a class="hlink" href="#publishing-checklist" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<ol class="steps" data-lang="en"><li class="step"><div class="step-body"><p class="step-title">Test with the keyboard only</p><p>Tab through the field, open results with ArrowDown and Enter, close with Escape.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">Test with a screen reader</p><p>Check that the field name, the result count and the FAQ state are announced.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">Test without JavaScript</p><p>The search form must still submit. FAQ closed answers cannot open without JavaScript; only initially open answers remain visible, capped at 640px. Provide another way to read essential content.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">Check contrast</p><p>Every text pair you changed should meet at least 4.5:1.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">Check reduced motion</p><p>Enable the OS setting and confirm nothing animates.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">Validate the schema</p><p>Run the page through the Rich Results Test.</p>
+</div></li></ol>
+<p>Keyboard details for each widget are on the <a href="../keyboard/">keyboard shortcuts page</a>.</p>
+
+</div>
+
+</article>
+<nav class="prevnext" aria-label="Previous / Next"><a class="pn pn--prev" href="../rest-api/" rel="prev">
+<span class="pn-dir">Previous</span>
+<span class="pn-group">Advanced use</span>
+<span class="pn-title">REST API</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></span>
+</a>
+<a class="pn pn--next" href="../keyboard/" rel="next">
+<span class="pn-dir">Next</span>
+<span class="pn-group">Accessibility &amp; language</span>
+<span class="pn-title">Keyboard shortcuts</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span>
+</a>
+</nav>
+<section class="related"><h2 class="related-title">Related pages</h2><div class="cards cards--related"><a class="card" href="../keyboard/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="card-body"><span class="card-title">Keyboard shortcuts</span><span class="card-text">Every keyboard interaction in the WidgetCore widgets and in this documentation site — search field, results list, pagination, the FAQ accordion and the docs shortcuts.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../widgets/faq/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="card-body"><span class="card-title">FAQ widget</span><span class="card-text">The complete guide to the WidgetCore FAQ widget — question and answer items, accordion or toggle mode, icons, animation speed, question heading tag, FAQPage schema and styling.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../widgets/live-search/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="card-body"><span class="card-title">Live Search widget</span><span class="card-text">The complete guide to the WidgetCore Live Search widget — General, Layout, Query and Pagination controls, result structure, styles, JavaScript configuration and how to send custom queries.</span></span>
+<span class="card-arrow"></span>
+</a>
+</div></section>
+</div>
+</main>
+<aside class="aside-right" aria-label="On this page">
+<nav class="toc" aria-label="On this page" data-toc>
+<p class="toc-title">On this page</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#live-search-widget" data-toc-link="live-search-widget">Live Search widget</a></li><li class="toc-item toc-d3"><a href="#the-combobox-pattern" data-toc-link="the-combobox-pattern">The combobox pattern</a></li><li class="toc-item toc-d3"><a href="#label-and-accessible-name" data-toc-link="label-and-accessible-name">Label and accessible name</a></li><li class="toc-item toc-d3"><a href="#live-regions" data-toc-link="live-regions">Live regions</a></li><li class="toc-item toc-d3"><a href="#working-without-javascript" data-toc-link="working-without-javascript">Working without JavaScript</a></li><li class="toc-item toc-d2"><a href="#faq-widget" data-toc-link="faq-widget">FAQ widget</a></li><li class="toc-item toc-d3"><a href="#semantic-structure" data-toc-link="semantic-structure">Semantic structure</a></li><li class="toc-item toc-d3"><a href="#closed-state-and-focus" data-toc-link="closed-state-and-focus">Closed state and focus</a></li><li class="toc-item toc-d3"><a href="#structured-data" data-toc-link="structured-data">Structured data</a></li><li class="toc-item toc-d3"><a href="#without-javascript" data-toc-link="without-javascript">Without JavaScript</a></li><li class="toc-item toc-d2"><a href="#reduced-motion" data-toc-link="reduced-motion">Reduced motion</a></li><li class="toc-item toc-d2"><a href="#colour-contrast" data-toc-link="colour-contrast">Colour contrast</a></li><li class="toc-item toc-d2"><a href="#text-direction-and-layout" data-toc-link="text-direction-and-layout">Text direction and layout</a></li><li class="toc-item toc-d2"><a href="#markup-when-customising" data-toc-link="markup-when-customising">Markup when customising</a></li><li class="toc-item toc-d2"><a href="#publishing-checklist" data-toc-link="publishing-checklist">Publishing checklist</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>Print this page</span></button>
+</nav>
+
+</aside>
+</div>
+<footer class="footer">
+<div class="footer-in">
+<div class="footer-brand">
+<p class="footer-note">WidgetCore is a free, open source plugin released under GPL-2.0-or-later.</p>
+<p class="footer-ver">Version <b dir="ltr">0.0.7</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">GPL-2.0-or-later license</a></p>
+</div>
+
+</div>
+</footer>
+
+<script type="application/json" data-ui-strings>{"lang":"en","copy":"Copy code","copied":"Copied","results":"results","theme":"Theme"}</script>
+<script src="../assets/app.js" defer></script>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/site-ui.js" defer></script>
+</body>
+</html>

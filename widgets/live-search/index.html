@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live Search widget | WidgetCore Documentation</title>
+<meta name="description" content="The complete guide to the WidgetCore Live Search widget — General, Layout, Query and Pagination controls, result structure, styles, JavaScript configuration and how to send custom queries.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f4f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161618" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="WidgetCore docs build">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://docs.widgetcore.ir/widgets/live-search/">
+<link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/widgets/live-search/">
+<link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/widgets/live-search/">
+<link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/widgets/live-search/">
+<meta property="og:site_name" content="WidgetCore Documentation">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fa_IR">
+<meta property="og:title" content="Live Search widget">
+<meta property="og:description" content="The complete guide to the WidgetCore Live Search widget — General, Layout, Query and Pagination controls, result structure, styles, JavaScript configuration and how to send custom queries.">
+<meta property="og:url" content="https://docs.widgetcore.ir/widgets/live-search/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Live Search widget">
+<meta name="twitter:description" content="The complete guide to the WidgetCore Live Search widget — General, Layout, Query and Pagination controls, result structure, styles, JavaScript configuration and how to send custom queries.">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://docs.widgetcore.ir/"},{"@type":"ListItem","position":2,"name":"Widgets","item":"https://docs.widgetcore.ir/widgets/"},{"@type":"ListItem","position":3,"name":"Live Search widget","item":"https://docs.widgetcore.ir/widgets/live-search/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Live Search widget","description":"The complete guide to the WidgetCore Live Search widget — General, Layout, Query and Pagination controls, result structure, styles, JavaScript configuration and how to send custom queries.","inLanguage":"en_US","url":"https://docs.widgetcore.ir/widgets/live-search/","isPartOf":{"@type":"WebSite","name":"WidgetCore Documentation","url":"https://docs.widgetcore.ir/","inLanguage":"en_US"},"about":{"@type":"SoftwareApplication","name":"WidgetCore","applicationCategory":"Plugin","operatingSystem":"WordPress"},"author":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"publisher":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"license":"https://www.gnu.org/licenses/gpl-2.0.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.widgetcore.ir/widgets/live-search/"}}</script>
+<script>(function(){try{var k='wgcr-theme';var t=localStorage.getItem(k);if(!t){t='system'}var d=t==='system'?(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;var r=document.documentElement;r.classList.add(d==='dark'?'dark':'light');r.setAttribute('data-theme',d);r.setAttribute('data-theme-mode',t);r.style.colorScheme=d;}catch(e){}})();</script>
+</head>
+<body class="body-docs">
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0"><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></symbol><symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></symbol><symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol><symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></symbol><symbol id="i-command" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6a3 3 0 10-3 3h12a3 3 0 10-3-3v12a3 3 0 103-3H6a3 3 0 103 3V6z"/></symbol><symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h11v11H9zM5 15H4V4h11v1"/></symbol><symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11m0 0l-4-4m4 4l4-4M4 18v2a1 1 0 001 1h14a1 1 0 001-1v-2"/></symbol><symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-2c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-1-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.8-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0012 2z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></symbol><symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.3A3.7 3.7 0 0112 8a3.7 3.7 0 017 2.7C19 15.6 12 20 12 20z"/></symbol><symbol id="i-important" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.2-2.9 7.3-7 9-4.1-1.7-7-4.8-7-9V6l7-3zM12 8v5M12 16h.01"/></symbol><symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM12 11v6M12 7.5h.01"/></symbol><symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM7 10h.01M11 10h.01M15 10h.01M8 14h8"/></symbol><symbol id="i-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM4 9h16M9 9v11"/></symbol><symbol id="i-life" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 5.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM5 5l4 4M19 5l-4 4M5 19l4-4M19 19l-4-4"/></symbol><symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 006 .5l2-2a4 4 0 00-5.7-5.7L11 8M14 10a4 4 0 00-6-.5l-2 2A4 4 0 0011.7 17L13 16"/></symbol><symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v11H3zM9 20h6M12 16v4"/></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 019.5 4 8.5 8.5 0 1020 14.5z"/></symbol><symbol id="i-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V4h10v5M7 18H4v-6h16v6h-3M7 14h10v6H7z"/></symbol><symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 2 5 5.5 5 9l2 3v3l-3-1.5V19l-4 3-4-3v-3.5L5 17v-3l2-3c0-3.5 2-7 5-9zm0 8.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></symbol><symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4a7 7 0 100 14 7 7 0 000-14zm9 16l-4.5-4.5"/></symbol><symbol id="i-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 12h4M12 12h8M4 17h12M20 17h0M16 5v4M10 10v4M18 15v4"/></symbol><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zM12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol><symbol id="i-tip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2h5c0-.8.4-1.5 1-2A6 6 0 0012 3z"/></symbol><symbol id="i-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 16H3l9-16zM12 10v4M12 17h.01"/></symbol></svg>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="header">
+<div class="reading-progress" data-reading-progress aria-hidden="true"></div>
+<div class="header-in">
+<button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-label="Sections menu" aria-expanded="false" aria-haspopup="dialog" aria-controls="sidebar"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="29" height="29" rx="8"/><path d="M8 11h6v6H8zM18 11h6v10h-6zM8 21h6"/></svg></button>
+<a class="brand" href="../../"><span class="brand-txt"><span class="brand-name">WidgetCore</span><span class="brand-sub">WidgetCore Documentation</span></span></a>
+<div class="header-actions">
+<button class="search-trigger" type="button" data-search-open aria-label="Search the documentation"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span class="search-text">Search the documentation…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<a class="download-link" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="Download the latest version" title="Download the latest version"><span class="download-mark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span><span class="download-count" data-download-count data-count-api="https://api.github.com/repos/WidgetCore/Plugin/releases?per_page=100" aria-label="Total GitHub downloads" aria-live="polite" aria-busy="true"></span></a>
+<a class="github-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="WidgetCore plugin repository on GitHub" title="WidgetCore plugin repository on GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg></a>
+<div class="theme-control">
+<button class="icon-btn theme-btn" type="button" data-theme-menu-toggle aria-haspopup="menu" aria-controls="theme-menu" aria-expanded="false"
+			aria-label="Theme" title="Theme">
+			<span class="th-ic th-light"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg></span>
+			<span class="th-ic th-dark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg></span>
+		</button>
+<div class="theme-menu" id="theme-menu" role="menu" aria-label="Theme" data-theme-menu hidden>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="system" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-monitor"/></svg><span>System</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="light" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg><span>Light</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="dark" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg><span>Dark</span></button>
+</div>
+</div>
+<a class="lang-btn" href="../../fa/widgets/live-search/" hreflang="fa" lang="fa" title="This page in Persian" aria-label="This page in Persian" data-lang-switch><span class="flag-emoji" aria-hidden="true">🇮🇷</span></a>
+</div>
+</div>
+</header>
+
+<div class="search-modal" data-search-modal data-search-index="../../search-index-en.json" data-search-page="widgets/live-search/" data-search-lang="en" hidden>
+<div class="search-backdrop" data-search-close></div>
+<div class="search-box" role="dialog" aria-modal="true" aria-label="Search the documentation" dir="ltr">
+<form class="search-head" role="search" data-search-form>
+<span class="search-head-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span>
+<input class="search-input" type="search" data-search-input placeholder="Search the documentation…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Search the documentation" aria-controls="search-results" aria-autocomplete="list">
+<button class="icon-btn" type="button" data-search-close aria-label="Close search"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button>
+</form>
+<div class="search-results" id="search-results" data-search-results role="listbox" aria-label="Search the documentation" tabindex="-1"></div>
+<p class="search-empty" data-search-empty hidden>No results for this query. <span>Try a shorter phrase, or switch the site language.</span></p>
+<p class="search-loading" data-search-loading hidden>Searching…</p>
+<p class="search-foot"><span class="search-count" data-search-count></span><span class="search-keys">Use ↑ and ↓ to move, Enter to open and Esc to close.</span></p>
+</div>
+</div>
+
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="Sections menu" data-sidebar>
+<div class="sidebar-in">
+<div class="sidebar-quick-head"><div class="sidebar-quick-title" id="sidebar-quick-title" role="heading" aria-level="2">Quick Access</div><button class="icon-btn sidebar-close" type="button" data-sidebar-close aria-label="Close quick-access menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button></div>
+<button class="sidebar-search" type="button" data-search-open aria-label="Search all documentation…"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span>Search all documentation…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<nav class="nav" aria-label="Sections menu">
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-intro" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg></span>
+<span class="nav-title">Getting to know</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-intro" data-nav-list>
+<li><a class="nav-link" href="../../introduction/">What is WidgetCore?</a></li>
+<li><a class="nav-link" href="../../quick-start/">Quick start</a></li>
+<li><a class="nav-link" href="../../concepts/">Core concepts</a></li>
+<li><a class="nav-link" href="../../requirements/">Requirements and compatibility</a></li>
+
+</ul>
+<p class="nav-desc">What the plugin is and what it adds to your site.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-install" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span>
+<span class="nav-title">Download &amp; install</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-install" data-nav-list>
+<li><a class="nav-link" href="../../download/">Download</a></li>
+<li><a class="nav-link" href="../../installation/">Installation and activation</a></li>
+<li><a class="nav-link" href="../../updates/">Updates</a></li>
+
+</ul>
+<p class="nav-desc">Download, install, update and remove.</p>
+</div>
+<div class="nav-group is-open" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="true" aria-controls="nav-widgets" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="nav-title">Widgets</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-widgets" data-nav-list>
+<li><a class="nav-link" href="../">Widgets</a></li>
+<li><a class="nav-link" href="../faq/">FAQ widget</a></li>
+<li><a class="nav-link is-current" href="./" aria-current="page">Live Search widget</a></li>
+
+</ul>
+<p class="nav-desc">The complete guide to every widget and control.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-advanced" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+<span class="nav-title">Advanced use</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-advanced" data-nav-list>
+<li><a class="nav-link" href="../../shortcode/">The wgcr_search shortcode</a></li>
+<li><a class="nav-link" href="../../rest-api/">REST API</a></li>
+
+</ul>
+<p class="nav-desc">Shortcode, REST and hooks for custom integrations.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-a11y" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="nav-title">Accessibility &amp; language</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-a11y" data-nav-list>
+<li><a class="nav-link" href="../../accessibility/">Accessibility</a></li>
+<li><a class="nav-link" href="../../keyboard/">Keyboard shortcuts</a></li>
+<li><a class="nav-link" href="../../translation/">Language and translation</a></li>
+
+</ul>
+<p class="nav-desc">Keyboard, screen readers and translation.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-support" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-life"/></svg></span>
+<span class="nav-title">Support</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-support" data-nav-list>
+<li><a class="nav-link" href="../../faq/">Frequently asked questions</a></li>
+<li><a class="nav-link" href="../../troubleshooting/">Troubleshooting</a></li>
+
+</ul>
+<p class="nav-desc">Troubleshooting and frequently asked questions.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-project" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-heart"/></svg></span>
+<span class="nav-title">Project</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-project" data-nav-list>
+<li><a class="nav-link" href="../../changelog/">Changelog</a></li>
+<li><a class="nav-link" href="../../contributing/">Contributing</a></li>
+
+</ul>
+<p class="nav-desc">Changelog, open source and contributing.</p>
+</div>
+
+</nav>
+<div class="sidebar-foot">
+<a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="Download the latest version" title="Download the latest version"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">Download the latest version</span></a>
+<a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="WidgetCore repository on GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>WidgetCore repository on GitHub</span></a>
+<p class="side-ver">Version <b dir="ltr">0.0.7</b></p>
+</div>
+</div>
+</aside>
+<div class="scrim" data-scrim hidden></div>
+
+<main class="main" id="main" tabindex="-1">
+<div class="content">
+<nav class="breadcrumb" aria-label="breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../">Widgets</a></li><li aria-current="page"><span>Live Search widget</span></li></ol><button class="breadcrumb-toc-toggle" type="button" data-toc-toggle aria-label="On this page" title="On this page" aria-expanded="false" aria-controls="breadcrumb-toc-menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-list"/></svg></button><div class="breadcrumb-toc-menu" id="breadcrumb-toc-menu" data-mobile-toc hidden><nav class="toc" aria-label="On this page" data-mobile-toc-list>
+<p class="toc-title">On this page</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#general-section" data-toc-link="general-section">General section</a></li><li class="toc-item toc-d2"><a href="#display-modes" data-toc-link="display-modes">Display modes</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#comparing-the-two-modes" data-toc-link="comparing-the-two-modes">Comparing the two modes</a></li><li class="toc-item toc-d3"><a href="#list-mode" data-toc-link="list-mode">List mode</a></li><li class="toc-item toc-d3"><a href="#page-mode" data-toc-link="page-mode">Page mode</a></li><li class="toc-item toc-d3"><a href="#behaviour-differences-that-are-easy-to-miss" data-toc-link="behaviour-differences-that-are-easy-to-miss">Behaviour differences that are easy to miss</a></li><li class="toc-item toc-d3"><a href="#accessibility-in-both-modes" data-toc-link="accessibility-in-both-modes">Accessibility in both modes</a></li><li class="toc-item toc-d3"><a href="#style-differences" data-toc-link="style-differences">Style differences</a></li><li class="toc-item toc-d3"><a href="#which-mode-to-choose" data-toc-link="which-mode-to-choose">Which mode to choose</a></li></ul></li><li class="toc-item toc-d2"><a href="#elementor-templates" data-toc-link="elementor-templates">Elementor templates</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#preparing-the-template" data-toc-link="preparing-the-template">Preparing the template</a></li><li class="toc-item toc-d3"><a href="#what-happens-during-a-search" data-toc-link="what-happens-during-a-search">What happens during a search</a></li><li class="toc-item toc-d3"><a href="#how-the-template-css-is-loaded" data-toc-link="how-the-template-css-is-loaded">How the template CSS is loaded</a></li><li class="toc-item toc-d3"><a href="#entry-animations-and-handlers" data-toc-link="entry-animations-and-handlers">Entry animations and handlers</a></li><li class="toc-item toc-d3"><a href="#templated-results-and-interaction" data-toc-link="templated-results-and-interaction">Templated results and interaction</a></li><li class="toc-item toc-d3"><a href="#recommended-template-pattern" data-toc-link="recommended-template-pattern">Recommended template pattern</a></li><li class="toc-item toc-d3"><a href="#template-troubleshooting" data-toc-link="template-troubleshooting">Template troubleshooting</a></li></ul></li><li class="toc-item toc-d2"><a href="#query-and-filters" data-toc-link="query-and-filters">Query and filters</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#base-query-arguments" data-toc-link="base-query-arguments">Base query arguments</a></li><li class="toc-item toc-d3"><a href="#filters-without-code" data-toc-link="filters-without-code">Filters without code</a></li><li class="toc-item toc-d3"><a href="#server-side-filters" data-toc-link="server-side-filters">Server-side filters</a></li><li class="toc-item toc-d3"><a href="#performance-notes" data-toc-link="performance-notes">Performance notes</a></li></ul></li><li class="toc-item toc-d2"><a href="#pagination" data-toc-link="pagination">Pagination</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#the-four-pagination-types" data-toc-link="the-four-pagination-types">The four pagination types</a></li><li class="toc-item toc-d3"><a href="#the-page-bar-markup" data-toc-link="the-page-bar-markup">The page bar markup</a></li><li class="toc-item toc-d3"><a href="#related-controls" data-toc-link="related-controls">Related controls</a></li><li class="toc-item toc-d3"><a href="#how-the-page-count-is-computed" data-toc-link="how-the-page-count-is-computed">How the page count is computed</a></li><li class="toc-item toc-d3"><a href="#infinite-scroll-2" data-toc-link="infinite-scroll-2">Infinite scroll</a></li><li class="toc-item toc-d3"><a href="#keyboard-behaviour" data-toc-link="keyboard-behaviour">Keyboard behaviour</a></li><li class="toc-item toc-d3"><a href="#performance-notes-2" data-toc-link="performance-notes-2">Performance notes</a></li><li class="toc-item toc-d3"><a href="#choosing-a-type" data-toc-link="choosing-a-type">Choosing a type</a></li></ul></li><li class="toc-item toc-d2"><a href="#styling" data-toc-link="styling">Styling</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#css-variables" data-toc-link="css-variables">CSS variables</a></li><li class="toc-item toc-d3"><a href="#elementor-style-controls" data-toc-link="elementor-style-controls">Elementor style controls</a></li><li class="toc-item toc-d3"><a href="#columns-masonry-and-equal-height-2" data-toc-link="columns-masonry-and-equal-height-2">Columns, masonry and equal height</a></li><li class="toc-item toc-d3"><a href="#ready-to-use-snippets" data-toc-link="ready-to-use-snippets">Ready-to-use snippets</a></li><li class="toc-item toc-d3"><a href="#important-notes" data-toc-link="important-notes">Important notes</a></li></ul></li><li class="toc-item toc-d2"><a href="#result-structure" data-toc-link="result-structure">Result structure</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#javascript-configuration" data-toc-link="javascript-configuration">JavaScript configuration</a></li></ul></li><li class="toc-item toc-d2"><a href="#client-side-behaviour" data-toc-link="client-side-behaviour">Client-side behaviour</a></li><li class="toc-item toc-d2"><a href="#working-without-javascript" data-toc-link="working-without-javascript">Working without JavaScript</a></li><li class="toc-item toc-d2"><a href="#data-attributes-on-the-widget-root" data-toc-link="data-attributes-on-the-widget-root">Data attributes on the widget root</a></li><li class="toc-item toc-d2"><a href="#complete-control-reference" data-toc-link="complete-control-reference">Complete control reference</a></li><li class="toc-item toc-d2"><a href="#troubleshooting" data-toc-link="troubleshooting">Troubleshooting</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>Print this page</span></button>
+</nav>
+</div></nav>
+<article class="article">
+<header class="article-head">
+<h1 class="article-title">Live Search widget</h1>
+<p class="article-desc">The complete guide to the WidgetCore Live Search widget — General, Layout, Query and Pagination controls, result structure, styles, JavaScript configuration and how to send custom queries.</p>
+<p class="article-meta">Last updated <time datetime="2026-09-29">2026-09-29</time></p>
+</header>
+<div class="prose" data-prose>
+<p>The <strong>Live Search</strong> widget sends the visitor&#39;s query to WordPress&#39; REST API and renders the results without a page reload. Everything the widget does is built on top of a real search form, so if JavaScript is unavailable the form still submits and the theme&#39;s native search results page opens.</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Item</th><th>Value</th></tr></thead><tbody><tr><td>Widget name</td><td><code>wgcr-search</code></td></tr><tr><td>Panel title</td><td>Live Search</td></tr><tr><td>Category</td><td>WidgetCore Widgets (<code>wgcr</code>)</td></tr><tr><td>Style / script</td><td><code>wgcr-search</code></td></tr><tr><td>Root class</td><td><code>.wgcr-search</code></td></tr><tr><td>REST route</td><td><code>/wp-json/wgcr/v1/search</code></td></tr></tbody></table></div>
+<h2 id="general-section">General section<a class="hlink" href="#general-section" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Control</th><th>Type</th><th>Default</th><th>Notes</th></tr></thead><tbody><tr><td>Results display mode</td><td>Select</td><td>List mode</td><td>List mode (dropdown panel) or Page mode (always-visible region)</td></tr><tr><td>Placeholder text</td><td>Text</td><td>Empty</td><td>Filled automatically: “Search in posts…”, or a post-type aware text such as “Search in courses…”</td></tr><tr><td>Show thumbnail</td><td>Switcher</td><td>Yes</td><td>Featured image next to each result</td></tr><tr><td>Show excerpt</td><td>Switcher</td><td>Yes</td><td>18 words with an ellipsis</td></tr><tr><td>“Show all” text</td><td>Text</td><td>“Show all results”</td><td>Label of the link to the site search page</td></tr></tbody></table></div>
+<p><strong>Results display mode</strong> is the most important choice; it changes the whole experience and the list of available controls. See the <a href="#display-modes">display modes page</a>.</p>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">The “Show all” link</p><p>A link with this label appears in the results header and sends the visitor to <code>/search/{query}/</code> with the current query. When the text is empty the link is not printed, and on a site with permalinks disabled it becomes <code>/?s={query}</code>.</p>
+</div></aside>
+<h2 id="display-modes">Display modes<a class="hlink" href="#display-modes" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>The live search widget has two display modes, and this single control decides where results are shown, which extra controls are available and how visitors navigate them.</p>
+<h3 id="comparing-the-two-modes">Comparing the two modes<a class="hlink" href="#comparing-the-two-modes" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Feature</th><th>List mode (<code>modal</code>)</th><th>Page mode (<code>page</code>)</th></tr></thead><tbody><tr><td>Where results appear</td><td>A dropdown panel below the field</td><td>An always-visible region inside the same widget</td></tr><tr><td>Initial panel state</td><td>Closed with <code>hidden</code></td><td>Open (<code>aria-expanded=&quot;true&quot;</code> on the field)</td></tr><tr><td>Closes on an outside click</td><td>Yes</td><td>No (the panel is part of the page)</td></tr><tr><td><code>Escape</code> behaviour</td><td>Closes the panel; if already closed, clears the query</td><td>Clears the search query</td></tr><tr><td>Columns</td><td>Always a single column</td><td>1 to 6 columns (responsive)</td></tr><tr><td>Masonry and equal height</td><td>Not available</td><td>Available</td></tr><tr><td>Results container styling</td><td>Panel background and radius only</td><td>Width, minimum/maximum height, spacing, background, alignment</td></tr><tr><td>Infinite scroll</td><td>Inside the panel (panel scroll)</td><td>Relative to the browser window</td></tr><tr><td>“Show all” link</td><td>Shown after the results</td><td>Only when the query is valid</td></tr><tr><td>Good fit for</td><td>Header, sidebar, quick search</td><td>A dedicated search page, an archive, a course section</td></tr></tbody></table></div>
+<h3 id="list-mode">List mode<a class="hlink" href="#list-mode" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>The default mode. The panel opens after the visitor types two or more characters and closes on an outside click, with <code>Escape</code>, or when the widget loses focus.</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">[ Search field ▾ ]
+└──────────────────────────────┐
+│  8 results            All text │
+│  ┌────┐ Result title           │
+│  │ img│ Excerpt…                │
+│  └────┘ 2026-09-01             │
+│  ┌────┐ Result title           │
+└──────────────────────────────┘</code></pre>
+</figure>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Feature</th><th>Behaviour</th></tr></thead><tbody><tr><td>Opening</td><td>After 2 characters are typed (250 ms debounce)</td></tr><tr><td>Closing</td><td>Outside click, <code>Escape</code>, or selecting a result</td></tr><tr><td>Max height</td><td><code>70vh</code> (adjustable in the “Results box” section)</td></tr><tr><td>Columns</td><td>Always 1</td></tr><tr><td>Masonry</td><td>Not available</td></tr><tr><td>Pagination</td><td>Numbers, previous/next, load on click, load on scroll</td></tr></tbody></table></div>
+<ol class="steps" data-lang="en"><li class="step"><div class="step-body"><p class="step-title">The visitor clicks the field</p><p>If a valid query is already in the field and results are still loaded, the panel opens.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">The visitor types</p><p>After 250 milliseconds the request is sent and the panel opens.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">A result is picked with the keyboard or the mouse</p><p>The up and down arrows move between results and <code>Enter</code> opens the selected one.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">The panel closes with an outside click or <code>Escape</code></p><p>A second <code>Escape</code> clears the text in the field.</p>
+</div></li></ol>
+<aside class="callout callout--tip"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-tip"/></svg><div class="callout-body"><p class="callout-title">List mode in the header</p><p>Because the panel closes on an outside click, this mode suits the site header well: a compact field that does not take up space on the page.</p>
+</div></aside>
+<h3 id="page-mode">Page mode<a class="hlink" href="#page-mode" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>The results region is always visible inside the widget, so it behaves like a real search page: the visitor types a query and results appear below in the same view.</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Feature</th><th>Behaviour</th></tr></thead><tbody><tr><td>Results visibility</td><td>Always visible (no outside click to close)</td></tr><tr><td>Layout controls</td><td>Template choice, items per page, columns, masonry, equal height</td></tr><tr><td>Columns</td><td>1 to 6, responsive (defaults 3 / 2 / 1)</td></tr><tr><td>Masonry</td><td>Available</td></tr><tr><td>Equal height</td><td>Available</td></tr><tr><td>Template</td><td>Default or a custom Elementor template</td></tr><tr><td>Pagination</td><td>Inside the same region, below the results</td></tr></tbody></table></div>
+<aside class="callout callout--tip"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-tip"/></svg><div class="callout-body"><p class="callout-title">Reserve the height</p><p>Before the first search the results region is empty. If that jump spoils the layout, set a <strong>minimum height</strong> in “Results box → Results container” (for example <code>320px</code>).</p>
+</div></aside>
+<h4 id="columns-masonry-and-equal-height">Columns, masonry and equal height<a class="hlink" href="#columns-masonry-and-equal-height" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Setting</th><th>Effect</th></tr></thead><tbody><tr><td>Columns</td><td>The <code>wgcr-search--cols-{n}</code> class on the root; with 3 or more, a CSS grid</td></tr><tr><td>Masonry</td><td>The <code>wgcr-search--masonry</code> class; items are positioned by their natural height</td></tr><tr><td>Equal height</td><td>The <code>wgcr-search--equal</code> class; all cards stretch to the tallest one</td></tr></tbody></table></div>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">Masonry and equal height together</p><p>The two are mutually exclusive in practice: masonry relies on different item heights, while equal height makes them the same. Turn on only one.</p>
+</div></aside>
+<h4 id="choosing-a-template-in-page-mode">Choosing a template in Page mode<a class="hlink" href="#choosing-a-template-in-page-mode" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<p>When “Template choice” is set to <em>Custom</em>, the widget sends the template id to the REST route and each result is rendered with your Elementor template:</p>
+<ol class="steps" data-lang="en"><li class="step"><div class="step-body"><p class="step-title">Build the template in the library</p><p>“Templates → Saved Templates”; the template must be published.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">Select it in the widget</p><p>“Template choice” → Custom, then pick the template.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">Check the output</p><p>The root gets the <code>wgcr-search--tpl</code> class and the template&#39;s own CSS loads once.</p>
+</div></li></ol>
+<p>Details on the <a href="#elementor-templates">Elementor templates page</a>.</p>
+<h3 id="behaviour-differences-that-are-easy-to-miss">Behaviour differences that are easy to miss<a class="hlink" href="#behaviour-differences-that-are-easy-to-miss" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<h4 id="selecting-with-the-mouse">Selecting with the mouse<a class="hlink" href="#selecting-with-the-mouse" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<ul>
+<li><strong>List mode</strong>: moving the mouse over a result marks it as “selected” so <code>Enter</code> opens it.</li>
+<li><strong>Both modes with an Elementor template</strong>: when results are rendered by a custom template (<code>wgcr-search-item--tpl</code>), hovering no longer marks a result as selected and the selected styling is not applied — the template has its own links and styles, and overlapping them would break clicks. If a templated result has no link of its own, clicking the card opens that result.</li>
+</ul>
+<h4 id="focus-after-pagination">Focus after pagination<a class="hlink" href="#focus-after-pagination" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<p>When you change page with the keyboard, focus returns to the button you pressed (previous, next, or the current page number) after the new results are rendered. Keyboard users therefore never lose their place in the pagination bar.</p>
+<h4 id="infinite-scroll">Infinite scroll<a class="hlink" href="#infinite-scroll" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<p>In Page mode a sentinel element (<code>.wgcr-search-sentinel</code>) measures the end of the results with <code>IntersectionObserver</code> against the <strong>browser window</strong>, so loading more does not require scrolling inside a panel. In List mode the panel&#39;s own scroll is what counts.</p>
+<h3 id="accessibility-in-both-modes">Accessibility in both modes<a class="hlink" href="#accessibility-in-both-modes" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Feature</th><th>List mode</th><th>Page mode</th></tr></thead><tbody><tr><td><code>role=&quot;combobox&quot;</code> on the field</td><td>Yes</td><td>Yes</td></tr><tr><td><code>aria-expanded</code> and <code>aria-controls</code></td><td>Yes</td><td>Yes</td></tr><tr><td><code>role=&quot;listbox&quot;</code> on the results panel</td><td>Yes</td><td>Yes</td></tr><tr><td><code>aria-live=&quot;polite&quot;</code> for status messages</td><td>Yes</td><td>Yes</td></tr><tr><td>Result navigation with <code>ArrowDown</code> / <code>ArrowUp</code></td><td>Yes</td><td>Yes</td></tr><tr><td>Opening a result with <code>Enter</code></td><td>Yes</td><td>Yes</td></tr><tr><td>Closing with <code>Escape</code></td><td>Yes</td><td>— (there is nothing to close)</td></tr></tbody></table></div>
+<p>Full details on the <a href="../../accessibility/">accessibility page</a> and the <a href="../../keyboard/">keyboard shortcuts page</a>.</p>
+<h3 id="style-differences">Style differences<a class="hlink" href="#style-differences" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Area</th><th>List mode</th><th>Page mode</th></tr></thead><tbody><tr><td>Root class</td><td><code>wgcr-search--modal</code></td><td><code>wgcr-search--page</code></td></tr><tr><td>Results background</td><td>The dropdown panel background</td><td>The widget container background</td></tr><tr><td>Max height</td><td><code>70vh</code></td><td>Unlimited (follows the container)</td></tr><tr><td>Grid columns</td><td>1</td><td>1 to 6</td></tr></tbody></table></div>
+<p>Because both modes share the same root class (<code>.wgcr-search</code>), you can write one CSS rule for the shared parts and add mode-specific rules with the modifier classes.</p>
+<h3 id="which-mode-to-choose">Which mode to choose<a class="hlink" href="#which-mode-to-choose" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Your need</th><th>Mode</th></tr></thead><tbody><tr><td>A compact search field in the header or sidebar</td><td>List mode</td></tr><tr><td>A search page with a grid and pagination</td><td>Page mode</td></tr><tr><td>Showing results with a custom card design</td><td>Page mode + custom template</td></tr><tr><td>Infinite scroll while browsing</td><td>Page mode + “Load on scroll”</td></tr><tr><td>A search form inside an Elementor page that looks like a panel</td><td>List mode</td></tr></tbody></table></div>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Scenario</th><th>Settings</th></tr></thead><tbody><tr><td>Quick search in the header</td><td>List mode, 5 results, no thumbnail, pagination “None”</td></tr><tr><td>The main search page</td><td>Page mode, 12 results, 3 columns, numbered pagination</td></tr><tr><td>A course grid</td><td>Page mode, source <code>course</code>, columns 3/2/1, masonry on, load on scroll</td></tr><tr><td>Results with a bespoke design</td><td>Page mode, custom template, 2 columns, previous/next pagination</td></tr></tbody></table></div>
+<div class="cards"><a class="card" href="#pagination"><span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span><span class="card-body"><span class="card-title">Pagination</span><span class="card-text">All four pagination types and the settings that belong to each display mode.</span></span><span class="card-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span></a><a class="card" href="#elementor-templates"><span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layout"/></svg></span><span class="card-body"><span class="card-title">Elementor templates</span><span class="card-text">How to hand the look of the results entirely to your own template.</span></span><span class="card-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span></a><a class="card" href="#styling"><span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sliders"/></svg></span><span class="card-body"><span class="card-title">Styling</span><span class="card-text">Style controls, CSS classes and the column custom properties.</span></span><span class="card-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span></a></div>
+<h2 id="elementor-templates">Elementor templates<a class="hlink" href="#elementor-templates" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>Besides the built-in card, the live search can render each result with an <strong>Elementor template</strong> you designed yourself. This gives you full control over the result markup while the plugin keeps handling the query, pagination and accessibility.</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Template choice</th><th>Value</th><th>Markup</th></tr></thead><tbody><tr><td>Default template</td><td><code>default</code></td><td>The plugin&#39;s card: thumbnail, title, excerpt, date</td></tr><tr><td>Custom</td><td><code>custom</code></td><td>Your Elementor template, rendered per result</td></tr></tbody></table></div>
+<h3 id="preparing-the-template">Preparing the template<a class="hlink" href="#preparing-the-template" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<ol class="steps" data-lang="en"><li class="step"><div class="step-body"><p class="step-title">Create a template in the library</p><p>“Templates → Saved Templates → Add New”, type “Section”.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">Design one result card</p><p>Use Dynamic Tags for the post fields; the template is rendered in the context of each result.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">Publish the template</p><p>An unpublished template cannot be selected.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">Select it in the widget</p><p>“Template choice” → Custom, then pick the template from the list.</p>
+</div></li></ol>
+<aside class="callout callout--important"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-important"/></svg><div class="callout-body"><p class="callout-title">One result per template</p><p>The template is rendered <strong>once per result</strong>, with the result post as the current post in the query context. Design it as a single card, not as a grid of posts.</p>
+</div></aside>
+<h3 id="what-happens-during-a-search">What happens during a search<a class="hlink" href="#what-happens-during-a-search" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>When a template is selected, the request carries the template id:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">GET /wp-json/wgcr/v1/search?q=course&amp;limit=12&amp;type=post&amp;template=42</code></pre>
+</figure>
+<p>The server renders the template for every matching post:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-v">$plugin</span>   = \Elementor\Plugin::instance();
+<span class="tok-v">$document</span> = <span class="tok-v">$plugin</span>-&gt;documents-&gt;get( <span class="tok-v">$template_id</span> );
+<span class="tok-v">$html</span>     = <span class="tok-v">$plugin</span>-&gt;frontend-&gt;get_builder_content_for_display( <span class="tok-v">$template_id</span> );</code></pre>
+</figure>
+<p>The response then includes an <code>html</code> field per result alongside <code>id</code>, <code>title</code>, <code>link</code>, <code>thumb</code>, <code>excerpt</code> and <code>date</code>. The client inserts that HTML directly, which is why no escaping happens twice.</p>
+<h4 id="checking-for-visible-content">Checking for visible content<a class="hlink" href="#checking-for-visible-content" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<p>Before the rendered template is used, the plugin strips tags and checks whether anything visible is left:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-v">$visible</span> = trim( wp_strip_all_tags( <span class="tok-v">$html</span> ) );</code></pre>
+</figure>
+<p>If the result is empty — because the template has no content, or its conditions do not match — the plugin falls back to the default card. This prevents the results area from turning into a blank block.</p>
+<h3 id="how-the-template-css-is-loaded">How the template CSS is loaded<a class="hlink" href="#how-the-template-css-is-loaded" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>Elementor prints each template&#39;s CSS with <code>enqueue_css</code>. Since search results are injected after the page has loaded, the plugin takes two steps:</p>
+<ol>
+<li><strong>Inline critical CSS</strong>: <code>post_css</code> for the template is printed inline once per page, so the injected markup is styled immediately.</li>
+<li><strong>Register the template style handle</strong>: <code>elementor-post-{id}.css</code> is added to the widget&#39;s style dependencies so it loads on pages that contain the widget.</li>
+</ol>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Situation</th><th>Result</th></tr></thead><tbody><tr><td>First search on the page</td><td>The template CSS is already present (inline)</td></tr><tr><td>Subsequent searches</td><td>No extra request</td></tr><tr><td>A template with external fonts or icons</td><td>They are loaded by Elementor as usual</td></tr></tbody></table></div>
+<aside class="callout callout--warning"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-warning"/></svg><div class="callout-body"><p class="callout-title">Do not add another copy of the template CSS</p><p>Duplicating the template styles leads to conflicting rules and hard-to-trace layout bugs. Let Elementor handle it.</p>
+</div></aside>
+<h3 id="entry-animations-and-handlers">Entry animations and handlers<a class="hlink" href="#entry-animations-and-handlers" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>Elementor elements often carry animations or interactions (hover effects, counters, carousels). Because the markup is injected after page load, those handlers are not bound automatically. The plugin therefore runs:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">js</span></figcaption>
+<pre><code class="language-js" dir="ltr"><span class="tok-k">if</span> ( <span class="tok-k">window</span>.elementorFrontend ) {
+	<span class="tok-k">window</span>.elementorFrontend.elementsHandler.runReadyTrigger( container );
+}</code></pre>
+</figure>
+<p>on the injected results container, so animations and interactions defined in the template work as if the content had been printed server-side.</p>
+<h3 id="templated-results-and-interaction">Templated results and interaction<a class="hlink" href="#templated-results-and-interaction" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Feature</th><th>Default card</th><th>Custom template</th></tr></thead><tbody><tr><td>Root class</td><td>—</td><td><code>wgcr-search--tpl</code></td></tr><tr><td><code>role=&quot;option&quot;</code> on each result</td><td>Yes</td><td>Yes</td></tr><tr><td>Keyboard navigation (<code>ArrowDown</code>/<code>ArrowUp</code>)</td><td>Yes</td><td>Yes</td></tr><tr><td>Opening with <code>Enter</code></td><td>Yes</td><td>Yes (the result permalink from <code>data-href</code>)</td></tr><tr><td>Thumbnail control</td><td>Applies</td><td>Does not apply (your template decides)</td></tr><tr><td>Excerpt control</td><td>Applies</td><td>Does not apply</td></tr></tbody></table></div>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">Keeping results keyboard-friendly</p><p>With focus on the search input, <code>Enter</code> opens the active result’s <code>data-href</code> permalink (falling back to <code>a.wgcr-search-link</code>), not the first template link. <code>Tab</code> into a template link and <code>Enter</code> activates that link normally. A template without its own link still supports result navigation.</p>
+</div></aside>
+<h3 id="recommended-template-pattern">Recommended template pattern<a class="hlink" href="#recommended-template-pattern" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">┌──────────────────────────────────────────┐
+│ ┌──────┐  Title (H4 or H3)               │
+│ │ thumb│  Excerpt (2 lines, clamp)       │
+│ └──────┘  Category • Date                │
+└──────────────────────────────────────────┘</code></pre>
+</figure>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Element</th><th>Suggested setting</th></tr></thead><tbody><tr><td>Title</td><td>Heading, linked to the post URL, size H4</td></tr><tr><td>Thumbnail</td><td>Featured image, square, <code>object-fit: cover</code></td></tr><tr><td>Excerpt</td><td>Text, 18 words with an ellipsis</td></tr><tr><td>Meta</td><td>Post info (category, date) in small text</td></tr><tr><td>Card</td><td>Background, radius and a soft shadow</td></tr><tr><td>Height</td><td>“Equal height” in the widget for a tidy grid</td></tr></tbody></table></div>
+<h3 id="template-troubleshooting">Template troubleshooting<a class="hlink" href="#template-troubleshooting" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Symptom</th><th>Cause</th><th>Fix</th></tr></thead><tbody><tr><td>Results appear as the default card</td><td>The template rendered no visible content</td><td>Check the template content and its display conditions</td></tr><tr><td>The template is not in the list</td><td>It is not published, or it is the wrong type</td><td>Publish it as a “Section” template</td></tr><tr><td>The template appears unstyled</td><td>Its CSS did not load</td><td>Clear caches; check that <code>elementor-post-{id}.css</code> is requested</td></tr><tr><td>Animations do not run</td><td><code>elementorFrontend</code> is not available</td><td>Check that Elementor&#39;s scripts load on the page</td></tr><tr><td>Layout breaks in a grid</td><td>The template has its own width</td><td>Remove fixed widths inside the template and let the widget grid handle sizing</td></tr></tbody></table></div>
+<h2 id="query-and-filters">Query and filters<a class="hlink" href="#query-and-filters" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>Every search in the plugin ends in one <code>WP_Query</code>. This page shows what goes into that query, what you can control without writing code, and the two filters that let you change the query on the server.</p>
+<h3 id="base-query-arguments">Base query arguments<a class="hlink" href="#base-query-arguments" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Argument</th><th>Value</th><th>Notes</th></tr></thead><tbody><tr><td><code>s</code></td><td>The typed query</td><td>WordPress&#39; own search matching</td></tr><tr><td><code>post_type</code></td><td>The sanitised <code>source</code></td><td>Invalid values become <code>post</code></td></tr><tr><td><code>post_status</code></td><td><code>publish</code></td><td>Drafts and private posts never appear</td></tr><tr><td><code>has_password</code></td><td><code>false</code></td><td>Password-protected posts are excluded</td></tr><tr><td><code>posts_per_page</code></td><td>The requested <code>limit</code>, clamped to 1–50</td><td>—</td></tr><tr><td><code>paged</code></td><td>The requested <code>page</code></td><td>Only when greater than 0</td></tr><tr><td><code>orderby</code> / <code>order</code></td><td>Per the controls</td><td>With <code>relevance</code>, no <code>orderby</code> is added</td></tr><tr><td><code>ignore_sticky_posts</code></td><td>Per the <code>ignore_sticky</code> value</td><td>—</td></tr><tr><td><code>tax_query</code></td><td>Built from <code>terms</code> and <code>terms_op</code></td><td>Only when terms are given</td></tr><tr><td><code>date_query</code></td><td>Built from <code>date</code></td><td>Only when not <code>all</code></td></tr></tbody></table></div>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">The relevance ordering</p><p>When <code>orderby</code> is <code>relevance</code> the plugin deliberately adds nothing, so WordPress&#39; built-in search ranking decides the order. Choosing <code>date</code>, <code>title</code>, <code>author</code>, <code>rand</code> or <code>menu_order</code> overrides that ranking with an explicit <code>orderby</code>.</p>
+</div></aside>
+<h3 id="filters-without-code">Filters without code<a class="hlink" href="#filters-without-code" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<h4 id="the-taxquery-structure">The <code>tax_query</code> structure<a class="hlink" href="#the-taxquery-structure" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<p>With <code>terms_op=&quot;include&quot;</code> several terms are combined with an <code>OR</code> relation:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-s">'tax_query'</span> =&gt; <span class="tok-k">array</span>(
+	<span class="tok-s">'relation'</span> =&gt; <span class="tok-s">'OR'</span>,
+	<span class="tok-k">array</span>(
+		<span class="tok-s">'taxonomy'</span> =&gt; <span class="tok-s">'category'</span>,
+		<span class="tok-s">'field'</span>    =&gt; <span class="tok-s">'term_id'</span>,
+		<span class="tok-s">'terms'</span>    =&gt; <span class="tok-k">array</span>( <span class="tok-n">12</span>, <span class="tok-n">18</span> ),
+		<span class="tok-s">'operator'</span> =&gt; <span class="tok-s">'IN'</span>,
+	),
+),</code></pre>
+</figure>
+<p>With <code>terms_op=&quot;exclude&quot;</code> a single entry excludes the terms:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-s">'tax_query'</span> =&gt; <span class="tok-k">array</span>(
+	<span class="tok-k">array</span>(
+		<span class="tok-s">'taxonomy'</span> =&gt; <span class="tok-s">'category'</span>,
+		<span class="tok-s">'field'</span>    =&gt; <span class="tok-s">'term_id'</span>,
+		<span class="tok-s">'terms'</span>    =&gt; <span class="tok-k">array</span>( <span class="tok-n">12</span>, <span class="tok-n">18</span> ),
+		<span class="tok-s">'operator'</span> =&gt; <span class="tok-s">'NOT IN'</span>,
+	),
+),</code></pre>
+</figure>
+<h4 id="the-terms-format">The <code>terms</code> format<a class="hlink" href="#the-terms-format" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">terms=&quot;12,18&quot;                    → category:12, category:18
+terms=&quot;category:12,post_tag:7&quot;   → mixed taxonomies
+terms=&quot;product_cat:33&quot;           → a WooCommerce category</code></pre>
+</figure>
+<p>Each item is split on the colon; when the taxonomy part is missing, <code>category</code> is assumed. Ids are cast to positive integers and anything that is not a number is dropped.</p>
+<aside class="callout callout--warning"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-warning"/></svg><div class="callout-body"><p class="callout-title">Mixed taxonomies with include</p><p>With <code>terms_op=&quot;include&quot;</code> and several taxonomies, the <code>OR</code> relation means a post matching <strong>any</strong> of the terms is returned — not a post matching all of them. For an AND behaviour, use a filter (below).</p>
+</div></aside>
+<h3 id="server-side-filters">Server-side filters<a class="hlink" href="#server-side-filters" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>Two filters let you change the final arguments:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Filter</th><th>Arguments</th><th>When it runs</th></tr></thead><tbody><tr><td><code>wgcr_search_query_args</code></td><td><code>$args</code>, <code>$query_id</code>, <code>$request</code></td><td>For every search request</td></tr><tr><td><code>wgcr_search_query_args/{query_id}</code></td><td><code>$args</code>, <code>$request</code></td><td>Only for a widget or shortcode with that Query ID</td></tr></tbody></table></div>
+<p>The general filter runs first, so the id-specific one always has the final say.</p>
+<h4 id="where-to-write-them">Where to write them<a class="hlink" href="#where-to-write-them" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-c">/* A small custom plugin, or the theme's functions.php */</span>
+<span class="tok-k">add_filter</span>( <span class="tok-s">'wgcr_search_query_args'</span>, <span class="tok-s">'my_search_args'</span>, <span class="tok-n">10</span>, <span class="tok-n">3</span> );
+
+<span class="tok-k">function</span> my_search_args( <span class="tok-v">$args</span>, <span class="tok-v">$query_id</span>, <span class="tok-v">$request</span> ) {
+	<span class="tok-c">/* your changes */</span>
+	<span class="tok-k">return</span> <span class="tok-v">$args</span>;
+}</code></pre>
+</figure>
+<aside class="callout callout--important"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-important"/></svg><div class="callout-body"><p class="callout-title">Always return `$args`</p><p>Both filters are value filters. Forgetting <code>return $args;</code> leaves the query empty and search returns nothing.</p>
+</div></aside>
+<h4 id="practical-examples">Practical examples<a class="hlink" href="#practical-examples" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<p><strong>Search several post types at once</strong></p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-k">add_filter</span>( <span class="tok-s">'wgcr_search_query_args'</span>, <span class="tok-k">function</span> ( <span class="tok-v">$args</span> ) {
+	<span class="tok-v">$args</span>[<span class="tok-s">'post_type'</span>] = <span class="tok-k">array</span>( <span class="tok-s">'post'</span>, <span class="tok-s">'page'</span>, <span class="tok-s">'course'</span> );
+	<span class="tok-k">return</span> <span class="tok-v">$args</span>;
+} );</code></pre>
+</figure>
+<p><strong>Restrict one widget by Query ID</strong></p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-k">add_filter</span>( <span class="tok-s">'wgcr_search_query_args/featured'</span>, <span class="tok-k">function</span> ( <span class="tok-v">$args</span>, <span class="tok-v">$request</span> ) {
+	<span class="tok-v">$args</span>[<span class="tok-s">'meta_query'</span>] = <span class="tok-k">array</span>(
+		<span class="tok-k">array</span>( <span class="tok-s">'key'</span> =&gt; <span class="tok-s">'featured'</span>, <span class="tok-s">'value'</span> =&gt; <span class="tok-s">'yes'</span> ),
+	);
+	<span class="tok-k">return</span> <span class="tok-v">$args</span>;
+}, <span class="tok-n">10</span>, <span class="tok-n">2</span> );</code></pre>
+</figure>
+<p><strong>Combine terms with AND instead of OR</strong></p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-k">add_filter</span>( <span class="tok-s">'wgcr_search_query_args'</span>, <span class="tok-k">function</span> ( <span class="tok-v">$args</span> ) {
+	<span class="tok-k">if</span> ( ! <span class="tok-k">empty</span>( <span class="tok-v">$args</span>[<span class="tok-s">'tax_query'</span>] ) &amp;&amp; <span class="tok-s">'OR'</span> === ( <span class="tok-v">$args</span>[<span class="tok-s">'tax_query'</span>][<span class="tok-s">'relation'</span>] ?? <span class="tok-s">''</span> ) ) {
+		<span class="tok-v">$args</span>[<span class="tok-s">'tax_query'</span>][<span class="tok-s">'relation'</span>] = <span class="tok-s">'AND'</span>;
+	}
+	<span class="tok-k">return</span> <span class="tok-v">$args</span>;
+} );</code></pre>
+</figure>
+<p><strong>Search post titles only</strong></p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-k">add_filter</span>( <span class="tok-s">'wgcr_search_query_args/titles'</span>, <span class="tok-k">function</span> ( <span class="tok-v">$args</span> ) {
+	<span class="tok-v">$args</span>[<span class="tok-s">'search_columns'</span>] = <span class="tok-k">array</span>( <span class="tok-s">'post_title'</span> );
+	<span class="tok-k">return</span> <span class="tok-v">$args</span>;
+} );</code></pre>
+</figure>
+<p><strong>Exclude a category site-wide</strong></p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-k">add_filter</span>( <span class="tok-s">'wgcr_search_query_args'</span>, <span class="tok-k">function</span> ( <span class="tok-v">$args</span> ) {
+	<span class="tok-v">$args</span>[<span class="tok-s">'tax_query'</span>][] = <span class="tok-k">array</span>(
+		<span class="tok-s">'taxonomy'</span> =&gt; <span class="tok-s">'category'</span>,
+		<span class="tok-s">'field'</span>    =&gt; <span class="tok-s">'term_id'</span>,
+		<span class="tok-s">'terms'</span>    =&gt; <span class="tok-k">array</span>( <span class="tok-n">99</span> ),
+		<span class="tok-s">'operator'</span> =&gt; <span class="tok-s">'NOT IN'</span>,
+	);
+	<span class="tok-k">return</span> <span class="tok-v">$args</span>;
+} );</code></pre>
+</figure>
+<h3 id="performance-notes">Performance notes<a class="hlink" href="#performance-notes" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Situation</th><th>Recommendation</th></tr></thead><tbody><tr><td>A large site with many posts</td><td>Keep <code>limit</code> at 12 or less and avoid <code>orderby=rand</code></td></tr><tr><td>A <code>meta_query</code> on an unindexed meta key</td><td>Add a database index for that key</td></tr><tr><td>A heavy <code>tax_query</code> with many terms</td><td>Narrow the term list; <code>NOT IN</code> on a large set is slow</td></tr><tr><td>Repeated popular queries</td><td>Cache the route response for anonymous visitors</td></tr><tr><td>Random ordering (<code>rand</code>)</td><td>Costs a full sort on every request; use it sparingly</td></tr></tbody></table></div>
+<aside class="callout callout--tip"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-tip"/></svg><div class="callout-body"><p class="callout-title">Measure before optimising</p><p>The plugin runs one <code>WP_Query</code> per request. If a search feels slow, first look at the network tab for the <code>/wp-json/wgcr/v1/search</code> response time, then use <code>SAVEQUERIES</code> to see which query dominates.</p>
+</div></aside>
+<h2 id="pagination">Pagination<a class="hlink" href="#pagination" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>Pagination only matters when the number of matches is larger than “Items per page”. The widget offers four types, and each one uses a different mechanism: replacing the current results or appending new ones.</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Type</th><th>Control value</th><th>Behaviour</th><th>Results</th></tr></thead><tbody><tr><td>None</td><td><code>none</code></td><td>Only the first page of results</td><td>—</td></tr><tr><td>Numbers</td><td><code>numbers</code></td><td>A page bar with previous/next and “Page X of Y”</td><td>Replaced</td></tr><tr><td>Previous / next</td><td><code>prev_next</code></td><td>Two buttons</td><td>Replaced</td></tr><tr><td>Load on click</td><td><code>load_on_click</code></td><td>A “Load more” button</td><td>Appended</td></tr><tr><td>Load on scroll</td><td><code>load_on_scroll</code></td><td>Automatic near the end of the list</td><td>Appended</td></tr></tbody></table></div>
+<h3 id="the-four-pagination-types">The four pagination types<a class="hlink" href="#the-four-pagination-types" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p><strong>Numbers</strong> is the most complete type: a bar with page buttons, previous and next links and an accessible “Page X of Y” text. Because it needs the total number of results, the request carries <code>page</code> and the server returns the <code>X-WP-Total</code> and <code>X-WP-TotalPages</code> headers.</p>
+<p><strong>Previous and next</strong> uses the same mechanism but only renders two buttons, which suits narrow layouts.</p>
+<p><strong>Load on click</strong> appends the next page to the existing list with a button click. The visitor keeps their scroll position and can go back to earlier results without a request.</p>
+<p><strong>Load on scroll</strong> replaces the button with an <code>IntersectionObserver</code>: when the sentinel element comes within about 300 pixels of the bottom of the viewport, the next page loads automatically.</p>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">When the total is unknown</p><p>If a server-level cache strips the <code>X-WP-Total</code> headers, numbered pagination cannot compute the page count and only previous/next stays usable. In that case “Load on click” is the safest choice.</p>
+</div></aside>
+<h3 id="the-page-bar-markup">The page bar markup<a class="hlink" href="#the-page-bar-markup" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">html</span></figcaption>
+<pre><code class="language-html" dir="ltr">&lt;nav class=&quot;wgcr-search-pagination&quot; aria-label=&quot;Pagination&quot;&gt;
+	&lt;button type=&quot;button&quot; class=&quot;wgcr-search-page wgcr-search-page--prev&quot;&gt;Previous&lt;/button&gt;
+	&lt;button type=&quot;button&quot; class=&quot;wgcr-search-page&quot; aria-current=&quot;page&quot;&gt;1&lt;/button&gt;
+	&lt;button type=&quot;button&quot; class=&quot;wgcr-search-page&quot;&gt;2&lt;/button&gt;
+	&lt;button type=&quot;button&quot; class=&quot;wgcr-search-page&quot;&gt;3&lt;/button&gt;
+	&lt;button type=&quot;button&quot; class=&quot;wgcr-search-page wgcr-search-page--next&quot;&gt;Next&lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+</figure>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Class</th><th>Role</th></tr></thead><tbody><tr><td><code>.wgcr-search-pagination</code></td><td>The <code>nav</code> wrapper with an accessible label</td></tr><tr><td><code>.wgcr-search-page</code></td><td>Each page button</td></tr><tr><td><code>[aria-current=&quot;page&quot;]</code></td><td>The current page</td></tr><tr><td><code>.wgcr-search-page--prev</code> / <code>--next</code></td><td>Previous and next buttons</td></tr><tr><td><code>.wgcr-search-page--info</code></td><td>The “Page X of Y” text in previous/next mode (not a live region)</td></tr></tbody></table></div>
+<h3 id="related-controls">Related controls<a class="hlink" href="#related-controls" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Control</th><th>Id</th><th>Where</th><th>Values</th></tr></thead><tbody><tr><td>Pagination type</td><td><code>pagination_type</code></td><td>“Pagination” section</td><td>None / Numbers / Previous and next / Load on click / Load on scroll</td></tr><tr><td>Pagination alignment</td><td><code>pagination_align</code></td><td>“Pagination” section</td><td>Right / Centre / Left / Justify, responsive; shown when pagination is not “None”</td></tr><tr><td>Spacer</td><td><code>pagination_spacer</code></td><td>“Pagination” section</td><td>With / Without; adds the <code>wgcr-search--spacer</code> class</td></tr><tr><td>Items per page</td><td><code>posts_per_page</code></td><td>“Layout” section (Page mode)</td><td>1 to 50, default 12</td></tr><tr><td>Button text</td><td><code>button_text</code></td><td>“Pagination” section</td><td>Default “View more posts”; load on click only</td></tr><tr><td>Button icon</td><td><code>button_icon</code></td><td>“Pagination” section</td><td>Show / Hide; load on click only</td></tr><tr><td>Button ID</td><td><code>button_id</code></td><td>“Pagination” section</td><td>Printed as the button&#39;s <code>id</code>; leave empty to get a generated one</td></tr><tr><td>Message alignment</td><td><code>no_posts_align</code></td><td>“Pagination” section</td><td>Right / Centre / Left / Justify; load on click and load on scroll</td></tr><tr><td>Custom message</td><td><code>custom_message</code></td><td>“Pagination” section</td><td>Off by default; load on click and load on scroll</td></tr><tr><td>Custom message text</td><td><code>custom_message_text</code></td><td>“Pagination” section</td><td>Replaces “No more posts.” when the switcher is on</td></tr></tbody></table></div>
+<p>The “Spacer” control only adds vertical space before the bar; it does not change behaviour.</p>
+<aside class="callout callout--warning"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-warning"/></svg><div class="callout-body"><p class="callout-title">The button ID must be unique</p><p>“Button ID” is printed straight into the HTML as an <code>id</code>. If two widgets on one page share an id, <code>aria-controls</code> and <code>#id</code> links break. Only Latin letters, digits and underscores are allowed, and if you leave it empty the plugin generates a unique id itself.</p>
+</div></aside>
+<h3 id="how-the-page-count-is-computed">How the page count is computed<a class="hlink" href="#how-the-page-count-is-computed" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">js</span></figcaption>
+<pre><code class="language-js" dir="ltr"><span class="tok-k">const</span> totalPages = Number( response.headers.get( <span class="tok-s">'X-WP-TotalPages'</span> ) ) || <span class="tok-n">1</span>;
+<span class="tok-k">const</span> current    = Number( params.get( <span class="tok-s">'page'</span> ) ) || <span class="tok-n">1</span>;</code></pre>
+</figure>
+<p>The server sends these headers <strong>only when <code>page</code> is greater than 0</strong>. That means a plain request without <code>page</code> returns no pagination headers, which is why the widget always sends <code>page</code> when a pagination type is active.</p>
+<h3 id="infinite-scroll-2">Infinite scroll<a class="hlink" href="#infinite-scroll-2" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>With <code>load_on_scroll</code> the widget builds a sentinel element at the end of the list:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">js</span></figcaption>
+<pre><code class="language-js" dir="ltr"><span class="tok-k">const</span> io = <span class="tok-k">new</span> IntersectionObserver( ( entries ) =&gt; {
+	<span class="tok-k">if</span> ( entries[ <span class="tok-n">0</span> ].isIntersecting &amp;&amp; ! loading &amp;&amp; hasMore ) {
+		loadPage( current + <span class="tok-n">1</span>, <span class="tok-k">true</span> );
+	}
+}, { rootMargin: <span class="tok-s">'300px'</span> } );</code></pre>
+</figure>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Safeguard</th><th>Why</th></tr></thead><tbody><tr><td><code>loading</code> flag</td><td>Prevents two requests at once</td></tr><tr><td><code>hasMore</code> flag</td><td>Stops requests after the last page</td></tr><tr><td><code>rootMargin: 300px</code></td><td>Loads slightly before the visitor reaches the end</td></tr><tr><td>Disconnect on reset</td><td>The observer is removed when the query changes</td></tr></tbody></table></div>
+<aside class="callout callout--tip"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-tip"/></svg><div class="callout-body"><p class="callout-title">Infinite scroll on mobile</p><p>Automatic loading consumes the visitor&#39;s data plan. If your audience is mostly mobile, “Load on click” gives them control over when more results are fetched.</p>
+</div></aside>
+<h3 id="keyboard-behaviour">Keyboard behaviour<a class="hlink" href="#keyboard-behaviour" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Key</th><th>Result</th></tr></thead><tbody><tr><td><code>Tab</code></td><td>Moves through the page buttons in order</td></tr><tr><td><code>Enter</code> or <code>Space</code></td><td>Activates the focused page button</td></tr><tr><td><code>ArrowDown</code> / <code>ArrowUp</code></td><td>Navigate the results list cyclically while focus is on the input</td></tr></tbody></table></div>
+<p>After a page change, focus returns to the button the visitor pressed — not to the top of the page — so screen-reader users and keyboard users keep their place in the interface.</p>
+<h3 id="performance-notes-2">Performance notes<a class="hlink" href="#performance-notes-2" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<ul>
+<li><strong>Items per page</strong>: the default 12 is a good balance. Above 24 results the payload grows noticeably, especially with thumbnails.</li>
+<li><strong>Thumbnails</strong>: every result with an image adds a request (unless cached). Turning “Show thumbnail” off makes long lists much lighter.</li>
+<li><strong>Templates</strong>: a custom Elementor template renders each result on the server, so more items per page means more work per request. With a heavy template keep “Items per page” at 6 to 9.</li>
+<li><strong>Debounce</strong>: queries are debounced at 250 ms and every in-flight request is aborted with <code>AbortController</code>, so fast typing does not produce a burst of requests.</li>
+</ul>
+<h3 id="choosing-a-type">Choosing a type<a class="hlink" href="#choosing-a-type" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Your case</th><th>Best type</th></tr></thead><tbody><tr><td>A search page with many results</td><td>Numbers</td></tr><tr><td>A narrow header panel</td><td>Previous and next, or Load on click</td></tr><tr><td>Browsing a long list without interaction</td><td>Load on scroll</td></tr><tr><td>A small fixed number of results</td><td>None</td></tr></tbody></table></div>
+<h2 id="styling">Styling<a class="hlink" href="#styling" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>In Page mode, extra sections control the container and the cards (background, spacing, border radius, shadow and typography).</p>
+<p>The search widget is styled in two layers: <strong>Elementor style controls</strong> (which print inline CSS on the widget) and <strong>CSS classes</strong> you can target from your theme. This page covers both, plus ready-made snippets.</p>
+<h3 id="css-variables">CSS variables<a class="hlink" href="#css-variables" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>The plugin defines component-scoped CSS custom properties on each <code>.wgcr-search</code> root. They are not site-wide theme variables; they provide defaults for the widget’s accent colours, borders, radius and responsive column count. Override them on the root of one widget to change only that instance.</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Variable</th><th>Default</th><th>Purpose</th></tr></thead><tbody><tr><td><code>--wgcr-blue</code></td><td><code>#2E86DE</code></td><td>Main accent: focus border, active icon and spinner</td></tr><tr><td><code>--wgcr-navy</code></td><td><code>#1B5EA8</code></td><td>Darker shades of the main accent</td></tr><tr><td><code>--wgcr-ink</code></td><td><code>#111827</code></td><td>Heading text colour</td></tr><tr><td><code>--wgcr-slate</code></td><td><code>#64748B</code></td><td>Secondary text: excerpt, date and icon</td></tr><tr><td><code>--wgcr-line</code></td><td><code>#E2E8F0</code></td><td>Border colour</td></tr><tr><td><code>--wgcr-radius</code></td><td><code>14px</code></td><td>Field, panel and card radius</td></tr><tr><td><code>--wgcr-search-cols</code></td><td><code>1</code></td><td>Column count in Page mode; set by the <code>--cols-1</code> … <code>--cols-6</code> root classes</td></tr></tbody></table></div>
+<p>For example, change the palette for one widget:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr"><span class="tok-t">.wgcr-search</span> {
+	<span class="tok-v">--wgcr-blue</span>: <span class="tok-t">#4f46e5</span>;
+	<span class="tok-v">--wgcr-navy</span>: <span class="tok-t">#3730a3</span>;
+	<span class="tok-v">--wgcr-ink</span>: <span class="tok-t">#0f172a</span>;
+	<span class="tok-v">--wgcr-slate</span>: <span class="tok-t">#64748b</span>;
+	<span class="tok-v">--wgcr-line</span>: <span class="tok-t">#e2e8f0</span>;
+	<span class="tok-v">--wgcr-radius</span>: <span class="tok-n">10px</span>;
+}</code></pre>
+</figure>
+<p>The classes below are the stable hooks:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Class</th><th>Applied to</th><th>Meaning</th></tr></thead><tbody><tr><td><code>.wgcr-search</code></td><td>Root</td><td>Every search instance</td></tr><tr><td><code>.wgcr-search--modal</code></td><td>Root</td><td>List mode</td></tr><tr><td><code>.wgcr-search--page</code></td><td>Root</td><td>Page display mode</td></tr><tr><td><code>.wgcr-search--cols-1</code> … <code>--cols-6</code></td><td>Root</td><td>Column count</td></tr><tr><td><code>.wgcr-search--masonry</code></td><td>Root</td><td>Masonry layout</td></tr><tr><td><code>.wgcr-search--equal</code></td><td>Root</td><td>Equal-height cards</td></tr><tr><td><code>.wgcr-search--tpl</code></td><td>Root</td><td>A custom Elementor template is in use</td></tr><tr><td><code>.wgcr-search--spacer</code></td><td>Root</td><td>Extra space before pagination</td></tr><tr><td><code>.wgcr-search-field</code></td><td>The wrapper</td><td>Holds the input, icon and spinner</td></tr><tr><td><code>.wgcr-search-input</code></td><td>The input</td><td>The search field</td></tr><tr><td><code>.wgcr-search-panel</code></td><td>The panel</td><td>The results container</td></tr><tr><td><code>.wgcr-search-list</code></td><td>The list</td><td>The results grid or list</td></tr><tr><td><code>.wgcr-search-item</code></td><td>Each result</td><td>One result card</td></tr><tr><td><code>.wgcr-search-link</code></td><td>Each result</td><td>The result link</td></tr><tr><td><code>.wgcr-search-thumb</code></td><td>Each result</td><td>The thumbnail</td></tr><tr><td><code>.wgcr-search-title</code></td><td>Each result</td><td>The title</td></tr><tr><td><code>.wgcr-search-excerpt</code></td><td>Each result</td><td>The excerpt</td></tr><tr><td><code>.wgcr-search-date</code></td><td>Each result</td><td>The date</td></tr><tr><td><code>.wgcr-search-status</code></td><td>The panel</td><td>“No results” and error messages</td></tr><tr><td><code>.wgcr-search-pagination</code></td><td>The panel</td><td>The pagination bar</td></tr><tr><td><code>.wgcr-search-status</code></td><td>The panel</td><td>The <code>aria-live</code> status text</td></tr></tbody></table></div>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">Inline styles win</p><p>Values from the Elementor style controls are printed as inline CSS with the widget, which has higher specificity than a plain theme selector. To override them, either use the controls or raise specificity (for example <code>.wgcr-search .wgcr-search-item</code>).</p>
+</div></aside>
+<h3 id="elementor-style-controls">Elementor style controls<a class="hlink" href="#elementor-style-controls" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<h4 id="search-field">Search field<a class="hlink" href="#search-field" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Control</th><th>Default</th><th>Effect</th></tr></thead><tbody><tr><td>Background</td><td><code>rgba(255,255,255,0.85)</code></td><td>Field background</td></tr><tr><td>Background (focus)</td><td>—</td><td>When the field has focus</td></tr><tr><td>Text colour</td><td>—</td><td>The typed query</td></tr><tr><td>Border colour</td><td>—</td><td>Field border</td></tr><tr><td>Border colour (focus)</td><td>—</td><td>Border on focus</td></tr><tr><td>Placeholder colour</td><td><code>#94a3b8</code></td><td>Placeholder text</td></tr><tr><td>Font size</td><td>—</td><td>Field text size</td></tr><tr><td>Border radius</td><td><code>12px</code></td><td>Field corner radius</td></tr></tbody></table></div>
+<h4 id="results-box">Results box<a class="hlink" href="#results-box" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Control</th><th>Default</th><th>Effect</th></tr></thead><tbody><tr><td>Background</td><td><code>#ffffff</code></td><td>Panel background</td></tr><tr><td>Border colour</td><td>—</td><td>Panel border</td></tr><tr><td>Border radius</td><td><code>14px</code></td><td>Panel corner radius</td></tr><tr><td>Max height</td><td><code>70vh</code></td><td>Panel height cap in List mode</td></tr><tr><td>Message text colour</td><td><code>#94a3b8</code></td><td>“No results” and error messages</td></tr></tbody></table></div>
+<h4 id="items">Items<a class="hlink" href="#items" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Control</th><th>Default</th><th>Effect</th></tr></thead><tbody><tr><td>Padding</td><td><code>12px</code></td><td>Space inside each result</td></tr><tr><td>Text colour</td><td><code>#0f172a</code></td><td>Result title</td></tr><tr><td>Background (hover)</td><td><code>#f1f5f9</code></td><td>The focused or hovered result</td></tr><tr><td>Separator colour</td><td><code>#f1f5f9</code></td><td>Line between results</td></tr><tr><td>Thumbnail width</td><td><code>72px</code></td><td>Thumbnail size</td></tr><tr><td>Thumbnail border radius</td><td><code>10px</code></td><td>Thumbnail corners</td></tr><tr><td>Excerpt text colour</td><td><code>#64748b</code></td><td>Excerpt text</td></tr><tr><td>Excerpt font size</td><td>—</td><td>Excerpt size</td></tr></tbody></table></div>
+<h3 id="columns-masonry-and-equal-height-2">Columns, masonry and equal height<a class="hlink" href="#columns-masonry-and-equal-height-2" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>These three settings only appear in Page mode and map directly to root classes:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Setting</th><th>Class</th><th>Layout</th></tr></thead><tbody><tr><td>Columns 3</td><td><code>wgcr-search--cols-3</code></td><td><code>grid-template-columns: repeat(3, minmax(0,1fr))</code></td></tr><tr><td>Columns 2</td><td><code>wgcr-search--cols-2</code></td><td><code>grid-template-columns: repeat(2, minmax(0,1fr))</code></td></tr><tr><td>Columns 1</td><td><code>wgcr-search--cols-1</code></td><td>A single column list</td></tr><tr><td>Masonry</td><td><code>wgcr-search--masonry</code></td><td>Items keep their natural height</td></tr><tr><td>Equal height</td><td><code>wgcr-search--equal</code></td><td>All cards stretch to the tallest</td></tr></tbody></table></div>
+<p>On screens narrower than <code>782px</code> the grid drops to a single column automatically, and below <code>480px</code> the thumbnail shrinks so results stay readable on small phones.</p>
+<h3 id="ready-to-use-snippets">Ready-to-use snippets<a class="hlink" href="#ready-to-use-snippets" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<h4 id="a-card-with-a-soft-shadow-and-a-coloured-edge">A card with a soft shadow and a coloured edge<a class="hlink" href="#a-card-with-a-soft-shadow-and-a-coloured-edge" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr"><span class="tok-t">.wgcr-search-item</span> {
+	border-radius: <span class="tok-n">12px</span>;
+	box-shadow: <span class="tok-n">0</span> <span class="tok-n">2px</span> <span class="tok-n">12px</span> rgb(<span class="tok-n">15</span> <span class="tok-n">23</span> <span class="tok-n">42</span> / <span class="tok-n">8</span>%);
+	border-inline-start: <span class="tok-n">3px</span> solid <span class="tok-t">#2563eb</span>;
+	transition: transform <span class="tok-t">.18s</span> ease, box-shadow <span class="tok-t">.18s</span> ease;
+}
+<span class="tok-t">.wgcr-search-item</span>:hover {
+	transform: translateY(-<span class="tok-n">2px</span>);
+	box-shadow: <span class="tok-n">0</span> <span class="tok-n">8px</span> <span class="tok-n">24px</span> rgb(<span class="tok-n">15</span> <span class="tok-n">23</span> <span class="tok-n">42</span> / <span class="tok-n">12</span>%);
+}</code></pre>
+</figure>
+<h4 id="a-dark-panel">A dark panel<a class="hlink" href="#a-dark-panel" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr"><span class="tok-t">.wgcr-search-panel</span> {
+	background: <span class="tok-t">#0f172a</span>;
+	border-color: <span class="tok-t">#1e293b</span>;
+	color: <span class="tok-t">#e2e8f0</span>;
+}
+<span class="tok-t">.wgcr-search-title</span> { color: <span class="tok-t">#f8fafc</span>; }
+<span class="tok-t">.wgcr-search-excerpt</span> { color: <span class="tok-t">#94a3b8</span>; }
+<span class="tok-t">.wgcr-search-item</span>:hover { background: <span class="tok-t">#1e293b</span>; }
+<span class="tok-t">.wgcr-search-status</span> { color: <span class="tok-t">#64748b</span>; }</code></pre>
+</figure>
+<h4 id="a-panel-as-wide-as-the-field-in-list-mode">A panel as wide as the field in List mode<a class="hlink" href="#a-panel-as-wide-as-the-field-in-list-mode" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr"><span class="tok-t">.wgcr-search--modal</span> <span class="tok-t">.wgcr-search-panel</span> {
+	position: absolute;
+	inset-inline: <span class="tok-n">0</span>;
+	width: <span class="tok-n">100</span>%;
+	max-width: none;
+}</code></pre>
+</figure>
+<h4 id="removing-the-thumbnail-for-a-compact-layout">Removing the thumbnail for a compact layout<a class="hlink" href="#removing-the-thumbnail-for-a-compact-layout" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr"><span class="tok-t">.wgcr-search-thumb</span> { display: none; }
+<span class="tok-t">.wgcr-search-item</span> { padding: <span class="tok-n">8px</span> <span class="tok-n">12px</span>; }
+<span class="tok-t">.wgcr-search-link</span> { gap: <span class="tok-n">0</span>; }</code></pre>
+</figure>
+<aside class="callout callout--tip"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-tip"/></svg><div class="callout-body"><p class="callout-title">Hiding the thumbnail with a control</p><p>Instead of CSS, turning off the “Show thumbnail” switcher removes the image from the markup entirely — lighter HTML and fewer requests. Use CSS only when you need the image in the markup but hidden in one context.</p>
+</div></aside>
+<h3 id="important-notes">Important notes<a class="hlink" href="#important-notes" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<ul>
+<li><strong>Do not edit <code>search.css</code> directly</strong>: the file is replaced on every update. Put your CSS in the theme&#39;s stylesheet or in Elementor&#39;s “Custom CSS”.</li>
+<li><strong>Respect <code>prefers-reduced-motion</code></strong>: if you add transitions, disable them for visitors who asked for reduced motion:</li>
+</ul>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr">@media (prefers-reduced-motion: reduce) {
+	<span class="tok-t">.wgcr-search-item</span>, <span class="tok-t">.wgcr-search-panel</span> { transition: none !important; }
+}</code></pre>
+</figure>
+<ul>
+<li><strong>Keep contrast</strong>: the default colours were chosen for at least 4.5:1 contrast on the body text. If you recolour the panel, re-check contrast (see the <a href="../../accessibility/">accessibility page</a>).</li>
+<li><strong>RTL and LTR</strong>: all layout rules use logical properties (<code>inset-inline</code>, <code>margin-inline</code>, <code>border-inline-start</code>), so the same CSS works in both directions. Avoid physical properties such as <code>left</code> or <code>margin-right</code> in your overrides.</li>
+</ul>
+<h2 id="result-structure">Result structure<a class="hlink" href="#result-structure" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>With the default template each result looks like this:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">html</span></figcaption>
+<pre><code class="language-html" dir="ltr">&lt;article class=&quot;wgcr-search-item&quot;&gt;
+	&lt;a class=&quot;wgcr-search-link&quot; href=&quot;https://example.com/?p=42&quot;&gt;
+		&lt;img class=&quot;wgcr-search-thumb&quot; src=&quot;…&quot; alt=&quot;Post title&quot; width=&quot;72&quot; height=&quot;72&quot;&gt;
+		&lt;h4 class=&quot;wgcr-search-title&quot;&gt;Post title&lt;/h4&gt;
+		&lt;p class=&quot;wgcr-search-excerpt&quot;&gt;A short text…&lt;/p&gt;
+		&lt;time class=&quot;wgcr-search-date&quot; datetime=&quot;2026-09-01&quot;&gt;2026-09-01&lt;/time&gt;
+	&lt;/a&gt;
+&lt;/article&gt;</code></pre>
+</figure>
+<p>In custom template mode the markup is whatever your Elementor template produces, and <code>wgcr-search--tpl</code> is added to the root so you can style it separately.</p>
+<h3 id="javascript-configuration">JavaScript configuration<a class="hlink" href="#javascript-configuration" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>Before <code>search.js</code>, a configuration object is printed inline:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">js</span></figcaption>
+<pre><code class="language-js" dir="ltr"><span class="tok-k">window</span>.WGCRSearch = {
+	restUrl: <span class="tok-s">'https://example.com/wp-json/wgcr/v1/search'</span>,
+	homeUrl: <span class="tok-s">'https://example.com/'</span>,
+	minChars: <span class="tok-n">2</span>,
+	maxResults: <span class="tok-n">50</span>,
+	i18n: {
+		noResults: <span class="tok-s">'No results found.'</span>,
+		found: <span class="tok-s">'results'</span>,
+		error: <span class="tok-s">'Error fetching results.'</span>,
+		prev: <span class="tok-s">'Previous'</span>,
+		next: <span class="tok-s">'Next'</span>,
+		page: <span class="tok-s">'Page'</span>,
+		pageOf: <span class="tok-s">'of'</span>
+	}
+};</code></pre>
+</figure>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Key</th><th>Meaning</th></tr></thead><tbody><tr><td><code>restUrl</code></td><td>The search route address, built with <code>rest_url()</code></td></tr><tr><td><code>homeUrl</code></td><td>The site address, used by the real search form</td></tr><tr><td><code>minChars</code></td><td>Minimum query length before a request is sent (2)</td></tr><tr><td><code>maxResults</code></td><td>Hard cap on items per page (50)</td></tr><tr><td><code>i18n</code></td><td>Interface texts, translated into the site language</td></tr></tbody></table></div>
+<aside class="callout callout--important"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-important"/></svg><div class="callout-body"><p class="callout-title">Changing maxResults</p><p>In this release <code>WGCR_SEARCH_MAX_RESULTS</code> is fixed at 50 and defined unconditionally by the plugin. Overriding it in <code>wp-config.php</code> is not supported. Use <code>limit</code> (1–50) and pagination instead.</p>
+</div></aside>
+<h2 id="client-side-behaviour">Client-side behaviour<a class="hlink" href="#client-side-behaviour" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Behaviour</th><th>Value</th></tr></thead><tbody><tr><td>Minimum query length</td><td>2 characters (<code>minChars</code>)</td></tr><tr><td>Delay after typing (debounce)</td><td>250 milliseconds</td></tr><tr><td>Results cap per request</td><td>50 (<code>WGCR_SEARCH_MAX_RESULTS</code>)</td></tr><tr><td>Cancelling the previous request</td><td>With <code>AbortController</code> while typing fast</td></tr><tr><td>Endpoint</td><td><code>/wp-json/wgcr/v1/search</code></td></tr><tr><td>Infinite scroll</td><td>With <code>IntersectionObserver</code> on <code>.wgcr-search-sentinel</code></td></tr></tbody></table></div>
+<p>The flow: the visitor types → 250 ms are waited → if the query is shorter than 2 characters the panel is emptied and cleared → otherwise the previous request is aborted and a new one is sent → results are rendered → the status message (“N results”) is read out to screen readers.</p>
+<aside class="callout callout--tip"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-tip"/></svg><div class="callout-body"><p class="callout-title">Out-of-order responses are impossible</p><p>Because every new request aborts the previous one and a sequence counter (<code>seq</code>) is checked as well, the result of an older query can never replace a newer one.</p>
+</div></aside>
+<h2 id="working-without-javascript">Working without JavaScript<a class="hlink" href="#working-without-javascript" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>The widget&#39;s form is a real <code>GET</code> form whose <code>action</code> is the site home, with an <code>s</code> field and a hidden <code>post_type</code> field. So if JavaScript is disabled, submitting the form takes the visitor to WordPress&#39; own search results page for that post type. This is the pattern recommended for accessibility and SEO: progressive enhancement, not a hard dependency on a script.</p>
+<h2 id="data-attributes-on-the-widget-root">Data attributes on the widget root<a class="hlink" href="#data-attributes-on-the-widget-root" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>The JavaScript reads its settings from the <code>data-*</code> attributes on the root element, so if you build the widget with dynamic templates or PHP code, include all of them:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Attribute</th><th>Example</th></tr></thead><tbody><tr><td><code>data-wgcr-search</code></td><td>The initialisation marker (no value)</td></tr><tr><td><code>data-display-mode</code></td><td><code>modal</code> or <code>page</code></td></tr><tr><td><code>data-source</code></td><td><code>post</code>, <code>page</code>, <code>product</code>, …</td></tr><tr><td><code>data-limit</code></td><td><code>12</code></td></tr><tr><td><code>data-thumb</code></td><td><code>yes</code> / <code>no</code></td></tr><tr><td><code>data-excerpt</code></td><td><code>yes</code> / <code>no</code></td></tr><tr><td><code>data-all</code></td><td>The text of the “show all” link</td></tr><tr><td><code>data-template</code></td><td>An Elementor template id, or <code>0</code></td></tr><tr><td><code>data-query</code></td><td>Compact JSON with <code>orderby</code>, <code>order</code>, <code>date</code>, <code>terms</code>, <code>terms_op</code>, <code>ignore_sticky</code>, <code>query_id</code></td></tr><tr><td><code>data-pagination</code></td><td><code>none</code>, <code>numbers</code>, <code>prev_next</code>, <code>load_on_click</code>, <code>load_on_scroll</code></td></tr></tbody></table></div>
+<h2 id="complete-control-reference">Complete control reference<a class="hlink" href="#complete-control-reference" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>Every content control of the widget, in panel order. Style controls are listed in “Style sections” above.</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Id</th><th>Panel label</th><th>Type</th><th>Default</th><th>Shown when</th></tr></thead><tbody><tr><td><code>display_mode</code></td><td>Results display mode</td><td>Select</td><td><code>modal</code> (List mode)</td><td>—</td></tr><tr><td><code>placeholder</code></td><td>Placeholder text</td><td>Text</td><td>Empty (filled automatically)</td><td>—</td></tr><tr><td><code>thumb</code></td><td>Show thumbnail</td><td>Switcher</td><td>Yes</td><td>—</td></tr><tr><td><code>excerpt</code></td><td>Show excerpt</td><td>Switcher</td><td>Yes</td><td>—</td></tr><tr><td><code>all_text</code></td><td>“Show all” text</td><td>Text</td><td>“Show all results”</td><td>—</td></tr><tr><td><code>template_mode</code></td><td>Template choice</td><td>Select</td><td><code>default</code></td><td>—</td></tr><tr><td><code>template</code></td><td>Choose a template</td><td>Select with search</td><td>Empty</td><td><code>template_mode = custom</code></td></tr><tr><td><code>edit_template_link</code></td><td>Edit template</td><td>Raw HTML (link)</td><td>—</td><td><code>template_mode = custom</code></td></tr><tr><td><code>columns</code></td><td>Columns</td><td>Responsive number</td><td>3 (tablet 2, mobile 1)</td><td><code>display_mode = page</code></td></tr><tr><td><code>posts_per_page</code></td><td>Items per page</td><td>Number, 1 to 50</td><td>12</td><td>—</td></tr><tr><td><code>masonry</code></td><td>Masonry layout</td><td>Switcher</td><td>No</td><td><code>display_mode = page</code></td></tr><tr><td><code>equal_height</code></td><td>Equal height</td><td>Switcher</td><td>No</td><td><code>display_mode = page</code> and masonry off</td></tr><tr><td><code>source</code></td><td>Source</td><td>Select</td><td><code>post</code></td><td>—</td></tr><tr><td><code>custom_type</code></td><td>Custom post type</td><td>Text</td><td>Empty</td><td><code>source = custom</code></td></tr><tr><td><code>include_by</code></td><td>Include by</td><td>Select</td><td><code>exclude</code></td><td>—</td></tr><tr><td><code>include_terms</code></td><td>Categories and tags</td><td>Term selector</td><td>Empty</td><td>—</td></tr><tr><td><code>date_filter</code></td><td>Date</td><td>Select</td><td><code>all</code></td><td>—</td></tr><tr><td><code>orderby</code></td><td>Order by</td><td>Select</td><td><code>relevance</code></td><td>—</td></tr><tr><td><code>order</code></td><td>Order</td><td>Select</td><td><code>DESC</code></td><td><code>orderby</code> is not <code>relevance</code> or <code>rand</code></td></tr><tr><td><code>ignore_sticky</code></td><td>Ignore sticky posts</td><td>Switcher</td><td>Yes</td><td><code>source = post</code></td></tr><tr><td><code>query_id</code></td><td>Query ID</td><td>Text</td><td>Empty</td><td>—</td></tr><tr><td><code>pagination_type</code></td><td>Pagination</td><td>Select</td><td><code>none</code></td><td>—</td></tr><tr><td><code>pagination_align</code></td><td>Alignment</td><td>Responsive select</td><td><code>center</code></td><td><code>pagination_type</code> is not <code>none</code></td></tr><tr><td><code>pagination_spacer</code></td><td>Spacer</td><td>Select (with/without)</td><td><code>no</code></td><td><code>pagination_type</code> is not <code>none</code></td></tr><tr><td><code>button_heading</code></td><td>Button</td><td>Separator heading</td><td>—</td><td><code>pagination_type = load_on_click</code></td></tr><tr><td><code>button_text</code></td><td>Button text</td><td>Text</td><td>“View more posts”</td><td><code>pagination_type = load_on_click</code></td></tr><tr><td><code>button_icon</code></td><td>Button icon</td><td>Select (show/hide)</td><td><code>yes</code></td><td><code>pagination_type = load_on_click</code></td></tr><tr><td><code>button_id</code></td><td>Button ID</td><td>Text</td><td>Empty</td><td><code>pagination_type = load_on_click</code></td></tr><tr><td><code>no_posts_heading</code></td><td>“No more posts” message</td><td>Separator heading</td><td>—</td><td><code>load_on_click</code> or <code>load_on_scroll</code></td></tr><tr><td><code>no_posts_align</code></td><td>Message alignment</td><td>Responsive select</td><td><code>center</code></td><td><code>load_on_click</code> or <code>load_on_scroll</code></td></tr><tr><td><code>custom_message</code></td><td>Custom message</td><td>Switcher</td><td>No</td><td><code>load_on_click</code> or <code>load_on_scroll</code></td></tr><tr><td><code>custom_message_text</code></td><td>Custom message text</td><td>Textarea</td><td>Empty</td><td>The above plus <code>custom_message = yes</code></td></tr></tbody></table></div>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">Where these ids appear</p><p>The same ids are the keys of <code>data-query</code> on the widget root, the parameters of the REST route and the shortcode arguments — <code>orderby</code> is spelled the same in all three.</p>
+</div></aside>
+<h2 id="troubleshooting">Troubleshooting<a class="hlink" href="#troubleshooting" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr></thead><tbody><tr><td>Nothing appears while typing</td><td>The query is shorter than 2 characters</td><td>Type two characters or more</td></tr><tr><td>“Error fetching results.”</td><td>The REST API is blocked, or a server error</td><td>Run <code>curl</code> against <code>/wp-json/wgcr/v1/search?q=test</code></td></tr><tr><td>Duplicate results</td><td>Two widgets sharing the same button id</td><td>Use a unique id, or leave it empty</td></tr><tr><td>Result images are empty</td><td>The post has no featured image</td><td>The <code>.wgcr-search-thumb--empty</code> class fills the space; or turn “Show thumbnail” off</td></tr><tr><td>Columns have no effect</td><td>The display mode is List mode</td><td>Switch the mode to Page mode</td></tr><tr><td>Works in the editor but not on the site</td><td>Page cache or a JS optimiser</td><td>Exclude <code>search.js</code> from combining or delaying</td></tr></tbody></table></div>
+
+</div>
+
+</article>
+<nav class="prevnext" aria-label="Previous / Next"><a class="pn pn--prev" href="../faq/" rel="prev">
+<span class="pn-dir">Previous</span>
+<span class="pn-group">Widgets</span>
+<span class="pn-title">FAQ widget</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></span>
+</a>
+<a class="pn pn--next" href="../../shortcode/" rel="next">
+<span class="pn-dir">Next</span>
+<span class="pn-group">Advanced use</span>
+<span class="pn-title">The wgcr_search shortcode</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span>
+</a>
+</nav>
+<section class="related"><h2 class="related-title">Related pages</h2><div class="cards cards--related"><a class="card" href="../">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="card-body"><span class="card-title">Widgets</span><span class="card-text">The list of WidgetCore widgets in Elementor, the name and purpose of each, the dedicated “WidgetCore Widgets” category and how assets are loaded only where needed.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../../shortcode/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+<span class="card-body"><span class="card-title">The wgcr_search shortcode</span><span class="card-text">The complete reference for the [wgcr_search] shortcode — all 24 attributes with defaults and allowed values, boolean parsing, practical examples, the PHP function and validation rules.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../../rest-api/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+<span class="card-body"><span class="card-title">REST API</span><span class="card-text">The WidgetCore search REST endpoint — the route, every parameter with its type and default, the response shape, pagination headers, request examples and the status codes.</span></span>
+<span class="card-arrow"></span>
+</a>
+</div></section>
+</div>
+</main>
+<aside class="aside-right" aria-label="On this page">
+<nav class="toc" aria-label="On this page" data-toc>
+<p class="toc-title">On this page</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#general-section" data-toc-link="general-section">General section</a></li><li class="toc-item toc-d2"><a href="#display-modes" data-toc-link="display-modes">Display modes</a></li><li class="toc-item toc-d3"><a href="#comparing-the-two-modes" data-toc-link="comparing-the-two-modes">Comparing the two modes</a></li><li class="toc-item toc-d3"><a href="#list-mode" data-toc-link="list-mode">List mode</a></li><li class="toc-item toc-d3"><a href="#page-mode" data-toc-link="page-mode">Page mode</a></li><li class="toc-item toc-d3"><a href="#behaviour-differences-that-are-easy-to-miss" data-toc-link="behaviour-differences-that-are-easy-to-miss">Behaviour differences that are easy to miss</a></li><li class="toc-item toc-d3"><a href="#accessibility-in-both-modes" data-toc-link="accessibility-in-both-modes">Accessibility in both modes</a></li><li class="toc-item toc-d3"><a href="#style-differences" data-toc-link="style-differences">Style differences</a></li><li class="toc-item toc-d3"><a href="#which-mode-to-choose" data-toc-link="which-mode-to-choose">Which mode to choose</a></li><li class="toc-item toc-d2"><a href="#elementor-templates" data-toc-link="elementor-templates">Elementor templates</a></li><li class="toc-item toc-d3"><a href="#preparing-the-template" data-toc-link="preparing-the-template">Preparing the template</a></li><li class="toc-item toc-d3"><a href="#what-happens-during-a-search" data-toc-link="what-happens-during-a-search">What happens during a search</a></li><li class="toc-item toc-d3"><a href="#how-the-template-css-is-loaded" data-toc-link="how-the-template-css-is-loaded">How the template CSS is loaded</a></li><li class="toc-item toc-d3"><a href="#entry-animations-and-handlers" data-toc-link="entry-animations-and-handlers">Entry animations and handlers</a></li><li class="toc-item toc-d3"><a href="#templated-results-and-interaction" data-toc-link="templated-results-and-interaction">Templated results and interaction</a></li><li class="toc-item toc-d3"><a href="#recommended-template-pattern" data-toc-link="recommended-template-pattern">Recommended template pattern</a></li><li class="toc-item toc-d3"><a href="#template-troubleshooting" data-toc-link="template-troubleshooting">Template troubleshooting</a></li><li class="toc-item toc-d2"><a href="#query-and-filters" data-toc-link="query-and-filters">Query and filters</a></li><li class="toc-item toc-d3"><a href="#base-query-arguments" data-toc-link="base-query-arguments">Base query arguments</a></li><li class="toc-item toc-d3"><a href="#filters-without-code" data-toc-link="filters-without-code">Filters without code</a></li><li class="toc-item toc-d3"><a href="#server-side-filters" data-toc-link="server-side-filters">Server-side filters</a></li><li class="toc-item toc-d3"><a href="#performance-notes" data-toc-link="performance-notes">Performance notes</a></li><li class="toc-item toc-d2"><a href="#pagination" data-toc-link="pagination">Pagination</a></li><li class="toc-item toc-d3"><a href="#the-four-pagination-types" data-toc-link="the-four-pagination-types">The four pagination types</a></li><li class="toc-item toc-d3"><a href="#the-page-bar-markup" data-toc-link="the-page-bar-markup">The page bar markup</a></li><li class="toc-item toc-d3"><a href="#related-controls" data-toc-link="related-controls">Related controls</a></li><li class="toc-item toc-d3"><a href="#how-the-page-count-is-computed" data-toc-link="how-the-page-count-is-computed">How the page count is computed</a></li><li class="toc-item toc-d3"><a href="#infinite-scroll-2" data-toc-link="infinite-scroll-2">Infinite scroll</a></li><li class="toc-item toc-d3"><a href="#keyboard-behaviour" data-toc-link="keyboard-behaviour">Keyboard behaviour</a></li><li class="toc-item toc-d3"><a href="#performance-notes-2" data-toc-link="performance-notes-2">Performance notes</a></li><li class="toc-item toc-d3"><a href="#choosing-a-type" data-toc-link="choosing-a-type">Choosing a type</a></li><li class="toc-item toc-d2"><a href="#styling" data-toc-link="styling">Styling</a></li><li class="toc-item toc-d3"><a href="#css-variables" data-toc-link="css-variables">CSS variables</a></li><li class="toc-item toc-d3"><a href="#elementor-style-controls" data-toc-link="elementor-style-controls">Elementor style controls</a></li><li class="toc-item toc-d3"><a href="#columns-masonry-and-equal-height-2" data-toc-link="columns-masonry-and-equal-height-2">Columns, masonry and equal height</a></li><li class="toc-item toc-d3"><a href="#ready-to-use-snippets" data-toc-link="ready-to-use-snippets">Ready-to-use snippets</a></li><li class="toc-item toc-d3"><a href="#important-notes" data-toc-link="important-notes">Important notes</a></li><li class="toc-item toc-d2"><a href="#result-structure" data-toc-link="result-structure">Result structure</a></li><li class="toc-item toc-d3"><a href="#javascript-configuration" data-toc-link="javascript-configuration">JavaScript configuration</a></li><li class="toc-item toc-d2"><a href="#client-side-behaviour" data-toc-link="client-side-behaviour">Client-side behaviour</a></li><li class="toc-item toc-d2"><a href="#working-without-javascript" data-toc-link="working-without-javascript">Working without JavaScript</a></li><li class="toc-item toc-d2"><a href="#data-attributes-on-the-widget-root" data-toc-link="data-attributes-on-the-widget-root">Data attributes on the widget root</a></li><li class="toc-item toc-d2"><a href="#complete-control-reference" data-toc-link="complete-control-reference">Complete control reference</a></li><li class="toc-item toc-d2"><a href="#troubleshooting" data-toc-link="troubleshooting">Troubleshooting</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>Print this page</span></button>
+</nav>
+
+</aside>
+</div>
+<footer class="footer">
+<div class="footer-in">
+<div class="footer-brand">
+<p class="footer-note">WidgetCore is a free, open source plugin released under GPL-2.0-or-later.</p>
+<p class="footer-ver">Version <b dir="ltr">0.0.7</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">GPL-2.0-or-later license</a></p>
+</div>
+
+</div>
+</footer>
+
+<script type="application/json" data-ui-strings>{"lang":"en","copy":"Copy code","copied":"Copied","results":"results","theme":"Theme"}</script>
+<script src="../../assets/app.js" defer></script>
+<script src="../../assets/search.js" defer></script>
+<script src="../../assets/site-ui.js" defer></script>
+</body>
+</html>

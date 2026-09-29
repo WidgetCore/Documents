@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ویجت جستجوی زنده | مستندات WidgetCore</title>
+<meta name="description" content="راهنمای کامل ویجت جستجوی زنده‌ی WidgetCore؛ کنترل‌های عمومی، طرح‌بندی، کوئری و صفحه‌بندی، ساختار خروجی، رفتار جاوااسکریپت و کار بدون جاوااسکریپت.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f4f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161618" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="WidgetCore docs build">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://docs.widgetcore.ir/fa/widgets/live-search/">
+<link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/widgets/live-search/">
+<link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/widgets/live-search/">
+<link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/widgets/live-search/">
+<meta property="og:site_name" content="مستندات WidgetCore">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="ویجت جستجوی زنده">
+<meta property="og:description" content="راهنمای کامل ویجت جستجوی زنده‌ی WidgetCore؛ کنترل‌های عمومی، طرح‌بندی، کوئری و صفحه‌بندی، ساختار خروجی، رفتار جاوااسکریپت و کار بدون جاوااسکریپت.">
+<meta property="og:url" content="https://docs.widgetcore.ir/fa/widgets/live-search/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ویجت جستجوی زنده">
+<meta name="twitter:description" content="راهنمای کامل ویجت جستجوی زنده‌ی WidgetCore؛ کنترل‌های عمومی، طرح‌بندی، کوئری و صفحه‌بندی، ساختار خروجی، رفتار جاوااسکریپت و کار بدون جاوااسکریپت.">
+<link rel="icon" href="../../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../assets/style.css">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../assets/fonts/yekan.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../assets/fonts/vazirmatn-var.woff2">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"خانه","item":"https://docs.widgetcore.ir/fa/"},{"@type":"ListItem","position":2,"name":"ویجت‌ها","item":"https://docs.widgetcore.ir/fa/widgets/"},{"@type":"ListItem","position":3,"name":"ویجت جستجوی زنده","item":"https://docs.widgetcore.ir/fa/widgets/live-search/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"ویجت جستجوی زنده","description":"راهنمای کامل ویجت جستجوی زنده‌ی WidgetCore؛ کنترل‌های عمومی، طرح‌بندی، کوئری و صفحه‌بندی، ساختار خروجی، رفتار جاوااسکریپت و کار بدون جاوااسکریپت.","inLanguage":"fa_IR","url":"https://docs.widgetcore.ir/fa/widgets/live-search/","isPartOf":{"@type":"WebSite","name":"مستندات WidgetCore","url":"https://docs.widgetcore.ir/","inLanguage":"fa_IR"},"about":{"@type":"SoftwareApplication","name":"WidgetCore","applicationCategory":"Plugin","operatingSystem":"WordPress"},"author":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"publisher":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"license":"https://www.gnu.org/licenses/gpl-2.0.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.widgetcore.ir/fa/widgets/live-search/"}}</script>
+<script>(function(){try{var k='wgcr-theme';var t=localStorage.getItem(k);if(!t){t='system'}var d=t==='system'?(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;var r=document.documentElement;r.classList.add(d==='dark'?'dark':'light');r.setAttribute('data-theme',d);r.setAttribute('data-theme-mode',t);r.style.colorScheme=d;}catch(e){}})();</script>
+</head>
+<body class="body-docs">
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0"><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></symbol><symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></symbol><symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol><symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></symbol><symbol id="i-command" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6a3 3 0 10-3 3h12a3 3 0 10-3-3v12a3 3 0 103-3H6a3 3 0 103 3V6z"/></symbol><symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h11v11H9zM5 15H4V4h11v1"/></symbol><symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11m0 0l-4-4m4 4l4-4M4 18v2a1 1 0 001 1h14a1 1 0 001-1v-2"/></symbol><symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-2c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-1-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.8-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0012 2z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></symbol><symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.3A3.7 3.7 0 0112 8a3.7 3.7 0 017 2.7C19 15.6 12 20 12 20z"/></symbol><symbol id="i-important" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.2-2.9 7.3-7 9-4.1-1.7-7-4.8-7-9V6l7-3zM12 8v5M12 16h.01"/></symbol><symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM12 11v6M12 7.5h.01"/></symbol><symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM7 10h.01M11 10h.01M15 10h.01M8 14h8"/></symbol><symbol id="i-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM4 9h16M9 9v11"/></symbol><symbol id="i-life" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 5.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM5 5l4 4M19 5l-4 4M5 19l4-4M19 19l-4-4"/></symbol><symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 006 .5l2-2a4 4 0 00-5.7-5.7L11 8M14 10a4 4 0 00-6-.5l-2 2A4 4 0 0011.7 17L13 16"/></symbol><symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v11H3zM9 20h6M12 16v4"/></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 019.5 4 8.5 8.5 0 1020 14.5z"/></symbol><symbol id="i-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V4h10v5M7 18H4v-6h16v6h-3M7 14h10v6H7z"/></symbol><symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 2 5 5.5 5 9l2 3v3l-3-1.5V19l-4 3-4-3v-3.5L5 17v-3l2-3c0-3.5 2-7 5-9zm0 8.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></symbol><symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4a7 7 0 100 14 7 7 0 000-14zm9 16l-4.5-4.5"/></symbol><symbol id="i-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 12h4M12 12h8M4 17h12M20 17h0M16 5v4M10 10v4M18 15v4"/></symbol><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zM12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol><symbol id="i-tip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2h5c0-.8.4-1.5 1-2A6 6 0 0012 3z"/></symbol><symbol id="i-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 16H3l9-16zM12 10v4M12 17h.01"/></symbol></svg>
+<a class="skip" href="#main">پرش به محتوای اصلی</a>
+<header class="header">
+<div class="reading-progress" data-reading-progress aria-hidden="true"></div>
+<div class="header-in">
+<button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-label="منوی بخش‌ها" aria-expanded="false" aria-haspopup="dialog" aria-controls="sidebar"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="29" height="29" rx="8"/><path d="M8 11h6v6H8zM18 11h6v10h-6zM8 21h6"/></svg></button>
+<a class="brand" href="../../"><span class="brand-txt"><span class="brand-name">WidgetCore</span><span class="brand-sub">مستندات WidgetCore</span></span></a>
+<div class="header-actions">
+<button class="search-trigger" type="button" data-search-open aria-label="جستجو در مستندات"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span class="search-text">جستجو در مستندات…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<a class="download-link" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="دانلود آخرین نسخه" title="دانلود آخرین نسخه"><span class="download-mark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span><span class="download-count" data-download-count data-count-api="https://api.github.com/repos/WidgetCore/Plugin/releases?per_page=100" aria-label="مجموع دانلودهای گیت‌هاب" aria-live="polite" aria-busy="true"></span></a>
+<a class="github-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="مخزن افزونه WidgetCore در GitHub" title="مخزن افزونه WidgetCore در GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg></a>
+<div class="theme-control">
+<button class="icon-btn theme-btn" type="button" data-theme-menu-toggle aria-haspopup="menu" aria-controls="theme-menu" aria-expanded="false"
+			aria-label="پوسته" title="پوسته">
+			<span class="th-ic th-light"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg></span>
+			<span class="th-ic th-dark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg></span>
+		</button>
+<div class="theme-menu" id="theme-menu" role="menu" aria-label="پوسته" data-theme-menu hidden>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="system" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-monitor"/></svg><span>سیستم</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="light" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg><span>روشن</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="dark" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg><span>تیره</span></button>
+</div>
+</div>
+<a class="lang-btn" href="../../../widgets/live-search/" hreflang="en" lang="en" title="همین صفحه به انگلیسی" aria-label="همین صفحه به انگلیسی" data-lang-switch><span class="flag-emoji" aria-hidden="true">🇬🇧</span></a>
+</div>
+</div>
+</header>
+
+<div class="search-modal" data-search-modal data-search-index="../../../search-index-fa.json" data-search-page="fa/widgets/live-search/" data-search-lang="fa" hidden>
+<div class="search-backdrop" data-search-close></div>
+<div class="search-box" role="dialog" aria-modal="true" aria-label="جستجو در مستندات" dir="rtl">
+<form class="search-head" role="search" data-search-form>
+<span class="search-head-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span>
+<input class="search-input" type="search" data-search-input placeholder="جستجو در مستندات…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="جستجو در مستندات" aria-controls="search-results" aria-autocomplete="list">
+<button class="icon-btn" type="button" data-search-close aria-label="بستن جستجو"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button>
+</form>
+<div class="search-results" id="search-results" data-search-results role="listbox" aria-label="جستجو در مستندات" tabindex="-1"></div>
+<p class="search-empty" data-search-empty hidden>نتیجه‌ای برای این عبارت پیدا نشد. <span>عبارت کوتاه‌تری بنویسید یا زبان سایت را عوض کنید.</span></p>
+<p class="search-loading" data-search-loading hidden>در حال جستجو…</p>
+<p class="search-foot"><span class="search-count" data-search-count></span><span class="search-keys">با ↑ و ↓ حرکت کنید، با Enter باز کنید و با Esc ببندید.</span></p>
+</div>
+</div>
+
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="منوی بخش‌ها" data-sidebar>
+<div class="sidebar-in">
+<div class="sidebar-quick-head"><div class="sidebar-quick-title" id="sidebar-quick-title" role="heading" aria-level="2">دسترسی سریع</div><button class="icon-btn sidebar-close" type="button" data-sidebar-close aria-label="بستن منوی دسترسی سریع"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button></div>
+<button class="sidebar-search" type="button" data-search-open aria-label="جستجو در همه مستندات…"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span>جستجو در همه مستندات…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<nav class="nav" aria-label="منوی بخش‌ها">
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-intro" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg></span>
+<span class="nav-title">آشنایی</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-intro" data-nav-list>
+<li><a class="nav-link" href="../../introduction/">ویجت‌کور چیست؟</a></li>
+<li><a class="nav-link" href="../../quick-start/">شروع سریع</a></li>
+<li><a class="nav-link" href="../../concepts/">مفهوم‌های پایه</a></li>
+<li><a class="nav-link" href="../../requirements/">پیش‌نیازها و سازگاری</a></li>
+
+</ul>
+<p class="nav-desc">افزونه چیست و چه چیزی به سایت شما اضافه می‌کند.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-install" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span>
+<span class="nav-title">دریافت و نصب</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-install" data-nav-list>
+<li><a class="nav-link" href="../../download/">دانلود</a></li>
+<li><a class="nav-link" href="../../installation/">نصب و فعال‌سازی</a></li>
+<li><a class="nav-link" href="../../updates/">به‌روزرسانی</a></li>
+
+</ul>
+<p class="nav-desc">دانلود، نصب، به‌روزرسانی و حذف.</p>
+</div>
+<div class="nav-group is-open" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="true" aria-controls="nav-widgets" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="nav-title">ویجت‌ها</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-widgets" data-nav-list>
+<li><a class="nav-link" href="../">ویجت‌ها</a></li>
+<li><a class="nav-link" href="../faq/">ویجت سوالات متداول</a></li>
+<li><a class="nav-link is-current" href="./" aria-current="page">ویجت جستجوی زنده</a></li>
+
+</ul>
+<p class="nav-desc">راهنمای کامل هر ویجت و همه کنترل‌ها.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-advanced" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+<span class="nav-title">استفاده پیشرفته</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-advanced" data-nav-list>
+<li><a class="nav-link" href="../../shortcode/">شورت‌کد جستجو</a></li>
+<li><a class="nav-link" href="../../rest-api/">REST API جستجو</a></li>
+
+</ul>
+<p class="nav-desc">شورت‌کد، REST و هوک‌ها برای یکپارچه‌سازی سفارشی.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-a11y" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="nav-title">دسترس‌پذیری و زبان</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-a11y" data-nav-list>
+<li><a class="nav-link" href="../../accessibility/">دسترس‌پذیری</a></li>
+<li><a class="nav-link" href="../../keyboard/">میان‌برهای کیبورد</a></li>
+<li><a class="nav-link" href="../../translation/">زبان و ترجمه</a></li>
+
+</ul>
+<p class="nav-desc">کیبورد، صفحه‌خوان‌ها و ترجمه.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-support" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-life"/></svg></span>
+<span class="nav-title">پشتیبانی</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-support" data-nav-list>
+<li><a class="nav-link" href="../../faq/">پرسش‌های متداول</a></li>
+<li><a class="nav-link" href="../../troubleshooting/">عیب‌یابی</a></li>
+
+</ul>
+<p class="nav-desc">عیب‌یابی و پرسش‌های متداول.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-project" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-heart"/></svg></span>
+<span class="nav-title">پروژه</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-project" data-nav-list>
+<li><a class="nav-link" href="../../changelog/">Changelog</a></li>
+<li><a class="nav-link" href="../../contributing/">مشارکت در توسعه</a></li>
+
+</ul>
+<p class="nav-desc">Changelog، متن‌باز بودن و مشارکت در توسعه.</p>
+</div>
+
+</nav>
+<div class="sidebar-foot">
+<a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="دانلود آخرین نسخه" title="دانلود آخرین نسخه"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">دانلود آخرین نسخه</span></a>
+<a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="مخزن WidgetCore در GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>مخزن WidgetCore در GitHub</span></a>
+<p class="side-ver">نسخه <b dir="ltr">0.0.7</b></p>
+</div>
+</div>
+</aside>
+<div class="scrim" data-scrim hidden></div>
+
+<main class="main" id="main" tabindex="-1">
+<div class="content">
+<nav class="breadcrumb" aria-label="breadcrumb"><ol><li><a href="../../">خانه</a></li><li><a href="../">ویجت‌ها</a></li><li aria-current="page"><span>ویجت جستجوی زنده</span></li></ol><button class="breadcrumb-toc-toggle" type="button" data-toc-toggle aria-label="در این صفحه" title="در این صفحه" aria-expanded="false" aria-controls="breadcrumb-toc-menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-list"/></svg></button><div class="breadcrumb-toc-menu" id="breadcrumb-toc-menu" data-mobile-toc hidden><nav class="toc" aria-label="در این صفحه" data-mobile-toc-list>
+<p class="toc-title">در این صفحه</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#بخش-عمومی" data-toc-link="بخش-عمومی">بخش «عمومی»</a></li><li class="toc-item toc-d2"><a href="#حالتهای-نمایش" data-toc-link="حالتهای-نمایش">حالت‌های نمایش</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#مقایسهی-دو-حالت" data-toc-link="مقایسهی-دو-حالت">مقایسه‌ی دو حالت</a></li><li class="toc-item toc-d3"><a href="#حالت-لیست" data-toc-link="حالت-لیست">حالت لیست</a></li><li class="toc-item toc-d3"><a href="#حالت-نمایش-در-صفحه" data-toc-link="حالت-نمایش-در-صفحه">حالت نمایش در صفحه</a></li><li class="toc-item toc-d3"><a href="#تفاوتهای-رفتاری-که-کمتر-دیده-میشوند" data-toc-link="تفاوتهای-رفتاری-که-کمتر-دیده-میشوند">تفاوت‌های رفتاری که کمتر دیده می‌شوند</a></li><li class="toc-item toc-d3"><a href="#دسترسپذیری-در-هر-دو-حالت" data-toc-link="دسترسپذیری-در-هر-دو-حالت">دسترس‌پذیری در هر دو حالت</a></li><li class="toc-item toc-d3"><a href="#تفاوتهای-استایل" data-toc-link="تفاوتهای-استایل">تفاوت‌های استایل</a></li><li class="toc-item toc-d3"><a href="#الگوهای-پیشنهادی" data-toc-link="الگوهای-پیشنهادی">الگوهای پیشنهادی</a></li></ul></li><li class="toc-item toc-d2"><a href="#قالبهای-المنتور" data-toc-link="قالبهای-المنتور">قالب‌های المنتور</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#آمادهسازی-قالب" data-toc-link="آمادهسازی-قالب">آماده‌سازی قالب</a></li><li class="toc-item toc-d3"><a href="#چه-اتفاقی-هنگام-جستجو-میافتد" data-toc-link="چه-اتفاقی-هنگام-جستجو-میافتد">چه اتفاقی هنگام جستجو می‌افتد</a></li><li class="toc-item toc-d3"><a href="#css-قالب-چگونه-بارگذاری-میشود" data-toc-link="css-قالب-چگونه-بارگذاری-میشود">CSS قالب چگونه بارگذاری می‌شود</a></li><li class="toc-item toc-d3"><a href="#انیمیشنهای-ورود-و-هندلرها" data-toc-link="انیمیشنهای-ورود-و-هندلرها">انیمیشن‌های ورود و هندلرها</a></li><li class="toc-item toc-d3"><a href="#نتیجههای-قالبی-و-تعامل" data-toc-link="نتیجههای-قالبی-و-تعامل">نتیجه‌های قالبی و تعامل</a></li><li class="toc-item toc-d3"><a href="#الگوی-پیشنهادی-قالب" data-toc-link="الگوی-پیشنهادی-قالب">الگوی پیشنهادی قالب</a></li><li class="toc-item toc-d3"><a href="#رفع-مشکلات-قالب" data-toc-link="رفع-مشکلات-قالب">رفع مشکلات قالب</a></li></ul></li><li class="toc-item toc-d2"><a href="#پرسوجو-و-فیلترها" data-toc-link="پرسوجو-و-فیلترها">پرس‌وجو و فیلترها</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#آرگومانهای-پایهی-کوئری" data-toc-link="آرگومانهای-پایهی-کوئری">آرگومان‌های پایه‌ی کوئری</a></li><li class="toc-item toc-d3"><a href="#فیلترهای-بدون-کدنویسی" data-toc-link="فیلترهای-بدون-کدنویسی">فیلترهای بدون کدنویسی</a></li><li class="toc-item toc-d3"><a href="#فیلترهای-سمت-سرور" data-toc-link="فیلترهای-سمت-سرور">فیلترهای سمت سرور</a></li><li class="toc-item toc-d3"><a href="#نکات-عملکرد" data-toc-link="نکات-عملکرد">نکات عملکرد</a></li></ul></li><li class="toc-item toc-d2"><a href="#صفحهبندی" data-toc-link="صفحهبندی">صفحه‌بندی</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#چهار-نوع-صفحهبندی" data-toc-link="چهار-نوع-صفحهبندی">چهار نوع صفحه‌بندی</a></li><li class="toc-item toc-d3"><a href="#ساختار-نوار-صفحهبندی" data-toc-link="ساختار-نوار-صفحهبندی">ساختار نوار صفحه‌بندی</a></li><li class="toc-item toc-d3"><a href="#کنترلهای-مربوط" data-toc-link="کنترلهای-مربوط">کنترل‌های مربوط</a></li><li class="toc-item toc-d3"><a href="#چطور-تعداد-صفحهها-محاسبه-میشود" data-toc-link="چطور-تعداد-صفحهها-محاسبه-میشود">چطور تعداد صفحه‌ها محاسبه می‌شود</a></li><li class="toc-item toc-d3"><a href="#پیمایش-بینهایت" data-toc-link="پیمایش-بینهایت">پیمایش بی‌نهایت</a></li><li class="toc-item toc-d3"><a href="#رفتار-کیبورد" data-toc-link="رفتار-کیبورد">رفتار کیبورد</a></li><li class="toc-item toc-d3"><a href="#نکات-عملکرد-2" data-toc-link="نکات-عملکرد-2">نکات عملکرد</a></li><li class="toc-item toc-d3"><a href="#انتخاب-نوع-صفحهبندی" data-toc-link="انتخاب-نوع-صفحهبندی">انتخاب نوع صفحه‌بندی</a></li></ul></li><li class="toc-item toc-d2"><a href="#استایلدهی-نتایج" data-toc-link="استایلدهی-نتایج">استایل‌دهی نتایج</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#متغیرهای-css" data-toc-link="متغیرهای-css">متغیرهای CSS</a></li><li class="toc-item toc-d3"><a href="#کنترلهای-استایل-المنتور" data-toc-link="کنترلهای-استایل-المنتور">کنترل‌های استایل المنتور</a></li><li class="toc-item toc-d3"><a href="#چیدمان-ستونی،-کاشی-و-ارتفاع-برابر" data-toc-link="چیدمان-ستونی،-کاشی-و-ارتفاع-برابر">چیدمان ستونی، کاشی و ارتفاع برابر</a></li><li class="toc-item toc-d3"><a href="#نمونهکدهای-آماده" data-toc-link="نمونهکدهای-آماده">نمونه‌کدهای آماده</a></li><li class="toc-item toc-d3"><a href="#نکات-مهم" data-toc-link="نکات-مهم">نکات مهم</a></li></ul></li><li class="toc-item toc-d2"><a href="#ساختار-خروجی" data-toc-link="ساختار-خروجی">ساختار خروجی</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#پیکربندی-جاوااسکریپت" data-toc-link="پیکربندی-جاوااسکریپت">پیکربندی جاوااسکریپت</a></li></ul></li><li class="toc-item toc-d2"><a href="#رفتار-سمت-کاربر" data-toc-link="رفتار-سمت-کاربر">رفتار سمت کاربر</a></li><li class="toc-item toc-d2"><a href="#کار-بدون-جاوااسکریپت" data-toc-link="کار-بدون-جاوااسکریپت">کار بدون جاوااسکریپت</a></li><li class="toc-item toc-d2"><a href="#دادههای-روی-ریشهی-ویجت" data-toc-link="دادههای-روی-ریشهی-ویجت">داده‌های روی ریشه‌ی ویجت</a></li><li class="toc-item toc-d2"><a href="#فهرست-کامل-کنترلها" data-toc-link="فهرست-کامل-کنترلها">فهرست کامل کنترل‌ها</a></li><li class="toc-item toc-d2"><a href="#رفع-مشکلات" data-toc-link="رفع-مشکلات">رفع مشکلات</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>چاپ این صفحه</span></button>
+</nav>
+</div></nav>
+<article class="article">
+<header class="article-head">
+<h1 class="article-title">ویجت جستجوی زنده</h1>
+<p class="article-desc">راهنمای کامل ویجت جستجوی زنده‌ی WidgetCore؛ کنترل‌های عمومی، طرح‌بندی، کوئری و صفحه‌بندی، ساختار خروجی، رفتار جاوااسکریپت و کار بدون جاوااسکریپت.</p>
+<p class="article-meta">آخرین به‌روزرسانی <time datetime="2026-09-29">2026-09-29</time></p>
+</header>
+<div class="prose" data-prose>
+<p>ویجت <strong>جستجوی زنده</strong> یک فیلد جستجوی AJAX است: کاربر تایپ می‌کند و نتایج بدون بارگذاری صفحه زیر فیلد (یا در ناحیه‌ی نتایج همین ویجت) ظاهر می‌شوند. همه‌ی تنظیمات در چهار بخش محتوا و سه بخش استایل قرار دارند.</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>مورد</th><th>مقدار</th></tr></thead><tbody><tr><td>شناسه‌ی ویجت</td><td><code>wgcr-search</code></td></tr><tr><td>عنوان در پنل</td><td>جستجوی زنده</td></tr><tr><td>آیکون در پنل</td><td><code>eicon-search</code></td></tr><tr><td>دسته</td><td>ویجت‌های WidgetCore (<code>wgcr</code>)</td></tr><tr><td>استایل / اسکریپت</td><td><code>wgcr-search</code></td></tr><tr><td>کلاس ریشه</td><td><code>.wgcr-search</code></td></tr><tr><td>واژه‌های کلیدی</td><td><code>search</code>، <code>live</code>، <code>ajax</code>، «جستجو»، «سرچ»، «دوره»، «مقاله»</td></tr></tbody></table></div>
+<h2 id="بخش-عمومی">بخش «عمومی»<a class="hlink" href="#بخش-عمومی" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کنترل</th><th>نوع</th><th>پیش‌فرض</th><th>توضیح</th></tr></thead><tbody><tr><td>حالت نمایش نتایج</td><td>انتخابی</td><td><code>modal</code> (حالت لیست)</td><td><code>page</code> = حالت نمایش در صفحه</td></tr><tr><td>متن راهنما</td><td>متن</td><td>خالی</td><td>اگر خالی بماند، به‌صورت خودکار پر می‌شود (پایین‌تر توضیح داده شده)</td></tr><tr><td>نمایش تصویر</td><td>کلید</td><td>بله</td><td>بندانگشتی هر نتیجه</td></tr><tr><td>نمایش خلاصه</td><td>کلید</td><td>بله</td><td>18 کلمه از متن، با نقطه‌چین</td></tr><tr><td>متن «نمایش همه»</td><td>متن</td><td>«نمایش همه نتایج»</td><td>پیوندی که کاربر را به صفحه‌ی نتایج کامل می‌برد</td></tr></tbody></table></div>
+<p><strong>منطق متن راهنما</strong>: اگر «متن راهنما» را خالی بگذارید، افزونه بر اساس منبع یکی از دو مقدار پیش‌فرض را می‌گذارد — برای منبع <code>course</code> متن «جستجو در دوره‌ها…» و برای بقیه‌ی منابع «جستجو در مقالات…».</p>
+<h2 id="حالتهای-نمایش">حالت‌های نمایش<a class="hlink" href="#حالتهای-نمایش" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>ویجت جستجوی زنده دو حالت نمایش دارد که با کنترل <strong>حالت نمایش نتایج</strong> در بخش «عمومی» انتخاب می‌شود. این انتخاب فقط ظاهر را عوض نمی‌کند؛ رفتار پنل، کنترل‌های فعال و حتی کلید <code>Escape</code> را تغییر می‌دهد.</p>
+<h3 id="مقایسهی-دو-حالت">مقایسه‌ی دو حالت<a class="hlink" href="#مقایسهی-دو-حالت" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>ویژگی</th><th>حالت لیست (<code>modal</code>)</th><th>حالت نمایش در صفحه (<code>page</code>)</th></tr></thead><tbody><tr><td>جای نتایج</td><td>پنل بازشو زیر فیلد</td><td>ناحیه‌ی همیشه‌باز داخل همان ویجت</td></tr><tr><td>وضعیت اولیه‌ی پنل</td><td>با <code>hidden</code> بسته است</td><td>باز است (<code>aria-expanded=&quot;true&quot;</code> روی فیلد)</td></tr><tr><td>بسته‌شدن با کلیک بیرون</td><td>بله</td><td>خیر (پنل بخشی از صفحه است)</td></tr><tr><td>رفتار <code>Escape</code></td><td>بستن پنل؛ اگر بسته بود، پاک‌کردن عبارت</td><td>پاک‌کردن عبارت جستجو</td></tr><tr><td>ستون‌ها</td><td>همیشه تک‌ستونی</td><td>1 تا 6 ستون (واکنش‌گرا)</td></tr><tr><td>کاشی و ارتفاع برابر</td><td>غیرفعال</td><td>فعال</td></tr><tr><td>استایل کانتینر نتایج</td><td>فقط پس‌زمینه و گردی پنل</td><td>عرض، ارتفاع کمینه/بیشینه، فاصله، پس‌زمینه، تراز</td></tr><tr><td>پیمایش بی‌نهایت</td><td>داخل پنل (با اسکرول پنل)</td><td>نسبت به پنجره‌ی مرورگر</td></tr><tr><td>پیوند «نمایش همه»</td><td>بعد از نتایج دیده می‌شود</td><td>فقط وقتی عبارت معتبر است</td></tr><tr><td>کاربری مناسب</td><td>هدر، نوار کناری، جستجوی سریع</td><td>صفحه‌ی جستجوی اختصاصی، آرشیو، بخش دوره‌ها</td></tr></tbody></table></div>
+<h3 id="حالت-لیست">حالت لیست<a class="hlink" href="#حالت-لیست" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>در این حالت پنل فقط وقتی باز می‌شود که دست‌کم دو نویسه تایپ شده باشد و نتیجه‌ای وجود داشته باشد (یا پیامی برای گفتن باشد). با کلیک بیرون از ویجت، پنل بسته می‌شود.</p>
+<ol class="steps" data-lang="fa"><li class="step"><div class="step-body"><p class="step-title">کاربر روی فیلد کلیک می‌کند</p><p>اگر از قبل عبارت معتبری در فیلد باشد و نتیجه‌ای مانده باشد، پنل باز می‌شود.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">کاربر تایپ می‌کند</p><p>پس از 250 میلی‌ثانیه درخواست فرستاده می‌شود و پنل باز می‌شود.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">با کیبورد یا ماوس یک نتیجه انتخاب می‌شود</p><p>کلیدهای بالا و پایین بین نتایج حرکت می‌کنند و <code>Enter</code> به همان نتیجه می‌رود.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">با کلیک بیرون یا <code>Escape</code> پنل بسته می‌شود</p><p><code>Escape</code> دوم، عبارت داخل فیلد را پاک می‌کند.</p>
+</div></li></ol>
+<p><strong>کجا استفاده کنیم</strong>: هدر سایت، نوار کناری، بالای آرشیو، یا هر جایی که فضا محدود است و کاربر می‌خواهد سریع به یک نتیجه برود.</p>
+<h3 id="حالت-نمایش-در-صفحه">حالت نمایش در صفحه<a class="hlink" href="#حالت-نمایش-در-صفحه" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>در این حالت نتایج در یک ناحیه‌ی دائمی زیر فیلد رندر می‌شوند و پنل هرگز با کلیک بیرون بسته نمی‌شود؛ چون بخشی از محتوای صفحه است.</p>
+<ol class="steps" data-lang="fa"><li class="step"><div class="step-body"><p class="step-title">ناحیه‌ی نتایج از ابتدا روی صفحه است</p><p>می‌توانید با «حداقل ارتفاع» در بخش استایل، جای آن را رزرو کنید تا صفحه هنگام آمدن نتایج نپرد.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">عبارت تایپ می‌شود</p><p>نتایج داخل همان ناحیه، در شبکه‌ی چندستونی قرار می‌گیرند.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">ستون‌ها واکنش‌گرا هستند</p><p>مقادیر دسکتاپ/تبلت/موبایل به‌ترتیب پیش‌فرض 3/2/1 است.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">صفحه‌بندی داخل همان ناحیه است</p><p>شماره‌ها، قبلی/بعدی یا بارگذاری بیشتر، همه زیر نتایج.</p>
+</div></li></ol>
+<p><strong>کجا استفاده کنیم</strong>: صفحه‌ی «جستجوی پیشرفته»، بخش دوره‌ها یا محصولات، و هر صفحه‌ای که می‌خواهید نتایج مثل یک گرید محتوایی دیده شوند.</p>
+<h4 id="ستونها،-کاشی-و-ارتفاع-برابر">ستون‌ها، کاشی و ارتفاع برابر<a class="hlink" href="#ستونها،-کاشی-و-ارتفاع-برابر" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>تنظیم</th><th>اثر</th></tr></thead><tbody><tr><td>ستون‌ها</td><td>کلاس <code>wgcr-search--cols-{n}</code> روی ریشه؛ از 3 ستون به بالا شبکه‌ی CSS ساخته می‌شود</td></tr><tr><td>کاشی</td><td>کلاس <code>wgcr-search--masonry</code>؛ آیتم‌ها با ارتفاع طبیعی خودشان چیده می‌شوند</td></tr><tr><td>ارتفاع برابر</td><td>کلاس <code>wgcr-search--equal</code>؛ همه‌ی کارت‌ها به اندازه‌ی بلندترین کارت کشیده می‌شوند</td></tr></tbody></table></div>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">کاشی و ارتفاع برابر با هم</p><p>این دو در عمل با هم جور نمی‌شوند: کاشی به تفاوت ارتفاع آیتم‌ها تکیه می‌کند و ارتفاع برابر آن‌ها را یکسان می‌کند. فقط یکی از این دو را روشن کنید.</p>
+</div></aside>
+<h4 id="انتخاب-قالب-در-حالت-صفحه">انتخاب قالب در حالت صفحه<a class="hlink" href="#انتخاب-قالب-در-حالت-صفحه" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<p>وقتی «انتخاب قالب» روی <strong>سفارشی</strong> باشد، شناسه‌ی قالب به مسیر REST فرستاده می‌شود و هر نتیجه با قالب المنتور شما رندر می‌شود:</p>
+<ol class="steps" data-lang="fa"><li class="step"><div class="step-body"><p class="step-title">قالب را در کتابخانه بسازید</p><p>«قالب‌ها → قالب‌های ذخیره‌شده»؛ قالب باید منتشر شده باشد.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">آن را در ویجت انتخاب کنید</p><p>«انتخاب قالب» → سفارشی، سپس قالب موردنظر را از فهرست برگزینید.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">خروجی را بررسی کنید</p><p>کلاس <code>wgcr-search--tpl</code> به ریشه اضافه می‌شود و CSS خود قالب یک بار بارگذاری می‌شود.</p>
+</div></li></ol>
+<p>جزئیات بیشتر در صفحه‌ی <a href="#قالبهای-المنتور">قالب‌های المنتور</a>.</p>
+<aside class="callout callout--tip"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-tip"/></svg><div class="callout-body"><p class="callout-title">رزرو ارتفاع</p><p>در حالت «صفحه»، قبل از اولین جستجو ناحیه‌ی نتایج خالی است. اگر این پرش ظاهر صفحه را خراب می‌کند، در «کادر نتایج → کانتینر نتایج» یک <strong>حداقل ارتفاع</strong> بگذارید (مثلاً <code>320px</code>).</p>
+</div></aside>
+<h3 id="تفاوتهای-رفتاری-که-کمتر-دیده-میشوند">تفاوت‌های رفتاری که کمتر دیده می‌شوند<a class="hlink" href="#تفاوتهای-رفتاری-که-کمتر-دیده-میشوند" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<h4 id="انتخاب-با-ماوس">انتخاب با ماوس<a class="hlink" href="#انتخاب-با-ماوس" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<ul>
+<li><strong>حالت لیست</strong>: حرکت ماوس روی یک نتیجه، آن را «انتخاب‌شده» می‌کند تا با <code>Enter</code> باز شود.</li>
+<li><strong>هر دو حالت با قالب المنتور</strong>: وقتی نتایج با قالب سفارشی رندر می‌شوند (<code>wgcr-search-item--tpl</code>)، حرکت ماوس هیچ نتیجه‌ای را «انتخاب‌شده» نشانه‌گذاری نمی‌کند و استایل انتخاب اعمال نمی‌شود؛ چون قالب خودش لینک و استایل دارد و تداخل، کلیک را خراب می‌کند. اگر نتیجه‌ی قالبی لینک نداشته باشد، کلیک روی خود کارت به آدرس آن نتیجه می‌رود.</li>
+</ul>
+<h4 id="فوکوس-پس-از-صفحهبندی">فوکوس پس از صفحه‌بندی<a class="hlink" href="#فوکوس-پس-از-صفحهبندی" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<p>وقتی با کیبورد صفحه را عوض می‌کنید، بعد از رندر نتایج فوکوس به همان دکمه‌ای برمی‌گردد که زده‌اید (قبلی، بعدی یا شماره‌ی صفحه‌ی جاری). این کار باعث می‌شود کاربر کیبوردی جای خودش را در نوار صفحه‌بندی گم نکند.</p>
+<h4 id="اسکرول-بینهایت">اسکرول بی‌نهایت<a class="hlink" href="#اسکرول-بینهایت" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<p>در حالت «صفحه»، یک عنصر دیده‌بان (<code>.wgcr-search-sentinel</code>) انتهای نتایج را با <code>IntersectionObserver</code> نسبت به <strong>پنجره‌ی مرورگر</strong> می‌سنجد؛ یعنی برای بارگذاری بیشتر لازم نیست داخل پنل اسکرول کنید. در حالت لیست، اسکرول خود پنل معیار است.</p>
+<h3 id="دسترسپذیری-در-هر-دو-حالت">دسترس‌پذیری در هر دو حالت<a class="hlink" href="#دسترسپذیری-در-هر-دو-حالت" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>ویژگی</th><th>حالت لیست</th><th>حالت نمایش در صفحه</th></tr></thead><tbody><tr><td><code>role=&quot;combobox&quot;</code> روی فیلد</td><td>بله</td><td>بله</td></tr><tr><td><code>aria-expanded</code> و <code>aria-controls</code></td><td>بله</td><td>بله</td></tr><tr><td><code>role=&quot;listbox&quot;</code> روی پنل نتایج</td><td>بله</td><td>بله</td></tr><tr><td><code>aria-live=&quot;polite&quot;</code> برای پیام وضعیت</td><td>بله</td><td>بله</td></tr><tr><td>پیمایش نتایج با <code>ArrowDown</code> / <code>ArrowUp</code></td><td>بله</td><td>بله</td></tr><tr><td>بازکردن نتیجه با <code>Enter</code></td><td>بله</td><td>بله</td></tr><tr><td>بستن با <code>Escape</code></td><td>بله</td><td>— (چیزی برای بستن وجود ندارد)</td></tr></tbody></table></div>
+<p>جزئیات کامل در صفحه‌ی <a href="../../accessibility/">دسترس‌پذیری</a> و <a href="../../keyboard/">کلیدهای کیبورد</a>.</p>
+<h3 id="تفاوتهای-استایل">تفاوت‌های استایل<a class="hlink" href="#تفاوتهای-استایل" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>ناحیه</th><th>حالت لیست</th><th>حالت نمایش در صفحه</th></tr></thead><tbody><tr><td>کلاس ریشه</td><td><code>wgcr-search--modal</code></td><td><code>wgcr-search--page</code></td></tr><tr><td>پس‌زمینه‌ی نتایج</td><td>پس‌زمینه‌ی پنل بازشو</td><td>پس‌زمینه‌ی کانتینر ویجت</td></tr><tr><td>بیشینه‌ی ارتفاع</td><td><code>70vh</code></td><td>نامحدود (تابع کانتینر)</td></tr><tr><td>ستون‌های شبکه</td><td>1</td><td>1 تا 6</td></tr></tbody></table></div>
+<p>چون هر دو حالت کلاس پایه‌ی <code>.wgcr-search</code> را دارند، می‌توانید یک قانون CSS برای بخش‌های مشترک بنویسید و قانون‌های اختصاصی هر حالت را با کلاس‌های تغییردهنده اضافه کنید.</p>
+<h3 id="الگوهای-پیشنهادی">الگوهای پیشنهادی<a class="hlink" href="#الگوهای-پیشنهادی" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>سناریو</th><th>تنظیمات</th></tr></thead><tbody><tr><td>جستجوی سریع در هدر</td><td>حالت لیست، 5 نتیجه، بدون تصویر، صفحه‌بندی هیچکدام</td></tr><tr><td>صفحه‌ی جستجوی اصلی</td><td>حالت صفحه، 12 نتیجه، 3 ستون، صفحه‌بندی شماره‌ها</td></tr><tr><td>گرید دوره‌ها</td><td>حالت صفحه، منبع <code>course</code>، ستون 3/2/1، کاشی روشن، بارگذاری با اسکرول</td></tr><tr><td>نتایج با طراحی اختصاصی</td><td>حالت صفحه، قالب سفارشی، ستون 2، صفحه‌بندی قبلی/بعدی</td></tr></tbody></table></div>
+<div class="cards"><a class="card" href="#صفحهبندی"><span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span><span class="card-body"><span class="card-title">صفحه‌بندی</span><span class="card-text">هر چهار نوع صفحه‌بندی و تنظیمات مربوط به هر حالت نمایش.</span></span><span class="card-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></span></a><a class="card" href="#قالبهای-المنتور"><span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layout"/></svg></span><span class="card-body"><span class="card-title">قالب‌های المنتور</span><span class="card-text">چطور ظاهر نتایج را کاملاً به قالب خودتان بسپارید.</span></span><span class="card-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></span></a><a class="card" href="#استایلدهی-نتایج"><span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sliders"/></svg></span><span class="card-body"><span class="card-title">استایل‌دهی</span><span class="card-text">کنترل‌های استایل، کلاس‌های CSS و متغیر ستون‌ها.</span></span><span class="card-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></span></a></div>
+<h2 id="قالبهای-المنتور">قالب‌های المنتور<a class="hlink" href="#قالبهای-المنتور" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>به‌جای کارت پیش‌فرض افزونه، می‌توانید ظاهر هر نتیجه را با یک <strong>قالب ذخیره‌شده در کتابخانه‌ی المنتور</strong> بسازید. قالب شما برای هر نتیجه رندر می‌شود و افزونه فقط داده‌های آن نتیجه را در حلقه قرار می‌دهد.</p>
+<h3 id="آمادهسازی-قالب">آماده‌سازی قالب<a class="hlink" href="#آمادهسازی-قالب" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<ol class="steps" data-lang="fa"><li class="step"><div class="step-body"><p class="step-title">یک قالب جدید در کتابخانه بسازید</p><p>در پیشخوان: «قالب‌ها → افزودن جدید» و نوع «بخش» (Section) یا «قالب حلقه» را انتخاب کنید.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">داخل قالب از ویجت‌های حلقه‌ی المنتور استفاده کنید</p><p>ویجت‌هایی مانند «پست حلقه» یا فیلدهای داینامیک عنوان/تصویر/خلاصه، داده‌های همان نتیجه را می‌گیرند.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">قالب را منتشر کنید</p><p>فقط قالب‌های با وضعیت <code>publish</code> و نوع <code>elementor_library</code> قابل استفاده‌اند؛ پیش‌نویس در فهرست نمی‌آید.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">قالب را در ویجت انتخاب کنید</p><p>در ویجت جستجوی زنده: بخش «طرح‌بندی» → «انتخاب قالب» را روی <strong>سفارشی</strong> بگذارید و از فهرست «یک قالب انتخاب کنید» همان قالب را انتخاب کنید.</p>
+</div></li></ol>
+<p>فهرست قالب‌ها با قابلیت جستجو نمایش داده می‌شود و کنار آن یک پیوند <strong>ویرایش قالب</strong> هست که مستقیم به کتابخانه‌ی المنتور می‌رود.</p>
+<aside class="callout callout--tip"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-tip"/></svg><div class="callout-body"><p class="callout-title">فهرست قالب‌ها فقط در ویرایشگر پرس‌وجو می‌شود</p><p>فهرست قالب‌ها و ترم‌ها فقط داخل ویرایشگر المنتور از پایگاه‌داده خوانده می‌شود، نه در هر بار نمایش سایت. یعنی انتخاب قالب هیچ هزینه‌ی اضافی روی سرعت صفحات شما ندارد.</p>
+</div></aside>
+<h3 id="چه-اتفاقی-هنگام-جستجو-میافتد">چه اتفاقی هنگام جستجو می‌افتد<a class="hlink" href="#چه-اتفاقی-هنگام-جستجو-میافتد" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">1. درخواست با پارامتر template=&lt;شناسه‌ی قالب&gt; به REST می‌رود
+2. سرور برای هر نتیجه، حلقه را روی همان نوشته می‌بندد
+3. قالب با get_builder_content_for_display() رندر می‌شود
+4. اگر خروجی محتوای قابل‌مشاهده داشته باشد، در فیلد html همان نتیجه برمی‌گردد
+5. جاوااسکریپت آن را داخل li.wgcr-search-item--tpl می‌گذارد</code></pre>
+</figure>
+<h4 id="بررسی-محتوای-قابلمشاهده">بررسی محتوای قابل‌مشاهده<a class="hlink" href="#بررسی-محتوای-قابلمشاهده" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<p>پیش از آنکه خروجی قالب پذیرفته شود، دو بررسی انجام می‌شود:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>بررسی</th><th>جزئیات</th></tr></thead><tbody><tr><td>متن قابل‌مشاهده</td><td>برچسب‌های <code>script</code> و <code>style</code> حذف می‌شوند و اگر متن باقی‌مانده خالی نبود، قبول است</td></tr><tr><td>رسانه</td><td>وجود <code>img</code>، <code>svg</code>، <code>picture</code>، <code>video</code>، <code>iframe</code> یا <code>canvas</code> هم کافی است</td></tr><tr><td>خطا</td><td>اگر رندر قالب استثنا بدهد، خروجی خالی در نظر گرفته می‌شود</td></tr></tbody></table></div>
+<p>اگر هیچ‌کدام برقرار نباشد، افزونه <strong>به کارت پیش‌فرض برمی‌گردد</strong> تا کاربر نتیجه‌ی خالی نبیند. یعنی یک قالب خراب، جستجو را از کار نمی‌اندازد.</p>
+<h3 id="css-قالب-چگونه-بارگذاری-میشود">CSS قالب چگونه بارگذاری می‌شود<a class="hlink" href="#css-قالب-چگونه-بارگذاری-میشود" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>قالب‌های المنتور معمولاً همراه خروجی خود <code>&lt;style&gt;</code> و <code>&lt;link rel=&quot;stylesheet&quot;&gt;</code> دارند. افزونه این‌ها را از HTML نتایج بیرون می‌کشد و جدا مدیریت می‌کند:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>نوع</th><th>رفتار</th></tr></thead><tbody><tr><td><code>&lt;style&gt;</code></td><td>محتوای همه‌ی بلوک‌ها جمع‌آوری، یکسان‌سازی و <strong>یک بار</strong> داخل <code>&lt;style class=&quot;wgcr-search-tpl-style&quot;&gt;</code> در پنل نوشته می‌شود</td></tr><tr><td><code>&lt;link rel=&quot;stylesheet&quot;&gt;</code></td><td>به‌عنوان یک استایل واقعی و <strong>یک بار در صفحه</strong> به <code>&lt;head&gt;</code> اضافه می‌شود</td></tr><tr><td>تکراری‌ها</td><td>با کلیدِ متن یکسان‌سازی‌شده شناسایی و حذف می‌شوند</td></tr></tbody></table></div>
+<p>نتیجه: حتی با 12 نتیجه، CSS قالب 12 بار تکرار نمی‌شود و <code>&lt;link&gt;</code>ها هم به‌جای درج شدن به‌صورت متن، مانند استایل واقعی رفتار می‌کنند.</p>
+<h3 id="انیمیشنهای-ورود-و-هندلرها">انیمیشن‌های ورود و هندلرها<a class="hlink" href="#انیمیشنهای-ورود-و-هندلرها" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>پس از رندر نتایج قالبی، دو کار انجام می‌شود:</p>
+<ol>
+<li>کلاس <code>elementor-invisible</code> از عنصرها حذف می‌شود؛ وگرنه عنصرهای دارای انیمیشن ورود نامرئی می‌ماندند.</li>
+<li>اگر <code>window.elementorFrontend</code> موجود باشد، هندلرهای سمت کاربر المنتور روی نتایج تازه اجرا می‌شوند تا رفتارهایی مثل تب، آکاردئون یا کاروسل داخل قالب کار کنند.</li>
+</ol>
+<h3 id="نتیجههای-قالبی-و-تعامل">نتیجه‌های قالبی و تعامل<a class="hlink" href="#نتیجههای-قالبی-و-تعامل" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>رفتار</th><th>در نتایج قالبی</th></tr></thead><tbody><tr><td>حرکت ماوس روی نتیجه</td><td>نتیجه را «انتخاب‌شده» نمی‌کند</td></tr><tr><td>استایل انتخاب/هاور افزونه</td><td>اعمال نمی‌شود (ظاهر کاملاً از قالب شماست)</td></tr><tr><td>کیبورد (بالا/پایین و <code>Enter</code>)</td><td>کار می‌کند و با حلقه‌ی بیرونی مشخص است</td></tr><tr><td>کلیک روی کارت بدون لینک</td><td>به آدرس همان نتیجه می‌رود</td></tr><tr><td>کلیک روی لینک/دکمه/فیلد داخل قالب</td><td>به همان عنصر واگذار می‌شود</td></tr></tbody></table></div>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">چرا استایل انتخاب حذف شد</p><p>در نسخه‌های قبلی، کارت افزونه دور نتیجه‌ی قالبی هم حاشیه و پس‌زمینه می‌کشید و لینک تو در تو می‌ساخت. از نسخه‌ی 0.0.6 به بعد، در نتایج قالبی هیچ پوشش و استایلی از طرف ویجت اضافه نمی‌شود و در حالت «صفحه» حتی پنل نتایج هم بدون استایل است؛ پس ظاهر، صد درصد از قالب شما می‌آید.</p>
+</div></aside>
+<h3 id="الگوی-پیشنهادی-قالب">الگوی پیشنهادی قالب<a class="hlink" href="#الگوی-پیشنهادی-قالب" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>یک قالب نتیجه‌ی خوب معمولاً این عنصرها را دارد:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">┌──────────────────────────────────────┐
+│ تصویر شاخص (16:9)                     │
+│ عنوان (پیوند به نوشته)                 │
+│ خلاصه‌ی کوتاه (2 خط)                   │
+│ رده · تاریخ · نویسنده                  │
+│ دکمه‌ی «ادامه مطلب»                     │
+└──────────────────────────────────────┘</code></pre>
+</figure>
+<p>نکات عملی:</p>
+<ul>
+<li><strong>یک لینک اصلی در هر کارت</strong> بگذارید؛ لینک‌های تودرتو دسترس‌پذیری را خراب می‌کنند.</li>
+<li>ارتفاع تصویر را ثابت نگه دارید تا در حالت «کاشی» چیدمان نپرد.</li>
+<li>اگر از «ارتفاع برابر» استفاده می‌کنید، کارت را با <code>display:flex</code> و <code>flex-direction:column</code> بسازید تا دکمه همیشه پایین بماند.</li>
+<li>متن‌های طولانی را با <code>line-clamp</code> کوتاه کنید؛ افزونه خلاصه را به 18 کلمه محدود می‌کند ولی قالب شما می‌تواند کمتر نشان دهد.</li>
+</ul>
+<h3 id="رفع-مشکلات-قالب">رفع مشکلات قالب<a class="hlink" href="#رفع-مشکلات-قالب" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>نشانه</th><th>علت</th><th>راه‌حل</th></tr></thead><tbody><tr><td>نتایج خالی‌اند و کارت پیش‌فرض می‌آید</td><td>قالب محتوای قابل‌مشاهده نساخته</td><td>در قالب از فیلدهای داینامیک استفاده کنید، نه متن ثابت خالی</td></tr><tr><td>ظاهر قالب بدون استایل است</td><td>CSS قالب بارگذاری نشده</td><td>قالب را یک بار در ویرایشگر باز و ذخیره کنید تا CSS ساخته شود</td></tr><tr><td>عنصرها نامرئی می‌مانند</td><td>کلاس <code>elementor-invisible</code></td><td>افزونه آن را حذف می‌کند؛ اگر ماند، انیمیشن ورود را در قالب خاموش کنید</td></tr><tr><td>فقط اولین نتیجه درست است</td><td>حلقه‌ی قالب به داده‌ی نتیجه وصل نیست</td><td>از ویجت‌های حلقه/داینامیک المنتور استفاده کنید</td></tr><tr><td>قالب در فهرست نیست</td><td>وضعیت پیش‌نویس</td><td>قالب را منتشر کنید</td></tr></tbody></table></div>
+<h2 id="پرسوجو-و-فیلترها">پرس‌وجو و فیلترها<a class="hlink" href="#پرسوجو-و-فیلترها" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>پرس‌وجوی جستجو از دو لایه ساخته می‌شود: <strong>کنترل‌های ویجت</strong> (یا ویژگی‌های شورت‌کد) که بدون کدنویسی تنظیم می‌شوند، و <strong>فیلترهای PHP</strong> که اجازه می‌دهند کل کوئری را عوض کنید.</p>
+<h3 id="آرگومانهای-پایهی-کوئری">آرگومان‌های پایه‌ی کوئری<a class="hlink" href="#آرگومانهای-پایهی-کوئری" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>هر جستجو به یک <code>WP_Query</code> تبدیل می‌شود که این مقدارهای ثابت را دارد:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>آرگومان</th><th>مقدار</th><th>چرا</th></tr></thead><tbody><tr><td><code>s</code></td><td>عبارت کاربر</td><td>جستجوی اصلی وردپرس</td></tr><tr><td><code>post_type</code></td><td>منبع انتخابی</td><td>فقط همان نوع محتوا</td></tr><tr><td><code>post_status</code></td><td><code>publish</code></td><td>پیش‌نویس‌ها دیده نمی‌شوند</td></tr><tr><td><code>has_password</code></td><td><code>false</code></td><td>نوشته‌های رمزدار دیده نمی‌شوند</td></tr><tr><td><code>posts_per_page</code></td><td><code>limit</code> (1 تا 50)</td><td>سقف نتایج</td></tr><tr><td><code>paged</code></td><td><code>max( 1, page )</code></td><td>صفحه‌بندی</td></tr><tr><td><code>no_found_rows</code></td><td><code>page &lt; 1</code></td><td>سبک‌تر شدن کوئری وقتی شمارش لازم نیست</td></tr><tr><td><code>ignore_sticky_posts</code></td><td><code>true</code></td><td>ترتیب نتایج به هم نریزد</td></tr></tbody></table></div>
+<h3 id="فیلترهای-بدون-کدنویسی">فیلترهای بدون کدنویسی<a class="hlink" href="#فیلترهای-بدون-کدنویسی" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>فیلتر</th><th>پارامتر</th><th>مقدارها</th><th>اثر روی کوئری</th></tr></thead><tbody><tr><td>مرتب‌سازی</td><td><code>orderby</code></td><td><code>relevance</code>, <code>date</code>, <code>title</code>, <code>author</code>, <code>rand</code>, <code>menu_order</code></td><td><code>relevance</code> هیچ <code>orderby</code> اضافه نمی‌کند؛ <code>menu_order</code> به <code>menu_order title</code> تبدیل می‌شود</td></tr><tr><td>جهت</td><td><code>order</code></td><td><code>ASC</code> / <code>DESC</code></td><td>فقط وقتی <code>orderby</code> غیر از <code>relevance</code> باشد</td></tr><tr><td>بازه‌ی تاریخ</td><td><code>date</code></td><td><code>all</code>, <code>week</code>, <code>month</code>, <code>year</code></td><td><code>date_query</code> با <code>after</code> و <code>inclusive =&gt; true</code></td></tr><tr><td>رده/برچسب</td><td><code>terms</code></td><td><code>[taxonomy:]id</code> با ویرگول</td><td><code>tax_query</code> با رابطه‌ی <code>OR</code> یا <code>AND</code></td></tr><tr><td>شامل/استثنا</td><td><code>terms_op</code></td><td><code>include</code> / <code>exclude</code></td><td>جهت فیلتر رده‌ها</td></tr><tr><td>نوشته‌های چسبنده</td><td><code>ignore_sticky</code></td><td><code>yes</code> / <code>no</code></td><td>اگر <code>no</code> باشد، چسبنده‌ها به ابتدای نتایج منتقل می‌شوند</td></tr><tr><td>شناسه‌ی کوئری</td><td><code>query_id</code></td><td>کلید ساده</td><td>کلید فیلتر اختصاصی سمت سرور</td></tr></tbody></table></div>
+<h4 id="ساختار-taxquery">ساختار <code>tax_query</code><a class="hlink" href="#ساختار-taxquery" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<p>ترم‌ها بر اساس رده‌بندی گروه می‌شوند و یک <code>tax_query</code> ساخته می‌شود:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-v">$tax_query</span> = <span class="tok-k">array</span>( <span class="tok-s">'relation'</span> =&gt; <span class="tok-v">$include</span> ? <span class="tok-s">'OR'</span> : <span class="tok-s">'AND'</span> );
+<span class="tok-k">foreach</span> ( <span class="tok-v">$grouped_terms</span> as <span class="tok-v">$taxonomy</span> =&gt; <span class="tok-v">$ids</span> ) {
+	<span class="tok-v">$tax_query</span>[] = <span class="tok-k">array</span>(
+		<span class="tok-s">'taxonomy'</span> =&gt; <span class="tok-v">$taxonomy</span>,
+		<span class="tok-s">'field'</span>    =&gt; <span class="tok-s">'term_id'</span>,
+		<span class="tok-s">'terms'</span>    =&gt; <span class="tok-v">$ids</span>,
+		<span class="tok-s">'operator'</span> =&gt; <span class="tok-v">$include</span> ? <span class="tok-s">'IN'</span> : <span class="tok-s">'NOT IN'</span>,
+	);
+}</code></pre>
+</figure>
+<p>یعنی با <code>terms_op=&quot;include&quot;</code> کافی است نتیجه در <strong>یکی</strong> از رده‌های داده‌شده باشد، و با <code>terms_op=&quot;exclude&quot;</code> نتیجه باید از <strong>همه‌ی</strong> رده‌های داده‌شده بیرون باشد.</p>
+<h4 id="قالب-terms">قالب <code>terms</code><a class="hlink" href="#قالب-terms" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>ورودی</th><th>تفسیر</th></tr></thead><tbody><tr><td><code>12</code></td><td>رده‌ی پیش‌فرض (<code>category</code>) با شناسه‌ی 12</td></tr><tr><td><code>category:12</code></td><td>همان مورد، صریح</td></tr><tr><td><code>post_tag:57,category:12</code></td><td>دو فیلتر از دو رده‌بندی</td></tr><tr><td><code>category:abc</code></td><td>نادیده گرفته می‌شود (شناسه باید عدد باشد)</td></tr><tr><td><code>private_tax:5</code></td><td>نادیده گرفته می‌شود (فقط رده‌بندی عمومی)</td></tr></tbody></table></div>
+<h3 id="فیلترهای-سمت-سرور">فیلترهای سمت سرور<a class="hlink" href="#فیلترهای-سمت-سرور" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>دو فیلتر روی آرگومان‌های کوئری اعمال می‌شوند، پیش از اجرای <code>WP_Query</code>:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-v">$args</span> = <span class="tok-k">apply_filters</span>( <span class="tok-s">'wgcr_search_query_args'</span>, <span class="tok-v">$args</span>, <span class="tok-v">$query_id</span>, <span class="tok-v">$request</span> );
+<span class="tok-k">if</span> ( <span class="tok-s">''</span> !== <span class="tok-v">$query_id</span> ) {
+	<span class="tok-v">$args</span> = <span class="tok-k">apply_filters</span>( <span class="tok-s">'wgcr_search_query_args/'</span> . <span class="tok-v">$query_id</span>, <span class="tok-v">$args</span>, <span class="tok-v">$request</span> );
+}</code></pre>
+</figure>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>فیلتر</th><th>چه زمانی</th><th>ورودی‌ها</th></tr></thead><tbody><tr><td><code>wgcr_search_query_args</code></td><td>همه‌ی جستجوها</td><td><code>$args</code>، <code>$query_id</code>، <code>$request</code></td></tr><tr><td><code>wgcr_search_query_args/{query_id}</code></td><td>فقط ویجت‌هایی با همان شناسه</td><td><code>$args</code>، <code>$request</code></td></tr></tbody></table></div>
+<p>فیلتر اختصاصی <strong>بعد از</strong> فیلتر عمومی اجرا می‌شود، پس مقدار نهایی با آن تعیین می‌شود.</p>
+<h4 id="کجا-بنویسیم">کجا بنویسیم<a class="hlink" href="#کجا-بنویسیم" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<p>کد نمونه را در یک افزونه‌ی کوچک یا در <code>functions.php</code> پوسته‌ی فرزند بگذارید:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-k">add_filter</span>( <span class="tok-s">'wgcr_search_query_args/courses'</span>, <span class="tok-k">function</span> ( <span class="tok-v">$args</span>, <span class="tok-v">$request</span> ) {
+	<span class="tok-v">$args</span>[<span class="tok-s">'meta_query'</span>] = <span class="tok-k">array</span>(
+		<span class="tok-k">array</span>(
+			<span class="tok-s">'key'</span>     =&gt; <span class="tok-s">'course_level'</span>,
+			<span class="tok-s">'value'</span>   =&gt; <span class="tok-s">'beginner'</span>,
+			<span class="tok-s">'compare'</span> =&gt; <span class="tok-s">'='</span>,
+		),
+	);
+	<span class="tok-k">return</span> <span class="tok-v">$args</span>;
+}, <span class="tok-n">10</span>, <span class="tok-n">2</span> );</code></pre>
+</figure>
+<p>و در ویجت (یا شورت‌کد) همان شناسه را بگذارید:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">[wgcr_search source=&quot;course&quot; query_id=&quot;courses&quot; mode=&quot;page&quot; columns=&quot;3&quot;]</code></pre>
+</figure>
+<h4 id="نمونههای-کاربردی">نمونه‌های کاربردی<a class="hlink" href="#نمونههای-کاربردی" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<p><strong>محدود کردن به یک نویسنده:</strong></p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-k">add_filter</span>( <span class="tok-s">'wgcr_search_query_args/team_blog'</span>, <span class="tok-k">function</span> ( <span class="tok-v">$args</span> ) {
+	<span class="tok-v">$args</span>[<span class="tok-s">'author__in'</span>] = <span class="tok-k">array</span>( <span class="tok-n">4</span>, <span class="tok-n">17</span>, <span class="tok-n">22</span> );
+	<span class="tok-k">return</span> <span class="tok-v">$args</span>;
+} );</code></pre>
+</figure>
+<p><strong>جستجو در عنوان با وزن بیشتر:</strong></p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-k">add_filter</span>( <span class="tok-s">'wgcr_search_query_args'</span>, <span class="tok-k">function</span> ( <span class="tok-v">$args</span>, <span class="tok-v">$query_id</span>, <span class="tok-v">$request</span> ) {
+	<span class="tok-k">if</span> ( <span class="tok-s">'title'</span> === <span class="tok-v">$request</span>-&gt;get_param( <span class="tok-s">'orderby'</span> ) ) {
+		<span class="tok-v">$args</span>[<span class="tok-s">'orderby'</span>] = <span class="tok-s">'title'</span>;
+		<span class="tok-v">$args</span>[<span class="tok-s">'order'</span>]   = <span class="tok-s">'ASC'</span>;
+	}
+	<span class="tok-k">return</span> <span class="tok-v">$args</span>;
+}, <span class="tok-n">10</span>, <span class="tok-n">3</span> );</code></pre>
+</figure>
+<p><strong>حذف یک رده از همه‌ی جستجوها:</strong></p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-k">add_filter</span>( <span class="tok-s">'wgcr_search_query_args'</span>, <span class="tok-k">function</span> ( <span class="tok-v">$args</span> ) {
+	<span class="tok-v">$args</span>[<span class="tok-s">'tax_query'</span>]   = <span class="tok-k">isset</span>( <span class="tok-v">$args</span>[<span class="tok-s">'tax_query'</span>] ) ? <span class="tok-v">$args</span>[<span class="tok-s">'tax_query'</span>] : <span class="tok-k">array</span>();
+	<span class="tok-v">$args</span>[<span class="tok-s">'tax_query'</span>][] = <span class="tok-k">array</span>(
+		<span class="tok-s">'taxonomy'</span> =&gt; <span class="tok-s">'category'</span>,
+		<span class="tok-s">'field'</span>    =&gt; <span class="tok-s">'slug'</span>,
+		<span class="tok-s">'terms'</span>    =&gt; <span class="tok-k">array</span>( <span class="tok-s">'internal'</span> ),
+		<span class="tok-s">'operator'</span> =&gt; <span class="tok-s">'NOT IN'</span>,
+	);
+	<span class="tok-k">return</span> <span class="tok-v">$args</span>;
+} );</code></pre>
+</figure>
+<p><strong>افزودن یک پست‌تایپ دوم:</strong></p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">php</span></figcaption>
+<pre><code class="language-php" dir="ltr"><span class="tok-k">add_filter</span>( <span class="tok-s">'wgcr_search_query_args/library'</span>, <span class="tok-k">function</span> ( <span class="tok-v">$args</span> ) {
+	<span class="tok-v">$args</span>[<span class="tok-s">'post_type'</span>] = <span class="tok-k">array</span>( <span class="tok-s">'post'</span>, <span class="tok-s">'document'</span> );
+	<span class="tok-k">return</span> <span class="tok-v">$args</span>;
+} );</code></pre>
+</figure>
+<aside class="callout callout--warning"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-warning"/></svg><div class="callout-body"><p class="callout-title">post_type را با احتیاط عوض کنید</p><p>کنترل «منبع» مقدار <code>post_type</code> را تعیین می‌کند و فقط پست‌تایپ‌های عمومی مجازند. اگر در فیلتر آن را به آرایه تغییر می‌دهید، مسئولیت محدود ماندن نتایج به محتوای عمومی با شماست؛ مقادیر امن <code>post_status =&gt; publish</code> و <code>has_password =&gt; false</code> را حفظ کنید؛ فیلترها بعد از ساخت آرگومان‌ها اجرا می‌شوند و محدودیت‌ها دوباره اعمال نمی‌شوند.</p>
+</div></aside>
+<h3 id="نکات-عملکرد">نکات عملکرد<a class="hlink" href="#نکات-عملکرد" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<ul>
+<li><code>orderby=&quot;rand&quot;</code> روی محتواهای بزرگ کند است؛ برای فهرست‌های بلند از <code>date</code> استفاده کنید.</li>
+<li><code>meta_query</code> بدون ایندکس مناسب، جستجو را سنگین می‌کند؛ اگر تعداد نوشته‌ها زیاد است، کلید متا را ایندکس کنید.</li>
+<li><code>date_query</code> با <code>inclusive =&gt; true</code> ساخته می‌شود، پس «هفته» یعنی از همین لحظه هفت روز به عقب.</li>
+<li>اگر به نوار شماره‌ی صفحه نیاز ندارید، <code>page</code> نفرستید تا <code>no_found_rows</code> فعال بماند و کوئری سبک‌تر شود.</li>
+</ul>
+<h2 id="صفحهبندی">صفحه‌بندی<a class="hlink" href="#صفحهبندی" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>صفحه‌بندی نتایج جستجو در بخش «صفحه‌بندی» ویجت تنظیم می‌شود و فقط وقتی دیده می‌شود که تعداد نتایج از «آیتم در هر برگه» بیشتر باشد.</p>
+<h3 id="چهار-نوع-صفحهبندی">چهار نوع صفحه‌بندی<a class="hlink" href="#چهار-نوع-صفحهبندی" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>نوع</th><th>مقدار کنترل</th><th>رفتار</th><th>مناسب</th></tr></thead><tbody><tr><td>هیچکدام</td><td><code>none</code></td><td>فقط یک صفحه نتیجه</td><td>هدر، جستجوی سریع</td></tr><tr><td>شماره‌ها</td><td><code>numbers</code></td><td>نوار کامل با قبلی، بعدی، شماره‌ها و «صفحه X از Y»</td><td>صفحه‌ی جستجوی اصلی</td></tr><tr><td>قبلی / بعدی</td><td><code>prev_next</code></td><td>فقط دو دکمه</td><td>فضاهای باریک</td></tr><tr><td>بارگذاری با کلیک</td><td><code>load_on_click</code></td><td>دکمه‌ی «بارگذاری بیشتر» نتایج را <strong>اضافه</strong> می‌کند</td><td>گرید محتوا</td></tr><tr><td>بارگذاری با اسکرول</td><td><code>load_on_scroll</code></td><td>با رسیدن به انتها، خودکار اضافه می‌شود</td><td>فهرست‌های طولانی</td></tr></tbody></table></div>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">تفاوت «جابه‌جایی» و «افزودن»</p><p>در انواع شماره‌ای و قبلی/بعدی، نتایج صفحه‌ی جدید <strong>جای</strong> نتایج قبلی را می‌گیرند. در انواع «بارگذاری»، نتایج جدید به انتهای همان فهرست <strong>اضافه</strong> می‌شوند و نتایج قبلی سر جایشان می‌مانند.</p>
+</div></aside>
+<h3 id="ساختار-نوار-صفحهبندی">ساختار نوار صفحه‌بندی<a class="hlink" href="#ساختار-نوار-صفحهبندی" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">html</span></figcaption>
+<pre><code class="language-html" dir="ltr">&lt;div class=&quot;wgcr-search-foot&quot;&gt;
+	&lt;nav class=&quot;wgcr-search-pagination&quot; aria-label=&quot;صفحه‌بندی نتایج&quot;&gt;
+		&lt;button type=&quot;button&quot; class=&quot;wgcr-search-page wgcr-search-page--prev&quot;&gt;قبلی&lt;/button&gt;
+		&lt;button type=&quot;button&quot; class=&quot;wgcr-search-page&quot; data-page=&quot;1&quot;&gt;1&lt;/button&gt;
+		&lt;button type=&quot;button&quot; class=&quot;wgcr-search-page&quot; data-page=&quot;2&quot; aria-current=&quot;page&quot;&gt;2&lt;/button&gt;
+		&lt;span class=&quot;wgcr-search-page wgcr-search-page--gap&quot; aria-hidden=&quot;true&quot;&gt;…&lt;/span&gt;
+		&lt;button type=&quot;button&quot; class=&quot;wgcr-search-page&quot; data-page=&quot;9&quot;&gt;9&lt;/button&gt;
+		&lt;button type=&quot;button&quot; class=&quot;wgcr-search-page wgcr-search-page--next&quot;&gt;بعدی&lt;/button&gt;
+		&lt;span class=&quot;wgcr-search-page wgcr-search-page--info&quot;&gt;صفحه 2 از 9&lt;/span&gt;
+	&lt;/nav&gt;
+	&lt;button type=&quot;button&quot; class=&quot;wgcr-search-more&quot; aria-controls=&quot;wgcr-search-abc123-list&quot; hidden&gt;
+		&lt;span class=&quot;wgcr-search-more-icon&quot; aria-hidden=&quot;true&quot;&gt;…&lt;/span&gt;
+		&lt;span class=&quot;wgcr-search-more-text&quot;&gt;مشاهده مقالات بیشتر&lt;/span&gt;
+	&lt;/button&gt;
+	&lt;div class=&quot;wgcr-search-nomore&quot; role=&quot;status&quot; hidden&gt;نوشته‌ی بیشتری موجود نیست.&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</figure>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کلاس</th><th>نقش</th></tr></thead><tbody><tr><td><code>.wgcr-search-pagination</code></td><td>ناوبری صفحه‌بندی با <code>aria-label</code></td></tr><tr><td><code>.wgcr-search-page[data-page]</code></td><td>دکمه‌ی شماره‌ی صفحه</td></tr><tr><td><code>.wgcr-search-page--prev</code> و <code>--next</code></td><td>دکمه‌های قبلی و بعدی</td></tr><tr><td><code>.wgcr-search-page--gap</code></td><td>نقطه‌چین بین شماره‌ها (غیرقابل کلیک)</td></tr><tr><td><code>.wgcr-search-page--info</code></td><td>متن «صفحه X از Y»</td></tr><tr><td><code>.wgcr-search-more</code></td><td>دکمه‌ی «بارگذاری بیشتر»</td></tr><tr><td><code>.wgcr-search-nomore</code></td><td>پیام پایان نتایج با <code>role=&quot;status&quot;</code></td></tr></tbody></table></div>
+<p>صفحه‌ی جاری با <code>aria-current=&quot;page&quot;</code> نشانه‌گذاری می‌شود تا صفحه‌خوان آن را اعلام کند.</p>
+<h3 id="کنترلهای-مربوط">کنترل‌های مربوط<a class="hlink" href="#کنترلهای-مربوط" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کنترل</th><th>شناسه</th><th>مقدار پیش‌فرض</th><th>توضیح</th></tr></thead><tbody><tr><td>صفحه‌بندی</td><td><code>pagination_type</code></td><td>هیچکدام (<code>none</code>)</td><td>یکی از چهار نوع بالا</td></tr><tr><td>چیدمان</td><td><code>pagination_align</code></td><td>وسط (<code>center</code>)</td><td>واکنش‌گرا؛ فقط وقتی صفحه‌بندی فعال باشد</td></tr><tr><td>اسپیسر</td><td><code>pagination_spacer</code></td><td>بدون (<code>no</code>)</td><td>کلاس <code>wgcr-search--spacer</code> را به ریشه اضافه می‌کند تا بالای صفحه‌بندی فاصله بگیرد</td></tr><tr><td>آیتم در هر برگه</td><td><code>posts_per_page</code></td><td>12</td><td>در بخش «طرح‌بندی» (حالت صفحه)؛ 1 تا 50</td></tr><tr><td>متن دکمه</td><td><code>button_text</code></td><td>«مشاهده مقالات بیشتر»</td><td>متن دکمه‌ی «بارگذاری بیشتر»؛ فقط «بارگذاری با کلیک»</td></tr><tr><td>آیکن</td><td><code>button_icon</code></td><td>نمایش</td><td>آیکون شورون کنار متن دکمه</td></tr><tr><td>شناسه دکمه</td><td><code>button_id</code></td><td>خالی</td><td>اگر پر شود، به‌عنوان <code>id</code> دکمه استفاده می‌شود</td></tr><tr><td>چیدمان پیام</td><td><code>no_posts_align</code></td><td>وسط (<code>center</code>)</td><td>چیدمان پیام پایان نتایج در هر دو نوع بارگذاری</td></tr><tr><td>پیام سفارشی</td><td><code>custom_message</code></td><td>خیر</td><td>برای فعال‌کردن پیام دلخواه پایان نتایج</td></tr><tr><td>متن پیام سفارشی</td><td><code>custom_message_text</code></td><td>خالی</td><td>جایگزین «نوشته‌ی بیشتری موجود نیست.»</td></tr></tbody></table></div>
+<aside class="callout callout--warning"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-warning"/></svg><div class="callout-body"><p class="callout-title">شناسه‌ی دکمه باید یکتا باشد</p><p>«شناسه دکمه» مستقیماً به‌عنوان <code>id</code> در HTML چاپ می‌شود. اگر دو ویجت در یک صفحه یک شناسه داشته باشند، <code>aria-controls</code> و لینک‌های <code>#id</code> خراب می‌شوند. فقط حروف انگلیسی، عدد و زیرخط مجاز است و اگر خالی بگذارید، افزونه خودش شناسه‌ی یکتا می‌سازد.</p>
+</div></aside>
+<h3 id="چطور-تعداد-صفحهها-محاسبه-میشود">چطور تعداد صفحه‌ها محاسبه می‌شود<a class="hlink" href="#چطور-تعداد-صفحهها-محاسبه-میشود" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>وقتی درخواست با پارامتر <code>page</code> فرستاده شود، سرور دو هدر برمی‌گرداند:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>هدر</th><th>محتوا</th></tr></thead><tbody><tr><td><code>X-WP-Total</code></td><td>تعداد کل نتایج (<code>found_posts</code>)</td></tr><tr><td><code>X-WP-TotalPages</code></td><td>تعداد کل صفحه‌ها (<code>max_num_pages</code>)</td></tr></tbody></table></div>
+<p>برای اینکه شمارش کل نتایج انجام شود، <code>no_found_rows</code> فقط وقتی <code>page</code> کمتر از 1 باشد روشن می‌شود؛ یعنی در درخواست‌های بدون صفحه‌بندی، کوئری سبک‌تر است و شمارش انجام نمی‌شود.</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">bash</span></figcaption>
+<pre><code class="language-bash" dir="ltr"><span class="tok-k">curl</span> -sI <span class="tok-s">&quot;https://example.com/wp-json/wgcr/v1/search?q=آموزش&amp;limit=12&amp;page=1&quot;</span> | grep -i x-wp</code></pre>
+</figure>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">X-WP-Total: 47
+X-WP-TotalPages: 4</code></pre>
+</figure>
+<h3 id="پیمایش-بینهایت">پیمایش بی‌نهایت<a class="hlink" href="#پیمایش-بینهایت" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>در «بارگذاری با اسکرول»، یک عنصر دیده‌بان به نام <code>.wgcr-search-sentinel</code> بعد از آخرین نتیجه قرار می‌گیرد و با <code>IntersectionObserver</code> دیده می‌شود:</p>
+<ul>
+<li>در <strong>حالت نمایش در صفحه</strong>، ملاک دیده‌شدن، پنجره‌ی مرورگر است.</li>
+<li>در <strong>حالت لیست</strong>، ملاک، اسکرول داخل پنل نتایج است.</li>
+<li>اگر <code>IntersectionObserver</code> در مرورگر موجود نباشد، بارگذاری خودکار انجام نمی‌شود ولی «بارگذاری با کلیک» و شماره‌ها کار می‌کنند.</li>
+</ul>
+<p>هر بار که صفحه‌ی جدید می‌رسد، تا پایان رندر منتظر می‌ماند و سپس دیده‌بان دوباره فعال می‌شود؛ پس درخواست پشت‌سرهم و تکراری فرستاده نمی‌شود. وقتی صفحه‌ی آخر رسید، پیام پایان نتایج (<code>role=&quot;status&quot;</code>) نمایش داده می‌شود و دیده‌بان با <code>aria-hidden</code> از دسترس بیرون می‌رود.</p>
+<h3 id="رفتار-کیبورد">رفتار کیبورد<a class="hlink" href="#رفتار-کیبورد" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کلید</th><th>رفتار</th></tr></thead><tbody><tr><td><code>Tab</code></td><td>بین فیلد، نتایج و دکمه‌های صفحه‌بندی جابه‌جا می‌شود</td></tr><tr><td><code>Enter</code> روی دکمه‌ی صفحه</td><td>همان صفحه بارگذاری می‌شود و فوکوس روی همان دکمه می‌ماند</td></tr><tr><td><code>Enter</code> روی «بارگذاری بیشتر»</td><td>نتایج بعدی اضافه می‌شوند</td></tr><tr><td><code>Escape</code></td><td>در حالت لیست پنل بسته می‌شود؛ در حالت صفحه عبارت پاک می‌شود</td></tr></tbody></table></div>
+<p>پس از رندر صفحه‌ی جدید، فوکوس به دکمه‌ای برمی‌گردد که زده شده بود: قبلی، بعدی یا دکمه‌ی <code>aria-current=&quot;page&quot;</code>.</p>
+<h3 id="نکات-عملکرد-2">نکات عملکرد<a class="hlink" href="#نکات-عملکرد-2" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<ul>
+<li><strong>آیتم در هر برگه را کوچک نگه دارید</strong>: مقدار 12 برای بیشتر سایت‌ها مناسب است؛ مقدار 50 در حالت لیست، پنل را طولانی و رندر را سنگین می‌کند.</li>
+<li><strong>شمارش کل نتایج هزینه دارد</strong>: اگر به نوار شماره‌ها نیاز ندارید، صفحه‌بندی را «هیچکدام» یا «بارگذاری با کلیک» بگذارید تا <code>found_posts</code> شمارش نشود.</li>
+<li><strong>کش سمت سرور</strong>: اگر پروکسی کش هدرهای <code>X-WP-Total</code> را حذف می‌کند، نوار شماره‌ها کامل ساخته نمی‌شود. مسیر <code>/wp-json/</code> را از کش بیرون بگذارید.</li>
+</ul>
+<h3 id="انتخاب-نوع-صفحهبندی">انتخاب نوع صفحه‌بندی<a class="hlink" href="#انتخاب-نوع-صفحهبندی" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>وضعیت شما</th><th>نوع مناسب</th></tr></thead><tbody><tr><td>صفحه‌ی جستجو با نتایج زیاد</td><td>شماره‌ها</td></tr><tr><td>پنل باریک در سربرگ سایت</td><td>قبلی/بعدی یا بارگذاری با کلیک</td></tr><tr><td>مرور فهرست طولانی بدون کلیک</td><td>بارگذاری با اسکرول</td></tr><tr><td>تعداد کم و ثابت نتایج</td><td>هیچکدام</td></tr></tbody></table></div>
+<h2 id="استایلدهی-نتایج">استایل‌دهی نتایج<a class="hlink" href="#استایلدهی-نتایج" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>کنترل‌های مخصوص حالت «صفحه» فقط وقتی همان حالت انتخاب شده باشد نمایش داده می‌شوند. راهنمای کامل در صفحه‌ی <a href="#استایلدهی-نتایج">استایل‌دهی</a>.</p>
+<p>ظاهر ویجت جستجو را می‌توانید از سه راه تغییر دهید: <strong>کنترل‌های استایل المنتور</strong>، <strong>متغیرهای CSS</strong> و <strong>بازنویسی کلاس‌ها</strong>. این صفحه هر سه را با نمونه‌کد توضیح می‌دهد.</p>
+<h3 id="متغیرهای-css">متغیرهای CSS<a class="hlink" href="#متغیرهای-css" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>افزونه چند متغیر CSS را روی ریشه‌ی هر <code>.wgcr-search</code> تعریف می‌کند. این متغیرها سراسری نیستند؛ مقدارهای پایه‌ی رنگ، کادر، گردی و تعداد ستون‌ها را برای همان ویجت فراهم می‌کنند و می‌توانید آن‌ها را روی ریشه‌ی یک نمونه بازنویسی کنید:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>متغیر</th><th>مقدار پیش‌فرض</th><th>کاربرد</th></tr></thead><tbody><tr><td><code>--wgcr-blue</code></td><td><code>#2E86DE</code></td><td>رنگ اصلی: حاشیه‌ی فوکوس، آیکون فعال، اسپینر</td></tr><tr><td><code>--wgcr-navy</code></td><td><code>#1B5EA8</code></td><td>حالت‌های تیره‌تر رنگ اصلی</td></tr><tr><td><code>--wgcr-ink</code></td><td><code>#111827</code></td><td>رنگ متن عنوان‌ها</td></tr><tr><td><code>--wgcr-slate</code></td><td><code>#64748B</code></td><td>رنگ متن ثانویه (خلاصه، تاریخ، آیکون)</td></tr><tr><td><code>--wgcr-line</code></td><td><code>#E2E8F0</code></td><td>رنگ حاشیه‌ها</td></tr><tr><td><code>--wgcr-radius</code></td><td><code>14px</code></td><td>گردی فیلد، پنل و کارت‌ها</td></tr><tr><td><code>--wgcr-search-cols</code></td><td><code>1</code></td><td>تعداد ستون‌ها در حالت «صفحه»</td></tr></tbody></table></div>
+<p>تغییر کل ظاهر با یک قطعه‌ی کوچک:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr"><span class="tok-t">.wgcr-search</span> {
+	<span class="tok-v">--wgcr-blue</span>: <span class="tok-t">#4f46e5</span>;
+	<span class="tok-v">--wgcr-navy</span>: <span class="tok-t">#3730a3</span>;
+	<span class="tok-v">--wgcr-ink</span>: <span class="tok-t">#0f172a</span>;
+	<span class="tok-v">--wgcr-slate</span>: <span class="tok-t">#64748b</span>;
+	<span class="tok-v">--wgcr-line</span>: <span class="tok-t">#e2e8f0</span>;
+	<span class="tok-v">--wgcr-radius</span>: <span class="tok-n">10px</span>;
+}</code></pre>
+</figure>
+<p>اگر می‌خواهید فقط یک ویجت خاص عوض شود، همان متغیرها را روی پوشش آن ویجت در المنتور بگذارید (کلاس CSS دلخواه در بخش «پیشرفته»).</p>
+<h3 id="کنترلهای-استایل-المنتور">کنترل‌های استایل المنتور<a class="hlink" href="#کنترلهای-استایل-المنتور" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<h4 id="فیلد-جستجو">فیلد جستجو<a class="hlink" href="#فیلد-جستجو" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کنترل</th><th>انتخابگر هدف</th></tr></thead><tbody><tr><td>رنگ متن</td><td><code>.wgcr-search-input</code></td></tr><tr><td>رنگ متن راهنما</td><td><code>.wgcr-search-input::placeholder</code></td></tr><tr><td>پس‌زمینه</td><td><code>.wgcr-search-input</code></td></tr><tr><td>رنگ کادر (فوکوس)</td><td><code>.wgcr-search-input:focus</code></td></tr><tr><td>گردی گوشه‌ها</td><td><code>.wgcr-search-input</code></td></tr><tr><td>پدینگ</td><td><code>.wgcr-search-input</code></td></tr><tr><td>رنگ و اندازه‌ی آیکون</td><td><code>.wgcr-search-icon</code></td></tr></tbody></table></div>
+<h4 id="کادر-نتایج">کادر نتایج<a class="hlink" href="#کادر-نتایج" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کنترل</th><th>هدف</th><th>شرط</th></tr></thead><tbody><tr><td>پس‌زمینه</td><td><code>.wgcr-search-panel</code></td><td>هر دو حالت</td></tr><tr><td>گردی و پدینگ پنل</td><td><code>.wgcr-search-panel</code></td><td>هر دو حالت</td></tr><tr><td>عرض کانتینر</td><td><code>.wgcr-search--page .wgcr-search-panel</code></td><td>فقط حالت صفحه</td></tr><tr><td>حداقل / حداکثر ارتفاع</td><td><code>.wgcr-search--page .wgcr-search-panel</code></td><td>فقط حالت صفحه</td></tr><tr><td>فاصله‌ی بیرونی</td><td><code>.wgcr-search--page .wgcr-search-panel</code></td><td>فقط حالت صفحه</td></tr><tr><td>پس‌زمینه‌ی کانتینر</td><td><code>.wgcr-search--page .wgcr-search-panel</code></td><td>فقط حالت صفحه</td></tr><tr><td>تراز افقی</td><td><code>.wgcr-search--page .wgcr-search-panel</code></td><td>فقط حالت صفحه؛ پیش‌فرض <code>justify</code></td></tr></tbody></table></div>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">حداکثر ارتفاع در دو حالت</p><p>در حالت لیست، ارتفاع فهرست نتایج با <code>max-height: 420px</code> در CSS محدود و خود فهرست اسکرول می‌شود. در حالت «صفحه» این سقف برداشته می‌شود و در عوض، کنترل «حداکثر ارتفاع» خودِ پنل را اسکرول می‌کند؛ پس نتایج به‌همراه تعدادشان فضا می‌گیرند.</p>
+</div></aside>
+<h4 id="آیتمها">آیتم‌ها<a class="hlink" href="#آیتمها" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کنترل</th><th>هدف</th></tr></thead><tbody><tr><td>رنگ عنوان</td><td><code>.wgcr-search-title</code></td></tr><tr><td>پس‌زمینه‌ی آیتم فعال/هاور</td><td><code>.wgcr-search-link:hover</code> و <code>.wgcr-search-item[aria-selected=&quot;true&quot;] .wgcr-search-link</code></td></tr><tr><td>رنگ خلاصه</td><td><code>.wgcr-search-excerpt</code></td></tr><tr><td>رنگ «نمایش همه»</td><td><code>.wgcr-search-all</code></td></tr><tr><td>رنگ «نمایش همه» (هاور)</td><td><code>.wgcr-search-all:hover</code></td></tr></tbody></table></div>
+<h3 id="چیدمان-ستونی،-کاشی-و-ارتفاع-برابر">چیدمان ستونی، کاشی و ارتفاع برابر<a class="hlink" href="#چیدمان-ستونی،-کاشی-و-ارتفاع-برابر" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کلاس ریشه</th><th>اثر</th></tr></thead><tbody><tr><td><code>.wgcr-search--page</code></td><td>پنل از حالت مطلق به <code>static</code> تغییر می‌کند و فهرست به شبکه‌ی CSS تبدیل می‌شود</td></tr><tr><td><code>.wgcr-search--cols-1</code> … <code>--cols-6</code></td><td>متغیر <code>--wgcr-search-cols</code> را تنظیم می‌کند</td></tr><tr><td><code>.wgcr-search--masonry</code></td><td>فهرست از <code>grid</code> به <code>columns</code> تغییر می‌کند و هر آیتم <code>break-inside: avoid</code> می‌گیرد</td></tr><tr><td><code>.wgcr-search--equal</code></td><td><code>align-items: stretch</code> روی فهرست و <code>height: 100%</code> روی لینک کارت</td></tr><tr><td><code>.wgcr-search--tpl</code></td><td>نتایج با قالب المنتور رندر شده‌اند</td></tr><tr><td><code>.wgcr-search--spacer</code></td><td>فاصله‌ی اضافی پیش از ناحیه‌ی صفحه‌بندی</td></tr><tr><td><code>.wgcr-search.is-loading</code></td><td>اسپینر داخل فیلد دیده می‌شود</td></tr></tbody></table></div>
+<p>ستون‌ها واکنش‌گرا هستند؛ چون المنتور برای هر نقطه‌ی شکست یک مقدار جدا می‌سازد:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr"><span class="tok-t">.wgcr-search--page</span> <span class="tok-t">.wgcr-search-list</span> {
+	display: grid;
+	grid-template-columns: repeat(var(<span class="tok-v">--wgcr-search-cols</span>, <span class="tok-n">1</span>), minmax(<span class="tok-n">0</span>, <span class="tok-n">1fr</span>));
+	gap: <span class="tok-n">4px</span> <span class="tok-n">10px</span>;
+}</code></pre>
+</figure>
+<h3 id="نمونهکدهای-آماده">نمونه‌کدهای آماده<a class="hlink" href="#نمونهکدهای-آماده" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<h4 id="کارت-با-سایهی-نرم-و-لبهی-رنگی">کارت با سایه‌ی نرم و لبه‌ی رنگی<a class="hlink" href="#کارت-با-سایهی-نرم-و-لبهی-رنگی" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr"><span class="tok-t">.wgcr-search-item</span> <span class="tok-t">.wgcr-search-link</span> {
+	border: <span class="tok-n">1px</span> solid var(<span class="tok-v">--wgcr-line</span>);
+	border-radius: <span class="tok-n">12px</span>;
+	box-shadow: <span class="tok-n">0</span> <span class="tok-n">1px</span> <span class="tok-n">3px</span> rgb(<span class="tok-n">15</span> <span class="tok-n">23</span> <span class="tok-n">42</span> / <span class="tok-n">6</span>%);
+	transition: box-shadow <span class="tok-t">.18s</span> ease, transform <span class="tok-t">.18s</span> ease;
+}
+<span class="tok-t">.wgcr-search-item</span> <span class="tok-t">.wgcr-search-link</span>:hover {
+	box-shadow: <span class="tok-n">0</span> <span class="tok-n">10px</span> <span class="tok-n">24px</span> -<span class="tok-n">8px</span> rgb(<span class="tok-n">15</span> <span class="tok-n">23</span> <span class="tok-n">42</span> / <span class="tok-n">22</span>%);
+	transform: translateY(-<span class="tok-n">2px</span>);
+}</code></pre>
+</figure>
+<h4 id="پنل-تیره">پنل تیره<a class="hlink" href="#پنل-تیره" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr"><span class="tok-t">.wgcr-search-panel</span> {
+	background: <span class="tok-t">#0f172a</span>;
+	border-color: <span class="tok-t">#1e293b</span>;
+	<span class="tok-v">--wgcr-ink</span>: <span class="tok-t">#f8fafc</span>;
+	<span class="tok-v">--wgcr-slate</span>: <span class="tok-t">#94a3b8</span>;
+}</code></pre>
+</figure>
+<h4 id="پنل-همعرض-با-فیلد-در-حالت-لیست">پنل هم‌عرض با فیلد در حالت لیست<a class="hlink" href="#پنل-همعرض-با-فیلد-در-حالت-لیست" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr"><span class="tok-t">.wgcr-search-panel</span> { inset-inline: <span class="tok-n">0</span>; }
+<span class="tok-t">.wgcr-search--modal</span> <span class="tok-t">.wgcr-search-list</span> { max-height: <span class="tok-n">60vh</span>; }</code></pre>
+</figure>
+<h4 id="حذف-تصویر-و-چیدمان-فشرده">حذف تصویر و چیدمان فشرده<a class="hlink" href="#حذف-تصویر-و-چیدمان-فشرده" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h4>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr"><span class="tok-t">.wgcr-search-thumb</span> { display: none; }
+<span class="tok-t">.wgcr-search-body</span> { gap: <span class="tok-n">2px</span>; }
+<span class="tok-t">.wgcr-search-excerpt</span> { display: none; }</code></pre>
+</figure>
+<h3 id="نکات-مهم">نکات مهم<a class="hlink" href="#نکات-مهم" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<aside class="callout callout--warning"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-warning"/></svg><div class="callout-body"><p class="callout-title">فایل‌های افزونه را ویرایش نکنید</p><p><code>search.css</code> با شماره‌ی نسخه‌ی افزونه بارگذاری می‌شود و در هر به‌روزرسانی جایگزین می‌شود. تغییرات را در CSS پوسته، در «CSS سفارشی» المنتور یا در یک افزونه‌ی کوچک جداگانه بگذارید.</p>
+</div></aside>
+<aside class="callout callout--tip"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-tip"/></svg><div class="callout-body"><p class="callout-title">اولویت انتخابگرها</p><p>بیشتر انتخابگرهای افزونه با <code>.wgcr-search</code> شروع می‌شوند (مثلاً <code>.wgcr-search .wgcr-search-input</code>). اگر CSS شما اثر نکرد، انتخابگر را دقیق‌تر کنید یا از <code>:where()</code> برای کاهش وزن انتخابگر خود افزونه استفاده نکنید؛ کافی است همان الگو را تکرار کنید:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">css</span></figcaption>
+<pre><code class="language-css" dir="ltr"><span class="tok-t">.wgcr-search</span> <span class="tok-t">.wgcr-search-input</span> { background: <span class="tok-t">#f8fafc</span>; }</code></pre>
+</figure>
+</div></aside>
+<ul>
+<li>حرکت‌ها با <code>@media (prefers-reduced-motion: reduce)</code> غیرفعال می‌شوند؛ اگر انیمیشن دلخواه اضافه می‌کنید، همین الگو را رعایت کنید.</li>
+<li>جهت متن از خود سایت می‌آید (<code>inset-inline-start</code> و <code>inset-inline-end</code>)، پس در حالت چپ‌به‌راست هم درست کار می‌کند و نیازی به بازنویسی RTL ندارید.</li>
+<li>برچسب فیلد (<code>.wgcr-search-label</code>) به‌صورت بصری پنهان است ولی برای صفحه‌خوان خوانده می‌شود؛ آن را <code>display:none</code> نکنید.</li>
+</ul>
+<h2 id="ساختار-خروجی">ساختار خروجی<a class="hlink" href="#ساختار-خروجی" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">html</span></figcaption>
+<pre><code class="language-html" dir="ltr">&lt;div class=&quot;wgcr-search wgcr-search--modal&quot; data-wgcr-search
+	data-display-mode=&quot;modal&quot; data-source=&quot;post&quot; data-limit=&quot;12&quot;
+	data-thumb=&quot;yes&quot; data-excerpt=&quot;yes&quot; data-all=&quot;نمایش همه نتایج&quot;
+	data-template=&quot;0&quot; data-query=&quot;…&quot; data-pagination=&quot;none&quot;&gt;
+	&lt;form class=&quot;wgcr-search-form&quot; role=&quot;search&quot; method=&quot;get&quot; action=&quot;https://example.com/&quot;&gt;
+		&lt;label class=&quot;wgcr-search-label&quot; for=&quot;wgcr-search-abc123-input&quot;&gt;جستجو در مقالات…&lt;/label&gt;
+		&lt;div class=&quot;wgcr-search-field&quot;&gt;
+			&lt;span class=&quot;wgcr-search-icon&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;…&lt;/svg&gt;&lt;/span&gt;
+			&lt;input type=&quot;search&quot; class=&quot;wgcr-search-input&quot; id=&quot;wgcr-search-abc123-input&quot; name=&quot;s&quot;
+				placeholder=&quot;جستجو در مقالات…&quot; autocomplete=&quot;off&quot; role=&quot;combobox&quot;
+				aria-autocomplete=&quot;list&quot; aria-expanded=&quot;false&quot;
+				aria-controls=&quot;wgcr-search-abc123-list&quot; aria-haspopup=&quot;listbox&quot;&gt;
+			&lt;input type=&quot;hidden&quot; name=&quot;post_type&quot; value=&quot;post&quot;&gt;
+			&lt;span class=&quot;wgcr-search-spinner&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;wgcr-search-panel&quot; hidden&gt;
+			&lt;ul class=&quot;wgcr-search-list&quot; id=&quot;wgcr-search-abc123-list&quot; role=&quot;listbox&quot; aria-label=&quot;نتایج جستجو&quot;&gt;&lt;/ul&gt;
+			&lt;div class=&quot;wgcr-search-status&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+			&lt;a class=&quot;wgcr-search-all&quot; href=&quot;#&quot; hidden&gt;نمایش همه نتایج&lt;/a&gt;
+		&lt;/div&gt;
+	&lt;/form&gt;
+&lt;/div&gt;</code></pre>
+</figure>
+<p>هر نتیجه یک <code>li</code> با کلاس <code>wgcr-search-item</code> و <code>role=&quot;option&quot;</code> است:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">html</span></figcaption>
+<pre><code class="language-html" dir="ltr">&lt;li class=&quot;wgcr-search-item&quot; id=&quot;wgcr-search-abc123-opt-0&quot; role=&quot;option&quot; aria-selected=&quot;false&quot;&gt;
+	&lt;a class=&quot;wgcr-search-link&quot; href=&quot;https://example.com/?p=42&quot;&gt;
+		&lt;img class=&quot;wgcr-search-thumb&quot; src=&quot;…&quot; alt=&quot;&quot; width=&quot;150&quot; height=&quot;150&quot; loading=&quot;lazy&quot;&gt;
+		&lt;span class=&quot;wgcr-search-body&quot;&gt;
+			&lt;span class=&quot;wgcr-search-title&quot;&gt;عنوان نوشته&lt;/span&gt;
+			&lt;span class=&quot;wgcr-search-excerpt&quot;&gt;خلاصه‌ی 18 کلمه‌ای…&lt;/span&gt;
+			&lt;span class=&quot;wgcr-search-date&quot;&gt;2026/09/26&lt;/span&gt;
+		&lt;/span&gt;
+	&lt;/a&gt;
+&lt;/li&gt;</code></pre>
+</figure>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کلاس</th><th>نقش</th></tr></thead><tbody><tr><td><code>.wgcr-search-label</code></td><td>برچسب فیلد (برای صفحه‌خوان؛ بصری پنهان است)</td></tr><tr><td><code>.wgcr-search-field</code></td><td>جعبه‌ی فیلد، آیکون و اسپینر</td></tr><tr><td><code>.wgcr-search-spinner</code></td><td>نشانه‌ی «در حال دریافت»</td></tr><tr><td><code>.wgcr-search-panel</code></td><td>پنل نتایج؛ در حالت لیست با <code>hidden</code> شروع می‌شود</td></tr><tr><td><code>.wgcr-search-list</code></td><td>فهرست نتایج با <code>role=&quot;listbox&quot;</code></td></tr><tr><td><code>.wgcr-search-status</code></td><td>پیام وضعیت با <code>aria-live=&quot;polite&quot;</code> (تعداد نتایج یا خطا)</td></tr><tr><td><code>.wgcr-search-all</code></td><td>پیوند «نمایش همه نتایج» به جستجوی خود وردپرس</td></tr><tr><td><code>.wgcr-search-foot</code></td><td>ناحیه‌ی صفحه‌بندی و دکمه‌ی «بارگذاری بیشتر»</td></tr><tr><td><code>.wgcr-search-nomore</code></td><td>پیام «نوشته‌ی بیشتری موجود نیست» با <code>role=&quot;status&quot;</code></td></tr><tr><td><code>.wgcr-search-item--tpl</code></td><td>نتیجه‌ای که با قالب المنتور رندر شده است</td></tr><tr><td><code>.wgcr-search-thumb--empty</code></td><td>جای خالی تصویر وقتی نوشته تصویر شاخص ندارد</td></tr></tbody></table></div>
+<h3 id="پیکربندی-جاوااسکریپت">پیکربندی جاوااسکریپت<a class="hlink" href="#پیکربندی-جاوااسکریپت" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>پیش از فایل <code>search.js</code>، یک آبجکت پیکربندی به‌صورت درون‌خطی در صفحه چاپ می‌شود:</p>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr">js</span></figcaption>
+<pre><code class="language-js" dir="ltr"><span class="tok-k">window</span>.WGCRSearch = {
+	restUrl: <span class="tok-s">'https://example.com/wp-json/wgcr/v1/search'</span>,
+	homeUrl: <span class="tok-s">'https://example.com/'</span>,
+	minChars: <span class="tok-n">2</span>,
+	maxResults: <span class="tok-n">50</span>,
+	i18n: {
+		noResults: <span class="tok-s">'نتیجه‌ای یافت نشد.'</span>,
+		found: <span class="tok-s">'نتیجه'</span>,
+		error: <span class="tok-s">'خطا در دریافت نتایج.'</span>,
+		prev: <span class="tok-s">'قبلی'</span>,
+		next: <span class="tok-s">'بعدی'</span>,
+		page: <span class="tok-s">'صفحه'</span>,
+		pageOf: <span class="tok-s">'از'</span>
+	}
+};</code></pre>
+</figure>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>کلید</th><th>معنا</th></tr></thead><tbody><tr><td><code>restUrl</code></td><td>نشانی مسیر جستجو، ساخته‌شده با <code>rest_url()</code></td></tr><tr><td><code>homeUrl</code></td><td>نشانی خانه‌ی سایت، برای فرم واقعی جستجو</td></tr><tr><td><code>minChars</code></td><td>کمترین طول عبارت پیش از ارسال درخواست (2)</td></tr><tr><td><code>maxResults</code></td><td>سقف سخت آیتم‌ها در هر صفحه (50)</td></tr><tr><td><code>i18n</code></td><td>متن‌های رابط، ترجمه‌شده به زبان سایت</td></tr></tbody></table></div>
+<aside class="callout callout--important"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-important"/></svg><div class="callout-body"><p class="callout-title">تغییر سقف نتایج</p><p>در این نسخه، ثابت <code>WGCR_SEARCH_MAX_RESULTS</code> با مقدار 50 بدون شرط در افزونه تعریف می‌شود؛ بازتعریف آن در <code>wp-config.php</code> پشتیبانی نمی‌شود. از <code>limit</code> بین 1 تا 50 و صفحه‌بندی استفاده کنید.</p>
+</div></aside>
+<p>از روی فیلد، <code>Enter</code> آدرس <code>data-href</code> نتیجه‌ی فعال را باز می‌کند (جایگزین: <code>a.wgcr-search-link</code>)، نه اولین لینک قالب. با <code>Tab</code> می‌توانید روی لینک‌های خود قالب بروید و آن‌ها را جداگانه باز کنید؛ قالب بدون لینک هم با ناوبری نتیجه قابل بازکردن است.</p>
+<h2 id="رفتار-سمت-کاربر">رفتار سمت کاربر<a class="hlink" href="#رفتار-سمت-کاربر" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>رفتار</th><th>مقدار</th></tr></thead><tbody><tr><td>حداقل طول عبارت</td><td>2 نویسه (<code>minChars</code>)</td></tr><tr><td>تأخیر پس از تایپ (debounce)</td><td>250 میلی‌ثانیه</td></tr><tr><td>سقف نتایج در هر درخواست</td><td>50 (<code>WGCR_SEARCH_MAX_RESULTS</code>)</td></tr><tr><td>لغو درخواست قبلی</td><td>با <code>AbortController</code> هنگام تایپ سریع</td></tr><tr><td>نقطه‌ی پایان</td><td><code>/wp-json/wgcr/v1/search</code></td></tr><tr><td>پیمایش بی‌نهایت</td><td>با <code>IntersectionObserver</code> روی <code>.wgcr-search-sentinel</code></td></tr></tbody></table></div>
+<p>جریان کار: کاربر تایپ می‌کند → 250 میلی‌ثانیه صبر می‌شود → اگر عبارت کمتر از 2 نویسه بود، پنل خالی و پاک می‌شود → در غیر این صورت درخواست قبلی لغو و درخواست جدید فرستاده می‌شود → نتایج رندر می‌شوند → پیام وضعیت («تعداد نتایج: N») برای صفحه‌خوان خوانده می‌شود.</p>
+<aside class="callout callout--tip"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-tip"/></svg><div class="callout-body"><p class="callout-title">پاسخ‌های بی‌ترتیب ممکن نیست</p><p>چون هر درخواست جدید، درخواست قبلی را لغو می‌کند و یک شمارنده‌ی ترتیب (<code>seq</code>) هم بررسی می‌شود، هیچ‌وقت نتیجه‌ی یک عبارت قدیمی‌تر جای نتیجه‌ی تازه را نمی‌گیرد.</p>
+</div></aside>
+<h2 id="کار-بدون-جاوااسکریپت">کار بدون جاوااسکریپت<a class="hlink" href="#کار-بدون-جاوااسکریپت" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>فرم ویجت یک فرم واقعی <code>GET</code> با <code>action</code> برابر خانه‌ی سایت، فیلد <code>s</code> و فیلد پنهان <code>post_type</code> است. یعنی اگر جاوااسکریپت غیرفعال باشد، ارسال فرم کاربر را به صفحه‌ی نتایج جستجوی خود وردپرس برای همان پست‌تایپ می‌برد. این همان الگویی است که برای دسترس‌پذیری و سئو توصیه می‌شود: پیشرفت تدریجی، نه وابستگی کامل به اسکریپت.</p>
+<h2 id="دادههای-روی-ریشهی-ویجت">داده‌های روی ریشه‌ی ویجت<a class="hlink" href="#دادههای-روی-ریشهی-ویجت" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>جاوااسکریپت تنظیمات را از همان ویژگی‌های <code>data-*</code> روی ریشه می‌خواند؛ پس اگر ویجت را با قالب‌های پویا یا کد PHP می‌سازید، این ویژگی‌ها را کامل بگذارید:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>ویژگی</th><th>مثال</th></tr></thead><tbody><tr><td><code>data-wgcr-search</code></td><td>نشانه‌ی راه‌اندازی (بدون مقدار)</td></tr><tr><td><code>data-display-mode</code></td><td><code>modal</code> یا <code>page</code></td></tr><tr><td><code>data-source</code></td><td><code>post</code>، <code>page</code>، <code>product</code> …</td></tr><tr><td><code>data-limit</code></td><td><code>12</code></td></tr><tr><td><code>data-thumb</code></td><td><code>yes</code> / <code>no</code></td></tr><tr><td><code>data-excerpt</code></td><td><code>yes</code> / <code>no</code></td></tr><tr><td><code>data-all</code></td><td>متن پیوند «نمایش همه»</td></tr><tr><td><code>data-template</code></td><td>شناسه‌ی قالب المنتور یا <code>0</code></td></tr><tr><td><code>data-query</code></td><td>JSON فشرده‌ی <code>orderby</code>، <code>order</code>، <code>date</code>، <code>terms</code>، <code>terms_op</code>، <code>ignore_sticky</code>، <code>query_id</code></td></tr><tr><td><code>data-pagination</code></td><td><code>none</code>، <code>numbers</code>، <code>prev_next</code>، <code>load_on_click</code>، <code>load_on_scroll</code></td></tr></tbody></table></div>
+<h2 id="فهرست-کامل-کنترلها">فهرست کامل کنترل‌ها<a class="hlink" href="#فهرست-کامل-کنترلها" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>همه‌ی کنترل‌های محتوایی ویجت به ترتیب بخش‌های پنل. کنترل‌های استایل در بخش بالا فهرست شده‌اند.</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>شناسه</th><th>برچسب در پنل</th><th>نوع</th><th>پیش‌فرض</th><th>شرط نمایش</th></tr></thead><tbody><tr><td><code>display_mode</code></td><td>حالت نمایش نتایج</td><td>انتخابی</td><td><code>modal</code> (حالت لیست)</td><td>—</td></tr><tr><td><code>placeholder</code></td><td>متن راهنما</td><td>متن</td><td>خالی (خودکار پر می‌شود)</td><td>—</td></tr><tr><td><code>thumb</code></td><td>نمایش تصویر</td><td>کلید</td><td>بله</td><td>—</td></tr><tr><td><code>excerpt</code></td><td>نمایش خلاصه</td><td>کلید</td><td>بله</td><td>—</td></tr><tr><td><code>all_text</code></td><td>متن «نمایش همه»</td><td>متن</td><td>«نمایش همه نتایج»</td><td>—</td></tr><tr><td><code>template_mode</code></td><td>انتخاب قالب</td><td>انتخابی</td><td><code>default</code></td><td>—</td></tr><tr><td><code>template</code></td><td>یک قالب انتخاب کنید</td><td>انتخاب با جستجو</td><td>خالی</td><td><code>template_mode = custom</code></td></tr><tr><td><code>edit_template_link</code></td><td>ویرایش قالب</td><td>HTML خام (پیوند)</td><td>—</td><td><code>template_mode = custom</code></td></tr><tr><td><code>columns</code></td><td>ستون‌ها</td><td>عدد واکنش‌گرا</td><td>3 (تبلت 2، موبایل 1)</td><td><code>display_mode = page</code></td></tr><tr><td><code>posts_per_page</code></td><td>آیتم در هر برگه</td><td>عدد 1 تا 50</td><td>12</td><td>—</td></tr><tr><td><code>masonry</code></td><td>کاشی</td><td>کلید</td><td>خیر</td><td><code>display_mode = page</code></td></tr><tr><td><code>equal_height</code></td><td>ارتفاع برابر</td><td>کلید</td><td>خیر</td><td><code>display_mode = page</code> و <code>masonry</code> خاموش</td></tr><tr><td><code>source</code></td><td>منبع</td><td>انتخابی</td><td><code>post</code></td><td>—</td></tr><tr><td><code>custom_type</code></td><td>پست‌تایپ سفارشی</td><td>متن</td><td>خالی</td><td><code>source = custom</code></td></tr><tr><td><code>include_by</code></td><td>شامل توسط</td><td>انتخابی</td><td><code>exclude</code></td><td>—</td></tr><tr><td><code>include_terms</code></td><td>دسته‌ها و برچسب‌ها</td><td>انتخاب ترم</td><td>خالی</td><td>—</td></tr><tr><td><code>date_filter</code></td><td>تاریخ</td><td>انتخابی</td><td><code>all</code></td><td>—</td></tr><tr><td><code>orderby</code></td><td>ترتیب بر اساس</td><td>انتخابی</td><td><code>relevance</code></td><td>—</td></tr><tr><td><code>order</code></td><td>سفارش</td><td>انتخابی</td><td><code>DESC</code></td><td><code>orderby</code> برابر <code>relevance</code> یا <code>rand</code> نباشد</td></tr><tr><td><code>ignore_sticky</code></td><td>نادیده گرفتن نوشته‌های چسبنده</td><td>کلید</td><td>بله</td><td><code>source = post</code></td></tr><tr><td><code>query_id</code></td><td>کوئری ID</td><td>متن</td><td>خالی</td><td>—</td></tr><tr><td><code>pagination_type</code></td><td>صفحه‌بندی</td><td>انتخابی</td><td><code>none</code></td><td>—</td></tr><tr><td><code>pagination_align</code></td><td>چیدمان</td><td>انتخابی واکنش‌گرا</td><td><code>center</code></td><td><code>pagination_type</code> برابر <code>none</code> نباشد</td></tr><tr><td><code>pagination_spacer</code></td><td>اسپیسر</td><td>انتخابی (با/بدون)</td><td><code>no</code></td><td><code>pagination_type</code> برابر <code>none</code> نباشد</td></tr><tr><td><code>button_heading</code></td><td>دکمه</td><td>عنوان جداکننده</td><td>—</td><td><code>pagination_type = load_on_click</code></td></tr><tr><td><code>button_text</code></td><td>متن دکمه</td><td>متن</td><td>«مشاهده مقالات بیشتر»</td><td><code>pagination_type = load_on_click</code></td></tr><tr><td><code>button_icon</code></td><td>آیکن</td><td>انتخابی (نمایش/مخفی)</td><td><code>yes</code></td><td><code>pagination_type = load_on_click</code></td></tr><tr><td><code>button_id</code></td><td>شناسه دکمه</td><td>متن</td><td>خالی</td><td><code>pagination_type = load_on_click</code></td></tr><tr><td><code>no_posts_heading</code></td><td>پیام نوشته‌های بیشتر موجود نیست</td><td>عنوان جداکننده</td><td>—</td><td><code>load_on_click</code> یا <code>load_on_scroll</code></td></tr><tr><td><code>no_posts_align</code></td><td>چیدمان پیام</td><td>انتخابی واکنش‌گرا</td><td><code>center</code></td><td><code>load_on_click</code> یا <code>load_on_scroll</code></td></tr><tr><td><code>custom_message</code></td><td>پیام سفارشی</td><td>کلید</td><td>خیر</td><td><code>load_on_click</code> یا <code>load_on_scroll</code></td></tr><tr><td><code>custom_message_text</code></td><td>متن پیام سفارشی</td><td>ناحیه‌ی متنی</td><td>خالی</td><td>شرط بالا و <code>custom_message = yes</code></td></tr></tbody></table></div>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">این شناسه‌ها کجا دیده می‌شوند؟</p><p>همین شناسه‌ها کلیدهای <code>data-query</code> روی ریشه‌ی ویجت، پارامترهای مسیر REST و آرگومان‌های شورت‌کد هم هستند؛ برای نمونه <code>orderby</code> در هر سه‌جا یک‌سان نوشته می‌شود.</p>
+</div></aside>
+<h2 id="رفع-مشکلات">رفع مشکلات<a class="hlink" href="#رفع-مشکلات" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>نشانه</th><th>علت احتمالی</th><th>راه‌حل</th></tr></thead><tbody><tr><td>با تایپ چیزی نمی‌آید</td><td>عبارت کمتر از 2 نویسه</td><td>دو نویسه یا بیشتر تایپ کنید</td></tr><tr><td>پیام «خطا در دریافت نتایج»</td><td>REST مسدود یا خطای سرور</td><td><code>curl</code> روی <code>/wp-json/wgcr/v1/search?q=test</code> بزنید</td></tr><tr><td>نتایج تکراری می‌آیند</td><td>دو ویجت با «شناسه دکمه» یکسان</td><td>شناسه‌ی یکتا بگذارید یا خالی بگذارید</td></tr><tr><td>تصویر نتایج خالی است</td><td>نوشته تصویر شاخص ندارد</td><td>کلاس <code>.wgcr-search-thumb--empty</code> جای آن را پر می‌کند؛ یا کنترل «نمایش تصویر» را خاموش کنید</td></tr><tr><td>ستون‌ها اثر ندارند</td><td>حالت نمایش روی لیست است</td><td>حالت را به «نمایش در صفحه» تغییر دهید</td></tr><tr><td>در ویرایشگر کار می‌کند ولی در سایت نه</td><td>کش صفحه یا بهینه‌ساز JS</td><td>فایل <code>search.js</code> را از ترکیب/تأخیر خارج کنید</td></tr></tbody></table></div>
+
+</div>
+
+</article>
+<nav class="prevnext" aria-label="قبلی / بعدی"><a class="pn pn--prev" href="../faq/" rel="prev">
+<span class="pn-dir">قبلی</span>
+<span class="pn-group">ویجت‌ها</span>
+<span class="pn-title">ویجت سوالات متداول</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span>
+</a>
+<a class="pn pn--next" href="../../shortcode/" rel="next">
+<span class="pn-dir">بعدی</span>
+<span class="pn-group">استفاده پیشرفته</span>
+<span class="pn-title">شورت‌کد جستجو</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></span>
+</a>
+</nav>
+<section class="related"><h2 class="related-title">صفحه‌های مرتبط</h2><div class="cards cards--related"><a class="card" href="../">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="card-body"><span class="card-title">ویجت‌ها</span><span class="card-text">فهرست ویجت‌های WidgetCore در المنتور، شناسه و کاربرد هر ویجت، دسته‌ی اختصاصی «ویجت‌های WidgetCore» و نحوه‌ی بارگذاری دارایی‌ها فقط در صفحه‌های لازم.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../../shortcode/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+<span class="card-body"><span class="card-title">شورت‌کد جستجو</span><span class="card-text">راهنمای کامل شورت‌کد wgcr_search؛ همه‌ی ویژگی‌ها با مقدار پیش‌فرض و مقدارهای مجاز، نمونه‌های کاربردی و تفاوت آن با ویجت المنتور.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../../rest-api/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+<span class="card-body"><span class="card-title">REST API جستجو</span><span class="card-text">مرجع کامل مسیر REST جستجوی زنده؛ همه‌ی پارامترها، شکل پاسخ، هدرهای صفحه‌بندی، نمونه‌های curl و جاوااسکریپت و نکات امنیتی.</span></span>
+<span class="card-arrow"></span>
+</a>
+</div></section>
+</div>
+</main>
+<aside class="aside-right" aria-label="در این صفحه">
+<nav class="toc" aria-label="در این صفحه" data-toc>
+<p class="toc-title">در این صفحه</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#بخش-عمومی" data-toc-link="بخش-عمومی">بخش «عمومی»</a></li><li class="toc-item toc-d2"><a href="#حالتهای-نمایش" data-toc-link="حالتهای-نمایش">حالت‌های نمایش</a></li><li class="toc-item toc-d3"><a href="#مقایسهی-دو-حالت" data-toc-link="مقایسهی-دو-حالت">مقایسه‌ی دو حالت</a></li><li class="toc-item toc-d3"><a href="#حالت-لیست" data-toc-link="حالت-لیست">حالت لیست</a></li><li class="toc-item toc-d3"><a href="#حالت-نمایش-در-صفحه" data-toc-link="حالت-نمایش-در-صفحه">حالت نمایش در صفحه</a></li><li class="toc-item toc-d3"><a href="#تفاوتهای-رفتاری-که-کمتر-دیده-میشوند" data-toc-link="تفاوتهای-رفتاری-که-کمتر-دیده-میشوند">تفاوت‌های رفتاری که کمتر دیده می‌شوند</a></li><li class="toc-item toc-d3"><a href="#دسترسپذیری-در-هر-دو-حالت" data-toc-link="دسترسپذیری-در-هر-دو-حالت">دسترس‌پذیری در هر دو حالت</a></li><li class="toc-item toc-d3"><a href="#تفاوتهای-استایل" data-toc-link="تفاوتهای-استایل">تفاوت‌های استایل</a></li><li class="toc-item toc-d3"><a href="#الگوهای-پیشنهادی" data-toc-link="الگوهای-پیشنهادی">الگوهای پیشنهادی</a></li><li class="toc-item toc-d2"><a href="#قالبهای-المنتور" data-toc-link="قالبهای-المنتور">قالب‌های المنتور</a></li><li class="toc-item toc-d3"><a href="#آمادهسازی-قالب" data-toc-link="آمادهسازی-قالب">آماده‌سازی قالب</a></li><li class="toc-item toc-d3"><a href="#چه-اتفاقی-هنگام-جستجو-میافتد" data-toc-link="چه-اتفاقی-هنگام-جستجو-میافتد">چه اتفاقی هنگام جستجو می‌افتد</a></li><li class="toc-item toc-d3"><a href="#css-قالب-چگونه-بارگذاری-میشود" data-toc-link="css-قالب-چگونه-بارگذاری-میشود">CSS قالب چگونه بارگذاری می‌شود</a></li><li class="toc-item toc-d3"><a href="#انیمیشنهای-ورود-و-هندلرها" data-toc-link="انیمیشنهای-ورود-و-هندلرها">انیمیشن‌های ورود و هندلرها</a></li><li class="toc-item toc-d3"><a href="#نتیجههای-قالبی-و-تعامل" data-toc-link="نتیجههای-قالبی-و-تعامل">نتیجه‌های قالبی و تعامل</a></li><li class="toc-item toc-d3"><a href="#الگوی-پیشنهادی-قالب" data-toc-link="الگوی-پیشنهادی-قالب">الگوی پیشنهادی قالب</a></li><li class="toc-item toc-d3"><a href="#رفع-مشکلات-قالب" data-toc-link="رفع-مشکلات-قالب">رفع مشکلات قالب</a></li><li class="toc-item toc-d2"><a href="#پرسوجو-و-فیلترها" data-toc-link="پرسوجو-و-فیلترها">پرس‌وجو و فیلترها</a></li><li class="toc-item toc-d3"><a href="#آرگومانهای-پایهی-کوئری" data-toc-link="آرگومانهای-پایهی-کوئری">آرگومان‌های پایه‌ی کوئری</a></li><li class="toc-item toc-d3"><a href="#فیلترهای-بدون-کدنویسی" data-toc-link="فیلترهای-بدون-کدنویسی">فیلترهای بدون کدنویسی</a></li><li class="toc-item toc-d3"><a href="#فیلترهای-سمت-سرور" data-toc-link="فیلترهای-سمت-سرور">فیلترهای سمت سرور</a></li><li class="toc-item toc-d3"><a href="#نکات-عملکرد" data-toc-link="نکات-عملکرد">نکات عملکرد</a></li><li class="toc-item toc-d2"><a href="#صفحهبندی" data-toc-link="صفحهبندی">صفحه‌بندی</a></li><li class="toc-item toc-d3"><a href="#چهار-نوع-صفحهبندی" data-toc-link="چهار-نوع-صفحهبندی">چهار نوع صفحه‌بندی</a></li><li class="toc-item toc-d3"><a href="#ساختار-نوار-صفحهبندی" data-toc-link="ساختار-نوار-صفحهبندی">ساختار نوار صفحه‌بندی</a></li><li class="toc-item toc-d3"><a href="#کنترلهای-مربوط" data-toc-link="کنترلهای-مربوط">کنترل‌های مربوط</a></li><li class="toc-item toc-d3"><a href="#چطور-تعداد-صفحهها-محاسبه-میشود" data-toc-link="چطور-تعداد-صفحهها-محاسبه-میشود">چطور تعداد صفحه‌ها محاسبه می‌شود</a></li><li class="toc-item toc-d3"><a href="#پیمایش-بینهایت" data-toc-link="پیمایش-بینهایت">پیمایش بی‌نهایت</a></li><li class="toc-item toc-d3"><a href="#رفتار-کیبورد" data-toc-link="رفتار-کیبورد">رفتار کیبورد</a></li><li class="toc-item toc-d3"><a href="#نکات-عملکرد-2" data-toc-link="نکات-عملکرد-2">نکات عملکرد</a></li><li class="toc-item toc-d3"><a href="#انتخاب-نوع-صفحهبندی" data-toc-link="انتخاب-نوع-صفحهبندی">انتخاب نوع صفحه‌بندی</a></li><li class="toc-item toc-d2"><a href="#استایلدهی-نتایج" data-toc-link="استایلدهی-نتایج">استایل‌دهی نتایج</a></li><li class="toc-item toc-d3"><a href="#متغیرهای-css" data-toc-link="متغیرهای-css">متغیرهای CSS</a></li><li class="toc-item toc-d3"><a href="#کنترلهای-استایل-المنتور" data-toc-link="کنترلهای-استایل-المنتور">کنترل‌های استایل المنتور</a></li><li class="toc-item toc-d3"><a href="#چیدمان-ستونی،-کاشی-و-ارتفاع-برابر" data-toc-link="چیدمان-ستونی،-کاشی-و-ارتفاع-برابر">چیدمان ستونی، کاشی و ارتفاع برابر</a></li><li class="toc-item toc-d3"><a href="#نمونهکدهای-آماده" data-toc-link="نمونهکدهای-آماده">نمونه‌کدهای آماده</a></li><li class="toc-item toc-d3"><a href="#نکات-مهم" data-toc-link="نکات-مهم">نکات مهم</a></li><li class="toc-item toc-d2"><a href="#ساختار-خروجی" data-toc-link="ساختار-خروجی">ساختار خروجی</a></li><li class="toc-item toc-d3"><a href="#پیکربندی-جاوااسکریپت" data-toc-link="پیکربندی-جاوااسکریپت">پیکربندی جاوااسکریپت</a></li><li class="toc-item toc-d2"><a href="#رفتار-سمت-کاربر" data-toc-link="رفتار-سمت-کاربر">رفتار سمت کاربر</a></li><li class="toc-item toc-d2"><a href="#کار-بدون-جاوااسکریپت" data-toc-link="کار-بدون-جاوااسکریپت">کار بدون جاوااسکریپت</a></li><li class="toc-item toc-d2"><a href="#دادههای-روی-ریشهی-ویجت" data-toc-link="دادههای-روی-ریشهی-ویجت">داده‌های روی ریشه‌ی ویجت</a></li><li class="toc-item toc-d2"><a href="#فهرست-کامل-کنترلها" data-toc-link="فهرست-کامل-کنترلها">فهرست کامل کنترل‌ها</a></li><li class="toc-item toc-d2"><a href="#رفع-مشکلات" data-toc-link="رفع-مشکلات">رفع مشکلات</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>چاپ این صفحه</span></button>
+</nav>
+
+</aside>
+</div>
+<footer class="footer">
+<div class="footer-in">
+<div class="footer-brand">
+<p class="footer-note">WidgetCore یک افزونه رایگان و متن‌باز با مجوز GPL-2.0-or-later است.</p>
+<p class="footer-ver">نسخه <b dir="ltr">0.0.7</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">مجوز GPL-2.0-or-later</a></p>
+</div>
+
+</div>
+</footer>
+
+<script type="application/json" data-ui-strings>{"lang":"fa","copy":"کپی کد","copied":"کپی شد","results":"نتیجه","theme":"پوسته"}</script>
+<script src="../../../assets/app.js" defer></script>
+<script src="../../../assets/search.js" defer></script>
+<script src="../../../assets/site-ui.js" defer></script>
+</body>
+</html>
