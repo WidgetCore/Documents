@@ -12,9 +12,6 @@
 	function svgIcon(name) {
 		return '<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-' + name + '"></use></svg>';
 	}
-	function faDigits(s) {
-		return String(s);
-	}
 
 	var strings = { copy: 'Copy code', copied: 'Copied', results: 'results', lang: 'en' };
 	var island = q('[data-ui-strings]');
@@ -356,6 +353,46 @@
 		updateProgress();
 	}
 
+	/* ---------------- تغییرات‌نامه: فقط یک نسخه باز ---------------- */
+
+	var releases = qa('[data-release]');
+	if (releases.length) {
+		var printing = false;
+		var wasOpen = [];
+		var openRelease = function (item) {
+			releases.forEach(function (other) { other.open = other === item; });
+		};
+		var fromHash = function () {
+			var id = location.hash.length > 1 ? decodeURIComponent(location.hash.slice(1)) : '';
+			var target = id ? doc.getElementById(id) : null;
+			var item = target ? target.closest('[data-release]') : null;
+			if (item) {
+				openRelease(item);
+				target.scrollIntoView();
+			}
+		};
+		releases.forEach(function (item) {
+			item.addEventListener('toggle', function () { if (item.open && !printing) { openRelease(item); } });
+		});
+		qa('.release-summary .hlink').forEach(function (link) {
+			link.addEventListener('click', function (ev) {
+				ev.preventDefault();
+				location.hash = link.getAttribute('href');
+			});
+		});
+		window.addEventListener('hashchange', fromHash);
+		window.addEventListener('beforeprint', function () {
+			printing = true;
+			wasOpen = releases.map(function (item) { return item.open; });
+			releases.forEach(function (item) { item.open = true; });
+		});
+		window.addEventListener('afterprint', function () {
+			releases.forEach(function (item, n) { item.open = wasOpen[n]; });
+			window.setTimeout(function () { printing = false; }, 0);
+		});
+		fromHash();
+	}
+
 	/* ---------------- چاپ ---------------- */
 
 	var printBtn = q('[data-print]');
@@ -363,11 +400,5 @@
 		printBtn.addEventListener('click', function () {
 			try { window.print(); } catch (e) { printBtn.hidden = true; }
 		});
-	}
-
-	/* ---------------- ارقام فارسی در شمارنده‌ها ---------------- */
-
-	if (strings.lang === 'fa') {
-		qa('[data-digits="fa"]').forEach(function (el) { el.textContent = faDigits(el.textContent || ''); });
 	}
 })();

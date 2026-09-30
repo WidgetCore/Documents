@@ -115,7 +115,7 @@
 					index = (data && data.items) || [];
 					normIndex = index.map(function (item) {
 						var folded = foldMap(item.b);
-						return { t: norm(item.t), d: norm(item.d), g: norm(item.g), h: (item.h || []).map(norm), b: folded.text, map: folded.map };
+						return { t: norm(item.t), d: norm(item.d), g: norm(item.g), h: (item.h || []).map(norm), b: folded.text, map: folded.map, rawBody: String(item.b || '') };
 					});
 					resolve(index);
 				} catch (e) { reject(e); }

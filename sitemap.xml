@@ -60,6 +60,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/widgets/faq/"/>    <lastmod>2026-09-29</lastmod>
   </url>
   <url>
+    <loc>https://docs.widgetcore.ir/fa/widgets/comments/</loc>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/widgets/comments/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/widgets/comments/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/widgets/comments/"/>    <lastmod>2026-09-29</lastmod>
+  </url>
+  <url>
     <loc>https://docs.widgetcore.ir/fa/widgets/live-search/</loc>
     <xhtml:link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/widgets/live-search/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/widgets/live-search/"/>
@@ -69,13 +75,25 @@
     <loc>https://docs.widgetcore.ir/fa/shortcode/</loc>
     <xhtml:link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/shortcode/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/shortcode/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/shortcode/"/>    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/shortcode/"/>    <lastmod>2026-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.widgetcore.ir/fa/shortcode/search/</loc>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/shortcode/search/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/shortcode/search/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/shortcode/search/"/>    <lastmod>2026-09-30</lastmod>
   </url>
   <url>
     <loc>https://docs.widgetcore.ir/fa/rest-api/</loc>
     <xhtml:link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/rest-api/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/rest-api/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/rest-api/"/>    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/rest-api/"/>    <lastmod>2026-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.widgetcore.ir/fa/rest-api/search/</loc>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/rest-api/search/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/rest-api/search/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/rest-api/search/"/>    <lastmod>2026-09-30</lastmod>
   </url>
   <url>
     <loc>https://docs.widgetcore.ir/fa/accessibility/</loc>
@@ -178,6 +196,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/widgets/faq/"/>    <lastmod>2026-09-29</lastmod>
   </url>
   <url>
+    <loc>https://docs.widgetcore.ir/widgets/comments/</loc>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/widgets/comments/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/widgets/comments/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/widgets/comments/"/>    <lastmod>2026-09-29</lastmod>
+  </url>
+  <url>
     <loc>https://docs.widgetcore.ir/widgets/live-search/</loc>
     <xhtml:link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/widgets/live-search/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/widgets/live-search/"/>
@@ -187,13 +211,25 @@
     <loc>https://docs.widgetcore.ir/shortcode/</loc>
     <xhtml:link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/shortcode/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/shortcode/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/shortcode/"/>    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/shortcode/"/>    <lastmod>2026-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.widgetcore.ir/shortcode/search/</loc>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/shortcode/search/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/shortcode/search/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/shortcode/search/"/>    <lastmod>2026-09-30</lastmod>
   </url>
   <url>
     <loc>https://docs.widgetcore.ir/rest-api/</loc>
     <xhtml:link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/rest-api/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/rest-api/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/rest-api/"/>    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/rest-api/"/>    <lastmod>2026-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.widgetcore.ir/rest-api/search/</loc>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/rest-api/search/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/rest-api/search/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/rest-api/search/"/>    <lastmod>2026-09-30</lastmod>
   </url>
   <url>
     <loc>https://docs.widgetcore.ir/accessibility/</loc>

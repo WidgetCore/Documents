@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comments widget | WidgetCore Documentation</title>
+<meta name="description" content="The complete guide to the WidgetCore Comments widget — comment list and form for the current post, optional fields, required name and email, field order, pagination, avatars, shortcode and styling.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f4f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161618" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="WidgetCore docs build">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://docs.widgetcore.ir/widgets/comments/">
+<link rel="alternate" hreflang="fa" href="https://docs.widgetcore.ir/fa/widgets/comments/">
+<link rel="alternate" hreflang="en" href="https://docs.widgetcore.ir/widgets/comments/">
+<link rel="alternate" hreflang="x-default" href="https://docs.widgetcore.ir/widgets/comments/">
+<meta property="og:site_name" content="WidgetCore Documentation">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fa_IR">
+<meta property="og:title" content="Comments widget">
+<meta property="og:description" content="The complete guide to the WidgetCore Comments widget — comment list and form for the current post, optional fields, required name and email, field order, pagination, avatars, shortcode and styling.">
+<meta property="og:url" content="https://docs.widgetcore.ir/widgets/comments/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Comments widget">
+<meta name="twitter:description" content="The complete guide to the WidgetCore Comments widget — comment list and form for the current post, optional fields, required name and email, field order, pagination, avatars, shortcode and styling.">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://docs.widgetcore.ir/"},{"@type":"ListItem","position":2,"name":"Widgets","item":"https://docs.widgetcore.ir/widgets/"},{"@type":"ListItem","position":3,"name":"Comments widget","item":"https://docs.widgetcore.ir/widgets/comments/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Comments widget","description":"The complete guide to the WidgetCore Comments widget — comment list and form for the current post, optional fields, required name and email, field order, pagination, avatars, shortcode and styling.","inLanguage":"en_US","url":"https://docs.widgetcore.ir/widgets/comments/","isPartOf":{"@type":"WebSite","name":"WidgetCore Documentation","url":"https://docs.widgetcore.ir/","inLanguage":"en_US"},"about":{"@type":"SoftwareApplication","name":"WidgetCore","applicationCategory":"Plugin","operatingSystem":"WordPress"},"author":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"publisher":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"license":"https://www.gnu.org/licenses/gpl-2.0.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.widgetcore.ir/widgets/comments/"}}</script>
+<script>(function(){try{var k='wgcr-theme';var t=localStorage.getItem(k);if(!t){t='system'}var d=t==='system'?(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;var r=document.documentElement;r.classList.add(d==='dark'?'dark':'light');r.setAttribute('data-theme',d);r.setAttribute('data-theme-mode',t);r.style.colorScheme=d;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC98V2C8FN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-ZC98V2C8FN');</script>
+</head>
+<body class="body-docs">
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0"><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></symbol><symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></symbol><symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol><symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></symbol><symbol id="i-command" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6a3 3 0 10-3 3h12a3 3 0 10-3-3v12a3 3 0 103-3H6a3 3 0 103 3V6z"/></symbol><symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h11v11H9zM5 15H4V4h11v1"/></symbol><symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11m0 0l-4-4m4 4l4-4M4 18v2a1 1 0 001 1h14a1 1 0 001-1v-2"/></symbol><symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-2c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-1-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.8-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0012 2z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></symbol><symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.3A3.7 3.7 0 0112 8a3.7 3.7 0 017 2.7C19 15.6 12 20 12 20z"/></symbol><symbol id="i-important" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.2-2.9 7.3-7 9-4.1-1.7-7-4.8-7-9V6l7-3zM12 8v5M12 16h.01"/></symbol><symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM12 11v6M12 7.5h.01"/></symbol><symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM7 10h.01M11 10h.01M15 10h.01M8 14h8"/></symbol><symbol id="i-life" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 5.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM5 5l4 4M19 5l-4 4M5 19l4-4M19 19l-4-4"/></symbol><symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 006 .5l2-2a4 4 0 00-5.7-5.7L11 8M14 10a4 4 0 00-6-.5l-2 2A4 4 0 0011.7 17L13 16"/></symbol><symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v11H3zM9 20h6M12 16v4"/></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 019.5 4 8.5 8.5 0 1020 14.5z"/></symbol><symbol id="i-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V4h10v5M7 18H4v-6h16v6h-3M7 14h10v6H7z"/></symbol><symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 2 5 5.5 5 9l2 3v3l-3-1.5V19l-4 3-4-3v-3.5L5 17v-3l2-3c0-3.5 2-7 5-9zm0 8.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></symbol><symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4a7 7 0 100 14 7 7 0 000-14zm9 16l-4.5-4.5"/></symbol><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zM12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol><symbol id="i-tip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2h5c0-.8.4-1.5 1-2A6 6 0 0012 3z"/></symbol><symbol id="i-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 16H3l9-16zM12 10v4M12 17h.01"/></symbol></svg>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="header">
+<div class="reading-progress" data-reading-progress aria-hidden="true"></div>
+<div class="header-in">
+<button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-label="Sections menu" aria-expanded="false" aria-haspopup="dialog" aria-controls="sidebar"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="29" height="29" rx="8"/><path d="M8 11h6v6H8zM18 11h6v10h-6zM8 21h6"/></svg></button>
+<a class="brand" href="../../"><span class="brand-txt"><span class="brand-name">WidgetCore</span><span class="brand-sub">WidgetCore Documentation</span></span></a>
+<div class="header-actions">
+<button class="search-trigger" type="button" data-search-open aria-label="Search the documentation"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span class="search-text">Search the documentation…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<a class="download-link" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="Download the latest version" title="Download the latest version"><span class="download-mark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span><span class="download-count" data-download-count data-count-api="https://api.github.com/repos/WidgetCore/Plugin/releases?per_page=100" aria-label="Total GitHub downloads" aria-live="polite" aria-busy="true"></span></a>
+<a class="github-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="WidgetCore plugin repository on GitHub" title="WidgetCore plugin repository on GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg></a>
+<div class="theme-control">
+<button class="icon-btn theme-btn" type="button" data-theme-menu-toggle aria-haspopup="menu" aria-controls="theme-menu" aria-expanded="false"
+			aria-label="Theme" title="Theme">
+			<span class="th-ic th-light"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg></span>
+			<span class="th-ic th-dark"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg></span>
+		</button>
+<div class="theme-menu" id="theme-menu" role="menu" aria-label="Theme" data-theme-menu hidden>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="system" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-monitor"/></svg><span>System</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="light" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg><span>Light</span></button>
+<button class="theme-option" type="button" role="menuitemradio" data-theme-set="dark" aria-checked="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg><span>Dark</span></button>
+</div>
+</div>
+<a class="lang-btn" href="../../fa/widgets/comments/" hreflang="fa" lang="fa" title="This page in Persian" aria-label="This page in Persian" data-lang-switch><span class="flag-emoji" aria-hidden="true">🇮🇷</span></a>
+</div>
+</div>
+</header>
+
+<div class="search-modal" data-search-modal data-search-index="../../search-index-en.json" data-search-page="widgets/comments/" data-search-lang="en" hidden>
+<div class="search-backdrop" data-search-close></div>
+<div class="search-box" role="dialog" aria-modal="true" aria-label="Search the documentation" dir="ltr">
+<form class="search-head" role="search" data-search-form>
+<span class="search-head-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span>
+<input class="search-input" type="search" data-search-input placeholder="Search the documentation…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Search the documentation" aria-controls="search-results" aria-autocomplete="list">
+<button class="icon-btn" type="button" data-search-close aria-label="Close search"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button>
+</form>
+<div class="search-results" id="search-results" data-search-results role="listbox" aria-label="Search the documentation" tabindex="-1"></div>
+<p class="search-empty" data-search-empty hidden>No results for this query. <span>Try a shorter phrase, or switch the site language.</span></p>
+<p class="search-loading" data-search-loading hidden>Searching…</p>
+<p class="search-foot"><span class="search-count" data-search-count></span><span class="search-keys">Use ↑ and ↓ to move, Enter to open and Esc to close.</span></p>
+</div>
+</div>
+
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="Sections menu" data-sidebar>
+<div class="sidebar-in">
+<div class="sidebar-quick-head"><div class="sidebar-quick-title" id="sidebar-quick-title" role="heading" aria-level="2">Quick Access</div><button class="icon-btn sidebar-close" type="button" data-sidebar-close aria-label="Close quick-access menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button></div>
+<button class="sidebar-search" type="button" data-search-open aria-label="Search all documentation…"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span>Search all documentation…</span><kbd class="kbd"><span class="kbd-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-command"/></svg></span>K</kbd></button>
+<nav class="nav" aria-label="Sections menu">
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-intro" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg></span>
+<span class="nav-title">Getting to know</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-intro" data-nav-list>
+<li><a class="nav-link" href="../../introduction/">What is WidgetCore?</a></li>
+<li><a class="nav-link" href="../../quick-start/">Quick start</a></li>
+<li><a class="nav-link" href="../../concepts/">Core concepts</a></li>
+<li><a class="nav-link" href="../../requirements/">Requirements and compatibility</a></li>
+
+</ul>
+<p class="nav-desc">What the plugin is and what it adds to your site.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-install" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span>
+<span class="nav-title">Download &amp; install</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-install" data-nav-list>
+<li><a class="nav-link" href="../../download/">Download</a></li>
+<li><a class="nav-link" href="../../installation/">Installation and activation</a></li>
+<li><a class="nav-link" href="../../updates/">Updates</a></li>
+
+</ul>
+<p class="nav-desc">Download, install, update and remove.</p>
+</div>
+<div class="nav-group is-open" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="true" aria-controls="nav-widgets" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="nav-title">Widgets</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-widgets" data-nav-list>
+<li><a class="nav-link" href="../">Widgets</a></li>
+<li><a class="nav-link" href="../faq/">FAQ widget</a></li>
+<li><a class="nav-link is-current" href="./" aria-current="page">Comments widget</a></li>
+<li><a class="nav-link" href="../live-search/">Live Search widget</a></li>
+
+</ul>
+<p class="nav-desc">The complete guide to every widget and control.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-advanced" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+<span class="nav-title">Advanced use</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-advanced" data-nav-list>
+<li><a class="nav-link" href="../../shortcode/">Shortcodes</a></li>
+<li><a class="nav-link nav-link--child" href="../../shortcode/search/">The wgcr_search shortcode</a></li>
+<li><a class="nav-link" href="../../rest-api/">REST API</a></li>
+<li><a class="nav-link nav-link--child" href="../../rest-api/search/">The search REST endpoint</a></li>
+
+</ul>
+<p class="nav-desc">Shortcode, REST and hooks for custom integrations.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-a11y" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="nav-title">Accessibility &amp; language</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-a11y" data-nav-list>
+<li><a class="nav-link" href="../../accessibility/">Accessibility</a></li>
+<li><a class="nav-link" href="../../keyboard/">Keyboard shortcuts</a></li>
+<li><a class="nav-link" href="../../translation/">Language and translation</a></li>
+
+</ul>
+<p class="nav-desc">Keyboard, screen readers and translation.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-support" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-life"/></svg></span>
+<span class="nav-title">Support</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-support" data-nav-list>
+<li><a class="nav-link" href="../../faq/">Frequently asked questions</a></li>
+<li><a class="nav-link" href="../../troubleshooting/">Troubleshooting</a></li>
+
+</ul>
+<p class="nav-desc">Troubleshooting and frequently asked questions.</p>
+</div>
+<div class="nav-group" data-nav-group>
+<button class="nav-head" type="button" aria-expanded="false" aria-controls="nav-project" data-nav-head>
+<span class="nav-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-heart"/></svg></span>
+<span class="nav-title">Project</span>
+<span class="nav-chev"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></span>
+</button>
+<ul class="nav-list" id="nav-project" data-nav-list>
+<li><a class="nav-link" href="../../changelog/">Changelog</a></li>
+<li><a class="nav-link" href="../../contributing/">Contributing</a></li>
+
+</ul>
+<p class="nav-desc">Changelog, open source and contributing.</p>
+</div>
+
+</nav>
+<div class="sidebar-foot">
+<a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="Download the latest version" title="Download the latest version"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">Download the latest version</span></a>
+<a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="WidgetCore repository on GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>WidgetCore repository on GitHub</span></a>
+<p class="side-ver">Version <b dir="ltr">0.0.8</b></p>
+</div>
+</div>
+</aside>
+<div class="scrim" data-scrim hidden></div>
+
+<main class="main" id="main" tabindex="-1">
+<div class="content">
+<nav class="breadcrumb" aria-label="breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../">Widgets</a></li><li aria-current="page"><span>Comments widget</span></li></ol><button class="breadcrumb-toc-toggle" type="button" data-toc-toggle aria-label="On this page" title="On this page" aria-expanded="false" aria-controls="breadcrumb-toc-menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-list"/></svg></button><div class="breadcrumb-toc-menu" id="breadcrumb-toc-menu" data-mobile-toc hidden><nav class="toc" aria-label="On this page" data-mobile-toc-list>
+<p class="toc-title">On this page</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#quick-start" data-toc-link="quick-start">Quick start</a></li><li class="toc-item toc-d2"><a href="#the-comment-form-section" data-toc-link="the-comment-form-section">The “Comment form” section</a></li><li class="toc-item toc-d2"><a href="#the-fields-section" data-toc-link="the-fields-section">The “Fields” section</a><ul class="toc-sublist"><li class="toc-item toc-d3"><a href="#how-required-fields-work" data-toc-link="how-required-fields-work">How required fields work</a></li></ul></li><li class="toc-item toc-d2"><a href="#the-comments-list-section" data-toc-link="the-comments-list-section">The “Comments list” section</a></li><li class="toc-item toc-d2"><a href="#the-messages-section" data-toc-link="the-messages-section">The “Messages” section</a></li><li class="toc-item toc-d2"><a href="#behaviour-in-different-situations" data-toc-link="behaviour-in-different-situations">Behaviour in different situations</a></li><li class="toc-item toc-d2"><a href="#shortcode" data-toc-link="shortcode">Shortcode</a></li><li class="toc-item toc-d2"><a href="#the-style-tab" data-toc-link="the-style-tab">The Style tab</a></li><li class="toc-item toc-d2"><a href="#html-structure-and-classes" data-toc-link="html-structure-and-classes">HTML structure and classes</a></li><li class="toc-item toc-d2"><a href="#accessibility" data-toc-link="accessibility">Accessibility</a></li><li class="toc-item toc-d2"><a href="#troubleshooting" data-toc-link="troubleshooting">Troubleshooting</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>Print this page</span></button>
+</nav>
+</div></nav>
+<article class="article">
+<header class="article-head">
+<h1 class="article-title">Comments widget</h1>
+<p class="article-desc">The complete guide to the WidgetCore Comments widget — comment list and form for the current post, optional fields, required name and email, field order, pagination, avatars, shortcode and styling.</p>
+<p class="article-meta">Last updated <time datetime="2026-09-29">2026-09-29</time></p>
+</header>
+<div class="prose" data-prose>
+<p>The <strong>Comments</strong> widget shows the current post&#39;s comment list and the comment form in one widget. Saving, spam checks, manual approval and notification emails stay the job of WordPress itself; the widget only gives you control over the look, the layout and the form fields. It needs no other plugin, ships no JavaScript of its own and creates no page or option in the dashboard.</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Item</th><th>Value</th></tr></thead><tbody><tr><td>Widget name</td><td><code>wgcr-comments</code></td></tr><tr><td>Panel title</td><td>Comments</td></tr><tr><td>Category</td><td>WidgetCore Widgets (<code>wgcr</code>)</td></tr><tr><td>Shortcode</td><td><code>[wgcr_comments]</code></td></tr><tr><td>Style</td><td><code>wgcr-comments</code> (no script)</td></tr><tr><td>Root class</td><td><code>.wgcr-comments</code></td></tr></tbody></table></div>
+<h2 id="quick-start">Quick start<a class="hlink" href="#quick-start" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<ol class="steps" data-lang="en"><li class="step"><div class="step-body"><p class="step-title">Drag the widget</p><p>On a single-post template (or any page that needs comments) drop “Comments” from the “WidgetCore Widgets” category.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">Choose the fields</p><p>In the “Fields” section turn name, email, website and the save-in-browser checkbox on or off and translate the labels.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">Set the look</p><p>In the Style tab change the colours, borders, spacing and typography of each part.</p>
+</div></li><li class="step"><div class="step-body"><p class="step-title">Try it on the site</p><p>Send a test comment; instant publishing or manual approval is decided by Settings → Discussion in WordPress.</p>
+</div></li></ol>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">In the Elementor editor</p><p>In the editor the widget shows three fixed sample comments so you can see the list, and the form is disabled (nothing is submitted). Real comments appear only on the site.</p>
+</div></aside>
+<h2 id="the-comment-form-section">The “Comment form” section<a class="hlink" href="#the-comment-form-section" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Control</th><th>ID</th><th>Type</th><th>Default</th><th>Notes</th></tr></thead><tbody><tr><td>Show form</td><td><code>form</code></td><td>Switcher</td><td>On</td><td>Off means list only; reply links are hidden too</td></tr><tr><td>Form title</td><td><code>title</code></td><td>Text</td><td>“Leave a comment”</td><td>Empty hides the title visually but keeps it for screen readers</td></tr><tr><td>Form title tag</td><td><code>title_tag</code></td><td>Select</td><td><code>h3</code></td><td><code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code> or <code>div</code></td></tr><tr><td>Note above the fields</td><td><code>note_before</code></td><td>Textarea</td><td>Empty</td><td>Simple, safe HTML (links, bold, …)</td></tr><tr><td>Note below the fields</td><td><code>note_after</code></td><td>Textarea</td><td>Empty</td><td>Same as above</td></tr><tr><td>Submit button text</td><td><code>submit</code></td><td>Text</td><td>“Post comment”</td><td></td></tr><tr><td>Cancel reply text</td><td><code>cancel</code></td><td>Text</td><td>“Cancel reply”</td><td>The link that appears beside the form title while replying to a comment</td></tr><tr><td>Logged-in users only</td><td><code>login_only</code></td><td>Switcher</td><td>Off</td><td>Guests see a login message instead of the form</td></tr></tbody></table></div>
+<aside class="callout callout--important"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-important"/></svg><div class="callout-body"><p class="callout-title">“Logged-in users only” can only be stricter</p><p>If WordPress (Settings → Discussion) requires users to be logged in, the widget cannot allow guests. The other way round, turning this switch on keeps posting limited to members even when WordPress allows guests.</p>
+</div></aside>
+<h2 id="the-fields-section">The “Fields” section<a class="hlink" href="#the-fields-section" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Control</th><th>ID</th><th>Default</th><th>Notes</th></tr></thead><tbody><tr><td>Name, email and website layout</td><td><code>fields_layout</code></td><td>Side by side (<code>row</code>)</td><td>“Side by side” (<code>row</code>) or “Stacked” (<code>stack</code>); always stacked on narrow screens</td></tr><tr><td>Show field</td><td><code>author</code>, <code>email</code>, <code>url</code>, <code>cookies</code></td><td>On</td><td>Every field can be removed on its own</td></tr><tr><td>Required</td><td><code>author_required</code>, <code>email_required</code></td><td>On</td><td>Name and email; a hidden field is automatically optional</td></tr><tr><td>Label</td><td><code>author_label</code>, <code>email_label</code>, <code>url_label</code>, <code>cookies_label</code>, <code>comment_label</code></td><td>“Name”, “Email”, “Website”, “Your comment” and the checkbox text</td><td>Leaving it empty restores the default label</td></tr><tr><td>Placeholder</td><td><code>author_ph</code>, <code>email_ph</code>, <code>url_ph</code>, <code>comment_ph</code></td><td>Empty</td><td></td></tr><tr><td>Display order</td><td><code>order_comment</code>, <code>order_author</code>, <code>order_email</code>, <code>order_url</code>, <code>order_cookies</code></td><td>1, 2, 3, 4, 5</td><td>A number from 1 to 9; the smaller comes first</td></tr><tr><td>Comment text rows</td><td><code>rows</code></td><td>6</td><td>3 to 15</td></tr></tbody></table></div>
+<ul>
+<li>The <strong>comment text</strong> cannot be removed or made optional.</li>
+<li><strong>Website</strong> is always optional.</li>
+<li>The <strong>“save in browser” checkbox</strong> only appears when WordPress&#39; own option for it (Settings → Discussion) is on; the control can only turn it off or change its text.</li>
+<li>Logged-in users do not see the name, email, website or checkbox fields; they get “Logged in as …” with profile and log-out links instead; the text and the links are editable in the “Messages” section.</li>
+<li>The field order is changed in the HTML itself, so the Tab key order always matches the visual order.</li>
+</ul>
+<h3 id="how-required-fields-work">How required fields work<a class="hlink" href="#how-required-fields-work" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h3>
+<p>Every form sends a signed hidden field that tells WordPress whether name and email are required in this form. Without that field WordPress behaves exactly as its own settings say. As a result:</p>
+<ul>
+<li>You can make name and email optional even when WordPress requires them (for this form only).</li>
+<li>You can make email required even when WordPress does not.</li>
+<li>If an email is entered, its format must be valid.</li>
+<li>A direct post to WordPress&#39; core endpoint (for example by a bot) without this field is checked against the WordPress settings; the widget does not close that path.</li>
+</ul>
+<h2 id="the-comments-list-section">The “Comments list” section<a class="hlink" href="#the-comments-list-section" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Control</th><th>ID</th><th>Type</th><th>Default</th><th>Notes</th></tr></thead><tbody><tr><td>Show list</td><td><code>list</code></td><td>Switcher</td><td>On</td><td></td></tr><tr><td>List title</td><td><code>list_title</code></td><td>Text</td><td>“Comments”</td><td>Empty = no title and no counter</td></tr><tr><td>List title tag</td><td><code>list_title_tag</code></td><td>Select</td><td><code>h2</code></td><td><code>h2</code> to <code>h5</code> or <code>div</code></td></tr><tr><td>Show comment count</td><td><code>show_count</code></td><td>Switcher</td><td>On</td><td>The number next to the title</td></tr><tr><td>Comments per page (0 = follow WordPress)</td><td><code>per_page</code></td><td>Number</td><td>0</td><td>0 to 100</td></tr><tr><td>List order</td><td><code>order</code></td><td>Select</td><td>“Follow WordPress settings” (<code>wp</code>)</td><td><code>wp</code>, “Oldest first” (<code>asc</code>) or “Newest first” (<code>desc</code>)</td></tr><tr><td>Avatar</td><td><code>avatar</code></td><td>Select</td><td>“Follow WordPress settings” (<code>wp</code>)</td><td><code>wp</code>, <code>yes</code> (always) or “Hide” (<code>no</code>)</td></tr><tr><td>Avatar size</td><td><code>avatar_size</code></td><td>Number</td><td>48</td><td>16 to 128 px</td></tr><tr><td>Show date</td><td><code>date</code></td><td>Switcher</td><td>On</td><td></td></tr><tr><td>Show reply link</td><td><code>reply</code></td><td>Switcher</td><td>On</td><td>Only when threaded replies are on in WordPress</td></tr><tr><td>Reply link text</td><td><code>reply_text</code></td><td>Text</td><td>“Reply”</td><td></td></tr></tbody></table></div>
+<ul>
+<li><strong>Threading, reply depth, pagination and the default order</strong> are decided by WordPress (Settings → Discussion); “Comments per page” and “List order” let this widget override them for itself.</li>
+<li>Pagination prints “Previous”, “Next” and page numbers; the current page is announced to screen readers.</li>
+<li>An unapproved comment is visible only to its own author, with the “Your comment is awaiting moderation.” message.</li>
+<li>With the avatar set to “follow WordPress”, the widget respects WordPress turning avatars off.</li>
+</ul>
+<aside class="callout callout--warning"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-warning"/></svg><div class="callout-body"><p class="callout-title">Avatars and privacy</p><p>When avatars are shown, WordPress loads the image from the Gravatar service and the visitor&#39;s browser makes a request to that domain. If you do not want that, set “Avatar” to “Hide”. The plugin itself makes no external request.</p>
+</div></aside>
+<h2 id="the-messages-section">The “Messages” section<a class="hlink" href="#the-messages-section" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Control</th><th>ID</th><th>Default</th></tr></thead><tbody><tr><td>Empty list message</td><td><code>empty_text</code></td><td>“No comments have been posted yet.”</td></tr><tr><td>Awaiting moderation message</td><td><code>pending_text</code></td><td>“Your comment is awaiting moderation.”</td></tr><tr><td>Comments closed message</td><td><code>closed_text</code></td><td>“Comments are closed for this post.”</td></tr><tr><td>Login required message</td><td><code>login_text</code></td><td>“You must be logged in to post a comment.”</td></tr><tr><td>Show logged-in user text</td><td><code>loggedin_show</code></td><td>On</td></tr><tr><td>Logged-in user text</td><td><code>loggedin_text</code></td><td>“Logged in as {name}.”</td></tr><tr><td>Show edit profile link</td><td><code>loggedin_profile</code></td><td>On</td></tr><tr><td>Edit profile link text</td><td><code>loggedin_profile_text</code></td><td>“Edit profile”</td></tr><tr><td>Show log out link</td><td><code>loggedin_logout</code></td><td>On</td></tr><tr><td>Log out link text</td><td><code>loggedin_logout_text</code></td><td>“Log out”</td></tr></tbody></table></div>
+<p>The logged-in user text is shown only to logged-in users and only when the form is shown. Write <code>{name}</code> where the user&#39;s display name should appear; without it no name is printed. HTML in the text is removed. Turning <code>loggedin_show</code> off removes only this line and keeps the form. It has its own “Logged-in user text” section in the Style tab.</p>
+<h2 id="behaviour-in-different-situations">Behaviour in different situations<a class="hlink" href="#behaviour-in-different-situations" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Situation</th><th>Output</th></tr></thead><tbody><tr><td>Comments open</td><td>List and form</td></tr><tr><td>Comments closed</td><td>The list stays; the message “Comments are closed for this post.” replaces the form</td></tr><tr><td>Login required and the visitor is a guest</td><td>The login message with a login link, no form</td></tr><tr><td>Password-protected post</td><td>Nothing is shown</td></tr><tr><td>Private post or draft</td><td>Only for someone allowed to see it</td></tr><tr><td>A post type without comments</td><td>Nothing is shown</td></tr></tbody></table></div>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">One form per page</p><p>WordPress&#39; comment form has identifiers that must not repeat on a page. If you put several comments widgets or shortcodes on one page, the first prints the form and the rest print only the list.</p>
+</div></aside>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">The theme's comments are not printed next to the widget</p><p>Once the widget or shortcode has printed something for the current post, the plugin stops the theme&#39;s own comment area from printing for that post: both <code>comments_template()</code> in classic themes and the comments blocks in block themes. Each post then has exactly one list and one form, and both come from the widget. This only applies to the post the widget printed for: a widget that points to another post with <code>post</code> does not hide the current post&#39;s comments, a password-protected post stays with the theme, and the editor preview hides nothing. There is no option for this behavior.</p>
+</div></aside>
+<aside class="callout callout--tip"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-tip"/></svg><div class="callout-body"><p class="callout-title">Very large lists</p><p>The widget reads all approved comments of the post at once and paginates them itself. For posts with tens of thousands of comments, use the widget for the form and turn the list off with “Show list”.</p>
+</div></aside>
+<h2 id="shortcode">Shortcode<a class="hlink" href="#shortcode" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<figure class="code">
+<figcaption class="code-bar"><span class="code-lang" dir="ltr"></span></figcaption>
+<pre><code class="language-text" dir="ltr">[wgcr_comments]
+[wgcr_comments form=&quot;no&quot; list_title=&quot;Reader comments&quot; avatar=&quot;no&quot;]
+[wgcr_comments list=&quot;no&quot; title=&quot;Write your comment&quot; email_required=&quot;no&quot; rows=&quot;4&quot;]
+[wgcr_comments login_only=&quot;yes&quot; login_text=&quot;Log in to comment&quot;]</code></pre>
+</figure>
+<ul>
+<li>Every attribute uses the same ID as the tables above (for example <code>author=&quot;no&quot;</code>, <code>per_page=&quot;10&quot;</code>, <code>order=&quot;desc&quot;</code>). Show/required values are <code>yes</code> and <code>no</code>.</li>
+<li>One extra attribute, <code>post</code>: the ID of another post; it defaults to the current post.</li>
+<li>An invalid value silently falls back to the default.</li>
+<li>The Style tab options exist only in the widget; the shortcode uses the default look. Change it with custom CSS and the classes below.</li>
+</ul>
+<h2 id="the-style-tab">The Style tab<a class="hlink" href="#the-style-tab" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<p>Every style section is written without <code>!important</code> and affects only this widget.</p>
+<p>All size controls (width, padding, margins, gaps, radius) have a device switcher and Normal/Hover tabs — see <a href="../#responsive-sizes-and-hover">Responsive sizes and hover</a>.</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Section</th><th>What you change</th></tr></thead><tbody><tr><td>Layout</td><td>Max width, Widget alignment, Gap between list and form</td></tr><tr><td>List title</td><td>Color, Typography, Counter color, Gap to the list</td></tr><tr><td>Form title</td><td>Color, Typography</td></tr><tr><td>Form card</td><td>Background, Border (type, width and color), Border radius, Shadow, Padding</td></tr><tr><td>Labels</td><td>Color, Typography, Required asterisk color</td></tr><tr><td>Fields</td><td>Normal: Text color, Background, Placeholder color, Border (type, width and color); Focus: Background, Border color, Shadow; Typography, Border radius, Padding, Gap between fields</td></tr><tr><td>Save-in-browser checkbox</td><td>Color, Typography</td></tr><tr><td>Form notes</td><td>Color, Typography</td></tr><tr><td>Submit button</td><td>Normal: Text color, Background, Border color; Hover: Text color, Background, Border color; Typography, Border radius, Padding, Shadow</td></tr><tr><td>Comment card</td><td>Background, Border (type, width and color), Border radius, Shadow, Padding, Gap between comments, Reply indent and spacing (a four-side margin of the replies list relative to the parent card: top is the distance from the parent comment, left/right is the indent; it can differ per device)</td></tr><tr><td>Avatar</td><td>Border radius (each corner), Border (type, width and color), Avatar width (16 to 200 px, em or rem; the image stays square), Distance from the comment card (outer margin, four sides)</td></tr><tr><td>Author name</td><td>Color, Typography, Distance from the avatar (outer margin of the name, four sides)</td></tr><tr><td>Date</td><td>Color, Typography, Distance from the avatar (outer margin of the date, four sides)</td></tr><tr><td>Comment text</td><td>Color, Typography</td></tr><tr><td>Reply link</td><td>Normal: Color, Background; Hover: Color, Background; Typography, Border radius, Padding</td></tr><tr><td>Pagination</td><td>Typography, Color, Background, Hover color, Current page color, Current page background, Border radius</td></tr><tr><td>Messages</td><td>Color, Background, Typography, Border radius, Padding, Awaiting moderation message color</td></tr><tr><td>Logged-in user text</td><td>Text color, Typography, Link color, Link hover color, Link typography, Background, Border, Border radius, Shadow, Padding, Outer spacing</td></tr></tbody></table></div>
+<p>The default colours were chosen for sufficient (AA) contrast. If you change them, check the text/background contrast yourself.</p>
+<h2 id="html-structure-and-classes">HTML structure and classes<a class="hlink" href="#html-structure-and-classes" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Class</th><th>Role</th></tr></thead><tbody><tr><td><code>.wgcr-comments</code></td><td>Root; <code>.wgcr-comments--fields-row</code> for the side-by-side layout</td></tr><tr><td><code>.wgcr-comments-listwrap</code></td><td>The list section</td></tr><tr><td><code>.wgcr-comments-anchor</code></td><td>An empty element that carries <code>id=&quot;comments&quot;</code> (first instance only) so theme rules such as <code>#comments .comment .avatar</code> can never override the widget&#39;s style controls</td></tr><tr><td><code>.wgcr-comments-title</code> and <code>.wgcr-comments-count</code></td><td>Title and counter</td></tr><tr><td><code>.wgcr-comments-list</code></td><td>The <code>ol</code> list; replies live in <code>.children</code>, inside their parent&#39;s card</td></tr><tr><td><code>.wgcr-comment</code></td><td>Each comment card (an <code>article</code> that also holds its replies), with the <code>.wgcr-comment-body</code> wrapper (its <code>id</code> is where the reply form opens), <code>.wgcr-comment-head</code>, <code>.wgcr-comment-author</code>, <code>.wgcr-comment-date</code>, <code>.wgcr-comment-text</code>, <code>.wgcr-comment-reply</code></td></tr><tr><td><code>.wgcr-comments-pagination</code></td><td>The pagination nav; <code>.wgcr-comments-page</code> and <code>.is-current</code></td></tr><tr><td><code>.wgcr-comments-respond</code></td><td>The form card; <code>.wgcr-comments-form</code>, <code>.wgcr-comments-field</code>, <code>.wgcr-comments-input</code>, <code>.wgcr-comments-submit</code></td></tr><tr><td><code>.wgcr-comments-notice</code>, <code>.wgcr-comments-pending</code> and <code>.wgcr-comments-loggedin</code></td><td>Messages, and the logged-in user text</td></tr></tbody></table></div>
+<h2 id="accessibility">Accessibility<a class="hlink" href="#accessibility" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<ul>
+<li>Every field has a real <code>label</code>, and required fields are announced with <code>required</code> and <code>aria-required</code>; the required asterisk is hidden from screen readers.</li>
+<li>The submit button is a real <code>button</code>, and the Tab order matches the visual order.</li>
+<li>The pagination navigation has an <code>aria-label</code> and the current page has <code>aria-current=&quot;page&quot;</code>.</li>
+<li>The focus ring is drawn for <code>:focus-visible</code>; forced-colors mode and <code>prefers-reduced-motion</code> are supported.</li>
+<li>The layout uses CSS logical properties, so it works in Persian (right-to-left) and English (left-to-right).</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting<a class="hlink" href="#troubleshooting" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Problem</th><th>Likely cause</th><th>Fix</th></tr></thead><tbody><tr><td>The widget shows nothing</td><td>The post is password-protected or private, its type has no comments, or the widget is outside a post</td><td>Place it in a single-post template; give <code>post</code> in the shortcode</td></tr><tr><td>The theme&#39;s form or list shows up as well</td><td>The theme&#39;s comment area prints for a post the widget printed nothing for (the widget points to another post, the post is password-protected, or the widget sits in another post), or the page is an old cached copy</td><td>Put the widget in this post&#39;s own content and leave <code>post</code> empty; clear the cache</td></tr><tr><td>The second form is missing</td><td>A page has only one form</td><td>Keep one form per page; give the other instances <code>form=&quot;no&quot;</code></td></tr><tr><td>“Please fill in the required fields.”</td><td>A required field is empty or the email is malformed</td><td>Fill it in, or turn its required switch off</td></tr><tr><td>Guests cannot comment</td><td>WordPress or “Logged-in users only” requires login</td><td>Check Settings → Discussion</td></tr><tr><td>Making name or email optional has no effect</td><td>An old cached copy of the page, or the form is submitted from elsewhere</td><td>Clear the cache</td></tr><tr><td>A comment is not visible after sending</td><td>Manual approval or WordPress&#39; disallowed list</td><td>Settings → Discussion; a guest sees it as “awaiting moderation” for ten minutes after sending (or longer if the save-in-browser checkbox was ticked)</td></tr><tr><td>The avatar image loads from another site</td><td>WordPress&#39; Gravatar behaviour</td><td>Set “Avatar” to “Hide”</td></tr></tbody></table></div>
+<p>Related guides: <a href="../../shortcode/">Shortcode</a>, <a href="../../accessibility/">Accessibility</a>, <a href="../../troubleshooting/">Troubleshooting</a>.</p>
+
+</div>
+
+</article>
+<nav class="prevnext" aria-label="Previous / Next"><a class="pn pn--prev" href="../faq/" rel="prev">
+<span class="pn-dir">Previous</span>
+<span class="pn-group">Widgets</span>
+<span class="pn-title">FAQ widget</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></span>
+</a>
+<a class="pn pn--next" href="../live-search/" rel="next">
+<span class="pn-dir">Next</span>
+<span class="pn-group">Widgets</span>
+<span class="pn-title">Live Search widget</span>
+<span class="pn-arrow"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></span>
+</a>
+</nav>
+<section class="related"><h2 class="related-title">Related pages</h2><div class="cards cards--related"><a class="card" href="../">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span>
+<span class="card-body"><span class="card-title">Widgets</span><span class="card-text">The list of WidgetCore widgets in Elementor, the name and purpose of each, the dedicated “WidgetCore Widgets” category and how assets are loaded only where needed.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../../shortcode/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg></span>
+<span class="card-body"><span class="card-title">Shortcodes</span><span class="card-text">Every WidgetCore shortcode on one page — [wgcr_search] and [wgcr_comments], what each one is for, the rules they share, examples and links to the complete guide of each shortcode.</span></span>
+<span class="card-arrow"></span>
+</a>
+<a class="card" href="../../accessibility/">
+<span class="card-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg></span>
+<span class="card-body"><span class="card-title">Accessibility</span><span class="card-text">How WidgetCore meets accessibility requirements — the combobox pattern, ARIA roles, live regions, working without JavaScript, FAQ semantics, reduced motion, contrast and an audit checklist.</span></span>
+<span class="card-arrow"></span>
+</a>
+</div></section>
+</div>
+</main>
+<aside class="aside-right" aria-label="On this page">
+<nav class="toc" aria-label="On this page" data-toc>
+<p class="toc-title">On this page</p>
+<ul class="toc-list">
+<li class="toc-item toc-d2"><a href="#quick-start" data-toc-link="quick-start">Quick start</a></li><li class="toc-item toc-d2"><a href="#the-comment-form-section" data-toc-link="the-comment-form-section">The “Comment form” section</a></li><li class="toc-item toc-d2"><a href="#the-fields-section" data-toc-link="the-fields-section">The “Fields” section</a></li><li class="toc-item toc-d3"><a href="#how-required-fields-work" data-toc-link="how-required-fields-work">How required fields work</a></li><li class="toc-item toc-d2"><a href="#the-comments-list-section" data-toc-link="the-comments-list-section">The “Comments list” section</a></li><li class="toc-item toc-d2"><a href="#the-messages-section" data-toc-link="the-messages-section">The “Messages” section</a></li><li class="toc-item toc-d2"><a href="#behaviour-in-different-situations" data-toc-link="behaviour-in-different-situations">Behaviour in different situations</a></li><li class="toc-item toc-d2"><a href="#shortcode" data-toc-link="shortcode">Shortcode</a></li><li class="toc-item toc-d2"><a href="#the-style-tab" data-toc-link="the-style-tab">The Style tab</a></li><li class="toc-item toc-d2"><a href="#html-structure-and-classes" data-toc-link="html-structure-and-classes">HTML structure and classes</a></li><li class="toc-item toc-d2"><a href="#accessibility" data-toc-link="accessibility">Accessibility</a></li><li class="toc-item toc-d2"><a href="#troubleshooting" data-toc-link="troubleshooting">Troubleshooting</a></li>
+</ul>
+<button class="toc-print" type="button" data-print><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-printer"/></svg><span>Print this page</span></button>
+</nav>
+
+</aside>
+</div>
+<footer class="footer">
+<div class="footer-in">
+<div class="footer-brand">
+<p class="footer-note">WidgetCore is a free, open source plugin released under GPL-2.0-or-later.</p>
+<p class="footer-ver">Version <b dir="ltr">0.0.8</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">GPL-2.0-or-later license</a></p>
+</div>
+
+</div>
+</footer>
+
+<script type="application/json" data-ui-strings>{"lang":"en","copy":"Copy code","copied":"Copied","results":"results","theme":"Theme"}</script>
+<script src="../../assets/app.js" defer></script>
+<script src="../../assets/search.js" defer></script>
+<script src="../../assets/site-ui.js" defer></script>
+</body>
+</html>
