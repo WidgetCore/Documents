@@ -34,6 +34,8 @@
 <meta name="twitter:title" content="Download">
 <meta name="twitter:description" content="Download the WidgetCore installable package from GitHub releases, what the package contains, alternative ways to fetch it and how to choose the right version.">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/img/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="stylesheet" href="../assets/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://docs.widgetcore.ir/"},{"@type":"ListItem","position":2,"name":"Download","item":"https://docs.widgetcore.ir/download/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Download","description":"Download the WidgetCore installable package from GitHub releases, what the package contains, alternative ways to fetch it and how to choose the right version.","inLanguage":"en_US","url":"https://docs.widgetcore.ir/download/","isPartOf":{"@type":"WebSite","name":"WidgetCore Documentation","url":"https://docs.widgetcore.ir/","inLanguage":"en_US"},"about":{"@type":"SoftwareApplication","name":"WidgetCore","applicationCategory":"Plugin","operatingSystem":"WordPress"},"author":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"publisher":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"license":"https://www.gnu.org/licenses/gpl-2.0.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.widgetcore.ir/download/"}}</script>
@@ -213,7 +215,7 @@
 <header class="article-head">
 <h1 class="article-title">Download</h1>
 <p class="article-desc">Download the WidgetCore installable package from GitHub releases, what the package contains, alternative ways to fetch it and how to choose the right version.</p>
-<p class="article-meta">Last updated <time datetime="2026-09-26">2026-09-26</time></p>
+<p class="article-meta">Last updated <time datetime="2026-10-01">1 October 2026</time></p>
 </header>
 <div class="prose" data-prose>
 <p>The latest stable release of the plugin is published as a ZIP package on GitHub releases. The current version is <strong><code>0.0.8</code></strong>.</p>
@@ -225,8 +227,8 @@
 <aside class="callout callout--warning"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-warning"/></svg><div class="callout-body"><p class="callout-title">Release package vs repository ZIP</p><p>The <code>widgetcore.zip</code> asset attached to each release is the plugin folder itself and installs directly in WordPress. The repository ZIP also contains other folders and a different plugin folder structure; for installation, always take the release asset.</p>
 </div></aside>
 <h2 id="what-is-inside-the-package">What is inside the package<a class="hlink" href="#what-is-inside-the-package" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
-<p>The <code>widgetcore.zip</code> package contains a single <code>widgetcore/</code> folder with these files:</p>
-<div class="table-wrap" tabindex="0"><table><thead><tr><th>Path</th><th>Role</th></tr></thead><tbody><tr><td><code>widgetcore.php</code></td><td>Main file: plugin header, constants, category and widget registration</td></tr><tr><td><code>uninstall.php</code></td><td>Runs when the plugin is deleted (it removes no data)</td></tr><tr><td><code>readme.txt</code></td><td>Plugin metadata and the changelog</td></tr><tr><td><code>LICENSE</code></td><td>The full GPL-2.0-or-later license text</td></tr><tr><td><code>widgets/class-faq-widget.php</code></td><td>The FAQ widget</td></tr><tr><td><code>widgets/class-search-widget.php</code></td><td>The live search widget</td></tr><tr><td><code>includes/search/search-shared.php</code></td><td>Shared search logic and the shortcode</td></tr><tr><td><code>includes/search/rest-search.php</code></td><td>The search REST route</td></tr><tr><td><code>includes/update/github-updater.php</code></td><td>Updates from GitHub</td></tr><tr><td><code>assets/search/search.css</code></td><td>Front-end search styles</td></tr><tr><td><code>assets/search/search.js</code></td><td>Front-end search behaviour</td></tr><tr><td><code>languages/widgetcore-fa_IR.mo</code> and <code>.po</code></td><td>Persian translation</td></tr><tr><td><code>languages/widgetcore-en_US.mo</code> and <code>.po</code></td><td>English translation</td></tr><tr><td><code>languages/widgetcore.pot</code></td><td>Translation template for other languages</td></tr><tr><td><code>index.php</code> in every folder</td><td>Protects directories from being listed</td></tr></tbody></table></div>
+<p>The <code>widgetcore.zip</code> package contains a single <code>widgetcore/</code> folder, grouped by the role of each file into the regions below (this table is generated from the real package listing, so it stays current with every release):</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Path</th><th>Role</th><th>Files</th></tr></thead><tbody><tr><td><code>LICENSE</code>, <code>readme.txt</code>, <code>uninstall.php</code>, <code>widgetcore.php</code></td><td>Main plugin file, uninstall handler, readme and licence</td><td>4</td></tr><tr><td><code>widgets/</code></td><td>One class per widget: registration, controls and output</td><td>3</td></tr><tr><td><code>includes/{comments,search,style,update}/</code></td><td>Shared logic per feature: search, comments, size controls and the GitHub updater</td><td>7</td></tr><tr><td><code>assets/{comments,search}/</code></td><td>Front-end stylesheets and scripts for the widgets (CSS and JS)</td><td>3</td></tr><tr><td><code>languages/</code></td><td>Persian and English translation files and the <code>.pot</code> template</td><td>5</td></tr><tr><td><code>index.php</code></td><td>One <code>index.php</code> in every folder, to stop directory listing</td><td>11</td></tr></tbody></table></div>
 <p>There is no image, font or third-party library in the package; the plugin needs no extra asset to work.</p>
 <h2 id="choosing-the-right-version">Choosing the right version<a class="hlink" href="#choosing-the-right-version" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
 <ul>
@@ -297,7 +299,7 @@
 <div class="footer-in">
 <div class="footer-brand">
 <p class="footer-note">WidgetCore is a free, open source plugin released under GPL-2.0-or-later.</p>
-<p class="footer-ver">Version <b dir="ltr">0.0.8</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">GPL-2.0-or-later license</a></p>
+<p class="footer-ver">Version <b dir="ltr">0.0.8</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">GPL-2.0-or-later license</a> · Last updated <time datetime="2026-10-01" dir="ltr">1 October 2026</time></p>
 </div>
 
 </div>

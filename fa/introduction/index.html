@@ -34,9 +34,11 @@
 <meta name="twitter:title" content="ویجت‌کور چیست؟">
 <meta name="twitter:description" content="معرفی افزونه‌ی WidgetCore برای المنتور؛ مجموعه‌ی ویجت‌های کاربردی از جمله «سوالات متداول» با اسکیمای FAQPage، «جستجوی زنده» با شورت‌کد و «دیدگاه‌ها»، همراه با پیش‌نیازها و مسیر مطالعه‌ی مستندات.">
 <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/img/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon">
+<link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
 <link rel="stylesheet" href="../../assets/style.css">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/yekan.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/vazirmatn-var.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/arad-regular.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/arad-extrabold.woff2">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"خانه","item":"https://docs.widgetcore.ir/fa/"},{"@type":"ListItem","position":2,"name":"ویجت‌کور چیست؟","item":"https://docs.widgetcore.ir/fa/introduction/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"ویجت‌کور چیست؟","description":"معرفی افزونه‌ی WidgetCore برای المنتور؛ مجموعه‌ی ویجت‌های کاربردی از جمله «سوالات متداول» با اسکیمای FAQPage، «جستجوی زنده» با شورت‌کد و «دیدگاه‌ها»، همراه با پیش‌نیازها و مسیر مطالعه‌ی مستندات.","inLanguage":"fa_IR","url":"https://docs.widgetcore.ir/fa/introduction/","isPartOf":{"@type":"WebSite","name":"مستندات WidgetCore","url":"https://docs.widgetcore.ir/","inLanguage":"fa_IR"},"about":{"@type":"SoftwareApplication","name":"WidgetCore","applicationCategory":"Plugin","operatingSystem":"WordPress"},"author":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"publisher":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"license":"https://www.gnu.org/licenses/gpl-2.0.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.widgetcore.ir/fa/introduction/"}}</script>
 <script>(function(){try{var k='wgcr-theme';var t=localStorage.getItem(k);if(!t){t='system'}var d=t==='system'?(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;var r=document.documentElement;r.classList.add(d==='dark'?'dark':'light');r.setAttribute('data-theme',d);r.setAttribute('data-theme-mode',t);r.style.colorScheme=d;}catch(e){}})();</script>
@@ -215,7 +217,7 @@
 <header class="article-head">
 <h1 class="article-title">ویجت‌کور چیست؟</h1>
 <p class="article-desc">معرفی افزونه‌ی WidgetCore برای المنتور؛ مجموعه‌ی ویجت‌های کاربردی از جمله «سوالات متداول» با اسکیمای FAQPage، «جستجوی زنده» با شورت‌کد و «دیدگاه‌ها»، همراه با پیش‌نیازها و مسیر مطالعه‌ی مستندات.</p>
-<p class="article-meta">آخرین به‌روزرسانی <time datetime="2026-09-26">2026-09-26</time></p>
+<p class="article-meta">آخرین به‌روزرسانی <time datetime="2026-10-01">۱۴۰۵/۰۷/۰۹</time></p>
 </header>
 <div class="prose" data-prose>
 <p><strong>ویجت‌کور</strong> (WidgetCore) یک افزونه‌ی رایگان و متن‌باز برای وردپرس است که مجموعه‌ای از ویجت‌های کاربردی و آماده‌ی استفاده به المنتور اضافه می‌کند؛ از جمله آکاردئون <strong>سوالات متداول</strong> با خروجی ساخت‌یافته‌ی <code>FAQPage</code>، <strong>جستجوی زنده</strong> که نتایج را بدون بارگذاری مجدد صفحه نشان می‌دهد و با شورت‌کد <code>[wgcr_search]</code> هم در هر جای سایت قابل استفاده است، و ویجت <strong>دیدگاه‌ها</strong> با فهرست و فرم قابل‌تنظیم (<code>[wgcr_comments]</code>). هر ویجت افزونه صفحه‌ی راهنمای مستقل خودش را در همین مستندات دارد و مجموعه با هر نسخه بزرگ‌تر می‌شود.</p>
@@ -235,8 +237,8 @@
 </div></li><li class="step"><div class="step-body"><p class="step-title">به‌روز بمانید</p><p>به‌روزرسانی مستقیم از مخزن گیت‌هاب انجام می‌شود؛ راهنما در صفحه‌ی <a href="../updates/">به‌روزرسانی</a>.</p>
 </div></li></ol>
 <h2 id="ساختار-افزونه">ساختار افزونه<a class="hlink" href="#ساختار-افزونه" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
-<p>افزونه از چند بخش کوچک و مستقل تشکیل شده است؛ دانستن این بخش‌ها برای عیب‌یابی کمک می‌کند:</p>
-<div class="table-wrap" tabindex="0"><table><thead><tr><th>بخش</th><th>نقش</th></tr></thead><tbody><tr><td><code>widgetcore.php</code></td><td>ثبت دسته‌ی ویجت‌ها، بارگذاری ترجمه‌ها و ثبت دارایی‌ها</td></tr><tr><td><code>widgets/class-faq-widget.php</code></td><td>ویجت سوالات متداول، استایل و اسکریپت درون‌خطی آن</td></tr><tr><td><code>widgets/class-search-widget.php</code></td><td>ویجت جستجوی زنده و همه‌ی کنترل‌های آن</td></tr><tr><td><code>includes/search/search-shared.php</code></td><td>منطق مشترک جستجو، شورت‌کد و رندر خروجی</td></tr><tr><td><code>includes/search/rest-search.php</code></td><td>مسیر REST جستجو و پارامترهای آن</td></tr><tr><td><code>widgets/class-comments-widget.php</code></td><td>ویجت دیدگاه‌ها و کنترل‌های آن</td></tr><tr><td><code>includes/comments/</code></td><td>منطق مشترک دیدگاه‌ها، شورت‌کد و سیاست فیلد امضاشده برای فیلدهای اجباری</td></tr><tr><td><code>includes/update/github-updater.php</code></td><td>به‌روزرسانی از مخزن گیت‌هاب</td></tr><tr><td><code>assets/search/search.css</code> و <code>search.js</code></td><td>ظاهر و رفتار سمت کاربر جستجو</td></tr><tr><td><code>assets/comments/comments.css</code></td><td>ظاهر سمت کاربر دیدگاه‌ها (بدون اسکریپت)</td></tr><tr><td><code>languages/</code></td><td>فایل‌های ترجمه‌ی <code>fa_IR</code>، <code>en_US</code> و الگوی <code>.pot</code></td></tr></tbody></table></div>
+<p>افزونه از چند منطقهٔ کوچک و مستقل تشکیل شده است؛ دانستن این منطقه‌ها برای عیب‌یابی کمک می‌کند. جزئیات هر فایل در <a href="../download/">محتویات بسته</a> آمده است:</p>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>بخش</th><th>نقش</th><th>تعداد فایل</th></tr></thead><tbody><tr><td>ریشهٔ بسته</td><td>فایل اصلی افزونه، پاک‌کنندهٔ حذف، شناسنامه و پروانه</td><td>4</td></tr><tr><td>ویجت‌ها</td><td>یک کلاس برای هر ویجت: ثبت، کنترل‌ها و خروجی</td><td>3</td></tr><tr><td>منطق مشترک</td><td>منطق مشترک هر قابلیت: جستجو، دیدگاه‌ها، کنترل اندازه و به‌روزرسانی از گیت‌هاب</td><td>7</td></tr><tr><td>دارایی‌ها</td><td>شیوه‌نامه و اسکریپت سمت کاربرِ ویجت‌ها (CSS و JS)</td><td>3</td></tr><tr><td>ترجمه‌ها</td><td>فایل‌های ترجمهٔ فارسی و انگلیسی و الگوی <code>.pot</code></td><td>5</td></tr><tr><td>فایل‌های محافظ</td><td>یک فایل <code>index.php</code> در هر پوشه، در برابر فهرست‌شدن پوشه‌ها</td><td>11</td></tr></tbody></table></div>
 <h2 id="چه-چیزی-در-افزونه-نیست">چه چیزی در افزونه نیست<a class="hlink" href="#چه-چیزی-در-افزونه-نیست" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
 <ul>
 <li>هیچ کتابخانه‌ی جاوااسکریپت یا CSS خارجی بارگذاری نمی‌شود؛ همه‌چیز داخل بسته است.</li>
@@ -289,7 +291,7 @@
 <div class="footer-in">
 <div class="footer-brand">
 <p class="footer-note">WidgetCore یک افزونه رایگان و متن‌باز با مجوز GPL-2.0-or-later است.</p>
-<p class="footer-ver">نسخه <b dir="ltr">0.0.8</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">مجوز GPL-2.0-or-later</a></p>
+<p class="footer-ver">نسخه <b dir="ltr">0.0.8</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">مجوز GPL-2.0-or-later</a> · آخرین به‌روزرسانی <time datetime="2026-10-01" dir="rtl">۱۴۰۵/۰۷/۰۹</time></p>
 </div>
 
 </div>
