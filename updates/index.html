@@ -195,7 +195,7 @@
 <div class="sidebar-foot">
 <a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="Download the latest version" title="Download the latest version"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">Download the latest version</span></a>
 <a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="WidgetCore repository on GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>WidgetCore repository on GitHub</span></a>
-<p class="side-ver">Version <b dir="ltr">0.0.8</b></p>
+<p class="side-ver">Version <b dir="ltr">0.0.9</b></p>
 </div>
 </div>
 </aside>
@@ -215,10 +215,10 @@
 <header class="article-head">
 <h1 class="article-title">Updates</h1>
 <p class="article-desc">Updating WidgetCore straight from the GitHub repository — the check-for-updates link, native auto-updates, release notes, an optional token and switching back to WordPress.org.</p>
-<p class="article-meta">Last updated <time datetime="2026-10-01">1 October 2026</time></p>
+<p class="article-meta">Last updated <time datetime="2026-10-07">7 October 2026</time></p>
 </header>
 <div class="prose" data-prose>
-<p>From version <code>0.0.8</code> onwards the plugin receives new releases <strong>directly from the GitHub repository</strong>. This is done with the <code>Update URI</code> header and WordPress core hooks only — no update library is installed.</p>
+<p>From version <code>0.0.9</code> onwards the plugin receives new releases <strong>directly from the GitHub repository</strong>. This is done with the <code>Update URI</code> header and WordPress core hooks only — no update library is installed.</p>
 <h2 id="updates-at-a-glance">Updates at a glance<a class="hlink" href="#updates-at-a-glance" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
 <ol class="steps" data-lang="en"><li class="step"><div class="step-body"><p class="step-title">WordPress asks GitHub for the published release</p><p>Every update check reads the latest release of the <code>WidgetCore/Plugin</code> repository.</p>
 </div></li><li class="step"><div class="step-body"><p class="step-title">A newer version shows up in the plugins list</p><p>With the usual WordPress notice: “A new version is available”.</p>
@@ -263,7 +263,7 @@
 <h2 id="troubleshooting-updates">Troubleshooting updates<a class="hlink" href="#troubleshooting-updates" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
 <div class="table-wrap" tabindex="0"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr></thead><tbody><tr><td>A new version never appears</td><td>WordPress&#39; 12-hour cache</td><td>Click the “Check for updates” link</td></tr><tr><td>Package download fails</td><td>Outbound access to <code>github.com</code> is blocked, or the release asset is not public</td><td>Allow outbound access to <code>github.com</code>, or install the ZIP manually</td></tr><tr><td>cURL error or timeout</td><td>Outbound requests to <code>api.github.com</code> blocked</td><td>Allow outbound access to <code>api.github.com</code> and <code>github.com</code></td></tr><tr><td>“View details” is empty</td><td>A release without notes</td><td>Write release notes in the GitHub release</td></tr><tr><td>Folder changed after updating</td><td>ZIP structure of the release</td><td>The release package must contain a <code>widgetcore/</code> folder</td></tr><tr><td>The plugin row says “Untested with your version of WordPress”</td><td>The site&#39;s WordPress is newer than the version declared in the plugin&#39;s <code>readme.txt</code>, or the installed copy predates that badge</td><td>Install the current release of the plugin; the badge never blocks the update, it only informs</td></tr></tbody></table></div>
 <h2 id="version-history">Version history<a class="hlink" href="#version-history" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
-<p>The complete list of changes per version is on the <a href="../changelog/">changelog page</a>. Versioning is a simple counter: every release moves one step forward (<code>0.0.1</code> → <code>0.0.2</code> … <code>0.0.9</code> → <code>0.1.0</code> … <code>0.9.9</code> → <code>1.0.0</code>).</p>
+<p>The complete list of changes per version is on the <a href="../changelog/">changelog page</a>. Versioning is widget-count based: the version number derives from the registered widgets (<code>0.(N div 10).(N mod 10)</code> — 10 widgets → <code>0.1.0</code>, 17 widgets → <code>0.1.7</code>); versions <code>0.0.1</code> through <code>0.0.9</code> were released under the previous rule (a release counter).</p>
 
 </div>
 
@@ -314,7 +314,7 @@
 <div class="footer-in">
 <div class="footer-brand">
 <p class="footer-note">WidgetCore is a free, open source plugin released under GPL-2.0-or-later.</p>
-<p class="footer-ver">Version <b dir="ltr">0.0.8</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">GPL-2.0-or-later license</a> · Last updated <time datetime="2026-10-01" dir="ltr">1 October 2026</time></p>
+<p class="footer-ver">Version <b dir="ltr">0.0.9</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">GPL-2.0-or-later license</a> · Last updated <time datetime="2026-10-07" dir="ltr">7 October 2026</time></p>
 </div>
 
 </div>

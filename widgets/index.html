@@ -195,7 +195,7 @@
 <div class="sidebar-foot">
 <a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="Download the latest version" title="Download the latest version"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">Download the latest version</span></a>
 <a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="WidgetCore repository on GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>WidgetCore repository on GitHub</span></a>
-<p class="side-ver">Version <b dir="ltr">0.0.8</b></p>
+<p class="side-ver">Version <b dir="ltr">0.0.9</b></p>
 </div>
 </div>
 </aside>
@@ -215,7 +215,7 @@
 <header class="article-head">
 <h1 class="article-title">Widgets</h1>
 <p class="article-desc">The list of WidgetCore widgets in Elementor, the name and purpose of each, the dedicated “WidgetCore Widgets” category and how assets are loaded only where needed.</p>
-<p class="article-meta">Last updated <time datetime="2026-10-01">1 October 2026</time></p>
+<p class="article-meta">Last updated <time datetime="2026-10-07">7 October 2026</time></p>
 </header>
 <div class="prose" data-prose>
 <p>WidgetCore adds its widget set to Elementor (3 widgets today). Every widget lives in the dedicated <strong>WidgetCore Widgets</strong> category so it never gets lost among the others, and each one has a complete guide on its own page of these docs.</p>
@@ -236,7 +236,7 @@
 <p>The widgets declare their style and script with <code>get_style_depends()</code> and <code>get_script_depends()</code>:</p>
 <div class="table-wrap" tabindex="0"><table><thead><tr><th>Widget</th><th>Style</th><th>Script</th></tr></thead><tbody><tr><td>FAQ</td><td><code>wgcr-faq</code></td><td><code>wgcr-faq</code></td></tr><tr><td>Live Search</td><td><code>wgcr-search</code></td><td><code>wgcr-search</code></td></tr><tr><td>Comments</td><td><code>wgcr-comments</code></td><td>—</td></tr></tbody></table></div>
 <p>In practice this means a page without any WidgetCore widget loads no extra CSS or JS file. Inside the Elementor editor the assets are loaded through the <code>elementor/preview/enqueue_styles</code> and <code>elementor/preview/enqueue_scripts</code> hooks, so the preview matches the front end exactly.</p>
-<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">Asset versions</p><p>Both files are registered with the plugin version number (<code>WGCR_VER</code>), that is <code>search.css?ver=0.0.8</code>. After every update the browser fetches the new file, so “stale styles” never happens.</p>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">Asset versions</p><p>Both files are registered with the plugin version number (<code>WGCR_VER</code>), that is <code>search.css?ver=0.0.9</code>. After every update the browser fetches the new file, so “stale styles” never happens.</p>
 </div></aside>
 <h2 id="what-the-widgets-share">What the widgets share<a class="hlink" href="#what-the-widgets-share" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
 <div class="table-wrap" tabindex="0"><table><thead><tr><th>Feature</th><th>Behaviour shared by every widget</th></tr></thead><tbody><tr><td>Panel category</td><td><code>wgcr</code> (“WidgetCore Widgets”)</td></tr><tr><td>Registration</td><td>The <code>elementor/widgets/register</code> hook with lazy class loading</td></tr><tr><td>Live preview in the editor</td><td>With <code>content_template()</code></td></tr><tr><td>Inline text editing</td><td>Yes</td></tr><tr><td>Keyboard accessibility</td><td>Yes (full table on the keyboard page)</td></tr><tr><td><code>prefers-reduced-motion</code> support</td><td>Yes</td></tr><tr><td>Asset loading</td><td>Only on pages where the widget appears</td></tr><tr><td>Content and style sections</td><td>Listed on each widget&#39;s own page</td></tr></tbody></table></div>
@@ -299,7 +299,7 @@
 <div class="footer-in">
 <div class="footer-brand">
 <p class="footer-note">WidgetCore is a free, open source plugin released under GPL-2.0-or-later.</p>
-<p class="footer-ver">Version <b dir="ltr">0.0.8</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">GPL-2.0-or-later license</a> · Last updated <time datetime="2026-10-01" dir="ltr">1 October 2026</time></p>
+<p class="footer-ver">Version <b dir="ltr">0.0.9</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">GPL-2.0-or-later license</a> · Last updated <time datetime="2026-10-07" dir="ltr">7 October 2026</time></p>
 </div>
 
 </div>

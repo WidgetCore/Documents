@@ -197,7 +197,7 @@
 <div class="sidebar-foot">
 <a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="دانلود آخرین نسخه" title="دانلود آخرین نسخه"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">دانلود آخرین نسخه</span></a>
 <a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="مخزن WidgetCore در GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>مخزن WidgetCore در GitHub</span></a>
-<p class="side-ver">نسخه <b dir="ltr">0.0.8</b></p>
+<p class="side-ver">نسخه <b dir="ltr">0.0.9</b></p>
 </div>
 </div>
 </aside>
@@ -217,7 +217,7 @@
 <header class="article-head">
 <h1 class="article-title">ویجت‌ها</h1>
 <p class="article-desc">فهرست ویجت‌های WidgetCore در المنتور، شناسه و کاربرد هر ویجت، دسته‌ی اختصاصی «ویجت‌های WidgetCore» و نحوه‌ی بارگذاری دارایی‌ها فقط در صفحه‌های لازم.</p>
-<p class="article-meta">آخرین به‌روزرسانی <time datetime="2026-10-01">۱۴۰۵/۰۷/۰۹</time></p>
+<p class="article-meta">آخرین به‌روزرسانی <time datetime="2026-10-07">۱۴۰۵/۰۷/۱۵</time></p>
 </header>
 <div class="prose" data-prose>
 <p>افزونه‌ی ویجت‌کور مجموعه‌ی ویجت‌های خود را به المنتور اضافه می‌کند (هم‌اکنون 3 ویجت). هر ویجت در دسته‌ی اختصاصی <strong>ویجت‌های WidgetCore</strong> قرار می‌گیرد تا در میان ویجت‌های دیگر گم نشود و راهنمای کاملش یک صفحه‌ی مستقل در همین مستندات است.</p>
@@ -238,7 +238,7 @@
 <p>ویجت‌ها استایل و اسکریپت خود را با <code>get_style_depends()</code> و <code>get_script_depends()</code> اعلام می‌کنند:</p>
 <div class="table-wrap" tabindex="0"><table><thead><tr><th>ویجت</th><th>استایل</th><th>اسکریپت</th></tr></thead><tbody><tr><td>سوالات متداول</td><td><code>wgcr-faq</code></td><td><code>wgcr-faq</code></td></tr><tr><td>جستجوی زنده</td><td><code>wgcr-search</code></td><td><code>wgcr-search</code></td></tr><tr><td>دیدگاه‌ها</td><td><code>wgcr-comments</code></td><td>—</td></tr></tbody></table></div>
 <p>نتیجه‌ی عملی این است که در صفحه‌ای که هیچ ویجت ویجت‌کوری نیست، هیچ فایل CSS یا JS اضافه‌ای بارگذاری نمی‌شود. در ویرایشگر المنتور هم دارایی‌ها با هوک‌های <code>elementor/preview/enqueue_styles</code> و <code>elementor/preview/enqueue_scripts</code> بارگذاری می‌شوند تا پیش‌نمایش دقیقاً مثل نمای سایت باشد.</p>
-<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">نسخه‌ی دارایی‌ها</p><p>هر دو فایل با شماره‌ی نسخه‌ی افزونه (<code>WGCR_VER</code>) ثبت می‌شوند، یعنی <code>search.css?ver=0.0.8</code>. بعد از هر به‌روزرسانی، مرورگر فایل تازه را می‌گیرد و مشکل «استایل قدیمی مانده» پیش نمی‌آید.</p>
+<aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">نسخه‌ی دارایی‌ها</p><p>هر دو فایل با شماره‌ی نسخه‌ی افزونه (<code>WGCR_VER</code>) ثبت می‌شوند، یعنی <code>search.css?ver=0.0.9</code>. بعد از هر به‌روزرسانی، مرورگر فایل تازه را می‌گیرد و مشکل «استایل قدیمی مانده» پیش نمی‌آید.</p>
 </div></aside>
 <h2 id="ساختار-مشترک-ویجتها">ساختار مشترک ویجت‌ها<a class="hlink" href="#ساختار-مشترک-ویجتها" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
 <div class="table-wrap" tabindex="0"><table><thead><tr><th>ویژگی</th><th>رفتار مشترک همه‌ی ویجت‌ها</th></tr></thead><tbody><tr><td>دسته‌ی پنل</td><td><code>wgcr</code> («ویجت‌های WidgetCore»)</td></tr><tr><td>ثبت</td><td>هوک <code>elementor/widgets/register</code> با بارگذاری تنبل کلاس</td></tr><tr><td>پیش‌نمایش زنده در ویرایشگر</td><td>با <code>content_template()</code></td></tr><tr><td>ویرایش درون‌خطی متن</td><td>بله</td></tr><tr><td>دسترس‌پذیری کیبورد</td><td>بله (جدول کامل در صفحه‌ی کیبورد)</td></tr><tr><td>پشتیبانی <code>prefers-reduced-motion</code></td><td>بله</td></tr><tr><td>بارگذاری دارایی‌ها</td><td>فقط در صفحه‌هایی که ویجت حضور دارد</td></tr><tr><td>بخش‌های محتوا و استایل</td><td>در صفحه‌ی مستقل هر ویجت فهرست شده‌اند</td></tr></tbody></table></div>
@@ -301,7 +301,7 @@
 <div class="footer-in">
 <div class="footer-brand">
 <p class="footer-note">WidgetCore یک افزونه رایگان و متن‌باز با مجوز GPL-2.0-or-later است.</p>
-<p class="footer-ver">نسخه <b dir="ltr">0.0.8</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">مجوز GPL-2.0-or-later</a> · آخرین به‌روزرسانی <time datetime="2026-10-01" dir="rtl">۱۴۰۵/۰۷/۰۹</time></p>
+<p class="footer-ver">نسخه <b dir="ltr">0.0.9</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">مجوز GPL-2.0-or-later</a> · آخرین به‌روزرسانی <time datetime="2026-10-07" dir="rtl">۱۴۰۵/۰۷/۱۵</time></p>
 </div>
 
 </div>

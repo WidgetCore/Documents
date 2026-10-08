@@ -197,7 +197,7 @@
 <div class="sidebar-foot">
 <a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="دانلود آخرین نسخه" title="دانلود آخرین نسخه"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">دانلود آخرین نسخه</span></a>
 <a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="مخزن WidgetCore در GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>مخزن WidgetCore در GitHub</span></a>
-<p class="side-ver">نسخه <b dir="ltr">0.0.8</b></p>
+<p class="side-ver">نسخه <b dir="ltr">0.0.9</b></p>
 </div>
 </div>
 </aside>
@@ -217,7 +217,7 @@
 <header class="article-head">
 <h1 class="article-title">عیب‌یابی</h1>
 <p class="article-desc">راهنمای عیب‌یابی افزونه‌ی WidgetCore؛ ویجت دیده نمی‌شود، جستجو نتیجه نمی‌دهد، استایل‌ها بهم ریخته‌اند، به‌روزرسانی کار نمی‌کند و مشکلات عملکرد، همراه با روش تشخیص هر مورد.</p>
-<p class="article-meta">آخرین به‌روزرسانی <time datetime="2026-10-01">۱۴۰۵/۰۷/۰۹</time></p>
+<p class="article-meta">آخرین به‌روزرسانی <time datetime="2026-10-07">۱۴۰۵/۰۷/۱۵</time></p>
 </header>
 <div class="prose" data-prose>
 <p>این صفحه بر پایه‌ی «نشانه → علت → راه‌حل» نوشته شده است. اگر نشانه‌ی شما اینجا نیست، از بخش «تشخیص سریع» پایین صفحه شروع کنید.</p>
@@ -239,7 +239,7 @@
 <div class="table-wrap" tabindex="0"><table><thead><tr><th>کد</th><th>معنا</th></tr></thead><tbody><tr><td><code>200</code></td><td>REST سالم است؛ مشکل در سمت مرورگر یا جاوااسکریپت است</td></tr><tr><td><code>400</code></td><td>پارامتر <code>q</code> نیست (<code>rest_missing_callback_param</code>) یا نامعتبر و کمتر از 2 نویسه است (<code>rest_invalid_param</code>)</td></tr><tr><td><code>401</code> یا <code>403</code></td><td>چیزی REST را محدود کرده است (افزونه‌ی امنیتی یا قوانین سرور)</td></tr><tr><td><code>404</code></td><td>مسیر REST مسدود یا پیوندهای یکتا درست نیستند</td></tr><tr><td><code>500</code></td><td>خطای سرور؛ لاگ خطای PHP را ببینید</td></tr></tbody></table></div>
 <p>اگر <code>404</code> گرفتید، «تنظیمات → پیوندهای یکتا» را باز کنید و یک بار «نام نوشته» را ذخیره کنید تا قواعد بازنویسی تازه شوند.</p>
 <h2 id="ظاهر-و-استایل">ظاهر و استایل<a class="hlink" href="#ظاهر-و-استایل" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
-<div class="table-wrap" tabindex="0"><table><thead><tr><th>نشانه</th><th>علت</th><th>راه‌حل</th></tr></thead><tbody><tr><td>استایل‌ها اعمال نمی‌شوند</td><td><code>search.css</code> بارگذاری نشده</td><td>در ابزار توسعه‌دهنده ببینید فایل با <code>?ver=0.0.8</code> بارگذاری شده یا نه</td></tr><tr><td>پس از به‌روزرسانی ظاهر قدیمی است</td><td>کش مرورگر یا CDN</td><td>کش CDN را خالی کنید؛ خود افزونه نسخه را به نشانی فایل اضافه می‌کند</td></tr><tr><td>ستون‌ها اثر ندارند</td><td>حالت نمایش روی «لیست» است</td><td>حالت را به «نمایش در صفحه» تغییر دهید</td></tr><tr><td>کارت‌ها هم‌ارتفاع نیستند</td><td>«ارتفاع برابر» خاموش است یا کاشی روشن است</td><td>کاشی را خاموش و ارتفاع برابر را روشن کنید</td></tr><tr><td>پنل زیر یک عنصر دیگر پنهان می‌شود</td><td><code>z-index</code> پوشش سایت</td><td><code>z-index</code> پنل را در CSS سفارشی بالا ببرید (پیش‌فرض <code>999</code>)</td></tr><tr><td>CSS سفارشی اثر نمی‌کند</td><td>وزن انتخابگر کمتر است</td><td>انتخابگر را با <code>.wgcr-search</code> شروع کنید</td></tr></tbody></table></div>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>نشانه</th><th>علت</th><th>راه‌حل</th></tr></thead><tbody><tr><td>استایل‌ها اعمال نمی‌شوند</td><td><code>search.css</code> بارگذاری نشده</td><td>در ابزار توسعه‌دهنده ببینید فایل با <code>?ver=0.0.9</code> بارگذاری شده یا نه</td></tr><tr><td>پس از به‌روزرسانی ظاهر قدیمی است</td><td>کش مرورگر یا CDN</td><td>کش CDN را خالی کنید؛ خود افزونه نسخه را به نشانی فایل اضافه می‌کند</td></tr><tr><td>ستون‌ها اثر ندارند</td><td>حالت نمایش روی «لیست» است</td><td>حالت را به «نمایش در صفحه» تغییر دهید</td></tr><tr><td>کارت‌ها هم‌ارتفاع نیستند</td><td>«ارتفاع برابر» خاموش است یا کاشی روشن است</td><td>کاشی را خاموش و ارتفاع برابر را روشن کنید</td></tr><tr><td>پنل زیر یک عنصر دیگر پنهان می‌شود</td><td><code>z-index</code> پوشش سایت</td><td><code>z-index</code> پنل را در CSS سفارشی بالا ببرید (پیش‌فرض <code>999</code>)</td></tr><tr><td>CSS سفارشی اثر نمی‌کند</td><td>وزن انتخابگر کمتر است</td><td>انتخابگر را با <code>.wgcr-search</code> شروع کنید</td></tr></tbody></table></div>
 <h2 id="ویجت-سوالات-متداول">ویجت سوالات متداول<a class="hlink" href="#ویجت-سوالات-متداول" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
 <div class="table-wrap" tabindex="0"><table><thead><tr><th>نشانه</th><th>علت</th><th>راه‌حل</th></tr></thead><tbody><tr><td>آیتم‌ها باز نمی‌شوند</td><td>اسکریپت ویجت اجرا نشده</td><td>کش را خالی کنید و تداخل بهینه‌سازها را بررسی کنید</td></tr><tr><td>همه‌ی آیتم‌ها باز می‌مانند</td><td>حالت روی «آزاد» است</td><td>«حالت باز شدن» را روی آکاردئون بگذارید</td></tr><tr><td>پاسخ کامل دیده نمی‌شود</td><td>ارتفاع پاسخ محاسبه نشده</td><td>صفحه را یک بار resize کنید یا کش را خالی کنید؛ اسکریپت ارتفاع را دوباره می‌سنجد</td></tr><tr><td>اسکیما در صفحه نیست</td><td>کنترل خاموش یا ویجت دوم</td><td>کنترل «اسکیمای FAQ» را روشن و ویجت را اول بگذارید</td></tr><tr><td>آیکون سفارشی نمی‌چرخد</td><td>نوع آیکون سفارشی نیست</td><td>«آیکون» را روی «سفارشی (کتابخانه المنتور)» بگذارید</td></tr></tbody></table></div>
 <h2 id="ویجت-دیدگاهها">ویجت دیدگاه‌ها<a class="hlink" href="#ویجت-دیدگاهها" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
@@ -250,7 +250,7 @@
 <h2 id="عملکرد">عملکرد<a class="hlink" href="#عملکرد" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
 <div class="table-wrap" tabindex="0"><table><thead><tr><th>نشانه</th><th>علت</th><th>راه‌حل</th></tr></thead><tbody><tr><td>جستجو کند است</td><td><code>limit</code> بزرگ یا <code>orderby=&quot;rand&quot;</code></td><td>تعداد نتایج را کم و مرتب‌سازی را <code>relevance</code> یا <code>date</code> بگذارید</td></tr><tr><td>هر تایپ یک درخواست می‌فرستد</td><td>انتظار درست</td><td>افزونه 250 میلی‌ثانیه تأخیر و لغو درخواست قبلی دارد؛ اگر بیشتر می‌بینید، بهینه‌ساز را بررسی کنید</td></tr><tr><td>بار سرور بالاست</td><td>شمارش کل نتایج</td><td>صفحه‌بندی را «هیچکدام» یا «بارگذاری با کلیک» بگذارید تا <code>no_found_rows</code> فعال بماند</td></tr><tr><td>CSS قالب تکرار می‌شود</td><td>قالب در هر نتیجه استایل چاپ می‌کند</td><td>افزونه استایل‌ها را یک‌جا جمع می‌کند؛ اگر هنوز تکرار می‌شود، استایل را در تنظیمات قالب المنتور بگذارید نه درون محتوا</td></tr></tbody></table></div>
 <h2 id="تشخیص-سریع-چکلیست">تشخیص سریع (چک‌لیست)<a class="hlink" href="#تشخیص-سریع-چکلیست" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
-<ol class="steps" data-lang="fa"><li class="step"><div class="step-body"><p class="step-title">نسخه‌ها را ببینید</p><p>وردپرس ≥ 6.7، PHP ≥ 7.4، المنتور فعال، WidgetCore نسخه‌ی 0.0.8.</p>
+<ol class="steps" data-lang="fa"><li class="step"><div class="step-body"><p class="step-title">نسخه‌ها را ببینید</p><p>وردپرس ≥ 6.7، PHP ≥ 7.4، المنتور فعال، WidgetCore نسخه‌ی 0.0.9.</p>
 </div></li><li class="step"><div class="step-body"><p class="step-title">خطاهای PHP را بخوانید</p><p>«ابزارها → سلامت سایت» و در صورت نیاز <code>WP_DEBUG_LOG</code>.</p>
 </div></li><li class="step"><div class="step-body"><p class="step-title">REST را آزمایش کنید</p><p><code>curl</code> روی مسیر جستجو؛ کد وضعیت باید 200 باشد.</p>
 </div></li><li class="step"><div class="step-body"><p class="step-title">دارایی‌ها را ببینید</p><p>در تب Network باید <code>search.css</code> و <code>search.js</code> با <code>?ver=</code> بارگذاری شوند.</p>
@@ -309,7 +309,7 @@
 <div class="footer-in">
 <div class="footer-brand">
 <p class="footer-note">WidgetCore یک افزونه رایگان و متن‌باز با مجوز GPL-2.0-or-later است.</p>
-<p class="footer-ver">نسخه <b dir="ltr">0.0.8</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">مجوز GPL-2.0-or-later</a> · آخرین به‌روزرسانی <time datetime="2026-10-01" dir="rtl">۱۴۰۵/۰۷/۰۹</time></p>
+<p class="footer-ver">نسخه <b dir="ltr">0.0.9</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">مجوز GPL-2.0-or-later</a> · آخرین به‌روزرسانی <time datetime="2026-10-07" dir="rtl">۱۴۰۵/۰۷/۱۵</time></p>
 </div>
 
 </div>

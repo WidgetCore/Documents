@@ -197,7 +197,7 @@
 <div class="sidebar-foot">
 <a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="دانلود آخرین نسخه" title="دانلود آخرین نسخه"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">دانلود آخرین نسخه</span></a>
 <a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="مخزن WidgetCore در GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>مخزن WidgetCore در GitHub</span></a>
-<p class="side-ver">نسخه <b dir="ltr">0.0.8</b></p>
+<p class="side-ver">نسخه <b dir="ltr">0.0.9</b></p>
 </div>
 </div>
 </aside>
@@ -217,10 +217,10 @@
 <header class="article-head">
 <h1 class="article-title">به‌روزرسانی</h1>
 <p class="article-desc">به‌روزرسانی افزونه‌ی WidgetCore مستقیماً از مخزن گیت‌هاب؛ کلید بررسی به‌روزرسانی، به‌روزرسانی خودکار، یادداشت‌های انتشار، توکن اختیاری و بازگشت به وردپرس.ارگ.</p>
-<p class="article-meta">آخرین به‌روزرسانی <time datetime="2026-10-01">۱۴۰۵/۰۷/۰۹</time></p>
+<p class="article-meta">آخرین به‌روزرسانی <time datetime="2026-10-07">۱۴۰۵/۰۷/۱۵</time></p>
 </header>
 <div class="prose" data-prose>
-<p>از نسخه‌ی <code>0.0.8</code> به بعد، افزونه نسخه‌های تازه را <strong>مستقیماً از مخزن گیت‌هاب</strong> می‌گیرد. این کار فقط با هدر <code>Update URI</code> و هوک‌های خود هسته‌ی وردپرس انجام می‌شود و هیچ کتابخانه‌ی به‌روزرسانی نصب نمی‌شود.</p>
+<p>از نسخه‌ی <code>0.0.9</code> به بعد، افزونه نسخه‌های تازه را <strong>مستقیماً از مخزن گیت‌هاب</strong> می‌گیرد. این کار فقط با هدر <code>Update URI</code> و هوک‌های خود هسته‌ی وردپرس انجام می‌شود و هیچ کتابخانه‌ی به‌روزرسانی نصب نمی‌شود.</p>
 <h2 id="بهروزرسانی-در-یک-نگاه">به‌روزرسانی در یک نگاه<a class="hlink" href="#بهروزرسانی-در-یک-نگاه" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
 <ol class="steps" data-lang="fa"><li class="step"><div class="step-body"><p class="step-title">وردپرس نسخه‌ی منتشرشده در گیت‌هاب را می‌پرسد</p><p>در هر بررسی به‌روزرسانی، آخرین انتشار مخزن <code>WidgetCore/Plugin</code> خوانده می‌شود.</p>
 </div></li><li class="step"><div class="step-body"><p class="step-title">اگر نسخه جدیدتر باشد، در فهرست افزونه‌ها دیده می‌شود</p><p>با همان پیام همیشگی وردپرس: «نسخه‌ی جدیدی موجود است».</p>
@@ -265,7 +265,7 @@
 <h2 id="رفع-مشکلات-بهروزرسانی">رفع مشکلات به‌روزرسانی<a class="hlink" href="#رفع-مشکلات-بهروزرسانی" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
 <div class="table-wrap" tabindex="0"><table><thead><tr><th>نشانه</th><th>علت احتمالی</th><th>راه‌حل</th></tr></thead><tbody><tr><td>نسخه‌ی جدید در فهرست نمی‌آید</td><td>کش 12 ساعته‌ی وردپرس</td><td>پیوند «بررسی به‌روزرسانی» را بزنید</td></tr><tr><td>خطا در دانلود بسته</td><td>دسترسی خروجی به <code>github.com</code> مسدود است یا دارایی انتشار عمومی نیست</td><td>دسترسی خروجی را باز کنید یا ZIP را دستی نصب کنید</td></tr><tr><td>خطای <code>cURL</code> یا مهلت زمانی</td><td>خروجی مسدود سرور به <code>api.github.com</code></td><td>بازکردن دسترسی خروجی به <code>api.github.com</code> و <code>github.com</code></td></tr><tr><td>«جزئیات افزونه» خالی است</td><td>انتشار بدون یادداشت</td><td>متن یادداشت را در انتشار گیت‌هاب بنویسید</td></tr><tr><td>پس از به‌روزرسانی، پوشه عوض شده</td><td>ساختار ZIP انتشار</td><td>بسته‌ی انتشار باید پوشه‌ی <code>widgetcore/</code> داشته باشد</td></tr><tr><td>زیر نام افزونه پیام «آزمایش نشده» دیده می‌شود</td><td>وردپرس سایت از نسخه‌ای که نویسنده در <code>readme.txt</code> اعلام کرده تازه‌تر است، یا افزونه‌ی سایت هنوز بسته‌ی دارای این برچسب را نصب نکرده</td><td>آخرین بسته‌ی افزونه را نصب کنید؛ این برچسب فقط اطلاع‌رسان است و هرگز جلوی به‌روزرسانی را نمی‌گیرد</td></tr></tbody></table></div>
 <h2 id="تاریخچهی-نسخهها">تاریخچه‌ی نسخه‌ها<a class="hlink" href="#تاریخچهی-نسخهها" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
-<p>فهرست کامل تغییرات هر نسخه در صفحه‌ی <a href="../changelog/">Changelog</a> آمده است. نسخه‌گذاری افزونه شمارنده‌ای است: هر انتشار یک پله جلو می‌رود (<code>0.0.1</code> → <code>0.0.2</code> … <code>0.0.9</code> → <code>0.1.0</code> … <code>0.9.9</code> → <code>1.0.0</code>).</p>
+<p>فهرست کامل تغییرات هر نسخه در صفحه‌ی <a href="../changelog/">Changelog</a> آمده است. نسخه‌گذاری افزونه ویجت‌شمار است: شمارهٔ نسخه از تعداد ویجت‌های ثبت‌شده می‌آید (<code>0.(N div 10).(N mod 10)</code> — 10 ویجت → <code>0.1.0</code>، 17 ویجت → <code>0.1.7</code>)؛ نسخه‌های <code>0.0.1</code> تا <code>0.0.9</code> با قانون قبلی (شمارندهٔ انتشار) منتشر شده‌اند.</p>
 
 </div>
 
@@ -316,7 +316,7 @@
 <div class="footer-in">
 <div class="footer-brand">
 <p class="footer-note">WidgetCore یک افزونه رایگان و متن‌باز با مجوز GPL-2.0-or-later است.</p>
-<p class="footer-ver">نسخه <b dir="ltr">0.0.8</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">مجوز GPL-2.0-or-later</a> · آخرین به‌روزرسانی <time datetime="2026-10-01" dir="rtl">۱۴۰۵/۰۷/۰۹</time></p>
+<p class="footer-ver">نسخه <b dir="ltr">0.0.9</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">مجوز GPL-2.0-or-later</a> · آخرین به‌روزرسانی <time datetime="2026-10-07" dir="rtl">۱۴۰۵/۰۷/۱۵</time></p>
 </div>
 
 </div>
