@@ -133,6 +133,15 @@
 <li><a class="nav-link" href="../widgets/faq/">ویجت سوالات متداول</a></li>
 <li><a class="nav-link" href="../widgets/comments/">ویجت دیدگاه‌ها</a></li>
 <li><a class="nav-link" href="../widgets/live-search/">ویجت جستجوی زنده</a></li>
+<li><a class="nav-link" href="../widgets/tabs/">ویجت زبانه‌ها</a></li>
+<li><a class="nav-link" href="../widgets/counter/">ویجت شمارنده</a></li>
+<li><a class="nav-link" href="../widgets/progress/">ویجت نوار پیشرفت</a></li>
+<li><a class="nav-link" href="../widgets/alert/">ویجت پیام</a></li>
+<li><a class="nav-link" href="../widgets/iconbox/">ویجت جعبه آیکون</a></li>
+<li><a class="nav-link" href="../widgets/pricetable/">ویجت جدول قیمت</a></li>
+<li><a class="nav-link" href="../widgets/social/">ویجت آیکون‌های اجتماعی</a></li>
+<li><a class="nav-link" href="../widgets/breadcrumb/">ویجت مسیر راهنما</a></li>
+<li><a class="nav-link" href="../widgets/share/">ویجت اشتراک‌گذاری</a></li>
 
 </ul>
 <p class="nav-desc">راهنمای کامل هر ویجت و همه کنترل‌ها.</p>
@@ -197,7 +206,7 @@
 <div class="sidebar-foot">
 <a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="دانلود آخرین نسخه" title="دانلود آخرین نسخه"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">دانلود آخرین نسخه</span></a>
 <a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="مخزن WidgetCore در GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>مخزن WidgetCore در GitHub</span></a>
-<p class="side-ver">نسخه <b dir="ltr">0.0.9</b></p>
+<p class="side-ver">نسخه <b dir="ltr">0.1.2</b></p>
 </div>
 </div>
 </aside>
@@ -217,10 +226,10 @@
 <header class="article-head">
 <h1 class="article-title">دانلود</h1>
 <p class="article-desc">دانلود بسته‌ی نصب WidgetCore از انتشارهای گیت‌هاب، محتویات بسته، راه‌های جایگزین دریافت و راهنمای انتخاب نسخه‌ی مناسب.</p>
-<p class="article-meta">آخرین به‌روزرسانی <time datetime="2026-10-07">۱۴۰۵/۰۷/۱۵</time></p>
+<p class="article-meta">آخرین به‌روزرسانی <time datetime="2026-10-08">۱۴۰۵/۰۷/۱۶</time></p>
 </header>
 <div class="prose" data-prose>
-<p>آخرین نسخه‌ی پایدار افزونه به‌صورت یک بسته‌ی ZIP در انتشارهای گیت‌هاب منتشر می‌شود. نسخه‌ی جاری <strong><code>0.0.9</code></strong> است.</p>
+<p>آخرین نسخه‌ی پایدار افزونه به‌صورت یک بسته‌ی ZIP در انتشارهای گیت‌هاب منتشر می‌شود. نسخه‌ی جاری <strong><code>0.1.2</code></strong> است.</p>
 <div class="btn-row"><a class="btn btn--solid" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span>دانلود آخرین نسخه (widgetcore.zip)</span></a><a class="btn btn--outline" href="https://github.com/WidgetCore/Plugin/releases" target="_blank" rel="noopener noreferrer"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-history"/></svg><span>همه‌ی انتشارها</span></a></div>
 <aside class="callout callout--note"><span class="callout-bar" aria-hidden="true"></span><svg class="ic callout-ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><div class="callout-body"><p class="callout-title">پیوند دانلود مستقیم</p><p>دکمه‌ی بالا به آدرس پایدار <code>…/releases/latest/download/widgetcore.zip</code> می‌رود؛ یعنی همیشه آخرین انتشار را می‌گیرید و نیازی به پیدا کردن شماره‌ی نسخه ندارید.</p>
 </div></aside>
@@ -230,11 +239,11 @@
 </div></aside>
 <h2 id="محتویات-بسته">محتویات بسته<a class="hlink" href="#محتویات-بسته" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
 <p>بسته‌ی <code>widgetcore.zip</code> یک پوشه‌ی <code>widgetcore/</code> دارد که بر پایهٔ نقش هر فایل، در منطقه‌های زیر گروه‌بندی می‌شود (این جدول از فهرست واقعی بسته ساخته می‌شود و با هر نسخه تازه می‌ماند):</p>
-<div class="table-wrap" tabindex="0"><table><thead><tr><th>مسیر</th><th>نقش</th><th>تعداد فایل</th></tr></thead><tbody><tr><td><code>LICENSE</code>، <code>readme.txt</code>، <code>uninstall.php</code>، <code>widgetcore.php</code></td><td>فایل اصلی افزونه، پاک‌کنندهٔ حذف، شناسنامه و پروانه</td><td>4</td></tr><tr><td><code>widgets/</code></td><td>یک کلاس برای هر ویجت: ثبت، کنترل‌ها و خروجی</td><td>3</td></tr><tr><td><code>includes/{comments,search,style,update}/</code></td><td>منطق مشترک هر قابلیت: جستجو، دیدگاه‌ها، کنترل اندازه و به‌روزرسانی از گیت‌هاب</td><td>7</td></tr><tr><td><code>assets/{comments,search}/</code></td><td>شیوه‌نامه و اسکریپت سمت کاربرِ ویجت‌ها (CSS و JS)</td><td>3</td></tr><tr><td><code>languages/</code></td><td>فایل‌های ترجمهٔ فارسی و انگلیسی و الگوی <code>.pot</code></td><td>5</td></tr><tr><td><code>index.php</code></td><td>یک فایل <code>index.php</code> در هر پوشه، در برابر فهرست‌شدن پوشه‌ها</td><td>11</td></tr></tbody></table></div>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>مسیر</th><th>نقش</th><th>تعداد فایل</th></tr></thead><tbody><tr><td><code>LICENSE</code>، <code>readme.txt</code>، <code>uninstall.php</code>، <code>widgetcore.php</code></td><td>فایل اصلی افزونه، پاک‌کنندهٔ حذف، شناسنامه و پروانه</td><td>4</td></tr><tr><td><code>widgets/</code></td><td>یک کلاس برای هر ویجت: ثبت، کنترل‌ها و خروجی</td><td>12</td></tr><tr><td><code>includes/{comments,search,style,template,update}/</code></td><td>منطق مشترک هر قابلیت: جستجو، دیدگاه‌ها، کنترل اندازه و به‌روزرسانی از گیت‌هاب</td><td>8</td></tr><tr><td><code>assets/{comments,search}/</code></td><td>شیوه‌نامه و اسکریپت سمت کاربرِ ویجت‌ها (CSS و JS)</td><td>3</td></tr><tr><td><code>languages/</code></td><td>فایل‌های ترجمهٔ فارسی و انگلیسی و الگوی <code>.pot</code></td><td>5</td></tr><tr><td><code>index.php</code></td><td>یک فایل <code>index.php</code> در هر پوشه، در برابر فهرست‌شدن پوشه‌ها</td><td>11</td></tr></tbody></table></div>
 <p>هیچ فایل تصویر، فونت یا کتابخانه‌ی خارجی در بسته نیست؛ افزونه برای کار کردن به هیچ دارایی اضافه‌ای نیاز ندارد.</p>
 <h2 id="نسخهی-مناسب-را-انتخاب-کنید">نسخه‌ی مناسب را انتخاب کنید<a class="hlink" href="#نسخهی-مناسب-را-انتخاب-کنید" aria-label="پیوند به این بخش"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
 <ul>
-<li><strong>همیشه آخرین انتشار</strong>: نسخه‌های افزونه شمارنده‌ای هستند (<code>0.0.9</code>) و هر انتشار شامل اصلاح نسخه‌های قبلی است.</li>
+<li><strong>همیشه آخرین انتشار</strong>: نسخه‌های افزونه شمارنده‌ای هستند (<code>0.1.2</code>) و هر انتشار شامل اصلاح نسخه‌های قبلی است.</li>
 <li><strong>اگر سایت وردپرس قدیمی دارید</strong>: حداقل وردپرس 6.7 و PHP 7.4 لازم است؛ جزئیات در <a href="../requirements/">پیش‌نیازها و سازگاری</a>.</li>
 <li><strong>اگر المنتور ندارید</strong>: افزونه بدون المنتور هیچ ویجتی ثبت نمی‌کند؛ اول المنتور را نصب کنید.</li>
 </ul>
@@ -301,7 +310,7 @@
 <div class="footer-in">
 <div class="footer-brand">
 <p class="footer-note">WidgetCore یک افزونه رایگان و متن‌باز با مجوز GPL-2.0-or-later است.</p>
-<p class="footer-ver">نسخه <b dir="ltr">0.0.9</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">مجوز GPL-2.0-or-later</a> · آخرین به‌روزرسانی <time datetime="2026-10-07" dir="rtl">۱۴۰۵/۰۷/۱۵</time></p>
+<p class="footer-ver">نسخه <b dir="ltr">0.1.2</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">مجوز GPL-2.0-or-later</a> · آخرین به‌روزرسانی <time datetime="2026-10-08" dir="rtl">۱۴۰۵/۰۷/۱۶</time></p>
 </div>
 
 </div>

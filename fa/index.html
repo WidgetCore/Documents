@@ -39,7 +39,7 @@
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../assets/fonts/arad-regular.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../assets/fonts/arad-extrabold.woff2">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"WidgetCore","alternateName":"ویجت‌های WidgetCore","applicationCategory":"Plugin","applicationSubCategory":"Elementor widgets","operatingSystem":"WordPress 6.7+","softwareVersion":"0.0.9","softwareRequirements":["WordPress 6.7+","PHP 7.4+","Elementor"],"url":"https://docs.widgetcore.ir/","inLanguage":"fa_IR","description":"مستندات رسمی افزونه رایگان WidgetCore برای وردپرس و المنتور: مجموعه‌ی ویجت‌هایی مانند سوالات متداول با اسکیمای FAQPage و جستجوی زنده با شورت‌کد و REST، همراه راهنمای نصب، کنترل‌ها و عیب‌یابی.","license":"https://www.gnu.org/licenses/gpl-2.0.html","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"publisher":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"downloadUrl":"https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip","softwareHelp":{"@type":"WebSite","name":"مستندات WidgetCore — ویجت‌های سبک و در دسترس برای المنتور","url":"https://docs.widgetcore.ir/","inLanguage":"fa_IR"},"featureList":["سوالات متداول - FAQ","جستجوی زنده","دیدگاه‌ها"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"WidgetCore","alternateName":"ویجت‌های WidgetCore","applicationCategory":"Plugin","applicationSubCategory":"Elementor widgets","operatingSystem":"WordPress 6.7+","softwareVersion":"0.1.2","softwareRequirements":["WordPress 6.7+","PHP 7.4+","Elementor"],"url":"https://docs.widgetcore.ir/","inLanguage":"fa_IR","description":"مستندات رسمی افزونه رایگان WidgetCore برای وردپرس و المنتور: مجموعه‌ی ویجت‌هایی مانند سوالات متداول با اسکیمای FAQPage و جستجوی زنده با شورت‌کد و REST، همراه راهنمای نصب، کنترل‌ها و عیب‌یابی.","license":"https://www.gnu.org/licenses/gpl-2.0.html","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"publisher":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"},"downloadUrl":"https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip","softwareHelp":{"@type":"WebSite","name":"مستندات WidgetCore — ویجت‌های سبک و در دسترس برای المنتور","url":"https://docs.widgetcore.ir/","inLanguage":"fa_IR"},"featureList":["سوالات متداول - FAQ","جستجوی زنده","دیدگاه‌ها","زبانه‌ها - Tabs","شمارنده - Counter","نوار پیشرفت - Progress Bar","پیام - Alert","جعبه آیکون - Icon Box","جدول قیمت - Price Table","آیکون‌های اجتماعی - Social Icons","مسیر راهنما - Breadcrumb","اشتراک‌گذاری - Share"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"مستندات WidgetCore","url":"https://docs.widgetcore.ir/","inLanguage":"fa_IR","publisher":{"@type":"Organization","name":"WidgetCore","url":"https://github.com/WidgetCore"}}</script>
 <script>(function(){try{var k='wgcr-theme';var t=localStorage.getItem(k);if(!t){t='system'}var d=t==='system'?(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;var r=document.documentElement;r.classList.add(d==='dark'?'dark':'light');r.setAttribute('data-theme',d);r.setAttribute('data-theme-mode',t);r.style.colorScheme=d;}catch(e){}})();</script>
 </head>
@@ -117,6 +117,15 @@
 <li><a class="nav-link" href="widgets/faq/">ویجت سوالات متداول</a></li>
 <li><a class="nav-link" href="widgets/comments/">ویجت دیدگاه‌ها</a></li>
 <li><a class="nav-link" href="widgets/live-search/">ویجت جستجوی زنده</a></li>
+<li><a class="nav-link" href="widgets/tabs/">ویجت زبانه‌ها</a></li>
+<li><a class="nav-link" href="widgets/counter/">ویجت شمارنده</a></li>
+<li><a class="nav-link" href="widgets/progress/">ویجت نوار پیشرفت</a></li>
+<li><a class="nav-link" href="widgets/alert/">ویجت پیام</a></li>
+<li><a class="nav-link" href="widgets/iconbox/">ویجت جعبه آیکون</a></li>
+<li><a class="nav-link" href="widgets/pricetable/">ویجت جدول قیمت</a></li>
+<li><a class="nav-link" href="widgets/social/">ویجت آیکون‌های اجتماعی</a></li>
+<li><a class="nav-link" href="widgets/breadcrumb/">ویجت مسیر راهنما</a></li>
+<li><a class="nav-link" href="widgets/share/">ویجت اشتراک‌گذاری</a></li>
 
 </ul>
 <p class="nav-desc">راهنمای کامل هر ویجت و همه کنترل‌ها.</p>
@@ -181,7 +190,7 @@
 <div class="sidebar-foot">
 <a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="دانلود آخرین نسخه" title="دانلود آخرین نسخه"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">دانلود آخرین نسخه</span></a>
 <a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="مخزن WidgetCore در GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>مخزن WidgetCore در GitHub</span></a>
-<p class="side-ver">نسخه <b dir="ltr">0.0.9</b></p>
+<p class="side-ver">نسخه <b dir="ltr">0.1.2</b></p>
 </div>
 </div>
 </aside>
@@ -206,7 +215,7 @@
 <div class="hero-bg" aria-hidden="true"></div>
 <section class="hero">
 <div class="hero-txt">
-<p class="hero-badges"><span class="badge"><span class="dot" aria-hidden="true"></span>نسخه 0.0.9 منتشر شد</span><span class="eyebrow">مستندات رسمی افزونه</span></p>
+<p class="hero-badges"><span class="badge"><span class="dot" aria-hidden="true"></span>نسخه 0.1.2 منتشر شد</span><span class="eyebrow">مستندات رسمی افزونه</span></p>
 <h1 class="hero-title">WidgetCore. مجموعه‌ی ویجت‌های حرفه‌ای برای المنتور، بدون سربار.</h1>
 <p class="hero-text">از سوالات متداول با اسکیمای خودکار برای گوگل تا جستجوی زنده‌ای که نتیجه را همان لحظه‌ی تایپ نشان می‌دهد؛ بدون صفحه تنظیمات، بدون ذخیره داده در دیتابیس و بدون هیچ درخواست خارجی از سمت ویجت‌ها.</p>
 <div class="hero-cta">
@@ -219,15 +228,15 @@
 <div class="panel-head">
 <p class="panel-title">نمای کلی افزونه</p>
 <p class="panel-host" dir="ltr">widgetcore · المنتور</p>
-<span class="badge badge--sm"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sparkles"/></svg>نسخه 0.0.9 منتشر شد</span>
+<span class="badge badge--sm"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sparkles"/></svg>نسخه 0.1.2 منتشر شد</span>
 </div>
 <div class="metrics">
 <div class="metric">
-<div class="metric-top"><span class="metric-main"><span class="metric-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span><span class="metric-value" dir="ltr">3</span></span><span class="dot dot--ok" aria-hidden="true"></span></div>
+<div class="metric-top"><span class="metric-main"><span class="metric-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg></span><span class="metric-value" dir="ltr">12</span></span><span class="dot dot--ok" aria-hidden="true"></span></div>
 <p class="metric-label">ویجت اختصاصی</p>
 </div>
 <div class="metric">
-<div class="metric-top"><span class="metric-main"><span class="metric-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-languages"/></svg></span><span class="metric-value" dir="ltr">303</span></span><span class="dot dot--ok" aria-hidden="true"></span></div>
+<div class="metric-top"><span class="metric-main"><span class="metric-ic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-languages"/></svg></span><span class="metric-value" dir="ltr">572</span></span><span class="dot dot--ok" aria-hidden="true"></span></div>
 <p class="metric-label">رشته ترجمه‌شده</p>
 </div>
 <div class="metric">
@@ -293,7 +302,7 @@
 <div class="footer-in">
 <div class="footer-brand">
 <p class="footer-note">WidgetCore یک افزونه رایگان و متن‌باز با مجوز GPL-2.0-or-later است.</p>
-<p class="footer-ver">نسخه <b dir="ltr">0.0.9</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">مجوز GPL-2.0-or-later</a> · آخرین به‌روزرسانی <time datetime="2026-10-07" dir="rtl">۱۴۰۵/۰۷/۱۵</time></p>
+<p class="footer-ver">نسخه <b dir="ltr">0.1.2</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">مجوز GPL-2.0-or-later</a> · آخرین به‌روزرسانی <time datetime="2026-10-08" dir="rtl">۱۴۰۵/۰۷/۱۶</time></p>
 </div>
 
 </div>

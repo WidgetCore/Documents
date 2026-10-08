@@ -131,6 +131,15 @@
 <li><a class="nav-link" href="../widgets/faq/">FAQ widget</a></li>
 <li><a class="nav-link" href="../widgets/comments/">Comments widget</a></li>
 <li><a class="nav-link" href="../widgets/live-search/">Live Search widget</a></li>
+<li><a class="nav-link" href="../widgets/tabs/">Tabs widget</a></li>
+<li><a class="nav-link" href="../widgets/counter/">Counter widget</a></li>
+<li><a class="nav-link" href="../widgets/progress/">Progress Bar widget</a></li>
+<li><a class="nav-link" href="../widgets/alert/">Alert widget</a></li>
+<li><a class="nav-link" href="../widgets/iconbox/">Icon Box widget</a></li>
+<li><a class="nav-link" href="../widgets/pricetable/">Price Table widget</a></li>
+<li><a class="nav-link" href="../widgets/social/">Social Icons widget</a></li>
+<li><a class="nav-link" href="../widgets/breadcrumb/">Breadcrumb Widget</a></li>
+<li><a class="nav-link" href="../widgets/share/">Share Widget</a></li>
 
 </ul>
 <p class="nav-desc">The complete guide to every widget and control.</p>
@@ -195,7 +204,7 @@
 <div class="sidebar-foot">
 <a class="side-btn" href="https://github.com/WidgetCore/Plugin/releases/latest/download/widgetcore.zip" target="_blank" rel="noopener noreferrer" aria-label="Download the latest version" title="Download the latest version"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span class="side-btn-label">Download the latest version</span></a>
 <a class="side-link" href="https://github.com/WidgetCore/Plugin" target="_blank" rel="noopener noreferrer" aria-label="WidgetCore repository on GitHub"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span>WidgetCore repository on GitHub</span></a>
-<p class="side-ver">Version <b dir="ltr">0.0.9</b></p>
+<p class="side-ver">Version <b dir="ltr">0.1.2</b></p>
 </div>
 </div>
 </aside>
@@ -215,7 +224,7 @@
 <header class="article-head">
 <h1 class="article-title">Troubleshooting</h1>
 <p class="article-desc">Fixing common WidgetCore problems — installation and activation, missing widgets in the editor, search returning no results, styling issues, FAQ behaviour, updates and performance.</p>
-<p class="article-meta">Last updated <time datetime="2026-10-07">7 October 2026</time></p>
+<p class="article-meta">Last updated <time datetime="2026-10-08">8 October 2026</time></p>
 </header>
 <div class="prose" data-prose>
 <p>This page collects the problems reported most often, with the quickest way to confirm each cause. Work top to bottom: most issues are resolved in the first two sections.</p>
@@ -249,7 +258,7 @@
 <div class="table-wrap" tabindex="0"><table><thead><tr><th>Response</th><th>Meaning</th><th>Fix</th></tr></thead><tbody><tr><td>A JSON array of results</td><td>The endpoint works; the problem is in the widget settings</td><td>Check “Source”, “Date filter” and the term filters</td></tr><tr><td><code>[]</code> (empty array)</td><td>The query matched nothing</td><td>Try another term, or widen the source</td></tr><tr><td><code>rest_missing_callback_param</code></td><td>The <code>q</code> parameter is missing</td><td>Add <code>q</code> to the request</td></tr><tr><td><code>rest_invalid_param</code></td><td><code>q</code> is shorter than 2 characters or is not text</td><td>Add a longer <code>q</code></td></tr><tr><td><code>rest_cannot_access</code></td><td>The REST API is blocked</td><td>Check security plugins and server rules</td></tr><tr><td>A 404 page</td><td>Permalinks are not set</td><td>“Settings → Permalinks”, save once</td></tr><tr><td>A PHP error page</td><td>A server-side fatal</td><td>Read <code>debug.log</code></td></tr></tbody></table></div>
 <p>Then repeat the same request from the browser&#39;s network tab while typing in the widget, and compare the URL, the status and the response headers.</p>
 <h2 id="appearance-and-styling">Appearance and styling<a class="hlink" href="#appearance-and-styling" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
-<div class="table-wrap" tabindex="0"><table><thead><tr><th>Symptom</th><th>Cause</th><th>Fix</th></tr></thead><tbody><tr><td>The widget looks unstyled</td><td><code>search.css</code> did not load</td><td>Clear caches; check the network tab for <code>search.css?ver=0.0.9</code></td></tr><tr><td>Old styles after an update</td><td>A cached stylesheet</td><td>Purge the cache; the version query string forces a new fetch</td></tr><tr><td>Columns collapse to one</td><td>The viewport is below <code>782px</code></td><td>Expected responsive behaviour</td></tr><tr><td>Masonry looks uneven</td><td>Masonry and equal height are both on</td><td>Enable only one</td></tr><tr><td>The panel is too narrow in List mode</td><td>The container width limits it</td><td>Widen the container, or use the “as wide as the field” snippet on the <a href="../widgets/live-search/#styling">styling page</a></td></tr><tr><td>A custom template is unstyled</td><td>The template CSS did not load</td><td>Regenerate Elementor CSS and clear caches</td></tr></tbody></table></div>
+<div class="table-wrap" tabindex="0"><table><thead><tr><th>Symptom</th><th>Cause</th><th>Fix</th></tr></thead><tbody><tr><td>The widget looks unstyled</td><td><code>search.css</code> did not load</td><td>Clear caches; check the network tab for <code>search.css?ver=0.1.2</code></td></tr><tr><td>Old styles after an update</td><td>A cached stylesheet</td><td>Purge the cache; the version query string forces a new fetch</td></tr><tr><td>Columns collapse to one</td><td>The viewport is below <code>782px</code></td><td>Expected responsive behaviour</td></tr><tr><td>Masonry looks uneven</td><td>Masonry and equal height are both on</td><td>Enable only one</td></tr><tr><td>The panel is too narrow in List mode</td><td>The container width limits it</td><td>Widen the container, or use the “as wide as the field” snippet on the <a href="../widgets/live-search/#styling">styling page</a></td></tr><tr><td>A custom template is unstyled</td><td>The template CSS did not load</td><td>Regenerate Elementor CSS and clear caches</td></tr></tbody></table></div>
 <h2 id="faq-widget">FAQ widget<a class="hlink" href="#faq-widget" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
 <div class="table-wrap" tabindex="0"><table><thead><tr><th>Symptom</th><th>Cause</th><th>Fix</th></tr></thead><tbody><tr><td>Items do not open at all</td><td>The widget script did not run</td><td>Check for JS errors in the console; clear caches</td></tr><tr><td>A long answer is cut off</td><td>The script is not running, so the no-JS cap (<code>max-height: 640px</code>) applies</td><td>Fix the script loading; with it running, the height is measured from the content</td></tr><tr><td>Two items open at once</td><td>The mode is “Toggle”</td><td>Switch to “Accordion”</td></tr><tr><td>The icon does not rotate</td><td>The icon type is not compatible</td><td>Use “Plus”, “Chevron” or a custom icon with the rotation control</td></tr><tr><td>No <code>FAQPage</code> schema</td><td>The control is off, or this is the second FAQ widget on the page</td><td>Enable the control; keep one schema-emitting widget per page</td></tr><tr><td>The heading level looks wrong in the outline</td><td>The “Question heading tag” control</td><td>Choose <code>H2</code>, <code>H3</code> or <code>H4</code> to fit your page structure</td></tr></tbody></table></div>
 <h2 id="comments-widget">Comments widget<a class="hlink" href="#comments-widget" aria-label="Link to this section"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg></a></h2>
@@ -315,7 +324,7 @@
 <div class="footer-in">
 <div class="footer-brand">
 <p class="footer-note">WidgetCore is a free, open source plugin released under GPL-2.0-or-later.</p>
-<p class="footer-ver">Version <b dir="ltr">0.0.9</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">GPL-2.0-or-later license</a> · Last updated <time datetime="2026-10-07" dir="ltr">7 October 2026</time></p>
+<p class="footer-ver">Version <b dir="ltr">0.1.2</b> · <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank" rel="noopener noreferrer">GPL-2.0-or-later license</a> · Last updated <time datetime="2026-10-08" dir="ltr">8 October 2026</time></p>
 </div>
 
 </div>
